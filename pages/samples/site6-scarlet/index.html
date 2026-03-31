@@ -247,9 +247,9 @@
     position: absolute; top: calc(100% + 16px); left: 50%; transform: translateX(-50%);
     background: var(--red); border-radius: 10px; padding: 8px 0; min-width: 200px;
     box-shadow: 0 16px 50px rgba(0,0,0,0.4); z-index: 200;
-    border: 2px solid #000;
+    border: 1.5px solid rgba(255,255,255,0.35);
   }
-  .drop::before { content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top: none; border-bottom-color: #000; }
+  .drop::before { content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top: none; border-bottom-color: rgba(255,255,255,0.35); }
   [x-cloak] { display: none !important; }
   .drop li { list-style: none; }
   .drop li a { display: block !important; padding: 9px 18px; color: rgba(255,255,255,0.9) !important; font-size: 0.82rem !important; white-space: nowrap; transition: background 0.15s, color 0.15s !important; }
