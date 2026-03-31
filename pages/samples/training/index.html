@@ -267,7 +267,8 @@
 </head>
 <body>
 
-<nav x-data="{ mo: false }">
+<div x-data="{ mo: false }">
+<nav>
   <a class="nav-brand" href="../index.html">
     <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
     <span>Torquay Leander SC</span>
@@ -285,7 +286,8 @@
   <button class="nav-burger" @click="mo = !mo" :class="{ active: mo }" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
-  <div class="mobile-nav" x-show="mo" x-cloak @click.self="mo = false">
+</nav>
+<div class="mobile-nav" x-show="mo" x-cloak @click.self="mo = false">
     <div class="mob-group">
       <span class="mob-label">On This Page</span>
       <a href="#squads">Squads</a>
@@ -304,7 +306,7 @@
       <a href="../login.html">Members Login</a>
     </div>
   </div>
-</nav>
+</div>
 
 <!-- HERO -->
 <section class="hero">
