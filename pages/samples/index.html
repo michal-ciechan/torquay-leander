@@ -115,6 +115,9 @@
     border-top: 1px solid rgba(255,255,255,0.05);
   }
 </style>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+<script>window.tailwind = { corePlugins: { preflight: false } }</script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
@@ -133,8 +136,41 @@
   .hub-nav-links a:hover { color: #38bdf8; }
   .hub-nav-links .hub-login { background: rgba(56,189,248,0.1); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); padding: 6px 14px; border-radius: 6px; font-weight: 700; }
   .hub-nav-links .hub-login:hover { background: #38bdf8; color: #0a0f1e; }
+
+  [x-cloak] { display: none !important; }
+
+  .hub-burger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 8px; z-index: 101;
+  }
+  .hub-burger span {
+    display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hub-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hub-burger.active span:nth-child(2) { opacity: 0; }
+  .hub-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .hub-mobile-nav {
+    position: fixed; inset: 64px 0 0 0; background: #0b1628; z-index: 100;
+    overflow-y: auto; padding: 24px;
+  }
+  .hub-mobile-nav a {
+    display: block; color: rgba(255,255,255,0.85); text-decoration: none;
+    padding: 14px 0; font-size: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .hub-mobile-nav a:hover { color: #38bdf8; }
+
+  @media (max-width: 900px) {
+    .hub-nav-links { display: none !important; }
+    .hub-burger { display: flex !important; }
+  }
+
+  @media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr !important; }
+  }
 </style>
-<nav class="hub-nav">
+<nav class="hub-nav" x-data="{ mo: false }">
   <a class="hub-nav-brand" href="#">
     <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
     <span>Torquay Leander SC</span>
@@ -147,6 +183,17 @@
     <li><a href="gallery/index.html">Gallery</a></li>
     <li><a href="login.html" class="hub-login">Members Login</a></li>
   </ul>
+  <button class="hub-burger" @click="mo = !mo" :class="{ active: mo }" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="hub-mobile-nav" x-show="mo" x-cloak @click.self="mo = false">
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="training/index.html">Training</a>
+    <a href="competitions/index.html">Competitions</a>
+    <a href="gallery/index.html">Gallery</a>
+    <a href="login.html">Members Login</a>
+  </div>
 </nav>
 
 <header>

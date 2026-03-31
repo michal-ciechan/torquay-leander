@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Training — Torquay Leander Swimming Club</title>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+<script>window.tailwind = { corePlugins: { preflight: false } }</script>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
     --sky: #0ea5e9;
@@ -200,11 +202,72 @@
     .kit-inner { grid-template-columns: 1fr; }
     .pool-facts { grid-template-columns: 1fr 1fr; }
   }
+
+  /* ── MOBILE NAV ── */
+  [x-cloak] { display: none !important; }
+  .nav-burger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 8px; z-index: 101; flex-shrink: 0;
+  }
+  .nav-burger span {
+    display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.active span:nth-child(2) { opacity: 0; }
+  .nav-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-nav {
+    position: fixed; inset: 70px 0 0 0; background: #0c1a2e; z-index: 100;
+    overflow-y: auto; padding: 20px 24px 40px;
+  }
+  .mob-group { margin-bottom: 8px; }
+  .mob-label {
+    display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #0ea5e9; padding: 16px 0 6px;
+  }
+  .mobile-nav a {
+    display: block; color: rgba(255,255,255,0.82); text-decoration: none;
+    padding: 10px 0; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.2s;
+  }
+  .mobile-nav a:hover { color: #0ea5e9; }
+
+  @media (max-width: 900px) {
+    .nav-links, .nav-menu, .nav-list { display: none !important; }
+    .nav-cta, .nav-pill { display: none !important; }
+    .nav-login { display: none !important; }
+    .nav-burger { display: flex !important; }
+  }
+
+  /* ── RESPONSIVE GRIDS & LAYOUTS ── */
+  @media (max-width: 768px) {
+    .hero h1, .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.6rem) !important; }
+    .hero p, .page-hero p { font-size: 1rem !important; }
+
+    .squads-grid, .coaches-grid,
+    .pool-facts, .kit-inner { grid-template-columns: 1fr !important; }
+
+    .section-inner, .inner { padding: 48px 20px !important; }
+
+    /* timetable: make scrollable on mobile */
+    .timetable-wrap, table { overflow-x: auto; display: block; }
+    table { min-width: 600px; }
+
+    /* ply-inner (Plymouth section) */
+    .ply-inner { grid-template-columns: 1fr !important; }
+
+    .pool-inner { grid-template-columns: 1fr !important; }
+
+    .tab-btns { flex-wrap: wrap; gap: 8px; }
+
+    .timeline { padding-left: 20px; }
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<nav x-data="{ mo: false }">
   <a class="nav-brand" href="../index.html">
     <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
     <span>Torquay Leander SC</span>
@@ -218,6 +281,28 @@
       <li><a href="../competitions/index.html">Competitions</a></li>
     </ul>
     <a class="nav-login" href="../login.html">Members Login</a>
+  </div>
+  <button class="nav-burger" @click="mo = !mo" :class="{ active: mo }" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-nav" x-show="mo" x-cloak @click.self="mo = false">
+    <div class="mob-group">
+      <span class="mob-label">On This Page</span>
+      <a href="#squads">Squads</a>
+      <a href="#home-pool">Home Pool</a>
+      <a href="#plymouth">Plymouth 50m</a>
+      <a href="#timetable">Timetable</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Other Pages</span>
+      <a href="../competitions/index.html">Competitions</a>
+      <a href="../gallery/index.html">Gallery</a>
+      <a href="../index.html">Back to Hub</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Account</span>
+      <a href="../login.html">Members Login</a>
+    </div>
   </div>
 </nav>
 
@@ -427,6 +512,7 @@
       Times shown are approximate. Always check with your coach for confirmed session times, especially during school holidays and bank holiday weekends.
     </div>
 
+    <div style="overflow-x: auto;">
     <table class="timetable">
       <thead>
         <tr>
@@ -506,6 +592,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 

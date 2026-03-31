@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery — Torquay Leander Swimming Club</title>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+<script>window.tailwind = { corePlugins: { preflight: false } }</script>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
     --sky: #0ea5e9;
@@ -151,11 +154,64 @@
     .photo-item.featured { grid-column: span 1; }
     .photo-item.featured img { aspect-ratio: 4/3; }
   }
+
+  /* ── MOBILE NAV ── */
+  [x-cloak] { display: none !important; }
+  .nav-burger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 8px; z-index: 101; flex-shrink: 0;
+  }
+  .nav-burger span {
+    display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.active span:nth-child(2) { opacity: 0; }
+  .nav-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-nav {
+    position: fixed; inset: 70px 0 0 0; background: #0c1a2e; z-index: 100;
+    overflow-y: auto; padding: 20px 24px 40px;
+  }
+  .mob-group { margin-bottom: 8px; }
+  .mob-label {
+    display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #0ea5e9; padding: 16px 0 6px;
+  }
+  .mobile-nav a {
+    display: block; color: rgba(255,255,255,0.82); text-decoration: none;
+    padding: 10px 0; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.2s;
+  }
+  .mobile-nav a:hover { color: #0ea5e9; }
+
+  @media (max-width: 900px) {
+    .nav-links, .nav-menu, .nav-list { display: none !important; }
+    .nav-cta, .nav-pill { display: none !important; }
+    .nav-login { display: none !important; }
+    .nav-back { display: none !important; }
+    .nav-burger { display: flex !important; }
+  }
+
+  /* ── RESPONSIVE GRIDS & LAYOUTS ── */
+  @media (max-width: 768px) {
+    .hero h1, .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.6rem) !important; }
+    .hero p, .page-hero p { font-size: 1rem !important; }
+
+    /* gallery grids */
+    .photo-grid { grid-template-columns: 1fr !important; }
+    .events-grid { grid-template-columns: 1fr !important; }
+
+    .gallery-section { padding: 40px 20px !important; }
+
+    .tab-btns { flex-wrap: wrap; gap: 8px; }
+    .event-tabs { flex-wrap: wrap; }
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<nav x-data="{ mo: false }">
   <a class="nav-brand" href="../index.html">
     <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
     <span>Torquay Leander SC</span>
@@ -163,6 +219,29 @@
   <a class="nav-back" href="javascript:history.back()">
     ← Back to Site
   </a>
+  <button class="nav-burger" @click="mo = !mo" :class="{ active: mo }" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-nav" x-show="mo" x-cloak @click.self="mo = false">
+    <div class="mob-group">
+      <span class="mob-label">Navigation</span>
+      <a href="../index.html">Home</a>
+      <a href="javascript:history.back()">← Back to Site</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Gallery</span>
+      <a href="#" onclick="showTab(0); mo=false; return false;">All Events</a>
+      <a href="#" onclick="showTab(1); mo=false; return false;">Competition Day</a>
+      <a href="#" onclick="showTab(2); mo=false; return false;">Training Sessions</a>
+      <a href="#" onclick="showTab(3); mo=false; return false;">Club Life &amp; Social</a>
+      <a href="#" onclick="showTab(4); mo=false; return false;">Junior Academy</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Other Pages</span>
+      <a href="../training/index.html">Training</a>
+      <a href="../competitions/index.html">Competitions</a>
+    </div>
+  </div>
 </nav>
 
 <div class="page-hero">

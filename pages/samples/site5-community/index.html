@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Torquay Leander Swimming Club</title>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+<script>window.tailwind = { corePlugins: { preflight: false } }</script>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
     --coral: #f43f5e;
@@ -308,11 +310,66 @@
     .facilities-inner { grid-template-columns: 1fr; }
     .fb-posts { grid-template-columns: 1fr; }
   }
+
+  /* ── MOBILE NAV ── */
+  .nav-burger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 8px; z-index: 101; flex-shrink: 0;
+  }
+  .nav-burger span {
+    display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.active span:nth-child(2) { opacity: 0; }
+  .nav-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-nav {
+    position: fixed; inset: 74px 0 0 0; z-index: 100;
+    background: #fff;
+    overflow-y: auto; padding: 20px 24px 40px;
+  }
+  .mob-group { margin-bottom: 8px; }
+  .mob-label {
+    display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 16px 0 6px; opacity: 0.9;
+    color: var(--coral);
+  }
+  .mobile-nav a {
+    display: block; text-decoration: none;
+    color: var(--text);
+    padding: 10px 0; font-size: 0.95rem; border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: color 0.2s;
+  }
+  .mobile-nav a:hover { color: var(--coral); }
+
+  @media (max-width: 900px) {
+    .nav-list { display: none !important; }
+    .try-btn { display: none !important; }
+    .nav-burger { display: flex !important; }
+  }
+
+  @media (max-width: 768px) {
+    .hero { min-height: 100svh; }
+    .hero h1 { font-size: clamp(1.8rem, 6vw, 2.8rem) !important; }
+    .hero p { font-size: 1rem !important; }
+    .hero-btns, .hero-actions { flex-direction: column !important; gap: 12px !important; align-items: flex-start !important; }
+
+    .squad-grid, .squads-grid, .feature-grid, .features-grid,
+    .program-grid, .programs-grid, .coach-grid, .coaches-grid,
+    .kit-grid, .news-grid, .info-grid, .stat-grid,
+    .sponsor-logos, .sponsor-grid { grid-template-columns: 1fr !important; }
+
+    section, .section { padding-left: 20px !important; padding-right: 20px !important; }
+    .section-inner { padding: 60px 20px !important; }
+    .fb-feed, .feed-grid { grid-template-columns: 1fr !important; }
+    .sponsor-logos { grid-template-columns: repeat(2, 1fr) !important; }
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<nav x-data="{ mo: false }">
   <a class="brand" href="#">
     <div class="brand-circle">
       <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="" onerror="this.style.display='none'">
@@ -352,6 +409,35 @@
     <li><a href="../login.html" class="nav-login">Members Login</a></li>
   </ul>
   <a href="#join" class="try-btn">Free Trial</a>
+  <button class="nav-burger" @click="mo = !mo" :class="{ active: mo }" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-nav" x-show="mo" x-cloak @click.self="mo = false">
+    <div class="mob-group">
+      <span class="mob-label">About Us</span>
+      <a href="#about">About the Club</a>
+      <a href="#facilities">Our Facilities</a>
+      <a href="#join">How to Join</a>
+      <a href="#">Codes of Conduct</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Training</span>
+      <a href="../training/index.html">Our Programs</a>
+      <a href="../training/index.html#timetable">Training Times</a>
+      <a href="../training/index.html#squads">Learn to Swim</a>
+      <a href="../training/index.html#coaches">Our Coaches</a>
+      <a href="../training/index.html#plymouth">Plymouth 50m (Long Course)</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Competitions</span>
+      <a href="../competitions/index.html">Our Meets</a>
+      <a href="../competitions/index.html#mini-league">Devon Mini League 🏆</a>
+      <a href="../competitions/index.html">Competition Guide</a>
+    </div>
+    <a href="../gallery/index.html">Gallery</a>
+    <a href="#sponsors">Sponsors</a>
+    <a href="../login.html">Members Login</a>
+  </div>
 </nav>
 
 <!-- HERO -->
