@@ -23,7 +23,7 @@
 
   /* NAV */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 40px;
     height: 70px;
@@ -287,7 +287,7 @@
   .nav-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   .mobile-nav {
-    position: fixed; inset: 70px 0 0 0; background: var(--navy); z-index: 100;
+    position: fixed; inset: 70px 0 0 0; background: var(--navy); z-index: 150;
     overflow-y: auto; padding: 20px 24px 40px;
   }
   .mob-group { margin-bottom: 8px; }
@@ -384,7 +384,7 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class="mobile-nav" x-show="mo" x-cloak @click="mo = false">
+<div class="mobile-nav" x-show="mo" x-cloak @click.capture="mo = false">
     <div class="mob-group">
       <span class="mob-label">About Us</span>
       <a href="#about">About the Club</a>
