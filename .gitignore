@@ -1,1 +1,10 @@
 .claude/
+node_modules/
+screenshots/
+verify.mjs
+package.json
+package-lock.json
+scrape-site.mjs
+screenshot-dropdown.mjs
+screenshot-logo.mjs
+screenshot-official.mjs
