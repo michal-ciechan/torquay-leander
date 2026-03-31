@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Members Login — Torquay Leander SC</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0c1a2e; min-height: 100vh; display: flex; flex-direction: column; }
+
+  header {
+    padding: 20px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo img { height: 38px; filter: brightness(0) invert(1); }
+  .logo span { color: #fff; font-weight: 700; font-size: 0.95rem; }
+  .back-link { color: #0ea5e9; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+  .back-link:hover { text-decoration: underline; }
+
+  main {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    padding: 40px 20px;
+  }
+  .card {
+    background: #111827; border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 48px 44px; width: 100%; max-width: 420px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+  }
+  .card-logo { text-align: center; margin-bottom: 28px; }
+  .card-logo img { height: 60px; filter: brightness(0) invert(1); opacity: 0.9; }
+  h1 { color: #fff; font-size: 1.5rem; font-weight: 800; text-align: center; margin-bottom: 6px; letter-spacing: -0.5px; }
+  .sub { color: #64748b; font-size: 0.88rem; text-align: center; margin-bottom: 32px; }
+  .demo-note {
+    background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.25);
+    border-radius: 10px; padding: 12px 16px; margin-bottom: 28px;
+    color: #38bdf8; font-size: 0.82rem; line-height: 1.5;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .demo-note svg { flex-shrink: 0; margin-top: 1px; }
+
+  label { display: block; color: #94a3b8; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px; }
+  input[type="email"], input[type="password"] {
+    width: 100%; padding: 12px 16px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);
+    color: #fff; font-size: 0.9rem; font-family: inherit;
+    transition: border-color 0.2s, background 0.2s; margin-bottom: 16px;
+    outline: none;
+  }
+  input:focus { border-color: #0ea5e9; background: rgba(14,165,233,0.05); }
+  input::placeholder { color: #475569; }
+  .forgot { display: flex; justify-content: flex-end; margin-top: -10px; margin-bottom: 20px; }
+  .forgot a { color: #0ea5e9; font-size: 0.8rem; text-decoration: none; }
+  .forgot a:hover { text-decoration: underline; }
+  .btn-login {
+    width: 100%; padding: 13px; background: #0ea5e9; color: #fff;
+    border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; font-family: inherit;
+  }
+  .btn-login:hover { background: #0369a1; }
+  .divider { display: flex; align-items: center; gap: 12px; margin: 24px 0; }
+  .divider hr { flex: 1; border: none; border-top: 1px solid rgba(255,255,255,0.08); }
+  .divider span { color: #475569; font-size: 0.78rem; }
+  .external-login {
+    display: block; text-align: center; padding: 12px;
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+    color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .external-login:hover { border-color: rgba(255,255,255,0.25); color: #fff; }
+  .external-login strong { color: #0ea5e9; }
+  footer-note {
+    display: block; text-align: center; margin-top: 24px;
+    color: #475569; font-size: 0.8rem;
+  }
+  footer-note a { color: #0ea5e9; text-decoration: none; }
+
+  footer {
+    padding: 24px 40px; text-align: center;
+    color: #334155; font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  footer a { color: #0ea5e9; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
+    <span>Torquay Leander SC</span>
+  </a>
+  <a class="back-link" href="javascript:history.back()">
+    ← Back
+  </a>
+</header>
+
+<main>
+  <div class="card">
+    <div class="card-logo">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
+    </div>
+    <h1>Members Login</h1>
+    <p class="sub">Sign in to the club management portal</p>
+
+    <div class="demo-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      This is a design demo. The real members portal is hosted at ClubOrganiser.
+    </div>
+
+    <form onsubmit="event.preventDefault()">
+      <label>Email Address</label>
+      <input type="email" placeholder="your@email.com">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••">
+      <div class="forgot"><a href="#">Forgot password?</a></div>
+      <button class="btn-login" type="submit">Sign In</button>
+    </form>
+
+    <div class="divider"><hr><span>OR</span><hr></div>
+
+    <a class="external-login" href="https://www.cluborganiser.co.uk/login.php" target="_blank" rel="noopener">
+      Continue with <strong>ClubOrganiser</strong> (official portal)
+    </a>
+
+    <footer-note>
+      Not a member? <a href="#join">Book a free trial</a> to get started.
+    </footer-note>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Torquay Leander Swimming Club &bull; <a href="mailto:torquayleander@hotmail.com">torquayleander@hotmail.com</a>
+</footer>
+
+</body>
+</html>

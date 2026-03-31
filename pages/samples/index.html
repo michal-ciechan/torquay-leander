@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torquay Leander — Design Samples</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0a0f1e;
+    color: #fff;
+    min-height: 100vh;
+  }
+  header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #0a0f1e 0%, #1a2a4a 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  header img { width: 80px; margin-bottom: 20px; filter: brightness(0) invert(1); }
+  header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.5px; }
+  header h1 span { color: #38bdf8; }
+  header p { margin-top: 12px; color: #94a3b8; font-size: 1.05rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 24px 60px;
+  }
+  .card {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .card-thumb {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-thumb img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .card:hover .card-thumb img { transform: scale(1.06); }
+  .card-badge {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .card-body { padding: 22px; }
+  .card-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .card h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .card p { font-size: 0.9rem; color: #94a3b8; line-height: 1.55; }
+  .card-footer {
+    padding: 14px 22px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #38bdf8;
+  }
+  .card-footer svg { flex-shrink: 0; }
+
+  /* colour accents per card */
+  .c1 .card-num { color: #38bdf8; }
+  .c2 .card-num { color: #818cf8; }
+  .c3 .card-num { color: #34d399; }
+  .c4 .card-num { color: #fb923c; }
+  .c5 .card-num { color: #f472b6; }
+
+  .c1 .card-footer { color: #38bdf8; }
+  .c2 .card-footer { color: #818cf8; }
+  .c3 .card-footer { color: #34d399; }
+  .c4 .card-footer { color: #fb923c; }
+  .c5 .card-footer { color: #f472b6; }
+
+  /* colour strip at top of each thumb */
+  .c1 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#38bdf8; }
+  .c2 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#818cf8; }
+  .c3 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#34d399; }
+  .c4 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#fb923c; }
+  .c5 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#f472b6; }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: #475569;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+</style>
+</head>
+<body>
+
+<style>
+  .hub-nav {
+    background: rgba(12,26,46,0.98); height: 64px; padding: 0 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .hub-nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .hub-nav-brand img { height: 36px; filter: brightness(0) invert(1); }
+  .hub-nav-brand span { color: #fff; font-weight: 700; font-size: 0.9rem; }
+  .hub-nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+  .hub-nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+  .hub-nav-links a:hover { color: #38bdf8; }
+  .hub-nav-links .hub-login { background: rgba(56,189,248,0.1); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); padding: 6px 14px; border-radius: 6px; font-weight: 700; }
+  .hub-nav-links .hub-login:hover { background: #38bdf8; color: #0a0f1e; }
+</style>
+<nav class="hub-nav">
+  <a class="hub-nav-brand" href="#">
+    <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
+    <span>Torquay Leander SC</span>
+  </a>
+  <ul class="hub-nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="training/index.html">Training</a></li>
+    <li><a href="competitions/index.html">Competitions</a></li>
+    <li><a href="gallery/index.html">Gallery</a></li>
+    <li><a href="login.html" class="hub-login">Members Login</a></li>
+  </ul>
+</nav>
+
+<header>
+  <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
+  <h1>Torquay Leander <span>Design Samples</span></h1>
+  <p>5 modern website concepts for the swimming club — click any card to preview</p>
+</header>
+
+<div class="grid">
+
+  <a class="card c1" href="site1-aqua/index.html">
+    <div class="card-thumb">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7837-1024x434.jpg" alt="">
+      <span class="card-badge">Design 1</span>
+    </div>
+    <div class="card-body">
+      <div class="card-num">01 / Aqua Wave</div>
+      <h2>Clean & Professional</h2>
+      <p>Ocean-blue gradients, bold hero section, smooth card layout. Calm, trustworthy feel with sky-blue accents.</p>
+    </div>
+    <div class="card-footer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      View Design
+    </div>
+  </a>
+
+  <a class="card c2" href="site2-bold/index.html">
+    <div class="card-thumb">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="">
+      <span class="card-badge">Design 2</span>
+    </div>
+    <div class="card-body">
+      <div class="card-num">02 / Bold Sport</div>
+      <h2>Dark & Dynamic</h2>
+      <p>Deep navy background with electric indigo highlights. High contrast, sporty energy. Great for competition focus.</p>
+    </div>
+    <div class="card-footer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      View Design
+    </div>
+  </a>
+
+  <a class="card c3" href="site3-minimal/index.html">
+    <div class="card-thumb">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7967-400x284.jpg" alt="">
+      <span class="card-badge">Design 3</span>
+    </div>
+    <div class="card-body">
+      <div class="card-num">03 / Minimal Fresh</div>
+      <h2>Light & Airy</h2>
+      <p>White space, clean typography, mint-green accents. Elegant, modern, and easy to navigate for all ages.</p>
+    </div>
+    <div class="card-footer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      View Design
+    </div>
+  </a>
+
+  <a class="card c4" href="site4-dynamic/index.html">
+    <div class="card-thumb">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="">
+      <span class="card-badge">Design 4</span>
+    </div>
+    <div class="card-body">
+      <div class="card-num">04 / Dynamic Energy</div>
+      <h2>Vibrant & Energetic</h2>
+      <p>Diagonal sections, orange/teal palette, bold typography. High energy feel that appeals to young swimmers.</p>
+    </div>
+    <div class="card-footer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      View Design
+    </div>
+  </a>
+
+  <a class="card c5" href="site5-community/index.html">
+    <div class="card-thumb">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8181-400x284.jpg" alt="">
+      <span class="card-badge">Design 5</span>
+    </div>
+    <div class="card-body">
+      <div class="card-num">05 / Community Warm</div>
+      <h2>Friendly & Welcoming</h2>
+      <p>Warm coral and teal palette, large family-friendly photos, soft rounded shapes. Perfect for beginners and families.</p>
+    </div>
+    <div class="card-footer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      View Design
+    </div>
+  </a>
+
+</div>
+
+<!-- SHARED PAGES -->
+<div style="max-width:1200px; margin:0 auto; padding:0 24px 60px;">
+  <h2 style="color:#fff; font-size:1.1rem; font-weight:700; margin-bottom:20px; opacity:0.5; letter-spacing:1px; text-transform:uppercase;">Shared Pages</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
+
+    <a href="training/index.html" style="background:#111827; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="height:140px; overflow:hidden; position:relative; background:#0c1a2e;">
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="" style="width:100%; height:100%; object-fit:cover; opacity:0.6;">
+        <div style="position:absolute; top:12px; left:12px; background:rgba(16,185,129,0.85); color:#fff; font-size:0.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:20px;">Squads & Times</div>
+      </div>
+      <div style="padding:18px;">
+        <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#34d399; margin-bottom:6px;">Shared Page</p>
+        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">Training</h3>
+        <p style="color:#64748b; font-size:0.82rem; line-height:1.55;">Squads, weekly timetable, Plymouth 50m long course sessions, coaches and kit.</p>
+      </div>
+    </a>
+
+    <a href="competitions/index.html" style="background:#111827; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="height:140px; overflow:hidden; position:relative; background:#0c1a2e;">
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="" style="width:100%; height:100%; object-fit:cover; opacity:0.6;">
+        <div style="position:absolute; top:12px; left:12px; background:linear-gradient(135deg,#b45309,#f59e0b); color:#fff; font-size:0.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:20px;">🏆 Champions</div>
+      </div>
+      <div style="padding:18px;">
+        <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f59e0b; margin-bottom:6px;">Shared Page</p>
+        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">Competitions</h3>
+        <p style="color:#64748b; font-size:0.82rem; line-height:1.55;">Devon Mini League (2× winners), County Champs, Plymouth 50m training and more.</p>
+      </div>
+    </a>
+
+    <a href="gallery/index.html" style="background:#111827; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="height:140px; overflow:hidden; position:relative; background:#0c1a2e;">
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="" style="width:100%; height:100%; object-fit:cover; opacity:0.6;">
+        <div style="position:absolute; top:12px; left:12px; background:rgba(14,165,233,0.8); color:#fff; font-size:0.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:20px;">Photo Gallery</div>
+      </div>
+      <div style="padding:18px;">
+        <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#38bdf8; margin-bottom:6px;">Shared Page</p>
+        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">Gallery</h3>
+        <p style="color:#64748b; font-size:0.82rem; line-height:1.55;">Browse by event — Competition Day, Training, Club Life & Social, Junior Academy.</p>
+      </div>
+    </a>
+
+    <a href="login.html" style="background:#111827; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="height:140px; background:linear-gradient(135deg,#0c1a2e,#1a2a4a); display:flex; align-items:center; justify-content:center; font-size:3rem;">🔑</div>
+      <div style="padding:18px;">
+        <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#818cf8; margin-bottom:6px;">Shared Page</p>
+        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">Members Login</h3>
+        <p style="color:#64748b; font-size:0.82rem; line-height:1.55;">Sample login page linking to the real ClubOrganiser members portal.</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  Torquay Leander Swimming Club &mdash; Design exploration &copy; 2026
+</footer>
+
+</body>
+</html>
