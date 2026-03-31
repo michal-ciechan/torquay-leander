@@ -245,15 +245,15 @@
   .nav-links li.has-drop > a::after { content: '▾'; font-size: 0.65rem; opacity: 0.6; }
   .drop {
     position: absolute; top: calc(100% + 16px); left: 50%; transform: translateX(-50%);
-    background: #111; border-radius: 10px; padding: 8px 0; min-width: 200px;
-    box-shadow: 0 16px 50px rgba(0,0,0,0.5); z-index: 200;
-    border: 1px solid rgba(220,38,38,0.15);
+    background: var(--red); border-radius: 10px; padding: 8px 0; min-width: 200px;
+    box-shadow: 0 16px 50px rgba(0,0,0,0.4); z-index: 200;
+    border: 2px solid #000;
   }
-  .drop::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top: none; border-bottom-color: #111; }
+  .drop::before { content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top: none; border-bottom-color: #000; }
   [x-cloak] { display: none !important; }
   .drop li { list-style: none; }
-  .drop li a { display: block !important; padding: 9px 18px; color: rgba(255,255,255,0.65) !important; font-size: 0.82rem !important; white-space: nowrap; transition: background 0.15s, color 0.15s !important; }
-  .drop li a:hover { background: rgba(220,38,38,0.1); color: #f87171 !important; }
+  .drop li a { display: block !important; padding: 9px 18px; color: rgba(255,255,255,0.9) !important; font-size: 0.82rem !important; white-space: nowrap; transition: background 0.15s, color 0.15s !important; }
+  .drop li a:hover { background: rgba(0,0,0,0.2); color: #fff !important; }
   .nav-login { background: rgba(0,0,0,0.2) !important; color: #fff !important; border: 1px solid rgba(0,0,0,0.4); padding: 6px 14px; border-radius: 6px; font-weight: 700 !important; }
   .nav-login:hover { background: #000 !important; color: #fff !important; }
 
