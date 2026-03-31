@@ -30,7 +30,6 @@
     padding: 0 40px;
     height: 70px;
     background: var(--red);
-    border-bottom: 3px solid #000;
   }
   .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
   .nav-logo img { height: 42px; filter: brightness(0) invert(1); }
@@ -51,14 +50,14 @@
     height: 100vh;
     display: flex; align-items: center;
     overflow: hidden;
-    background: linear-gradient(160deg, #7f1d1d 0%, var(--red) 100%);
+    background: var(--black);
     margin-top: -70px;
   }
   .hero-bg {
     position: absolute; inset: 0;
     background-image: url('https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7837-1024x434.jpg');
     background-size: cover; background-position: center;
-    opacity: 0.15;
+    opacity: 0.25;
   }
   .hero-wave {
     position: absolute; bottom: -1px; left: 0; right: 0;
@@ -71,9 +70,9 @@
   }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(0,0,0,0.25);
-    border: 1px solid rgba(255,255,255,0.35);
-    color: #fff; font-size: 0.8rem; font-weight: 700;
+    background: rgba(220,38,38,0.15);
+    border: 1px solid rgba(220,38,38,0.4);
+    color: #f87171; font-size: 0.8rem; font-weight: 700;
     letter-spacing: 1.5px; text-transform: uppercase;
     padding: 6px 14px; border-radius: 20px;
     margin-bottom: 24px;
@@ -84,7 +83,7 @@
     letter-spacing: -1.5px;
     margin-bottom: 20px;
   }
-  .hero h1 em { color: #000; font-style: normal; }
+  .hero h1 em { color: var(--red); font-style: normal; }
   .hero p {
     font-size: 1.1rem; line-height: 1.7;
     color: rgba(255,255,255,0.75);
@@ -93,13 +92,13 @@
   }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
   .btn-primary {
-    background: #000; color: #fff;
+    background: var(--red); color: #fff;
     padding: 14px 28px; border-radius: 10px;
     font-weight: 700; font-size: 0.95rem;
     text-decoration: none; transition: all 0.2s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(220,38,38,0.4);
   }
-  .btn-primary:hover { background: #222; transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
   .btn-outline {
     background: transparent; color: #fff;
     border: 2px solid rgba(255,255,255,0.3);
@@ -111,7 +110,7 @@
 
   /* STATS */
   .stats {
-    background: var(--black); color: #fff;
+    background: var(--red); color: #fff;
     display: grid; grid-template-columns: repeat(4,1fr);
     text-align: center;
   }
@@ -413,7 +412,7 @@
     </div>
   </div>
   <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0a0a0a"/>
+    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/>
   </svg>
 </section>
 
