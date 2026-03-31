@@ -222,12 +222,12 @@
   .cta h2 { color: #fff; margin-bottom: 14px; }
   .cta p { color: rgba(255,255,255,0.85); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
   .cta .btn-white {
-    background: #fff; color: var(--red-dark);
+    background: #000; color: #fff;
     padding: 14px 32px; border-radius: 10px;
     font-weight: 700; font-size: 1rem; text-decoration: none;
     transition: all 0.2s; display: inline-block;
   }
-  .cta .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+  .cta .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.4); background: #222; }
 
   /* FOOTER */
   footer {
@@ -245,17 +245,17 @@
   .nav-links li.has-drop > a::after { content: '▾'; font-size: 0.65rem; opacity: 0.6; }
   .drop {
     position: absolute; top: calc(100% + 16px); left: 50%; transform: translateX(-50%);
-    background: var(--red); border-radius: 10px; padding: 8px 0; min-width: 200px;
+    background: #000; border-radius: 10px; padding: 8px 0; min-width: 200px;
     box-shadow: 0 16px 50px rgba(0,0,0,0.4); z-index: 200;
     border: 1.5px solid rgba(255,255,255,0.35);
   }
   .drop::before { content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top: none; border-bottom-color: rgba(255,255,255,0.35); }
   [x-cloak] { display: none !important; }
   .drop li { list-style: none; }
-  .drop li a { display: block !important; padding: 9px 18px; color: rgba(255,255,255,0.9) !important; font-size: 0.82rem !important; white-space: nowrap; transition: background 0.15s, color 0.15s !important; }
-  .drop li a:hover { background: rgba(0,0,0,0.2); color: #fff !important; }
-  .nav-login { background: rgba(0,0,0,0.2) !important; color: #fff !important; border: 1px solid rgba(0,0,0,0.4); padding: 6px 14px; border-radius: 6px; font-weight: 700 !important; }
-  .nav-login:hover { background: #000 !important; color: #fff !important; }
+  .drop li a { display: block !important; padding: 9px 18px; color: rgba(255,255,255,0.75) !important; font-size: 0.82rem !important; white-space: nowrap; transition: background 0.15s, color 0.15s !important; }
+  .drop li a:hover { background: rgba(220,38,38,0.15); color: #f87171 !important; }
+  .nav-login { background: #fff !important; color: var(--red) !important; border: none; padding: 6px 14px; border-radius: 6px; font-weight: 700 !important; font-size: 0.9rem; text-decoration: none; transition: all 0.2s; }
+  .nav-login:hover { background: #f0f0f0 !important; }
 
   /* ── MOBILE NAV ── */
   .nav-burger {
