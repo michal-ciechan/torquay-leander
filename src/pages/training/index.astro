@@ -1,0 +1,405 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Training — Torquay Leander Swimming Club">
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <span>Training</span>
+    </div>
+    <h1>Training at Torquay Leander</h1>
+    <p>Structured coaching for every ability — from first strokes to competition squads. We train at Swim Torquay and travel to Plymouth's 50m pool to give our competitive swimmers race-distance experience.</p>
+    <div class="hero-pills">
+      <span class="pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> All abilities welcome</span>
+      <span class="pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 5+ sessions per week</span>
+      <span class="pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 50m pool access via Plymouth</span>
+      <span class="pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free trial session</span>
+    </div>
+  </div>
+</section>
+
+<!-- SQUADS -->
+<section class="squads" id="squads">
+  <div class="inner">
+    <p class="label">Our Squads</p>
+    <h2>Find Your Level</h2>
+    <p class="lead">We run a clear squad pathway from first-time swimmers through to our performance competition team. Every swimmer is assessed and placed in the right environment to thrive.</p>
+    <div class="squads-grid">
+
+      <div class="squad-card">
+        <div class="squad-img">
+          <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_2568-400x284.jpg" alt="Starters" />
+          <div class="squad-colour c-red"></div>
+        </div>
+        <div class="squad-body">
+          <span class="squad-age t-red">Ages 5 – 7</span>
+          <h3>Learn to Swim / Starters</h3>
+          <p>Building water confidence, basic stroke technique and a love for swimming in a safe, fun environment.</p>
+          <div class="squad-sessions">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            1–2 sessions / week
+          </div>
+        </div>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-img">
+          <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7967-400x284.jpg" alt="Junior Development" />
+          <div class="squad-colour c-teal"></div>
+        </div>
+        <div class="squad-body">
+          <span class="squad-age t-teal">Ages 8 – 12</span>
+          <h3>Junior Development</h3>
+          <p>Refining all four strokes, building fitness and getting first competitive experience at club galas and the Devon Mini League.</p>
+          <div class="squad-sessions">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2–3 sessions / week
+          </div>
+        </div>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-img">
+          <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_6586-400x284.jpg" alt="Performance Squad" />
+          <div class="squad-colour c-indigo"></div>
+        </div>
+        <div class="squad-body">
+          <span class="squad-age t-indigo">Ages 12+</span>
+          <h3>Performance Squad</h3>
+          <p>High-intensity structured training targeting county qualifying times, open meets and regional competition. Includes Plymouth 50m sessions.</p>
+          <div class="squad-sessions">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            4–5 sessions / week
+          </div>
+        </div>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-img">
+          <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8181-400x284.jpg" alt="Masters" />
+          <div class="squad-colour c-coral"></div>
+        </div>
+        <div class="squad-body">
+          <span class="squad-age t-coral">Adults</span>
+          <h3>Masters / Adult Fitness</h3>
+          <p>Coached sessions for adult swimmers focused on fitness, technique and enjoyment. All abilities welcome — complete beginners to ex-club swimmers returning to the water.</p>
+          <div class="squad-sessions">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            1–2 sessions / week
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOME POOL -->
+<section class="pool" id="home-pool">
+  <div class="pool-inner">
+    <div>
+      <p class="label">Home Pool</p>
+      <h2>Swim Torquay</h2>
+      <p class="lead">Our home pool is Swim Torquay — a modern, well-maintained facility in central Torquay. All regular weekly sessions are held here across the week.</p>
+      <div class="pool-facts">
+        <div class="fact"><span class="fi">🏊</span><strong>25m Pool</strong><span>Full-width competition lanes with timing equipment available</span></div>
+        <div class="fact"><span class="fi">📍</span><strong>Torquay, Devon</strong><span>Central location with parking, easily accessible for families</span></div>
+        <div class="fact"><span class="fi">🚿</span><strong>Full Facilities</strong><span>Modern changing rooms, poolside seating for spectators</span></div>
+        <div class="fact"><span class="fi">📅</span><strong>5+ Days / Week</strong><span>Sessions spread across weekday mornings, evenings and Saturdays</span></div>
+      </div>
+    </div>
+    <div class="pool-img">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7195-400x284.jpg" alt="Swim Torquay pool" />
+    </div>
+  </div>
+</section>
+
+<!-- PLYMOUTH LONG COURSE -->
+<section class="plymouth" id="plymouth">
+  <div class="ply-inner">
+    <div>
+      <div class="ply-tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        Long Course Training
+      </div>
+      <h2>Plymouth 50m Sessions</h2>
+      <p class="lead">Torquay doesn't have a 50m pool — so we take our competitive swimmers to Plymouth. These extended long-course sessions are a core part of preparing for county and regional competition, where all races are held over 50m.</p>
+      <div class="ply-highlights">
+        <div class="ply-row"><span class="ply-icon">🌅</span><div><strong>Early Sunday Mornings</strong><span>Sessions run on Sunday mornings with an early start — giving swimmers a full 2 hours in the water and the rest of the day free.</span></div></div>
+        <div class="ply-row"><span class="ply-icon">📏</span><div><strong>2 Hours in a Full 50m Pool</strong><span>A dedicated 2-hour coached slot in a competition-standard long-course pool. Swimmers experience real race distances — vital preparation for county championships and open meets.</span></div></div>
+        <div class="ply-row"><span class="ply-icon">💪</span><div><strong>Performance Squad Focus</strong><span>These sessions are primarily for Performance Squad swimmers working toward county qualifying times or competing at regional level.</span></div></div>
+        <div class="ply-row"><span class="ply-icon">🚗</span><div><strong>Club-Coordinated Travel</strong><span>Sessions are planned and communicated through the club. Speak to your coach to be added to the Plymouth session schedule.</span></div></div>
+      </div>
+      <div class="ply-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>For current Plymouth session dates and how to sign up, contact your coach or email <a href="mailto:torquayleander@hotmail.com">torquayleander@hotmail.com</a></span>
+      </div>
+    </div>
+    <div class="ply-img">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="Long course training" />
+    </div>
+  </div>
+</section>
+
+<!-- TIMETABLE -->
+<section class="sessions" id="timetable">
+  <div class="inner">
+    <p class="label">Weekly Schedule</p>
+    <h2>Session Timetable</h2>
+    <p class="lead" style="margin-bottom:28px;">An overview of weekly training sessions. Exact times may vary by term — your coach will confirm current session schedules.</p>
+
+    <div class="sessions-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Times shown are approximate. Always check with your coach for confirmed session times, especially during school holidays and bank holiday weekends.
+    </div>
+
+    <div style="overflow-x: auto;">
+    <table class="timetable">
+      <thead>
+        <tr><th>Day</th><th>Time</th><th>Squad</th><th>Location</th><th>Duration</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="day">Monday</td><td>6:00 – 7:30am</td><td><span class="squad-badge t-indigo">Performance</span></td><td><span class="loc">📍 Swim Torquay</span></td><td>90 min</td></tr>
+        <tr><td class="day">Monday</td><td>5:30 – 7:00pm</td><td><span class="squad-badge t-teal">Junior Dev</span></td><td><span class="loc">📍 Swim Torquay</span></td><td>90 min</td></tr>
+        <tr><td class="day">Tuesday</td><td>6:00 – 7:30am</td><td><span class="squad-badge t-indigo">Performance</span></td><td><span class="loc">📍 Swim Torquay</span></td><td>90 min</td></tr>
+        <tr><td class="day">Wednesday</td><td>5:30 – 7:00pm</td><td><span class="squad-badge t-teal">Junior Dev</span> <span class="squad-badge t-indigo">Performance</span></td><td><span class="loc">📍 Swim Torquay</span></td><td>90 min</td></tr>
+        <tr><td class="day">Thursday</td><td>4:30 – 5:30pm</td><td><span class="squad-badge t-red">Starters</span></td><td><span class="loc">📍 Swim Torquay</span></td><td>60 min</td></tr>
+        <tr><td class="day">Thursday</td><td>6:00 – 7:30am</td><td><span class="squad-badge t-indigo">Performance</span></td><td><span class="loc">📍 Swim Torquay</span></td><td>90 min</td></tr>
+        <tr><td class="day">Friday</td><td>5:30 – 7:00pm</td><td><span class="squad-badge t-coral">Masters</span></td><td><span class="loc">📍 Swim Torquay</span></td><td>90 min</td></tr>
+        <tr><td class="day">Saturday</td><td>8:00 – 9:30am</td><td><span class="squad-badge t-teal">Junior Dev</span> <span class="squad-badge t-red">Starters</span></td><td><span class="loc">📍 Swim Torquay</span></td><td>90 min</td></tr>
+        <tr class="special">
+          <td class="day">Sunday</td>
+          <td>6:30 – 8:30am</td>
+          <td><span class="squad-badge t-indigo">Performance</span> <span class="special-label">50m Long Course</span></td>
+          <td><span class="loc">🚗 Plymouth</span></td>
+          <td><strong>2 hours</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- COACHES -->
+<section class="coaches" id="coaches">
+  <div class="inner">
+    <p class="label">Our Team</p>
+    <h2>The Coaching Team</h2>
+    <p class="lead">Our coaches are qualified, experienced and passionate about developing every swimmer who comes through the door.</p>
+    <div class="coaches-grid">
+      <div class="coach-card">
+        <div class="coach-avatar">🏊</div>
+        <h3>Head Coach</h3>
+        <p class="coach-role">Senior Coach — All Squads</p>
+        <p>Leads the overall programme and coaches our Performance Squad. Certified to Swim England Level 3 standard with extensive competitive swimming experience.</p>
+      </div>
+      <div class="coach-card">
+        <div class="coach-avatar">🌊</div>
+        <h3>Junior Development Coach</h3>
+        <p class="coach-role">Junior Dev &amp; Starters</p>
+        <p>Specialises in technique development for younger swimmers, guiding the pathway from Learn to Swim through to first competitions.</p>
+      </div>
+      <div class="coach-card">
+        <div class="coach-avatar">💪</div>
+        <h3>Masters &amp; Fitness Coach</h3>
+        <p class="coach-role">Adult &amp; Masters Sessions</p>
+        <p>Runs our adult sessions with a focus on technique, fitness and enjoyment. Experienced working with swimmers returning to the sport at any age.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KIT -->
+<section class="kit" id="kit">
+  <div class="kit-inner">
+    <div class="kit-img">
+      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7634-400x284.jpg" alt="Training kit" />
+    </div>
+    <div>
+      <p class="label">What You'll Need</p>
+      <h2>Training Kit</h2>
+      <p class="lead">Here's what swimmers need to bring to training sessions. Your coach can advise on club-branded kit once you've joined.</p>
+      <div class="kit-list">
+        <div class="kit-item"><span class="kit-icon">🩱</span><div><strong>Swimsuit / Jammers</strong><p>A well-fitting training swimsuit. Club-branded suits are available once you join — ask your coach about ordering.</p></div></div>
+        <div class="kit-item"><span class="kit-icon">🥽</span><div><strong>Goggles</strong><p>A good pair of fitting goggles is essential. Bring a spare pair if you have one.</p></div></div>
+        <div class="kit-item"><span class="kit-icon">🏊</span><div><strong>Swimming Cap</strong><p>Required for all sessions. Club caps are available. A silicone cap is recommended for longer-haired swimmers.</p></div></div>
+        <div class="kit-item"><span class="kit-icon">🎒</span><div><strong>Kit Bag &amp; Water Bottle</strong><p>Bring a dedicated kit bag and a water bottle — staying hydrated during training is important even in the pool!</p></div></div>
+        <div class="kit-item"><span class="kit-icon">🚗</span><div><strong>For Plymouth 50m Sessions</strong><p>Same kit as above, plus warm layers for the early morning travel. Your coach will notify you of departure points and times.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="page-cta">
+  <h2>Ready to Start Training?</h2>
+  <p>Your first session is completely free. Come and meet the coaches, see the pool, and find out which squad is the right fit for you.</p>
+  <a class="btn-white" href="mailto:torquayleander@hotmail.com">Book a Free Trial</a>
+</section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 580px; line-height: 1.7; margin-bottom: 32px; }
+  .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); padding: 6px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
+  .pill svg { flex-shrink: 0; }
+
+  .inner { max-width: 1200px; margin: 0 auto; }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .lead { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 700px; }
+
+  /* SQUADS */
+  .squads { background: #fff; }
+  .squads-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; }
+  .squad-card {
+    border-radius: 18px; overflow: hidden; border: 1.5px solid var(--border);
+    transition: all 0.25s; position: relative;
+  }
+  .squad-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.1); }
+  .squad-img { height: 180px; overflow: hidden; position: relative; }
+  .squad-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .squad-card:hover .squad-img img { transform: scale(1.06); }
+  .squad-colour { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; }
+  .squad-body { padding: 20px; }
+  .squad-age { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+  .squad-body h3 { font-size: 1rem; font-weight: 800; margin-bottom: 7px; }
+  .squad-body p { color: var(--muted); font-size: 0.83rem; line-height: 1.65; }
+  .squad-sessions { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+
+  .c-red { background: var(--red); }
+  .c-teal { background: #0d9488; }
+  .c-indigo { background: #6366f1; }
+  .c-coral { background: #f43f5e; }
+  .t-red { background: var(--red-light); color: var(--red-dark); }
+  .t-teal { background: #ccfbf1; color: #0f766e; }
+  .t-indigo { background: #e0e7ff; color: #4338ca; }
+  .t-coral { background: #fff1f2; color: #be185d; }
+
+  /* POOL INFO */
+  .pool { background: var(--red-light); padding: 72px 5vw; }
+  .pool-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .pool-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+  .pool-img img { width: 100%; height: 340px; object-fit: cover; display: block; }
+  .pool-facts { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fact { background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 16px; }
+  .fact .fi { font-size: 1.3rem; margin-bottom: 6px; display: block; }
+  .fact strong { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 3px; }
+  .fact span { color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+
+  /* PLYMOUTH */
+  .plymouth {
+    background: var(--black); padding: 80px 5vw;
+    position: relative; overflow: hidden;
+  }
+  .plymouth::before {
+    content: ''; position: absolute; top: -150px; right: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .ply-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .ply-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.3); color: var(--red); padding: 5px 14px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .plymouth h2 { color: #fff; }
+  .plymouth .lead { color: rgba(255,255,255,0.65); }
+  .ply-highlights { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .ply-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; background: rgba(255,255,255,0.04); border-radius: 12px; border: 1px solid rgba(255,255,255,0.07); transition: border-color 0.2s; }
+  .ply-row:hover { border-color: rgba(220,38,38,0.3); }
+  .ply-icon { flex-shrink: 0; width: 38px; height: 38px; background: var(--red); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .ply-row strong { display: block; color: #fff; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+  .ply-row span { color: rgba(255,255,255,0.55); font-size: 0.82rem; line-height: 1.55; }
+  .ply-img { border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.07); }
+  .ply-img img { width: 100%; height: 360px; object-fit: cover; display: block; }
+  .ply-note {
+    margin-top: 24px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.2);
+    border-radius: 12px; padding: 16px 18px;
+    color: rgba(255,255,255,0.65); font-size: 0.85rem; line-height: 1.6;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .ply-note svg { flex-shrink: 0; color: var(--red); margin-top: 2px; }
+  .ply-note a { color: var(--red); text-decoration: none; }
+
+  /* SESSIONS TIMETABLE */
+  .sessions { background: #fff; }
+  .sessions-note { background: var(--red-light); border: 1.5px solid #fecaca; border-radius: 12px; padding: 14px 18px; color: var(--red-dark); font-size: 0.85rem; line-height: 1.6; margin-bottom: 36px; display: flex; gap: 10px; align-items: flex-start; max-width: 640px; }
+  .sessions-note svg { flex-shrink: 0; margin-top: 2px; }
+  .timetable { width: 100%; border-collapse: collapse; }
+  .timetable th { background: var(--black); color: rgba(255,255,255,0.75); font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+  .timetable th:first-child { border-radius: 10px 0 0 0; }
+  .timetable th:last-child { border-radius: 0 10px 0 0; }
+  .timetable td { padding: 13px 16px; font-size: 0.875rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .timetable tr:last-child td { border-bottom: none; }
+  .timetable tr:hover td { background: var(--red-light); }
+  .timetable .day { font-weight: 700; color: var(--text); }
+  .timetable .squad-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; }
+  .timetable .loc { color: var(--muted); font-size: 0.8rem; display: flex; align-items: center; gap: 4px; }
+  .timetable .special { background: linear-gradient(135deg, var(--black), #2a0a0a); color: #fff; }
+  .timetable .special td { background: transparent !important; color: rgba(255,255,255,0.85); }
+  .timetable .special td .day { color: #fff; }
+  .timetable .special td .loc { color: rgba(255,255,255,0.5); }
+  .timetable .special-label { display: inline-flex; align-items: center; gap: 5px; background: rgba(220,38,38,0.2); color: #f87171; padding: 2px 8px; border-radius: 20px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-left: 4px; }
+  .timetable .special strong { color: #fff; }
+
+  /* COACHES */
+  .coaches { background: #f8fafc; }
+  .coaches-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .coach-card { background: #fff; border-radius: 16px; padding: 28px 24px; border: 1.5px solid var(--border); text-align: center; transition: all 0.2s; }
+  .coach-card:hover { border-color: var(--red); box-shadow: 0 8px 30px rgba(220,38,38,0.1); }
+  .coach-avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--red-dark), var(--red)); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 16px; }
+  .coach-card h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 4px; }
+  .coach-role { font-size: 0.78rem; font-weight: 600; color: var(--red); margin-bottom: 10px; }
+  .coach-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.6; }
+
+  /* KIT */
+  .kit { background: #fff; }
+  .kit-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .kit-list { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .kit-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: 12px; transition: border-color 0.2s; }
+  .kit-item:hover { border-color: var(--red); }
+  .kit-icon { flex-shrink: 0; width: 38px; height: 38px; background: var(--red-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .kit-item strong { display: block; font-size: 0.88rem; font-weight: 700; margin-bottom: 3px; }
+  .kit-item p { color: var(--muted); font-size: 0.8rem; line-height: 1.5; margin: 0; }
+  .kit-img { border-radius: 20px; overflow: hidden; }
+  .kit-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+  /* CTA */
+  .page-cta { background: linear-gradient(135deg, var(--red-dark), var(--red)); text-align: center; padding: 72px 5vw; }
+  .page-cta h2 { color: #fff; margin-bottom: 12px; }
+  .page-cta p { color: rgba(255,255,255,0.9); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+  .btn-white { background: #000; color: #fff; padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; display: inline-block; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); background: #222; }
+
+  @media (max-width: 900px) {
+    .squads-grid { grid-template-columns: repeat(2, 1fr); }
+    .pool-inner, .ply-inner, .kit-inner { grid-template-columns: 1fr; }
+    .coaches-grid { grid-template-columns: 1fr; }
+    .pool-facts { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.6rem) !important; }
+    .page-hero p { font-size: 1rem !important; }
+    .squads-grid, .coaches-grid, .pool-facts, .kit-inner { grid-template-columns: 1fr !important; }
+    .inner { padding: 48px 20px !important; }
+    .timetable-wrap, table { overflow-x: auto; display: block; }
+    table { min-width: 600px; }
+    .ply-inner, .pool-inner { grid-template-columns: 1fr !important; }
+  }
+</style>

@@ -1,0 +1,366 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Competitions — Torquay Leander Swimming Club">
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-crumb">
+        <a href={`${base}/`}>Home</a>
+        <span>›</span>
+        <span>Competitions</span>
+      </div>
+      <h1>Our Competitions</h1>
+      <p>Torquay Leander competes across Devon and beyond — from local team galas through to regional championships. We're proud to be two-time Devon Mini League champions.</p>
+    </div>
+    <div class="trophy-card">
+      <span class="trophy-emoji">🏆</span>
+      <strong>Devon Mini<br/>League Winners</strong>
+      <span>2 Years in a Row</span>
+    </div>
+  </div>
+</section>
+
+<!-- DEVON MINI LEAGUE -->
+<section class="minileague" id="mini-league">
+  <div class="ml-inner">
+    <div class="ml-top">
+      <div>
+        <div class="ml-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          Featured Competition
+        </div>
+        <h2>Devon Mini League</h2>
+        <p class="lead">The Devon Mini League is a team gala competition organised through <a href="https://www.devonswimming.org.uk/" target="_blank" rel="noopener">Devon County ASA</a>, designed to give younger and newer competitive swimmers their first taste of racing against other clubs in a fun, team-focused environment.</p>
+        <p class="lead lead-muted">Swimmers race over 25m and 50m distances, with all competitors being 16 or under. Galas are held at pools across Devon including venues such as Exmouth.</p>
+      </div>
+      <div class="win-banner">
+        <h3>Back-to-Back<br/>Devon Mini League<br/>Champions! 🏆</h3>
+        <p>Torquay Leander have won the Devon Mini League two years running — a testament to the depth of talent in our junior squads and the dedication of every swimmer and coach.</p>
+        <div class="win-years">
+          <span class="win-year">2024 Champions</span>
+          <span class="win-year">2025 Champions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ml-details">
+      <div class="detail-card"><span class="detail-icon">🏊</span><strong>Race Format</strong><p>Team galas where clubs race head-to-head. Points scored across all events contribute to a team total.</p></div>
+      <div class="detail-card"><span class="detail-icon">📏</span><strong>Distances</strong><p>A mix of 25m and 50m events covering all four strokes plus individual medley and relays.</p></div>
+      <div class="detail-card"><span class="detail-icon">🎂</span><strong>Age Limit</strong><p>Open to swimmers aged 16 and under. Perfect for newer competitive swimmers making their start.</p></div>
+      <div class="detail-card"><span class="detail-icon">📍</span><strong>Venues</strong><p>Held at pools across Devon — Exmouth has recently hosted. Locations rotate between clubs each season.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLYMOUTH CROSS-LINK -->
+<section class="ply-xlink">
+  <div class="xlink-card">
+    <div class="xlink-emoji">🏊</div>
+    <div class="xlink-body">
+      <p class="xlink-label">Training</p>
+      <h3>Plymouth 50m Long Course Sessions</h3>
+      <p class="xlink-text">Early Sunday mornings in a full 50m pool — essential race-distance preparation for competitive swimmers. Details, timetable, and kit list are on the Training page.</p>
+    </div>
+    <a class="xlink-btn" href={`${base}/training/#plymouth`}>View Training Page →</a>
+  </div>
+</section>
+
+<!-- OTHER COMPETITIONS -->
+<section class="county" id="competitions">
+  <div class="section-inner">
+    <p class="section-label">All Competitions</p>
+    <h2>Competition Programme</h2>
+    <p class="lead">Beyond the Mini League, Torquay Leander swimmers compete at a range of local, county and regional events throughout the year.</p>
+
+    <div class="county-grid">
+      <div class="comp-card">
+        <div class="comp-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="Devon Mini League" /></div>
+        <div class="comp-body">
+          <span class="comp-tag tag-local">Local — Team</span>
+          <h3>Devon Mini League</h3>
+          <p>Our flagship junior team competition. A series of galas across the season against other Devon clubs — the competition we've won back-to-back. Run by <a href="https://www.devonswimming.org.uk/" target="_blank" rel="noopener">Devon County ASA</a>.</p>
+          <a class="ext-link" href="https://www.devonswimming.org.uk/swimming/" target="_blank" rel="noopener">Devon Swimming website ↗</a>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7967-400x284.jpg" alt="County Championships" /></div>
+        <div class="comp-body">
+          <span class="comp-tag tag-regional">Regional — Individual</span>
+          <h3>Devon County Championships</h3>
+          <p>The annual county championships for individual swimmers, held over 50m. Qualifying times required. Our swimmers regularly place across multiple age groups and events.</p>
+          <a class="ext-link" href="https://www.devonswimming.org.uk/" target="_blank" rel="noopener">Devon County ASA ↗</a>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7998-400x284.jpg" alt="Club Championships" /></div>
+        <div class="comp-body">
+          <span class="comp-tag tag-local">Club — Internal</span>
+          <h3>Torquay Leander Club Championships</h3>
+          <p>Our own internal championship meet — open to all club members. A great first competition experience and a chance to set club records and personal bests.</p>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="Open Meets" /></div>
+        <div class="comp-body">
+          <span class="comp-tag tag-regional">Regional — Open</span>
+          <h3>Open Meets</h3>
+          <p>Throughout the year, swimmers enter open meets hosted by clubs across Devon and the South West. These provide time trial conditions and valuable race experience.</p>
+          <a class="ext-link" href="https://www.exmouthswimming.org/club-calendar.html" target="_blank" rel="noopener">Example: Exmouth SC calendar ↗</a>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_6586-400x284.jpg" alt="Plymouth 50m" /></div>
+        <div class="comp-body">
+          <span class="comp-tag tag-training">Training &amp; Prep</span>
+          <h3>Plymouth 50m Training</h3>
+          <p>Early Sunday morning sessions at a Plymouth 50m pool. Two hours of focused race-distance preparation.</p>
+          <a class="ext-link" href={`${base}/training/#plymouth`}>Full details on the Training page →</a>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8701-400x284.jpg" alt="Relays" /></div>
+        <div class="comp-body">
+          <span class="comp-tag tag-local">Local — Team</span>
+          <h3>Club Relays &amp; Inter-Squad</h3>
+          <p>Fun internal relay competitions and inter-squad challenges run throughout the training year — building team spirit and healthy competition within the club.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASON OVERVIEW -->
+<section class="schedule" id="schedule">
+  <div class="section-inner">
+    <p class="section-label">Competition Calendar</p>
+    <h2>Typical Competition Season</h2>
+    <p class="lead">Competitions run throughout the year. Here's a general overview of what to expect across the season.</p>
+
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot gold">🏆</div><div class="tl-content"><span class="tl-tag">Autumn / Winter</span><strong>Devon Mini League Rounds</strong><p>Team gala rounds begin. Multiple rounds held at venues across Devon. All U16 swimmers can take part — great team atmosphere and a brilliant first competition experience.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🏊</div><div class="tl-content"><span class="tl-tag">Throughout Year</span><strong>Open Meets &amp; Club Championships</strong><p>Individual swimmers enter open meets around the region to chase personal bests and qualifying times. Our internal Club Championships are typically held mid-season.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🌅</div><div class="tl-content"><span class="tl-tag">Year-round — Sundays</span><strong>Plymouth 50m Sessions</strong><p>Early Sunday morning travel to Plymouth for 2-hour sessions in a 50m pool. Ongoing through the competitive season — check with your coach for current dates. <a href={`${base}/training/#plymouth`}>Full details on the Training page →</a></p></div></div>
+      <div class="tl-item"><div class="tl-dot black">🥇</div><div class="tl-content"><span class="tl-tag">Spring</span><strong>Devon County Championships</strong><p>The major individual championship for qualifying swimmers. Held over 50m, this is the premier event for our performance squad each season.</p></div></div>
+      <div class="tl-item"><div class="tl-dot gold">🏆</div><div class="tl-content"><span class="tl-tag">End of Season</span><strong>Devon Mini League Final</strong><p>The concluding round where the Devon Mini League champions are crowned. Torquay Leander have taken the title two years running — we aim to make it three!</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="resources" id="links">
+  <div class="resources-inner">
+    <p class="section-label">Useful Links</p>
+    <h2>Competition Resources</h2>
+    <p class="lead">Everything you need to stay up to date with Devon swimming competitions and fixtures.</p>
+    <div class="res-grid">
+      <a class="res-card" href="https://www.devonswimming.org.uk/" target="_blank" rel="noopener">
+        <span class="res-icon">🏛️</span>
+        <h3>Devon County ASA</h3>
+        <p>The governing body for competitive swimming in Devon. Find the official competition calendar, results, and qualifying times.</p>
+        <span class="res-url">devonswimming.org.uk</span>
+      </a>
+      <a class="res-card" href="https://www.devonswimming.org.uk/swimming/" target="_blank" rel="noopener">
+        <span class="res-icon">🌊</span>
+        <h3>Devon Swimming — Mini League</h3>
+        <p>Specific information on the Devon Mini League series, including round dates, host venues and entry details for the current season.</p>
+        <span class="res-url">devonswimming.org.uk/swimming</span>
+      </a>
+      <a class="res-card" href="https://www.exmouthswimming.org/club-calendar.html" target="_blank" rel="noopener">
+        <span class="res-icon">📅</span>
+        <h3>Exmouth SC — Club Calendar</h3>
+        <p>Example of a local club calendar showing hosted galas and open meets — useful for checking upcoming events in the region.</p>
+        <span class="res-url">exmouthswimming.org</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="page-cta">
+  <h2>Want to Compete for Leander?</h2>
+  <p>Whether you're a beginner ready for your first gala or a swimmer chasing county qualifying times — we have a squad for you. Your first session is free.</p>
+  <a class="btn-white" href="mailto:torquayleander@hotmail.com">Get in Touch</a>
+</section>
+
+</BaseLayout>
+
+<style>
+  :root {
+    --gold: #f59e0b;
+    --gold-light: #fef3c7;
+    --gold-dark: #b45309;
+  }
+
+  .page-hero {
+    background: var(--black); padding: 70px 5vw 60px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 540px; line-height: 1.7; }
+  .hero-crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; }
+  .hero-crumb a { color: var(--red); text-decoration: none; }
+  .hero-crumb span { opacity: 0.4; }
+
+  /* TROPHY BADGE */
+  .trophy-card {
+    background: linear-gradient(135deg, #b45309, #f59e0b, #fbbf24);
+    border-radius: 20px; padding: 28px 32px; text-align: center;
+    box-shadow: 0 20px 60px rgba(245,158,11,0.35);
+    flex-shrink: 0; min-width: 200px;
+    position: relative; overflow: hidden;
+  }
+  .trophy-card::before {
+    content: ''; position: absolute; top: -20px; right: -20px;
+    width: 100px; height: 100px;
+    background: rgba(255,255,255,0.1); border-radius: 50%;
+  }
+  .trophy-emoji { font-size: 3rem; display: block; margin-bottom: 8px; }
+  .trophy-card strong { display: block; color: #fff; font-size: 1.1rem; font-weight: 900; line-height: 1.2; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+  .trophy-card span { color: rgba(255,255,255,0.85); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px; }
+
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .lead { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 680px; }
+  .lead a { color: var(--red); font-weight: 700; text-decoration: underline; }
+  .lead-muted { margin-top: 12px; color: #78350f; }
+
+  /* MINI LEAGUE */
+  .minileague { background: var(--gold-light); border-top: 4px solid var(--gold); }
+  .ml-inner { max-width: 1200px; margin: 0 auto; }
+  .ml-top { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 48px; }
+  .ml-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: #fff; padding: 6px 14px; border-radius: 20px;
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 16px; box-shadow: 0 4px 12px rgba(245,158,11,0.4);
+  }
+  .ml-badge svg { flex-shrink: 0; }
+  .minileague h2 { color: var(--gold-dark); }
+  .minileague .lead { color: #78350f; }
+  .win-banner {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    border-radius: 16px; padding: 28px 32px; color: #fff;
+    box-shadow: 0 12px 40px rgba(245,158,11,0.3);
+    position: relative; overflow: hidden;
+  }
+  .win-banner::after {
+    content: '🏆'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+    font-size: 4rem; opacity: 0.25;
+  }
+  .win-banner h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 6px; line-height: 1.2; }
+  .win-banner p { font-size: 0.9rem; opacity: 0.9; line-height: 1.6; max-width: 360px; }
+  .win-years { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .win-year { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); border-radius: 8px; padding: 6px 16px; font-size: 0.9rem; font-weight: 800; }
+
+  .ml-details { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .detail-card {
+    background: #fff; border-radius: 14px; padding: 20px;
+    border: 1.5px solid rgba(245,158,11,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .detail-icon { font-size: 1.5rem; margin-bottom: 10px; display: block; }
+  .detail-card strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .detail-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+
+  /* PLYMOUTH XLINK */
+  .ply-xlink { background: var(--black); padding: 48px 24px; }
+  .xlink-card {
+    max-width: 760px; margin: 0 auto;
+    background: linear-gradient(135deg, #1a1a1a, #2a0a0a);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 16px;
+    padding: 36px 40px;
+    display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+  }
+  .xlink-emoji { font-size: 3rem; flex-shrink: 0; }
+  .xlink-body { flex: 1; min-width: 200px; }
+  .xlink-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+  .xlink-body h3 { color: #fff; font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+  .xlink-text { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; }
+  .xlink-btn { flex-shrink: 0; background: var(--red); color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; white-space: nowrap; transition: background 0.2s; }
+  .xlink-btn:hover { background: var(--red-dark); }
+
+  /* COUNTY CHAMPS */
+  .county { background: #fff; }
+  .county-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .comp-card {
+    border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden;
+    transition: all 0.25s;
+  }
+  .comp-card:hover { border-color: var(--red); box-shadow: 0 12px 40px rgba(220,38,38,0.1); transform: translateY(-3px); }
+  .comp-img { height: 180px; overflow: hidden; }
+  .comp-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .comp-card:hover .comp-img img { transform: scale(1.05); }
+  .comp-body { padding: 20px; }
+  .comp-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+  .tag-local { background: var(--red-light); color: var(--red-dark); }
+  .tag-regional { background: #dcfce7; color: #15803d; }
+  .tag-training { background: #fce7f3; color: #be185d; }
+  .comp-body h3 { font-size: 1rem; font-weight: 800; margin-bottom: 7px; }
+  .comp-body p { color: var(--muted); font-size: 0.85rem; line-height: 1.65; }
+  .comp-body p a { color: var(--red); font-weight: 600; }
+  .comp-body .ext-link { display: inline-flex; align-items: center; gap: 5px; color: var(--red); font-size: 0.8rem; font-weight: 600; text-decoration: none; margin-top: 12px; }
+  .comp-body .ext-link:hover { text-decoration: underline; }
+
+  /* SCHEDULE TIMELINE */
+  .schedule { background: var(--red-light); }
+  .timeline { margin-top: 40px; position: relative; max-width: 800px; }
+  .timeline::before { content: ''; position: absolute; left: 20px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+  .tl-item { display: flex; gap: 24px; margin-bottom: 28px; position: relative; }
+  .tl-dot { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #fff; font-weight: 800; z-index: 1; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(220,38,38,0.3); }
+  .tl-dot.gold { background: var(--gold); box-shadow: 0 2px 8px rgba(245,158,11,0.3); }
+  .tl-dot.black { background: var(--black); }
+  .tl-content { padding: 14px 20px; background: #fff; border-radius: 12px; border: 1.5px solid var(--border); flex: 1; }
+  .tl-content strong { display: block; font-size: 0.95rem; font-weight: 800; margin-bottom: 4px; }
+  .tl-content p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+  .tl-content p a { color: var(--red); }
+  .tl-content .tl-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+
+  /* RESOURCES */
+  .resources { background: #fff; }
+  .resources-inner { max-width: 1200px; margin: 0 auto; }
+  .res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+  .res-card {
+    border: 1.5px solid var(--border); border-radius: 14px; padding: 24px;
+    transition: all 0.2s; text-decoration: none; color: inherit; display: block;
+  }
+  .res-card:hover { border-color: var(--red); background: var(--red-light); transform: translateY(-2px); }
+  .res-icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
+  .res-card h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; }
+  .res-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.6; }
+  .res-card .res-url { display: block; color: var(--red); font-size: 0.75rem; font-weight: 600; margin-top: 10px; word-break: break-all; }
+
+  /* CTA */
+  .page-cta { background: linear-gradient(135deg, var(--red-dark), var(--red)); text-align: center; padding: 72px 5vw; }
+  .page-cta h2 { color: #fff; margin-bottom: 12px; }
+  .page-cta p { color: rgba(255,255,255,0.9); max-width: 500px; margin: 0 auto 28px; line-height: 1.7; }
+  .btn-white { background: #000; color: #fff; padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; display: inline-block; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); background: #222; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .trophy-card { display: none; }
+    .ml-top { grid-template-columns: 1fr; }
+    .ml-details { grid-template-columns: repeat(2, 1fr); }
+    .county-grid { grid-template-columns: 1fr; }
+    .res-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.6rem) !important; }
+    .page-hero p { font-size: 1rem !important; }
+    .county-grid, .ml-details, .res-grid, .ml-top { grid-template-columns: 1fr !important; }
+    .section-inner { padding: 48px 20px !important; }
+    .timeline { padding-left: 20px; }
+  }
+</style>
