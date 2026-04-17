@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server pages/samples --port=12700",
-    "serve-samples": "live-server pages/samples --port=12700",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev --port 12700",
+    "start": "astro dev --port 12700",
+    "build": "astro build",
+    "preview": "astro preview --port 12700",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -21,9 +23,9 @@
   },
   "homepage": "https://github.com/michal-ciechan/torquay-leander#readme",
   "dependencies": {
-    "playwright": "^1.58.2"
+    "astro": "^5.0.0"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "playwright": "^1.58.2"
   }
 }
