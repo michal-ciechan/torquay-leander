@@ -17,6 +17,8 @@ Serves `pages/samples` on http://localhost:12700 with live reload (via `live-ser
 
 ## Layout
 
-- `pages/samples/` — site1-aqua through site6-scarlet design variants, plus `index.html`, `login.html`, `competitions/`, `gallery/`, `training/`.
+- `pages/samples/index.html` — design hub landing page.
+- `pages/samples/site/` — current working site (scarlet & black palette).
+- `pages/samples/login.html`, `competitions/`, `gallery/`, `training/` — shared sub-pages linked from the site.
 - `pages/CLAUDE.md` — notes for Claude Code when working in `pages/`.
-- `contrast-check.mjs` — WCAG 2.1 contrast audit script for site6-scarlet colour pairs. Run with `node contrast-check.mjs`.
+- `contrast-check.mjs` — WCAG 2.1 contrast audit script for the current site's colour pairs. Run with `node contrast-check.mjs`.

@@ -1,6 +1,10 @@
 # pages/
 
-Static HTML sample sites under `samples/` (site1-aqua through site6-scarlet, plus `index.html`, `login.html`, `competitions/`, `gallery/`, `training/`).
+Static HTML for the club site under `samples/`:
+
+- `samples/index.html` — design hub landing page.
+- `samples/site/` — current working site (scarlet & black palette).
+- `samples/login.html`, `competitions/`, `gallery/`, `training/` — shared sub-pages.
 
 ## Serving locally
 

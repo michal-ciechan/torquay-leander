@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Torquay Leander — Design Samples</title>
+<title>Torquay Leander — Design Hub</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -13,355 +13,316 @@
     min-height: 100vh;
     padding-top: 64px;
   }
-  header {
-    text-align: center;
-    padding: 60px 20px 40px;
-    background: linear-gradient(135deg, #0a0f1e 0%, #1a2a4a 100%);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  header img { width: 80px; margin-bottom: 20px; filter: brightness(0) invert(1); }
-  header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.5px; }
-  header h1 span { color: #38bdf8; }
-  header p { margin-top: 12px; color: #94a3b8; font-size: 1.05rem; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 28px;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 24px 60px;
-  }
-  .card {
-    background: #111827;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.25s, box-shadow 0.25s;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  .card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-  .card-thumb {
-    height: 180px;
-    position: relative;
-    overflow: hidden;
-  }
-  .card-thumb img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.4s;
-  }
-  .card:hover .card-thumb img { transform: scale(1.06); }
-  .card-badge {
-    position: absolute;
-    top: 12px; left: 12px;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(8px);
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.15);
-  }
-  .card-body { padding: 22px; }
-  .card-num {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .card h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-  .card p { font-size: 0.9rem; color: #94a3b8; line-height: 1.55; }
-  .card-footer {
-    padding: 14px 22px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #38bdf8;
-  }
-  .card-footer svg { flex-shrink: 0; }
+  a { color: inherit; text-decoration: none; }
 
-  /* colour accents per card */
-  .c1 .card-num { color: #38bdf8; }
-  .c2 .card-num { color: #818cf8; }
-  .c3 .card-num { color: #34d399; }
-  .c4 .card-num { color: #fb923c; }
-  .c5 .card-num { color: #f472b6; }
-  .c6 .card-num { color: #f87171; }
-
-  .c1 .card-footer { color: #38bdf8; }
-  .c2 .card-footer { color: #818cf8; }
-  .c3 .card-footer { color: #34d399; }
-  .c4 .card-footer { color: #fb923c; }
-  .c5 .card-footer { color: #f472b6; }
-  .c6 .card-footer { color: #f87171; }
-
-  /* colour strip at top of each thumb */
-  .c1 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#38bdf8; }
-  .c2 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#818cf8; }
-  .c3 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#34d399; }
-  .c4 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#fb923c; }
-  .c5 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#f472b6; }
-  .c6 .card-thumb::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#dc2626; }
-
-  footer {
-    text-align: center;
-    padding: 32px;
-    color: #475569;
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-</style>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
-<script>window.tailwind = { corePlugins: { preflight: false } }</script>
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-
-<style>
+  /* HUB NAV */
   .hub-nav {
     background: rgba(12,26,46,0.98); height: 64px; padding: 0 5vw;
     display: flex; align-items: center; justify-content: space-between;
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .hub-nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .hub-nav-brand { display: flex; align-items: center; gap: 12px; }
   .hub-nav-brand img { height: 36px; filter: brightness(0) invert(1); }
   .hub-nav-brand span { color: #fff; font-weight: 700; font-size: 0.9rem; }
   .hub-nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
-  .hub-nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
-  .hub-nav-links a:hover { color: #38bdf8; }
-  .hub-nav-links .hub-login { background: rgba(56,189,248,0.1); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); padding: 6px 14px; border-radius: 6px; font-weight: 700; }
-  .hub-nav-links .hub-login:hover { background: #38bdf8; color: #0a0f1e; }
+  .hub-nav-links a { color: rgba(255,255,255,0.65); font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+  .hub-nav-links a:hover { color: #f87171; }
+  .hub-nav-links .hub-login {
+    background: rgba(248,113,113,0.1); color: #f87171;
+    border: 1px solid rgba(248,113,113,0.25);
+    padding: 6px 14px; border-radius: 6px; font-weight: 700;
+  }
+  .hub-nav-links .hub-login:hover { background: #f87171; color: #0a0f1e; }
 
-  [x-cloak] { display: none !important; }
+  /* HEADER */
+  header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(135deg, #0a0f1e 0%, #1a2a4a 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  header img { width: 80px; margin-bottom: 20px; filter: brightness(0) invert(1); }
+  header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.5px; }
+  header h1 span { color: #f87171; }
+  header p { margin-top: 12px; color: #94a3b8; font-size: 1.05rem; }
 
-  .hub-burger {
-    display: none; flex-direction: column; justify-content: center; gap: 5px;
-    background: none; border: none; cursor: pointer; padding: 8px; z-index: 101;
+  /* SECTIONS */
+  section.hub-section {
+    max-width: 1200px;
+    margin: 56px auto 0;
+    padding: 0 24px;
   }
-  .hub-burger span {
-    display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
+  section.hub-section + section.hub-section { margin-top: 64px; }
+  .hub-section-label {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 20px;
   }
-  .hub-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hub-burger.active span:nth-child(2) { opacity: 0; }
-  .hub-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  .hub-mobile-nav {
-    position: fixed; inset: 64px 0 0 0; background: #0b1628; z-index: 150;
-    overflow-y: auto; padding: 24px;
+  /* CURRENT SITE — featured card */
+  .site-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
   }
-  .hub-mobile-nav a {
-    display: block; color: rgba(255,255,255,0.85); text-decoration: none;
-    padding: 14px 0; font-size: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  .site-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(220,38,38,0.18);
+    border-color: rgba(248,113,113,0.3);
   }
-  .hub-mobile-nav a:hover { color: #38bdf8; }
+  .site-card-thumb {
+    height: 100%;
+    min-height: 240px;
+    position: relative;
+    overflow: hidden;
+    background: #0c1a2e;
+  }
+  .site-card-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .site-card:hover .site-card-thumb img { transform: scale(1.05); }
+  .site-card-thumb::after {
+    content: ''; position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,15,30,0) 30%, rgba(10,15,30,0.5) 100%);
+  }
+  .site-card-thumb .site-badge {
+    position: absolute; top: 16px; left: 16px;
+    background: #dc2626; color: #fff;
+    font-size: 0.7rem; font-weight: 800;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 20px;
+    z-index: 1;
+  }
+  .site-card-body {
+    padding: 40px 40px 36px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .site-card-body .tag {
+    color: #f87171; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .site-card-body h2 {
+    font-size: 1.8rem; font-weight: 800;
+    letter-spacing: -0.5px; margin-bottom: 12px;
+  }
+  .site-card-body p {
+    color: #94a3b8; font-size: 0.95rem; line-height: 1.65;
+    margin-bottom: 24px;
+  }
+  .site-card-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #dc2626; color: #fff;
+    padding: 12px 24px; border-radius: 10px;
+    font-weight: 700; font-size: 0.9rem;
+    align-self: flex-start;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .site-card-cta:hover { background: #b91c1c; transform: translateX(2px); }
+
+  /* GRID OF SHARED PAGES */
+  .page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  .page-card {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .page-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    border-color: rgba(255,255,255,0.12);
+  }
+  .page-card-thumb {
+    height: 130px; position: relative; overflow: hidden; background: #0c1a2e;
+  }
+  .page-card-thumb img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.55;
+  }
+  .page-card-thumb .pc-badge {
+    position: absolute; top: 12px; left: 12px;
+    color: #fff; font-size: 0.68rem; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .page-card-thumb.no-img {
+    background: linear-gradient(135deg, #0c1a2e, #1a2a4a);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .page-card-thumb.no-img svg {
+    width: 44px; height: 44px; color: rgba(255,255,255,0.45);
+    stroke-width: 1.5;
+  }
+  .page-card-body { padding: 18px 20px 20px; }
+  .page-card-body .pc-label {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: #f87171; margin-bottom: 6px;
+  }
+  .page-card-body h3 {
+    font-size: 1rem; font-weight: 700;
+    color: #fff; margin-bottom: 6px;
+  }
+  .page-card-body p {
+    color: #64748b; font-size: 0.82rem; line-height: 1.55;
+  }
+
+  /* PLACEHOLDER SECTIONS */
+  .placeholder {
+    border: 1px dashed rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 28px 24px;
+    color: #64748b;
+    font-size: 0.88rem;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  .hub-footer {
+    text-align: center;
+    padding: 48px 24px 32px;
+    margin-top: 80px;
+    color: #475569;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
 
   @media (max-width: 900px) {
-    .hub-nav-links { display: none !important; }
-    .hub-burger { display: flex !important; }
-  }
-
-  @media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr !important; }
+    .hub-nav-links { display: none; }
+    .site-card { grid-template-columns: 1fr; }
+    .site-card-thumb { min-height: 200px; }
+    .site-card-body { padding: 28px 24px 32px; }
+    .site-card-body h2 { font-size: 1.5rem; }
   }
 </style>
-<div x-data="{ mo: false }">
+</head>
+<body>
+
 <nav class="hub-nav">
-  <a class="hub-nav-brand" href="#">
+  <a class="hub-nav-brand" href="index.html">
     <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
     <span>Torquay Leander SC</span>
   </a>
   <ul class="hub-nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About Us</a></li>
+    <li><a href="site/index.html">Site</a></li>
     <li><a href="training/index.html">Training</a></li>
     <li><a href="competitions/index.html">Competitions</a></li>
     <li><a href="gallery/index.html">Gallery</a></li>
     <li><a href="login.html" class="hub-login">Members Login</a></li>
   </ul>
-  <button class="hub-burger" @click="mo = !mo" :class="{ active: mo }" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
-<div class="hub-mobile-nav" x-show="mo" x-cloak @click.capture="mo = false">
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="training/index.html">Training</a>
-    <a href="competitions/index.html">Competitions</a>
-    <a href="gallery/index.html">Gallery</a>
-    <a href="login.html">Members Login</a>
-  </div>
-</div>
 
 <header>
   <img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="Torquay Leander" onerror="this.style.display='none'">
-  <h1>Torquay Leander <span>Design Samples</span></h1>
-  <p>6 modern website concepts for the swimming club — click any card to preview</p>
+  <h1>Torquay Leander <span>Design Hub</span></h1>
+  <p>Jump into the current site, shared sub-pages, or upcoming component variations.</p>
 </header>
 
-<div class="grid">
-
-  <a class="card c1" href="site1-aqua/index.html">
-    <div class="card-thumb">
+<!-- CURRENT SITE -->
+<section class="hub-section">
+  <p class="hub-section-label">Current Site</p>
+  <a class="site-card" href="site/index.html">
+    <div class="site-card-thumb">
+      <span class="site-badge">Live preview</span>
       <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7837-1024x434.jpg" alt="">
-      <span class="card-badge">Design 1</span>
     </div>
-    <div class="card-body">
-      <div class="card-num">01 / Aqua Wave</div>
-      <h2>Clean & Professional</h2>
-      <p>Ocean-blue gradients, bold hero section, smooth card layout. Calm, trustworthy feel with sky-blue accents.</p>
-    </div>
-    <div class="card-footer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      View Design
-    </div>
-  </a>
-
-  <a class="card c2" href="site2-bold/index.html">
-    <div class="card-thumb">
-      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="">
-      <span class="card-badge">Design 2</span>
-    </div>
-    <div class="card-body">
-      <div class="card-num">02 / Bold Sport</div>
-      <h2>Dark & Dynamic</h2>
-      <p>Deep navy background with electric indigo highlights. High contrast, sporty energy. Great for competition focus.</p>
-    </div>
-    <div class="card-footer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      View Design
+    <div class="site-card-body">
+      <div class="tag">Scarlet &amp; Black</div>
+      <h2>Full Website</h2>
+      <p>The current working site — red/white/black club palette, hero, programs, gallery, join form and Plainmoor map. This is the reference build all shared pages branch from.</p>
+      <span class="site-card-cta">
+        Open Site
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
     </div>
   </a>
-
-  <a class="card c3" href="site3-minimal/index.html">
-    <div class="card-thumb">
-      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7967-400x284.jpg" alt="">
-      <span class="card-badge">Design 3</span>
-    </div>
-    <div class="card-body">
-      <div class="card-num">03 / Minimal Fresh</div>
-      <h2>Light & Airy</h2>
-      <p>White space, clean typography, mint-green accents. Elegant, modern, and easy to navigate for all ages.</p>
-    </div>
-    <div class="card-footer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      View Design
-    </div>
-  </a>
-
-  <a class="card c4" href="site4-dynamic/index.html">
-    <div class="card-thumb">
-      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="">
-      <span class="card-badge">Design 4</span>
-    </div>
-    <div class="card-body">
-      <div class="card-num">04 / Dynamic Energy</div>
-      <h2>Vibrant & Energetic</h2>
-      <p>Diagonal sections, orange/teal palette, bold typography. High energy feel that appeals to young swimmers.</p>
-    </div>
-    <div class="card-footer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      View Design
-    </div>
-  </a>
-
-  <a class="card c5" href="site5-community/index.html">
-    <div class="card-thumb">
-      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8181-400x284.jpg" alt="">
-      <span class="card-badge">Design 5</span>
-    </div>
-    <div class="card-body">
-      <div class="card-num">05 / Community Warm</div>
-      <h2>Friendly & Welcoming</h2>
-      <p>Warm coral and teal palette, large family-friendly photos, soft rounded shapes. Perfect for beginners and families.</p>
-    </div>
-    <div class="card-footer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      View Design
-    </div>
-  </a>
-
-  <a class="card c6" href="site6-scarlet/index.html">
-    <div class="card-thumb">
-      <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7837-1024x434.jpg" alt="">
-      <span class="card-badge">Design 6</span>
-    </div>
-    <div class="card-body">
-      <div class="card-num">06 / Scarlet &amp; Black</div>
-      <h2>Bold Brand Colours</h2>
-      <p>Red, white and black — the club's own brand palette. Striking, confident, and immediately on-brand.</p>
-    </div>
-    <div class="card-footer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      View Design
-    </div>
-  </a>
-
-</div>
+</section>
 
 <!-- SHARED PAGES -->
-<div style="max-width:1200px; margin:0 auto; padding:0 24px 60px;">
-  <h2 style="color:#fff; font-size:1.1rem; font-weight:700; margin-bottom:20px; opacity:0.5; letter-spacing:1px; text-transform:uppercase;">Shared Pages</h2>
-  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
+<section class="hub-section">
+  <p class="hub-section-label">Shared Pages</p>
+  <div class="page-grid">
 
-    <a href="training/index.html" style="background:#111827; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-      <div style="height:140px; overflow:hidden; position:relative; background:#0c1a2e;">
-        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="" style="width:100%; height:100%; object-fit:cover; opacity:0.6;">
-        <div style="position:absolute; top:12px; left:12px; background:rgba(16,185,129,0.85); color:#fff; font-size:0.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:20px;">Squads & Times</div>
+    <a class="page-card" href="training/index.html">
+      <div class="page-card-thumb">
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="">
+        <span class="pc-badge">Squads &amp; Times</span>
       </div>
-      <div style="padding:18px;">
-        <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#34d399; margin-bottom:6px;">Shared Page</p>
-        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">Training</h3>
-        <p style="color:#64748b; font-size:0.82rem; line-height:1.55;">Squads, weekly timetable, Plymouth 50m long course sessions, coaches and kit.</p>
+      <div class="page-card-body">
+        <p class="pc-label">Shared Page</p>
+        <h3>Training</h3>
+        <p>Squads, weekly timetable, Plymouth 50m long course sessions, coaches and kit.</p>
       </div>
     </a>
 
-    <a href="competitions/index.html" style="background:#111827; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-      <div style="height:140px; overflow:hidden; position:relative; background:#0c1a2e;">
-        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="" style="width:100%; height:100%; object-fit:cover; opacity:0.6;">
-        <div style="position:absolute; top:12px; left:12px; background:linear-gradient(135deg,#b45309,#f59e0b); color:#fff; font-size:0.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:20px;">🏆 Champions</div>
+    <a class="page-card" href="competitions/index.html">
+      <div class="page-card-thumb">
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="">
+        <span class="pc-badge">Champions</span>
       </div>
-      <div style="padding:18px;">
-        <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f59e0b; margin-bottom:6px;">Shared Page</p>
-        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">Competitions</h3>
-        <p style="color:#64748b; font-size:0.82rem; line-height:1.55;">Devon Mini League (2× winners), County Champs, Plymouth 50m training and more.</p>
-      </div>
-    </a>
-
-    <a href="gallery/index.html" style="background:#111827; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-      <div style="height:140px; overflow:hidden; position:relative; background:#0c1a2e;">
-        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="" style="width:100%; height:100%; object-fit:cover; opacity:0.6;">
-        <div style="position:absolute; top:12px; left:12px; background:rgba(14,165,233,0.8); color:#fff; font-size:0.7rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:20px;">Photo Gallery</div>
-      </div>
-      <div style="padding:18px;">
-        <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#38bdf8; margin-bottom:6px;">Shared Page</p>
-        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">Gallery</h3>
-        <p style="color:#64748b; font-size:0.82rem; line-height:1.55;">Browse by event — Competition Day, Training, Club Life & Social, Junior Academy.</p>
+      <div class="page-card-body">
+        <p class="pc-label">Shared Page</p>
+        <h3>Competitions</h3>
+        <p>Devon Mini League (2× winners), County Champs, Plymouth 50m training and more.</p>
       </div>
     </a>
 
-    <a href="login.html" style="background:#111827; border:1px solid rgba(255,255,255,0.07); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-      <div style="height:140px; background:linear-gradient(135deg,#0c1a2e,#1a2a4a); display:flex; align-items:center; justify-content:center; font-size:3rem;">🔑</div>
-      <div style="padding:18px;">
-        <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#818cf8; margin-bottom:6px;">Shared Page</p>
-        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:6px;">Members Login</h3>
-        <p style="color:#64748b; font-size:0.82rem; line-height:1.55;">Sample login page linking to the real ClubOrganiser members portal.</p>
+    <a class="page-card" href="gallery/index.html">
+      <div class="page-card-thumb">
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="">
+        <span class="pc-badge">Photo Gallery</span>
+      </div>
+      <div class="page-card-body">
+        <p class="pc-label">Shared Page</p>
+        <h3>Gallery</h3>
+        <p>Browse by event — Competition Day, Training, Club Life &amp; Social, Junior Academy.</p>
+      </div>
+    </a>
+
+    <a class="page-card" href="login.html">
+      <div class="page-card-thumb no-img">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="page-card-body">
+        <p class="pc-label">Shared Page</p>
+        <h3>Members Login</h3>
+        <p>Sample login page linking to the real ClubOrganiser members portal.</p>
       </div>
     </a>
 
   </div>
-</div>
+</section>
 
-<footer>
+<!-- PAGE VARIATIONS (placeholder) -->
+<section class="hub-section">
+  <p class="hub-section-label">Page Variations</p>
+  <div class="placeholder">Alternate layouts for individual pages (e.g. login A/B, training squad grid vs timetable) will appear here.</div>
+</section>
+
+<!-- COMPONENT VARIATIONS (placeholder) -->
+<section class="hub-section">
+  <p class="hub-section-label">Component Variations</p>
+  <div class="placeholder">Reusable component previews (nav bars, hero styles, program cards, footers) will appear here.</div>
+</section>
+
+<footer class="hub-footer">
   Torquay Leander Swimming Club &mdash; Design exploration &copy; 2026
 </footer>
 

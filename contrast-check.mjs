@@ -1,4 +1,4 @@
-// WCAG 2.1 contrast audit for site6-scarlet colour pairs.
+// WCAG 2.1 contrast audit for samples/site colour pairs.
 // Usage: node contrast-check.mjs
 
 const parseColor = (c) => {
@@ -52,7 +52,7 @@ const grade = (r, large=false) => {
   return 'FAIL';
 };
 
-// Pairs from site6-scarlet (fg, bg, label, optional `large` for >=18pt or >=14pt bold)
+// Pairs from samples/site (fg, bg, label, optional `large` for >=18pt or >=14pt bold)
 const pairs = [
   // NAV
   ['#ffffff',                '#dc2626', 'Nav link text on red nav'],
