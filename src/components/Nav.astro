@@ -1,0 +1,74 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
+---
+<div x-data="{ mo: false }">
+  <nav>
+    <a class="nav-logo" href={`${base}/`}>
+      <img src={logo} alt="Logo" onerror="this.style.display='none'" />
+      <span>Torquay Leander</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
+        <a href={`${base}/#about`}>About Us</a>
+        <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
+          <li><a href={`${base}/#about`}>About the Club</a></li>
+          <li><a href={`${base}/#facilities`}>Our Facilities</a></li>
+          <li><a href={`${base}/#contact`}>How to Join</a></li>
+          <li><a href="#">Codes of Conduct</a></li>
+        </ul>
+      </li>
+      <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
+        <a href={`${base}/training/`}>Training</a>
+        <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
+          <li><a href={`${base}/training/`}>Our Programs</a></li>
+          <li><a href={`${base}/training/#timetable`}>Training Times</a></li>
+          <li><a href={`${base}/training/#squads`}>Learn to Swim</a></li>
+          <li><a href={`${base}/training/#coaches`}>Our Coaches</a></li>
+          <li><a href={`${base}/training/#plymouth`}>Plymouth 50m (Long Course)</a></li>
+        </ul>
+      </li>
+      <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
+        <a href="#">Competitions</a>
+        <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
+          <li><a href={`${base}/competitions/`}>Our Meets</a></li>
+          <li><a href={`${base}/competitions/#mini-league`}>Devon Mini League 🏆</a></li>
+          <li><a href={`${base}/competitions/`}>Competition Guide</a></li>
+        </ul>
+      </li>
+      <li><a href={`${base}/gallery/`}>Gallery</a></li>
+      <li><a href={`${base}/#sponsors`}>Sponsors</a></li>
+      <li><a href={`${base}/login/`} class="nav-login">Members Login</a></li>
+    </ul>
+    <button class="nav-cta">Free Trial</button>
+    <button class="nav-burger" @click="mo = !mo" :class="{ active: mo }" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" x-show="mo" x-cloak @click.capture="mo = false">
+    <div class="mob-group">
+      <span class="mob-label">About Us</span>
+      <a href={`${base}/#about`}>About the Club</a>
+      <a href={`${base}/#facilities`}>Our Facilities</a>
+      <a href={`${base}/#contact`}>How to Join</a>
+      <a href="#">Codes of Conduct</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Training</span>
+      <a href={`${base}/training/`}>Our Programs</a>
+      <a href={`${base}/training/#timetable`}>Training Times</a>
+      <a href={`${base}/training/#squads`}>Learn to Swim</a>
+      <a href={`${base}/training/#coaches`}>Our Coaches</a>
+      <a href={`${base}/training/#plymouth`}>Plymouth 50m (Long Course)</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Competitions</span>
+      <a href={`${base}/competitions/`}>Our Meets</a>
+      <a href={`${base}/competitions/#mini-league`}>Devon Mini League 🏆</a>
+      <a href={`${base}/competitions/`}>Competition Guide</a>
+    </div>
+    <a href={`${base}/gallery/`}>Gallery</a>
+    <a href={`${base}/#sponsors`}>Sponsors</a>
+    <a href={`${base}/login/`}>Members Login</a>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
+---
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="f-logo">
+          <img src={logo} alt="" onerror="this.style.display='none'" />
+          <span>Torquay Leander</span>
+        </div>
+        <p>A non-profit, SwimMark registered swimming club in Torquay, Devon. Swim England affiliated. Open to all ages and abilities.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Club</h4>
+        <ul>
+          <li><a href={`${base}/#about`}>About Us</a></li>
+          <li><a href={`${base}/#facilities`}>Our Facilities</a></li>
+          <li><a href={`${base}/#sponsors`}>Sponsors</a></li>
+          <li><a href={`${base}/login/`}>Members Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Swimming</h4>
+        <ul>
+          <li><a href={`${base}/training/`}>Programs</a></li>
+          <li><a href={`${base}/training/#timetable`}>Training Times</a></li>
+          <li><a href={`${base}/training/#coaches`}>Our Coaches</a></li>
+          <li><a href={`${base}/competitions/`}>Competitions</a></li>
+          <li><a href={`${base}/gallery/`}>Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:torquayleander@hotmail.com">torquayleander@hotmail.com</a></li>
+          <li><span>Swim Torquay</span></li>
+          <li><span>Plainmoor, Torquay</span></li>
+          <li><span>Devon, UK</span></li>
+          <li><a href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Torquay Leander Swimming Club. All rights reserved.</span>
+      <span>Non-profit &middot; SwimMark Registered &middot; Swim England Affiliated</span>
+    </div>
+  </div>
+</footer>

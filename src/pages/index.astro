@@ -1,14 +1,323 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Torquay Leander Swimming Club</title>
-  </head>
-  <body>
-    <h1>Astro scaffold — Torquay Leander</h1>
-    <p>Home page placeholder. Port coming next.</p>
-  </body>
-</html>
+<BaseLayout title="Torquay Leander Swimming Club">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/></svg>
+        SwimMark Registered Club
+      </div>
+      <h1>Where <em>Champions</em><br/>Are Made</h1>
+      <p>Torquay Leander Swimming Club — inspiring a lifelong love of swimming for every child, from beginner to competitor.</p>
+      <div class="hero-btns">
+        <a href="#programs" class="btn-primary">Explore Programs</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/>
+    </svg>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-icon"><i data-lucide="users"></i></span>
+      <span class="stat-num">200+</span>
+      <span class="stat-label">Active Swimmers</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon"><i data-lucide="calendar-days"></i></span>
+      <span class="stat-num">30+</span>
+      <span class="stat-label">Years of Excellence</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon"><i data-lucide="calendar-check"></i></span>
+      <span class="stat-num">5</span>
+      <span class="stat-label">Training Sessions / Week</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon"><i data-lucide="gift"></i></span>
+      <span class="stat-num">Free</span>
+      <span class="stat-label">Trial Session</span>
+    </div>
+  </div>
+
+  <!-- SPONSORS -->
+  <section id="sponsors" style="background:#fff; padding:48px 5vw; border-bottom:1px solid #e5e7eb;">
+    <div style="max-width:1200px; margin:0 auto; text-align:center;">
+      <p style="font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red); margin-bottom:28px;">Our Sponsors</p>
+      <div style="display:flex; justify-content:center; align-items:center; gap:48px; flex-wrap:wrap;">
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/08/Sparkworld-Logo.png" alt="Sparkworld" style="height:44px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/08/Safeheat-Homecover-Logo-MAIN-HIGH-RES.jpg" alt="Safeheat" style="height:44px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/09/abbey-school-logo-300x84.png" alt="Abbey School" style="height:44px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/09/Velocity-Plumbing-logo-300x134.png" alt="Velocity Plumbing" style="height:44px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/09/Stockman-Loram-300x123.jpg" alt="Stockman Loram" style="height:44px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item"><span class="t-icon"><i data-lucide="shield-check"></i></span><span>SwimMark Registered</span></div>
+    <div class="trust-item"><span class="t-icon"><i data-lucide="award"></i></span><span>Swim England Affiliated</span></div>
+    <div class="trust-item"><span class="t-icon"><i data-lucide="heart"></i></span><span>Non-Profit Club</span></div>
+    <div class="trust-item"><span class="t-icon"><i data-lucide="users"></i></span><span>Family Friendly</span></div>
+    <div class="trust-item"><span class="t-icon"><i data-lucide="ticket"></i></span><span>Free First Session</span></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div>
+        <p class="section-label">About Us</p>
+        <h2>More Than Just Swimming</h2>
+        <p class="section-intro">We are a non-profit SwimMark registered club dedicated to developing every swimmer's potential — building confidence, teamwork, and excellence in the water.</p>
+        <div class="values">
+          <div class="value">
+            <div class="value-icon"><i data-lucide="trophy"></i></div>
+            <div class="value-text">
+              <strong>Excellence in Training</strong>
+              <span>Structured coaching programs for all ability levels</span>
+            </div>
+          </div>
+          <div class="value">
+            <div class="value-icon"><i data-lucide="handshake"></i></div>
+            <div class="value-text">
+              <strong>Team Spirit</strong>
+              <span>Encouraging good sportsmanship and camaraderie</span>
+            </div>
+          </div>
+          <div class="value">
+            <div class="value-icon"><i data-lucide="users-round"></i></div>
+            <div class="value-text">
+              <strong>Family Support</strong>
+              <span>A welcoming community for swimmers and their families</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-collage">
+        <div class="col-img col-main">
+          <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7634-400x284.jpg" alt="Swimmers in action" />
+        </div>
+        <div class="col-img col-sm1">
+          <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7967-400x284.jpg" alt="Competitive swimmers" />
+        </div>
+        <div class="col-badge">
+          <div class="emoji"><i data-lucide="waves"></i></div>
+          <strong>Free Trial</strong>
+          <span>No commitment</span>
+        </div>
+        <div class="col-badge2">
+          <strong>200+</strong>
+          <span>Happy Swimmers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="programs" id="programs">
+    <div class="programs-inner">
+      <div class="programs-header">
+        <p class="section-label">What We Offer</p>
+        <h2>Training Programs</h2>
+        <p class="section-intro">From first-timers to competitive racers, we have a program tailored for every swimmer.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="prog-card">
+          <div class="prog-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_2568-400x284.jpg" alt="Learn to swim" /></div>
+          <div class="prog-body">
+            <span class="prog-tag">Beginners</span>
+            <h3>Learn to Swim</h3>
+            <p>Building water confidence and fundamental techniques for young swimmers aged 5 and up.</p>
+          </div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="Development squad" /></div>
+          <div class="prog-body">
+            <span class="prog-tag">Intermediate</span>
+            <h3>Development Squad</h3>
+            <p>Improving stroke technique, fitness, and race awareness in a structured environment.</p>
+          </div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7967-400x284.jpg" alt="Competitive squad" /></div>
+          <div class="prog-body">
+            <span class="prog-tag">Advanced</span>
+            <h3>Competition Squad</h3>
+            <p>High performance training for club, county, and regional competition.</p>
+          </div>
+        </div>
+        <div class="prog-card">
+          <div class="prog-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_6883-400x284.jpeg" alt="Fitness squad" /></div>
+          <div class="prog-body">
+            <span class="prog-tag">Adult</span>
+            <h3>Masters Fitness</h3>
+            <p>Enjoyable, goal-oriented sessions for adult swimmers of all abilities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES -->
+  <section class="facilities" id="facilities">
+    <div class="facilities-inner">
+      <div class="fac-img">
+        <img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7195-400x284.jpg" alt="Swim Torquay pool" />
+      </div>
+      <div>
+        <p class="section-label">Our Facilities</p>
+        <h2>Training at Swim Torquay</h2>
+        <p class="section-intro" style="margin-bottom:20px;">Torquay Leander trains at Swim Torquay swimming pool — a modern, well-equipped facility in the heart of Torquay, Devon, providing dedicated competition lanes and coaching infrastructure for all our squads.</p>
+        <div class="values">
+          <div class="value">
+            <div class="value-icon"><i data-lucide="waves"></i></div>
+            <div class="value-text">
+              <strong>Competition Pool</strong>
+              <span>Full-length competition lanes available for training and time trials</span>
+            </div>
+          </div>
+          <div class="value">
+            <div class="value-icon"><i data-lucide="map-pin"></i></div>
+            <div class="value-text">
+              <strong>Swim Torquay, Torquay, Devon</strong>
+              <span>Conveniently located and accessible for all club members</span>
+            </div>
+          </div>
+          <div class="value">
+            <div class="value-icon"><i data-lucide="clock"></i></div>
+            <div class="value-text">
+              <strong>Multiple Sessions Weekly</strong>
+              <span>Morning, evening and weekend training slots for all squads</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="gallery-inner">
+      <div class="gallery-header">
+        <p class="section-label">In the Pool</p>
+        <h2>Gallery</h2>
+        <p class="section-intro">Moments from training, competition, and club life.</p>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-item wide tall"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="" /></div>
+        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_6586-400x284.jpg" alt="" /></div>
+        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7998-400x284.jpg" alt="" /></div>
+        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8181-400x284.jpg" alt="" /></div>
+        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7634-400x284.jpg" alt="" /></div>
+        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/06/DSC_7480-400x284.jpg" alt="" /></div>
+        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8904-400x284.jpg" alt="" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACEBOOK FEED -->
+  <section class="fb-section" id="news">
+    <div class="fb-inner">
+      <div class="fb-header">
+        <div>
+          <p class="section-label">Club Updates</p>
+          <h2>Latest from Facebook</h2>
+        </div>
+        <a class="fb-follow" href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Follow on Facebook
+        </a>
+      </div>
+      <div class="fb-posts">
+        <div class="fb-post">
+          <div class="fb-post-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="" /></div>
+          <div class="fb-post-body">
+            <div class="fb-post-header">
+              <div class="fb-avatar"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="" style="filter:brightness(0) invert(1); background:#0a0a0a; padding:4px;" /></div>
+              <div class="fb-meta"><strong>Torquay Leander Swimming Club</strong><span>1 week ago</span></div>
+            </div>
+            <p>3rd and final round! Let's Go Torquay! 👏👏👏 What a performance from all our swimmers today — so proud of every one of them.</p>
+            <a class="fb-post-link" href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank">View on Facebook →</a>
+          </div>
+        </div>
+        <div class="fb-post">
+          <div class="fb-post-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="" /></div>
+          <div class="fb-post-body">
+            <div class="fb-post-header">
+              <div class="fb-avatar"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="" style="filter:brightness(0) invert(1); background:#0a0a0a; padding:4px;" /></div>
+              <div class="fb-meta"><strong>Torquay Leander Swimming Club</strong><span>2 weeks ago</span></div>
+            </div>
+            <p>Brilliant results at the Devon County Championships this weekend. Congratulations to all our swimmers who competed and gave their absolute best! 🏆</p>
+            <a class="fb-post-link" href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank">View on Facebook →</a>
+          </div>
+        </div>
+        <div class="fb-post">
+          <div class="fb-post-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8181-400x284.jpg" alt="" /></div>
+          <div class="fb-post-body">
+            <div class="fb-post-header">
+              <div class="fb-avatar"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="" style="filter:brightness(0) invert(1); background:#0a0a0a; padding:4px;" /></div>
+              <div class="fb-meta"><strong>Torquay Leander Swimming Club</strong><span>3 weeks ago</span></div>
+            </div>
+            <p>Welcome to all our new members joining us this term! 🌊 If you're interested in a free trial, get in touch — we'd love to have you join the Leander family.</p>
+            <a class="fb-post-link" href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank">View on Facebook →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN: form + map -->
+  <section class="join" id="contact">
+    <div class="join-inner">
+      <div class="join-head">
+        <p class="section-label">Get Involved</p>
+        <h2>Come and Visit</h2>
+        <p class="section-intro" style="margin:12px auto 0;">Come and see what we're all about — your first session is on us. Drop us a message or find us at the pool.</p>
+      </div>
+      <div class="join-grid">
+        <div class="join-card join-form-card">
+          <h3>Book Your Free Trial</h3>
+          <input class="form-field" type="text" placeholder="Your name" />
+          <input class="form-field" type="email" placeholder="Email address" />
+          <input class="form-field" type="text" placeholder="Child's age (optional)" />
+          <textarea class="form-field" rows="3" placeholder="Any questions?"></textarea>
+          <button class="form-submit" onclick="window.location='mailto:torquayleander@hotmail.com'">Send Message</button>
+        </div>
+        <div class="join-card join-map-card">
+          <div class="join-map-embed">
+            <div id="join-map"></div>
+          </div>
+          <div class="join-map-foot">
+            <strong>Swim Torquay — Plainmoor</strong>
+            <p>We train at Swim Torquay in the Plainmoor area of Torquay, Devon. Parking and spectator access available on session nights.</p>
+            <a href="https://www.google.com/maps?q=Swim+Torquay+Plainmoor" target="_blank" rel="noopener">Open in Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    function initJoinMap() {
+      const location = { lat: 50.4800, lng: -3.5350 };
+      const map = new google.maps.Map(document.getElementById('join-map'), {
+        center: location,
+        zoom: 16,
+        zoomControl: true,
+        mapTypeControl: false,
+        streetViewControl: true,
+        fullscreenControl: true,
+      });
+      new google.maps.Marker({ position: location, map, title: 'Swim Torquay — Plainmoor' });
+    }
+  </script>
+  <script is:inline async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFulZw8ODr_AwZv7qCFLTqvPEryJrCbuw&loading=async&callback=initJoinMap"></script>
+</BaseLayout>
