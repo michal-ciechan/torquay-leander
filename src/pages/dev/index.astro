@@ -36,17 +36,6 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
     }
     body.hub-page .hub-nav-links .hub-login:hover { background: #f87171; color: #0a0f1e; }
 
-    body.hub-page header {
-      text-align: center;
-      padding: 60px 20px 30px;
-      background: linear-gradient(135deg, #0a0f1e 0%, #1a2a4a 100%);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    body.hub-page header img { width: 80px; margin-bottom: 20px; filter: brightness(0) invert(1); }
-    body.hub-page header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.5px; }
-    body.hub-page header h1 span { color: #f87171; }
-    body.hub-page header p { margin-top: 12px; color: #94a3b8; font-size: 1.05rem; }
-
     body.hub-page section.hub-section {
       max-width: 1200px; margin: 56px auto 0; padding: 0 24px;
     }
@@ -208,12 +197,6 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
   </ul>
 </nav>
 
-<header>
-  <img src={logo} alt="Torquay Leander" onerror="this.style.display='none'" />
-  <h1>Torquay Leander <span>Design Hub</span></h1>
-  <p>Jump into the current site, shared sub-pages, or upcoming component variations.</p>
-</header>
-
 <section class="hub-section">
   <p class="hub-section-label">Current Site</p>
   <a class="site-card" href={`${base}/`}>
@@ -281,6 +264,24 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
         <p class="pc-label">Shared Page</p>
         <h3>Members Login</h3>
         <p>Sample login page linking to the real ClubOrganiser members portal.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="hub-section">
+  <p class="hub-section-label">Site Structure</p>
+  <div class="page-grid">
+
+    <a class="page-card" href={`${base}/dev/sitemaps/`}>
+      <div class="page-card-thumb no-img">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4"/></svg>
+      </div>
+      <div class="page-card-body">
+        <p class="pc-label">IA Exploration</p>
+        <h3>Sitemap Variations</h3>
+        <p>Six takes on site structure — current baseline plus family-first, swimmer-journey, community-hub, performance and minimal variants.</p>
       </div>
     </a>
 

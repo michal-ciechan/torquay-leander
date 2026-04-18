@@ -1,0 +1,715 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
+
+type Page = { name: string; desc?: string };
+type Section = { title: string; description?: string; pages: Page[] };
+type Variation = {
+  id: string;
+  title: string;
+  tagline: string;
+  summary: string;
+  accent: string;
+  columns: 2 | 3;
+  sections: Section[];
+};
+
+const variations: Variation[] = [
+  {
+    id: 'current',
+    title: 'Variation 1 — Current Site',
+    tagline: 'Baseline',
+    summary: 'The site as it exists today. Top-level nav mirrors the club website: About, Training, Competitions, Gallery, Sponsors, Members Login. Most content lives on the home page with dedicated pages for the three busiest areas.',
+    accent: '#f87171',
+    columns: 3,
+    sections: [
+      {
+        title: 'Home',
+        description: 'Single long-scroll landing page.',
+        pages: [
+          { name: 'Hero + stats', desc: '"Champions in the making", founding year, swimmer count, free trial CTA.' },
+          { name: 'Sponsors strip', desc: 'Grayscale logos of club partners.' },
+          { name: 'Trust bar', desc: 'Swim England affiliation, safeguarding badges, ASA registration.' },
+          { name: 'About the Club', desc: 'Values, heritage, collage photos.' },
+          { name: 'Programs', desc: 'Learn to Swim / Dev / Competition / Masters overview cards.' },
+          { name: 'Facilities', desc: 'Plainmoor pool info block.' },
+          { name: 'Gallery preview', desc: 'Masonry tile — links to /gallery/.' },
+          { name: 'Facebook feed', desc: 'Latest three posts.' },
+          { name: 'Join / Contact', desc: 'Trial form + embedded Google Map of Plainmoor.' }
+        ]
+      },
+      {
+        title: 'About Us',
+        description: 'Anchor-linked sections on the home page (no dedicated page yet).',
+        pages: [
+          { name: 'About the Club', desc: 'History, ethos, volunteer base.' },
+          { name: 'Our Facilities', desc: 'Plainmoor pool + parking.' },
+          { name: 'How to Join', desc: 'Deep-links to home page join form.' },
+          { name: 'Codes of Conduct', desc: 'Placeholder — not yet wired up.' }
+        ]
+      },
+      {
+        title: 'Training',
+        description: 'Dedicated /training/ page.',
+        pages: [
+          { name: 'Our Programs', desc: 'Four squads with coach, times, focus.' },
+          { name: 'Training Times', desc: 'Weekly timetable (Mon–Sat).' },
+          { name: 'Learn to Swim', desc: 'Junior academy entry route.' },
+          { name: 'Our Coaches', desc: 'Coach bios and qualifications.' },
+          { name: 'Plymouth 50m', desc: 'Long course sessions card.' }
+        ]
+      },
+      {
+        title: 'Competitions',
+        description: 'Dedicated /competitions/ page.',
+        pages: [
+          { name: 'Our Meets', desc: 'Overview of meet types.' },
+          { name: 'Devon Mini League 🏆', desc: 'Feature card — back-to-back champions.' },
+          { name: 'County Champs', desc: 'Annual South West counties meet.' },
+          { name: 'Schedule timeline', desc: 'Year calendar with key events.' }
+        ]
+      },
+      {
+        title: 'Gallery',
+        description: 'Dedicated /gallery/ page.',
+        pages: [
+          { name: 'Event tabs', desc: 'Competition Day / Training / Social / Junior Academy.' },
+          { name: 'Photo grids + lightbox', desc: 'Tap to enlarge, keyboard arrows to navigate.' }
+        ]
+      },
+      {
+        title: 'Members',
+        description: 'Supporting pages.',
+        pages: [
+          { name: 'Sponsors', desc: 'Anchor on home page.' },
+          { name: 'Members Login', desc: 'Sample page → ClubOrganiser portal.' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'family-first',
+    title: 'Variation 2 — Family First',
+    tagline: 'Parent-friendly IA',
+    summary: 'Reorganises the site around the parent\'s decision journey: is this right for my child, how do we start, and what do we need to know as members. Promotes a dedicated "New to Swimming?" section to the top nav so first-time visitors aren\'t funnelled through the contact form.',
+    accent: '#60a5fa',
+    columns: 3,
+    sections: [
+      {
+        title: 'New to Swimming?',
+        description: 'Landing zone for first-time visitors.',
+        pages: [
+          { name: 'Is My Child Ready?', desc: 'Age and ability checklist — pool confidence, basic strokes, attention span.' },
+          { name: 'Your First Session', desc: 'What to bring, arrival time, parking, changing etiquette, spectator rules.' },
+          { name: 'Parent Handbook', desc: 'Full induction PDF — phone/photo policy, illness reporting, holiday breaks.' },
+          { name: 'FAQ', desc: 'Fees, attendance, uniform, fixtures, missing sessions.' },
+          { name: 'Book a Free Trial', desc: 'Dedicated form page, not an anchor.' }
+        ]
+      },
+      {
+        title: 'Our Club',
+        description: 'Who we are.',
+        pages: [
+          { name: 'About Us', desc: 'History back to founding, club values, community role.' },
+          { name: 'Meet the Team', desc: 'Coaches + committee cards with photos and remit.' },
+          { name: 'Facilities', desc: 'Plainmoor Pool, Plymouth 50m, parking map, changing setup.' },
+          { name: 'Safeguarding', desc: 'Welfare officer contact, Swim England Wavepower policy.' }
+        ]
+      },
+      {
+        title: 'Programs',
+        description: 'Training offer.',
+        pages: [
+          { name: 'Little Leanders', desc: 'Pre-club learn-to-swim for 4–7s.' },
+          { name: 'Development Squad', desc: 'First competitive squad, stroke refinement focus.' },
+          { name: 'Competition Squads', desc: 'Junior, Age Group, Youth / Senior detail pages.' },
+          { name: 'Masters', desc: 'Adult swimming — fitness, stroke work, masters meets.' },
+          { name: 'Times & Fees', desc: 'Consolidated weekly timetable plus fee table per squad.' }
+        ]
+      },
+      {
+        title: 'Parent Portal',
+        description: 'Everything you\'ll need as a member.',
+        pages: [
+          { name: 'Members Login', desc: 'ClubOrganiser SSO.' },
+          { name: 'Kit Shop', desc: 'Club costume, cap, hoodie, kit bag — order form.' },
+          { name: 'Pay Fees', desc: 'Fees schedule + payment links.' },
+          { name: 'Event Calendar', desc: 'Training, meets, club socials in one view.' }
+        ]
+      },
+      {
+        title: 'Competitions',
+        description: 'For swimmers already competing.',
+        pages: [
+          { name: 'Meet Calendar', desc: 'Upcoming meets with close dates and qualifying times.' },
+          { name: 'Results & PBs', desc: 'Searchable by swimmer name.' },
+          { name: 'Mini League Champions 🏆', desc: 'Trophy feature + squad photos.' }
+        ]
+      },
+      {
+        title: 'News & Photos',
+        description: 'Club life updates.',
+        pages: [
+          { name: 'News', desc: 'Blog — results recaps, swimmer spotlights, announcements.' },
+          { name: 'Photo Gallery', desc: 'Tabbed by event.' },
+          { name: 'Facebook Feed', desc: 'Embedded social feed.' }
+        ]
+      },
+      {
+        title: 'Get Involved',
+        description: 'Support the club.',
+        pages: [
+          { name: 'Volunteering', desc: 'Poolside helpers, officials, fundraising roles.' },
+          { name: 'Sponsors', desc: 'Current partners + sponsorship enquiry.' },
+          { name: 'Contact', desc: 'Coach / committee / welfare officer direct channels.' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'swimmer-journey',
+    title: 'Variation 3 — Swimmer Journey',
+    tagline: 'Pathway-oriented IA',
+    summary: 'Structures the whole site around the swimmer\'s progression through the club. The homepage hero is a pathway visualisation. Each stage has its own landing explaining the goals, expectations, and what the next step looks like — useful for retention and for coaches to refer families to.',
+    accent: '#34d399',
+    columns: 2,
+    sections: [
+      {
+        title: 'Start Here',
+        description: 'Entry to the journey.',
+        pages: [
+          { name: 'Try a Free Session', desc: 'Dedicated trial booking page with coach contact.' },
+          { name: 'What to Expect', desc: 'Week-one walkthrough — poolside protocol, first drills, how progression works.' },
+          { name: 'Meet the Coaches', desc: 'Short intros so families can put a face to the name before day one.' }
+        ]
+      },
+      {
+        title: 'Stage 1 — Learn to Swim',
+        description: 'Little Leanders academy.',
+        pages: [
+          { name: 'What We Teach', desc: 'Mapped to Swim England Stages 1–7.' },
+          { name: 'Times & Fees', desc: 'Academy sessions and pricing.' },
+          { name: 'Progression to Club', desc: 'Criteria to graduate into the development squad.' }
+        ]
+      },
+      {
+        title: 'Stage 2 — Development Squad',
+        description: 'First competitive squad.',
+        pages: [
+          { name: 'Squad Goals', desc: 'Focus on stroke technique, introduction to racing.' },
+          { name: 'Weekly Schedule', desc: 'Sessions per week, time commitment.' },
+          { name: 'Skills Focus', desc: 'Turns, dives, starts, pacing.' }
+        ]
+      },
+      {
+        title: 'Stage 3 — Competition Squad',
+        description: 'Training with intent.',
+        pages: [
+          { name: 'Squad Groups', desc: 'Junior, Age Group, Youth — each with detail.' },
+          { name: 'Training Times', desc: 'Full weekly schedule with pool assignments.' },
+          { name: 'Meet Expectations', desc: 'Meets per year, entries process, parent role.' },
+          { name: 'Plymouth 50m Sessions', desc: 'Why long course matters at this stage.' }
+        ]
+      },
+      {
+        title: 'Stage 4 — Senior Performance',
+        description: 'Regional and national track.',
+        pages: [
+          { name: 'National Qualifying Times', desc: 'Target cuts tracked per season.' },
+          { name: 'Elite Program', desc: 'Strength & conditioning, land training, video analysis.' },
+          { name: 'University Pathway', desc: 'Talking to BUCS clubs, scholarship signposting.' }
+        ]
+      },
+      {
+        title: 'Stage 5 — Masters',
+        description: 'Adult swimming home.',
+        pages: [
+          { name: 'Adult Training', desc: 'Coached sessions for 18+.' },
+          { name: 'Masters Meets', desc: 'National Masters and ASA Masters calendar.' },
+          { name: 'Social Swimming', desc: 'Non-competitive option.' }
+        ]
+      },
+      {
+        title: 'Resources',
+        description: 'Supporting pages across all stages.',
+        pages: [
+          { name: 'Members Login', desc: 'ClubOrganiser portal.' },
+          { name: 'Kit & Equipment', desc: 'Recommended gear per stage.' },
+          { name: 'Coaches', desc: 'Full profiles with qualifications.' },
+          { name: 'Facilities', desc: 'Pools and training venues.' }
+        ]
+      },
+      {
+        title: 'Community',
+        description: 'Club life alongside the pathway.',
+        pages: [
+          { name: 'Gallery', desc: 'Photos by stage and event.' },
+          { name: 'News', desc: 'Results and announcements.' },
+          { name: 'Sponsors', desc: 'Partners who support the journey.' },
+          { name: 'Contact', desc: 'Committee and safeguarding.' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'community-hub',
+    title: 'Variation 4 — Community Hub',
+    tagline: 'News-and-stories IA',
+    summary: 'Treats the website as a living magazine rather than a brochure. The homepage is a feed of recent posts, upcoming events, and latest results. Good fit if we can commit to monthly posts and match reports — otherwise the home page will feel stale.',
+    accent: '#a78bfa',
+    columns: 3,
+    sections: [
+      {
+        title: 'Home',
+        description: 'Magazine-style feed.',
+        pages: [
+          { name: 'Latest News strip', desc: 'Three most recent posts as cards.' },
+          { name: 'Upcoming Events', desc: 'Next three items from the club calendar.' },
+          { name: 'Recent Results', desc: 'Latest meet scorecard.' },
+          { name: 'Featured Swimmer', desc: 'Rotating spotlight pulled from news.' }
+        ]
+      },
+      {
+        title: 'News',
+        description: 'Full blog.',
+        pages: [
+          { name: 'All Posts', desc: 'Paginated news index.' },
+          { name: 'Match Reports', desc: 'Write-ups from county meets and galas.' },
+          { name: 'Swimmer Spotlights', desc: 'Short interviews with members.' },
+          { name: 'Coach Corner', desc: 'Training tips and technique posts.' },
+          { name: 'Club Announcements', desc: 'Pool closures, AGM notes, kit order windows.' }
+        ]
+      },
+      {
+        title: 'Events',
+        description: 'Calendar-driven.',
+        pages: [
+          { name: 'Upcoming Calendar', desc: 'Month view with training, meets, socials toggleable.' },
+          { name: 'Mini League Rounds', desc: 'Dates and venues with live scoreboard link.' },
+          { name: 'Social Events', desc: 'Summer BBQ, awards night, club champs, Christmas social.' },
+          { name: 'Fundraisers', desc: 'Swimathons, bag packs, sponsor runs.' }
+        ]
+      },
+      {
+        title: 'Results',
+        description: 'Data-forward section.',
+        pages: [
+          { name: 'Latest Meet Results', desc: 'Per-event times with PB highlighting.' },
+          { name: 'Club Records Board', desc: 'All strokes / distances / age groups.' },
+          { name: 'PB Dashboard', desc: 'Searchable — swimmer progression chart.' },
+          { name: 'County & National Qualifiers', desc: 'Who\'s qualified for what this season.' }
+        ]
+      },
+      {
+        title: 'About',
+        description: 'Who we are.',
+        pages: [
+          { name: 'The Club', desc: 'Story and heritage.' },
+          { name: 'Our Values', desc: 'Four-pillar values statement.' },
+          { name: 'Committee', desc: 'Roles, terms, contact.' },
+          { name: 'Coaches', desc: 'Profiles.' },
+          { name: 'Facilities', desc: 'Plainmoor + long course venues.' }
+        ]
+      },
+      {
+        title: 'Training',
+        description: 'Practical info.',
+        pages: [
+          { name: 'Programs Overview', desc: 'Learn-to-swim through Masters.' },
+          { name: 'Weekly Timetable', desc: 'All squads in one grid.' },
+          { name: 'Squad Pages', desc: 'Per-squad detail.' }
+        ]
+      },
+      {
+        title: 'Get Involved',
+        description: 'Participation lanes.',
+        pages: [
+          { name: 'Join', desc: 'Trial form.' },
+          { name: 'Volunteer', desc: 'Officials, poolside helpers, fundraising.' },
+          { name: 'Sponsor Us', desc: 'Tiered sponsorship packages with contact.' },
+          { name: 'Donate', desc: 'One-off giving page.' }
+        ]
+      },
+      {
+        title: 'Media',
+        description: 'Photos and press.',
+        pages: [
+          { name: 'Photo Gallery', desc: 'Event-tabbed archive.' },
+          { name: 'Video Highlights', desc: 'YouTube embeds from recent meets.' },
+          { name: 'Press & Media Kit', desc: 'Logos, club facts, coach quotes.' },
+          { name: 'Social Feeds', desc: 'Facebook + Instagram embed.' }
+        ]
+      },
+      {
+        title: 'Members',
+        description: 'Logged-in area.',
+        pages: [
+          { name: 'Login', desc: 'ClubOrganiser.' },
+          { name: 'Documents', desc: 'Constitution, codes, minutes.' },
+          { name: 'Fees', desc: 'Current schedule.' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'performance',
+    title: 'Variation 5 — Performance & Pathway',
+    tagline: 'Elite-competitive positioning',
+    summary: 'Positions the club as a serious performance environment. Squads get the top-nav spot, results and records are prominent, the trophy wall and hall of champions are front-and-centre. Filter for this variation: does the club want to attract higher-calibre swimmers from neighbouring areas?',
+    accent: '#fbbf24',
+    columns: 2,
+    sections: [
+      {
+        title: 'Squads',
+        description: 'Primary navigation axis. Each squad gets a full page.',
+        pages: [
+          { name: 'Academy', desc: 'Entry-level club squad — training volume, coach, goals, target meets, photo.' },
+          { name: 'Junior Development', desc: 'Detail page — volume, coach, skills focus, testing benchmarks.' },
+          { name: 'Junior Performance', desc: 'Competition-track junior squad.' },
+          { name: 'Senior Performance', desc: 'Regional and national qualifiers.' },
+          { name: 'Masters Performance', desc: 'Masters swimmers training competitively.' }
+        ]
+      },
+      {
+        title: 'Compete',
+        description: 'Calendar and results.',
+        pages: [
+          { name: 'Meet Calendar', desc: 'Colour-coded by qualifying status (Open / Qualifying / Invitational).' },
+          { name: 'Meet Results Archive', desc: 'Searchable by swimmer, year, event.' },
+          { name: 'Mini League History', desc: 'Trophy wall — every season with final positions.' },
+          { name: 'County Championships', desc: 'This year\'s entries + past finals.' },
+          { name: 'Regional & National Qualifiers', desc: 'Cut chart with current qualifiers named.' },
+          { name: 'How to Read a Time', desc: 'Parent-facing primer — swims, splits, converted times.' }
+        ]
+      },
+      {
+        title: 'Records & Achievements',
+        description: 'The silverware.',
+        pages: [
+          { name: 'Club Records Board', desc: 'All strokes, distances, age groups, LC + SC.' },
+          { name: 'Hall of Champions', desc: 'Past swimmers who reached national / international finals.' },
+          { name: 'Mini League Trophy 🏆', desc: 'Back-to-back champions feature.' },
+          { name: 'International & National Reps', desc: 'List with event, year, result.' }
+        ]
+      },
+      {
+        title: 'Coaching',
+        description: 'Coach-led content.',
+        pages: [
+          { name: 'Philosophy', desc: 'How we train — LTAD framing, stroke-before-volume, athlete-led goals.' },
+          { name: 'Head Coach Profile', desc: 'Bio, coaching qualifications, playing / swimming history.' },
+          { name: 'Assistant Coaches', desc: 'Profiles.' },
+          { name: 'Strength & Conditioning Partners', desc: 'External S&C providers we work with.' }
+        ]
+      },
+      {
+        title: 'Training',
+        description: 'Practical schedule.',
+        pages: [
+          { name: 'Weekly Pool Schedule', desc: 'All squads + land sessions.' },
+          { name: 'Plymouth 50m Long Course', desc: 'Why long course, when, who goes.' },
+          { name: 'Land Training', desc: 'S&C, mobility, flexibility sessions.' },
+          { name: 'Testing Sets', desc: 'Benchmark sets and how we use them.' }
+        ]
+      },
+      {
+        title: 'Become a Leander',
+        description: 'Application funnel.',
+        pages: [
+          { name: 'Trial Process', desc: 'Assessed trial form — coach review, swim-off where needed.' },
+          { name: 'Assessment Criteria', desc: 'What coaches look for per age group.' },
+          { name: 'Welcome Pack', desc: 'PDF for new members — kit list, standards, calendar.' }
+        ]
+      },
+      {
+        title: 'Support the Club',
+        description: 'Funding and volunteers.',
+        pages: [
+          { name: 'Sponsors', desc: 'Tiered sponsor packages with brand exposure details.' },
+          { name: 'Donate', desc: 'One-off support.' },
+          { name: 'Volunteer', desc: 'Officials, poolside, fundraising.' }
+        ]
+      },
+      {
+        title: 'Members',
+        description: 'Member login.',
+        pages: [
+          { name: 'Login', desc: 'ClubOrganiser SSO.' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'minimal',
+    title: 'Variation 6 — Minimal / Mobile-first',
+    tagline: 'Five-page flat IA',
+    summary: 'Strips the site to five top-level pages, each a single scroll. Removes dropdown complexity entirely. Good for a volunteer-maintained site where content churn is low and the audience is mostly mobile. Members Login sits as a tertiary link in the footer.',
+    accent: '#f472b6',
+    columns: 2,
+    sections: [
+      {
+        title: 'Home',
+        description: 'One page, one minute.',
+        pages: [
+          { name: 'Elevator pitch', desc: 'Who we are in two sentences.' },
+          { name: 'Stats strip', desc: 'Members, squads, founded.' },
+          { name: 'Featured meet', desc: 'Single most recent or upcoming event.' },
+          { name: 'Trial CTA', desc: 'Single button — links to /join/.' }
+        ]
+      },
+      {
+        title: 'About',
+        description: 'Single scrollable page covering everything "club".',
+        pages: [
+          { name: 'History', desc: 'Short paragraph.' },
+          { name: 'Values', desc: 'Three pillars.' },
+          { name: 'Facilities', desc: 'Plainmoor summary.' },
+          { name: 'Coaches', desc: 'Cards — name, role, photo.' },
+          { name: 'Committee', desc: 'Role list with contact email.' },
+          { name: 'Partners', desc: 'Sponsor logo strip.' }
+        ]
+      },
+      {
+        title: 'Train',
+        description: 'All training info on one page.',
+        pages: [
+          { name: 'Programs', desc: 'Four cards — Learn to Swim / Dev / Competition / Masters.' },
+          { name: 'Timetable', desc: 'Full weekly grid.' },
+          { name: 'Squads detail', desc: 'Expand-on-click blocks.' },
+          { name: 'Plymouth 50m', desc: 'Note card.' },
+          { name: 'Kit', desc: 'What to wear, where to buy.' }
+        ]
+      },
+      {
+        title: 'Compete',
+        description: 'All competitive info on one page.',
+        pages: [
+          { name: 'Mini League 🏆', desc: 'Trophy feature.' },
+          { name: 'County Champs', desc: 'Current year callout.' },
+          { name: 'Meet Calendar', desc: 'Scrollable list.' },
+          { name: 'Recent Results', desc: 'Latest five meets only.' }
+        ]
+      },
+      {
+        title: 'Photos',
+        description: 'Gallery only.',
+        pages: [
+          { name: 'Event-tabbed grid', desc: 'Same as current gallery.' },
+          { name: 'Lightbox', desc: 'Tap to enlarge.' }
+        ]
+      },
+      {
+        title: 'Join',
+        description: 'Conversion page — everything a new family needs.',
+        pages: [
+          { name: 'Trial form', desc: 'Front and centre.' },
+          { name: 'FAQ', desc: 'Accordion — fees, ages, what to bring.' },
+          { name: 'Fees table', desc: 'Per squad.' },
+          { name: 'Pool map', desc: 'Embedded Plainmoor map.' },
+          { name: 'Contact', desc: 'Email + phone.' },
+          { name: 'Members Login', desc: 'Small link at bottom.' }
+        ]
+      }
+    ]
+  }
+];
+
+const gridCols = (n: 2 | 3) => n === 3
+  ? 'repeat(auto-fill, minmax(280px, 1fr))'
+  : 'repeat(auto-fill, minmax(340px, 1fr))';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sitemap Variations — Torquay Leander Design Hub</title>
+  <style is:global>
+    body.sm-page * { margin: 0; padding: 0; box-sizing: border-box; }
+    body.sm-page {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0a0f1e; color: #fff;
+      min-height: 100vh; padding-top: 64px;
+    }
+    body.sm-page a { color: inherit; text-decoration: none; }
+
+    body.sm-page .sm-nav {
+      background: rgba(12,26,46,0.98); height: 64px; padding: 0 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    body.sm-page .sm-nav-brand { display: flex; align-items: center; gap: 12px; }
+    body.sm-page .sm-nav-brand img { height: 36px; filter: brightness(0) invert(1); }
+    body.sm-page .sm-nav-brand span { color: #fff; font-weight: 700; font-size: 0.9rem; }
+    body.sm-page .sm-nav-back {
+      color: rgba(255,255,255,0.65); font-size: 0.85rem; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: color 0.2s;
+    }
+    body.sm-page .sm-nav-back:hover { color: #f87171; }
+
+    body.sm-page .sm-intro {
+      max-width: 900px; margin: 56px auto 0; padding: 0 24px;
+      text-align: center;
+    }
+    body.sm-page .sm-intro .eyebrow {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    body.sm-page .sm-intro h1 {
+      font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800;
+      letter-spacing: -0.5px; margin-bottom: 14px;
+    }
+    body.sm-page .sm-intro h1 span { color: #f87171; }
+    body.sm-page .sm-intro p {
+      color: #94a3b8; font-size: 1.02rem; line-height: 1.7;
+    }
+
+    body.sm-page .sm-toc {
+      max-width: 1200px; margin: 40px auto 0; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    }
+    body.sm-page .sm-toc a {
+      background: #111827; border: 1px solid rgba(255,255,255,0.08);
+      padding: 8px 14px; border-radius: 20px;
+      font-size: 0.82rem; font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    body.sm-page .sm-toc a:hover { border-color: rgba(248,113,113,0.5); color: #f87171; }
+
+    body.sm-page .variation {
+      max-width: 1280px; margin: 72px auto 0; padding: 0 24px;
+      scroll-margin-top: 80px;
+    }
+    body.sm-page .variation-header {
+      border-left: 4px solid var(--accent, #f87171);
+      padding-left: 20px; margin-bottom: 28px;
+    }
+    body.sm-page .variation-header .tag {
+      color: var(--accent, #f87171);
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    body.sm-page .variation-header h2 {
+      font-size: 1.7rem; font-weight: 800;
+      letter-spacing: -0.3px; margin-bottom: 10px;
+    }
+    body.sm-page .variation-header p {
+      color: #94a3b8; font-size: 0.96rem; line-height: 1.65;
+      max-width: 820px;
+    }
+
+    body.sm-page .section-grid {
+      display: grid; gap: 18px;
+    }
+    body.sm-page .section-card {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 22px 22px 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    body.sm-page .section-card:hover {
+      border-color: rgba(248,113,113,0.18);
+      transform: translateY(-2px);
+    }
+    body.sm-page .section-card h3 {
+      font-size: 1.02rem; font-weight: 800;
+      letter-spacing: -0.2px; margin-bottom: 4px;
+    }
+    body.sm-page .section-card .section-desc {
+      color: #64748b; font-size: 0.78rem;
+      font-style: italic; margin-bottom: 14px;
+    }
+    body.sm-page .section-card ul {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+    }
+    body.sm-page .section-card li {
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 8px;
+    }
+    body.sm-page .section-card li .page-name {
+      display: block; color: #e5e7eb;
+      font-size: 0.86rem; font-weight: 700;
+      margin-bottom: 3px;
+    }
+    body.sm-page .section-card li .page-desc {
+      display: block; color: #64748b;
+      font-size: 0.78rem; line-height: 1.55;
+    }
+
+    body.sm-page .sm-footer {
+      text-align: center; padding: 80px 24px 32px;
+      margin-top: 80px; color: #475569;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 700px) {
+      body.sm-page .variation { padding: 0 16px; }
+      body.sm-page .variation-header { padding-left: 14px; }
+      body.sm-page .variation-header h2 { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body class="sm-page">
+
+<nav class="sm-nav">
+  <a class="sm-nav-brand" href={`${base}/dev/`}>
+    <img src={logo} alt="Torquay Leander" onerror="this.style.display='none'" />
+    <span>Torquay Leander SC — Design Hub</span>
+  </a>
+  <a class="sm-nav-back" href={`${base}/dev/`}>← Back to hub</a>
+</nav>
+
+<section class="sm-intro">
+  <p class="eyebrow">Information Architecture</p>
+  <h1>Sitemap <span>Variations</span></h1>
+  <p>Six takes on how the club site could be organised. Variation 1 is the current structure, shown as a baseline. The next five each pick a different user or strategic lens — parents, swimmer progression, community storytelling, performance positioning, or minimalism — and suggest new pages and content groupings to match.</p>
+</section>
+
+<nav class="sm-toc" aria-label="Sitemap variations">
+  {variations.map((v) => (
+    <a href={`#${v.id}`}>{v.title.replace('Variation ', 'V')} — {v.tagline}</a>
+  ))}
+</nav>
+
+{variations.map((v) => (
+  <section class="variation" id={v.id} style={`--accent: ${v.accent};`}>
+    <div class="variation-header">
+      <p class="tag">{v.tagline}</p>
+      <h2>{v.title}</h2>
+      <p>{v.summary}</p>
+    </div>
+    <div class="section-grid" style={`grid-template-columns: ${gridCols(v.columns)};`}>
+      {v.sections.map((s) => (
+        <div class="section-card">
+          <h3>{s.title}</h3>
+          {s.description && <p class="section-desc">{s.description}</p>}
+          <ul>
+            {s.pages.map((p) => (
+              <li>
+                <span class="page-name">{p.name}</span>
+                {p.desc && <span class="page-desc">{p.desc}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+))}
+
+<footer class="sm-footer">
+  Torquay Leander Swimming Club — Design exploration &copy; 2026
+</footer>
+
+</body>
+</html>
