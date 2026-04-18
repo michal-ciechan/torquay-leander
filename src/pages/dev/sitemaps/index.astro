@@ -4,6 +4,7 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
 
 type Page = { name: string; desc?: string };
 type Section = { title: string; description?: string; pages: Page[] };
+type NavItem = { label: string; children?: string[]; style?: 'cta' | 'login' };
 type Variation = {
   id: string;
   title: string;
@@ -12,6 +13,7 @@ type Variation = {
   accent: string;
   columns: 2 | 3;
   sections: Section[];
+  nav: NavItem[];
 };
 
 const variations: Variation[] = [
@@ -85,6 +87,15 @@ const variations: Variation[] = [
           { name: 'Members Login', desc: 'Sample page → ClubOrganiser portal.' }
         ]
       }
+    ],
+    nav: [
+      { label: 'About Us', children: ['About the Club', 'Our Facilities', 'How to Join', 'Codes of Conduct'] },
+      { label: 'Training', children: ['Our Programs', 'Training Times', 'Learn to Swim', 'Our Coaches', 'Plymouth 50m'] },
+      { label: 'Competitions', children: ['Our Meets', 'Devon Mini League 🏆', 'Competition Guide'] },
+      { label: 'Gallery' },
+      { label: 'Sponsors' },
+      { label: 'Members Login', style: 'login' },
+      { label: 'Free Trial', style: 'cta' }
     ]
   },
   {
@@ -164,6 +175,16 @@ const variations: Variation[] = [
           { name: 'Contact', desc: 'Coach / committee / welfare officer direct channels.' }
         ]
       }
+    ],
+    nav: [
+      { label: 'New to Swimming?', children: ['Is My Child Ready?', 'Your First Session', 'Parent Handbook', 'FAQ'] },
+      { label: 'Our Club', children: ['About Us', 'Meet the Team', 'Facilities', 'Safeguarding'] },
+      { label: 'Programs', children: ['Little Leanders', 'Development Squad', 'Competition Squads', 'Masters', 'Times & Fees'] },
+      { label: 'Competitions', children: ['Meet Calendar', 'Results & PBs', 'Mini League Champions 🏆'] },
+      { label: 'News & Photos', children: ['News', 'Photo Gallery', 'Facebook Feed'] },
+      { label: 'Get Involved', children: ['Volunteering', 'Sponsors', 'Contact'] },
+      { label: 'Parent Portal', style: 'login', children: ['Members Login', 'Kit Shop', 'Pay Fees', 'Event Calendar'] },
+      { label: 'Book a Trial', style: 'cta' }
     ]
   },
   {
@@ -249,6 +270,14 @@ const variations: Variation[] = [
           { name: 'Contact', desc: 'Committee and safeguarding.' }
         ]
       }
+    ],
+    nav: [
+      { label: 'Start Here', children: ['Try a Free Session', 'What to Expect', 'Meet the Coaches'] },
+      { label: 'Pathway', children: ['Stage 1 — Learn to Swim', 'Stage 2 — Development Squad', 'Stage 3 — Competition Squad', 'Stage 4 — Senior Performance', 'Stage 5 — Masters'] },
+      { label: 'Resources', children: ['Members Login', 'Kit & Equipment', 'Coaches', 'Facilities'] },
+      { label: 'Community', children: ['Gallery', 'News', 'Sponsors', 'Contact'] },
+      { label: 'Login', style: 'login' },
+      { label: 'Free Trial', style: 'cta' }
     ]
   },
   {
@@ -349,6 +378,16 @@ const variations: Variation[] = [
           { name: 'Fees', desc: 'Current schedule.' }
         ]
       }
+    ],
+    nav: [
+      { label: 'News', children: ['All Posts', 'Match Reports', 'Swimmer Spotlights', 'Coach Corner', 'Announcements'] },
+      { label: 'Events', children: ['Calendar', 'Mini League Rounds', 'Social Events', 'Fundraisers'] },
+      { label: 'Results', children: ['Latest Results', 'Club Records', 'PB Dashboard', 'Qualifiers'] },
+      { label: 'About', children: ['The Club', 'Values', 'Committee', 'Coaches', 'Facilities'] },
+      { label: 'Training', children: ['Programs', 'Weekly Timetable', 'Squad Pages'] },
+      { label: 'Media', children: ['Photo Gallery', 'Video Highlights', 'Press Kit', 'Social Feeds'] },
+      { label: 'Get Involved', children: ['Join', 'Volunteer', 'Sponsor Us', 'Donate'] },
+      { label: 'Members', style: 'login', children: ['Login', 'Documents', 'Fees'] }
     ]
   },
   {
@@ -437,6 +476,16 @@ const variations: Variation[] = [
           { name: 'Login', desc: 'ClubOrganiser SSO.' }
         ]
       }
+    ],
+    nav: [
+      { label: 'Squads', children: ['Academy', 'Junior Development', 'Junior Performance', 'Senior Performance', 'Masters Performance'] },
+      { label: 'Compete', children: ['Meet Calendar', 'Results Archive', 'Mini League History 🏆', 'County Champs', 'Qualifiers', 'How to Read a Time'] },
+      { label: 'Records', children: ['Club Records Board', 'Hall of Champions', 'Mini League Trophy', 'National Reps'] },
+      { label: 'Coaching', children: ['Philosophy', 'Head Coach', 'Assistant Coaches', 'S&C Partners'] },
+      { label: 'Training', children: ['Pool Schedule', 'Plymouth 50m', 'Land Training', 'Testing Sets'] },
+      { label: 'Support', children: ['Sponsors', 'Donate', 'Volunteer'] },
+      { label: 'Login', style: 'login' },
+      { label: 'Become a Leander', style: 'cta' }
     ]
   },
   {
@@ -510,6 +559,13 @@ const variations: Variation[] = [
           { name: 'Members Login', desc: 'Small link at bottom.' }
         ]
       }
+    ],
+    nav: [
+      { label: 'About' },
+      { label: 'Train' },
+      { label: 'Compete' },
+      { label: 'Photos' },
+      { label: 'Join', style: 'cta' }
     ]
   }
 ];
@@ -645,6 +701,115 @@ const gridCols = (n: 2 | 3) => n === 3
       font-size: 0.78rem; line-height: 1.55;
     }
 
+    body.sm-page .nav-preview {
+      background: #fff; color: #0a0a0a;
+      border-radius: 14px; overflow: visible;
+      margin-bottom: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+    body.sm-page .nav-preview .np-label {
+      position: absolute; top: -10px; left: 20px;
+      background: var(--accent, #f87171); color: #0a0f1e;
+      font-size: 0.64rem; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 4px;
+    }
+    body.sm-page .nav-preview .np-hint {
+      position: absolute; top: -8px; right: 20px;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.7rem; font-style: italic;
+    }
+    body.sm-page .np-bar {
+      display: flex; align-items: center;
+      padding: 14px 22px;
+      min-height: 60px;
+      gap: 16px; flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+    body.sm-page .np-logo {
+      display: flex; align-items: center; gap: 10px;
+      flex-shrink: 0;
+    }
+    body.sm-page .np-logo img { height: 28px; }
+    body.sm-page .np-logo span {
+      font-size: 0.78rem; font-weight: 800;
+      color: #0a0a0a;
+      white-space: nowrap;
+    }
+    body.sm-page .np-links {
+      list-style: none; display: flex; align-items: center;
+      gap: 4px; margin: 0 auto;
+      flex-wrap: nowrap;
+    }
+    body.sm-page .np-links > li {
+      position: relative;
+      padding: 8px 12px;
+      font-size: 0.82rem; font-weight: 600;
+      color: #334155;
+      white-space: nowrap;
+      cursor: default;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    body.sm-page .np-links > li.has-drop::after {
+      content: '▾'; font-size: 0.6rem;
+      margin-left: 4px; opacity: 0.6;
+    }
+    body.sm-page .np-links > li:hover,
+    body.sm-page .np-links > li:focus-within {
+      background: rgba(220,38,38,0.06);
+      color: #dc2626;
+    }
+    body.sm-page .np-links > li .np-drop {
+      position: absolute; top: calc(100% + 6px); left: 0;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      min-width: 220px;
+      padding: 8px;
+      box-shadow: 0 24px 50px rgba(0,0,0,0.18);
+      display: none; flex-direction: column;
+      z-index: 50;
+    }
+    body.sm-page .np-links > li:hover .np-drop,
+    body.sm-page .np-links > li:focus-within .np-drop {
+      display: flex;
+    }
+    body.sm-page .np-drop li {
+      list-style: none;
+      padding: 8px 12px;
+      font-size: 0.82rem; font-weight: 500;
+      color: #334155;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    body.sm-page .np-drop li:hover {
+      background: rgba(220,38,38,0.06);
+      color: #dc2626;
+    }
+    body.sm-page .np-links .np-btn-cta,
+    body.sm-page .np-links .np-btn-login {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    body.sm-page .np-links .np-btn-cta {
+      background: #dc2626; color: #fff;
+    }
+    body.sm-page .np-links .np-btn-cta:hover {
+      background: #b91c1c; color: #fff;
+    }
+    body.sm-page .np-links .np-btn-login {
+      border: 1.5px solid #dc2626; color: #dc2626;
+      background: transparent;
+    }
+    body.sm-page .np-links .np-btn-login:hover {
+      background: #dc2626; color: #fff;
+    }
+
     body.sm-page .sm-footer {
       text-align: center; padding: 80px 24px 32px;
       margin-top: 80px; color: #475569;
@@ -687,6 +852,28 @@ const gridCols = (n: 2 | 3) => n === 3
       <p class="tag">{v.tagline}</p>
       <h2>{v.title}</h2>
       <p>{v.summary}</p>
+    </div>
+    <div class="nav-preview">
+      <span class="np-label">Nav preview</span>
+      <span class="np-hint">hover items to see children</span>
+      <div class="np-bar">
+        <div class="np-logo">
+          <img src={logo} alt="" onerror="this.style.display='none'" />
+          <span>Torquay Leander</span>
+        </div>
+        <ul class="np-links">
+          {v.nav.map((n) => (
+            <li class={`${n.children ? 'has-drop' : ''} ${n.style === 'cta' ? 'np-btn-cta' : ''} ${n.style === 'login' ? 'np-btn-login' : ''}`.trim()} tabindex="0">
+              {n.label}
+              {n.children && (
+                <ul class="np-drop">
+                  {n.children.map((c) => (<li>{c}</li>))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
     <div class="section-grid" style={`grid-template-columns: ${gridCols(v.columns)};`}>
       {v.sections.map((s) => (
