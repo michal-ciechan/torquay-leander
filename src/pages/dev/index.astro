@@ -1,6 +1,5 @@
 ---
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
 ---
 <!doctype html>
 <html lang="en">
@@ -13,28 +12,9 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
     body.hub-page {
       font-family: 'Segoe UI', system-ui, sans-serif;
       background: #0a0f1e; color: #fff;
-      min-height: 100vh; padding-top: 64px;
+      min-height: 100vh;
     }
     body.hub-page a { color: inherit; text-decoration: none; }
-
-    body.hub-page .hub-nav {
-      background: rgba(12,26,46,0.98); height: 64px; padding: 0 5vw;
-      display: flex; align-items: center; justify-content: space-between;
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    body.hub-page .hub-nav-brand { display: flex; align-items: center; gap: 12px; }
-    body.hub-page .hub-nav-brand img { height: 36px; filter: brightness(0) invert(1); }
-    body.hub-page .hub-nav-brand span { color: #fff; font-weight: 700; font-size: 0.9rem; }
-    body.hub-page .hub-nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
-    body.hub-page .hub-nav-links a { color: rgba(255,255,255,0.65); font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
-    body.hub-page .hub-nav-links a:hover { color: #f87171; }
-    body.hub-page .hub-nav-links .hub-login {
-      background: rgba(248,113,113,0.1); color: #f87171;
-      border: 1px solid rgba(248,113,113,0.25);
-      padding: 6px 14px; border-radius: 6px; font-weight: 700;
-    }
-    body.hub-page .hub-nav-links .hub-login:hover { background: #f87171; color: #0a0f1e; }
 
     body.hub-page section.hub-section {
       max-width: 1200px; margin: 56px auto 0; padding: 0 24px;
@@ -173,7 +153,6 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
     }
 
     @media (max-width: 900px) {
-      body.hub-page .hub-nav-links { display: none; }
       body.hub-page .site-card { grid-template-columns: 1fr; }
       body.hub-page .site-card-thumb { min-height: 200px; }
       body.hub-page .site-card-body { padding: 28px 24px 32px; }
@@ -182,20 +161,6 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
   </style>
 </head>
 <body class="hub-page">
-
-<nav class="hub-nav">
-  <a class="hub-nav-brand" href={`${base}/dev/`}>
-    <img src={logo} alt="Torquay Leander" onerror="this.style.display='none'" />
-    <span>Torquay Leander SC</span>
-  </a>
-  <ul class="hub-nav-links">
-    <li><a href={`${base}/`}>Site</a></li>
-    <li><a href={`${base}/training/`}>Training</a></li>
-    <li><a href={`${base}/competitions/`}>Competitions</a></li>
-    <li><a href={`${base}/gallery/`}>Gallery</a></li>
-    <li><a href={`${base}/login/`} class="hub-login">Members Login</a></li>
-  </ul>
-</nav>
 
 <section class="hub-section">
   <p class="hub-section-label">Current Site</p>
