@@ -1,0 +1,329 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const logos = [
+  { name: 'Sparkworld', file: 'sparkworld.svg', navFile: 'sparkworld-nav.svg', url: 'https://www.sparkworld.co.uk' },
+  { name: 'Safeheat',   file: 'safeheat.svg',   navFile: 'safeheat.svg',       url: 'https://www.safeheat.co.uk'  },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sponsor Logos — Dev</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 40px 32px; min-height: 100vh; }
+    h1 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .subtitle { color: #8888aa; font-size: 0.85rem; margin-bottom: 40px; }
+    .back { display: inline-block; margin-bottom: 24px; color: #8888aa; text-decoration: none; font-size: 0.85rem; }
+    .back:hover { color: #fff; }
+    .logo-section { margin-bottom: 56px; }
+    .logo-section h2 { font-size: 1rem; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+    .swatch-row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+    .swatch { border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+    .swatch-label { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 12px; background: #111; }
+
+    /* Big preview */
+    .swatch-bg-white .swatch-inner { background: #ffffff; padding: 32px 40px; }
+    .swatch-bg-red   .swatch-inner { background: #dc2626; padding: 32px 40px; }
+
+    /* Nav-bar size preview */
+    .swatch-nav-white .swatch-inner { background: #ffffff; padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+    .swatch-nav-red   .swatch-inner { background: #dc2626; padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+
+    .big-logo  { display: block; height: 80px;  width: auto; }
+    .nav-logo  { display: block; height: 22px;  width: auto; }
+    .nav-logo-on-red { opacity: 0.85; }
+    .nav-text { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.85); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <a class="back" href={`${base}/dev/`}>← Dev Hub</a>
+  <h1>Sponsor Logos</h1>
+  <p class="subtitle">Verify colour, transparency and rendering at large &amp; nav-bar sizes.</p>
+
+  <!-- Blue picker section -->
+  <div class="logo-section">
+    <h2>Sparkworld — blue shade picker (white icons, red bg, 85% opacity)</h2>
+    {[
+      { key:'original',   hex:'#464fa1', label:'Original navy'   },
+      { key:'steel',      hex:'#4b7ba7', label:'Steel blue'      },
+      { key:'periwinkle', hex:'#5b6fa8', label:'Periwinkle-navy' },
+      { key:'navy',       hex:'#3d5a80', label:'French navy'     },
+      { key:'lavender',   hex:'#8898d4', label:'Soft lavender'   },
+    ].map(({ key, hex, label }) => (
+      <div style="margin-bottom:16px">
+        <div class="swatch-row">
+          <div class="swatch swatch-bg-red" style="flex:1;max-width:480px">
+            <div class="swatch-label">{label} — {hex}</div>
+            <div class="swatch-inner">
+              <img class="big-logo" style="opacity:0.85" src={`${base}/sponsors/sparkworld-nav-${key}-white.svg`} alt="Sparkworld" />
+            </div>
+          </div>
+          <div class="swatch swatch-nav-red">
+            <div class="swatch-label">Nav size</div>
+            <div class="swatch-inner">
+              <img class="nav-logo" style="opacity:0.85" src={`${base}/sponsors/sparkworld-nav-${key}-white.svg`} alt="Sparkworld" />
+              <span class="nav-text">Sparkworld</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Safeheat outline variants -->
+  <div class="logo-section">
+    <h2>Safeheat — text outline variants (teal icon, red bg, 85% opacity)</h2>
+    {[
+      { key:'outline-none',   label:'White — no outline (baseline)'       },
+      { key:'outline-dark-s', label:'White + dark outline thin'           },
+      { key:'outline-dark-m', label:'White + dark outline medium'         },
+      { key:'outline-dark-l', label:'White + dark outline thick'          },
+      { key:'outline-wht-m',  label:'Charcoal text + white outline medium'},
+      { key:'outline-wht-l',  label:'Charcoal text + white outline thick' },
+    ].map(({ key, label }) => (
+      <div style="margin-bottom:16px">
+        <div class="swatch-row">
+          <div class="swatch swatch-bg-red" style="flex:1;max-width:480px">
+            <div class="swatch-label">{label}</div>
+            <div class="swatch-inner">
+              <img class="big-logo" style="opacity:0.85" src={`${base}/sponsors/safeheat-nav-${key}.svg`} alt="Safeheat" />
+            </div>
+          </div>
+          <div class="swatch swatch-nav-red">
+            <div class="swatch-label">Nav size</div>
+            <div class="swatch-inner">
+              <img class="nav-logo" style="opacity:0.85" src={`${base}/sponsors/safeheat-nav-${key}.svg`} alt="Safeheat" />
+              <span class="nav-text">Safeheat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Safeheat hover gradient demos -->
+  <div class="logo-section">
+    <h2>Safeheat — hover gradient backgrounds (hover each swatch)</h2>
+    <style>
+      .hov-demo { position: relative; overflow: hidden; cursor: pointer; }
+      .hov-demo::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+      .hov-demo:hover::before { opacity: 1; }
+      .hov-radial-white::before  { background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(255,255,255,0.30) 0%, transparent 70%); }
+      .hov-radial-blue::before   { background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(8,123,181,0.45) 0%, transparent 70%); }
+      .hov-oval-white::before    { background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,255,255,0.35) 0%, transparent 65%); }
+      .hov-oval-blue::before     { background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(8,123,181,0.50) 0%, transparent 65%); }
+      .hov-sweep::before         { background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.20) 50%, transparent 100%); }
+    </style>
+    <div class="swatch-row">
+      {[
+        { cls:'hov-radial-white', label:'Radial white glow'   },
+        { cls:'hov-radial-blue',  label:'Radial blue glow'    },
+        { cls:'hov-oval-white',   label:'Oval white glow'     },
+        { cls:'hov-oval-blue',    label:'Oval blue glow'      },
+        { cls:'hov-sweep',        label:'Sweep highlight'     },
+      ].map(({ cls, label }) => (
+        <div class="swatch">
+          <div class="swatch-label">{label}</div>
+          <div class={`swatch-inner hov-demo ${cls}`} style="background:#dc2626;padding:20px 28px">
+            <img class="big-logo" style="opacity:0.85;position:relative;z-index:1" src={`${base}/sponsors/safeheat-nav-outline-none.svg`} alt="Safeheat" />
+          </div>
+          <div class="swatch-label" style="font-size:0.65rem;color:#555">hover above ↑</div>
+        </div>
+      ))}
+    </div>
+    <!-- Nav-size hover demos -->
+    <div class="swatch-row" style="margin-top:20px">
+      {[
+        { cls:'hov-radial-white', label:'Radial white — nav size' },
+        { cls:'hov-radial-blue',  label:'Radial blue — nav size'  },
+        { cls:'hov-oval-white',   label:'Oval white — nav size'   },
+        { cls:'hov-oval-blue',    label:'Oval blue — nav size'    },
+        { cls:'hov-sweep',        label:'Sweep — nav size'        },
+      ].map(({ cls, label }) => (
+        <div class="swatch">
+          <div class="swatch-label">{label}</div>
+          <div class={`swatch-inner hov-demo ${cls}`} style="background:#dc2626;padding:10px 16px;display:flex;align-items:center;gap:8px">
+            <img class="nav-logo" style="opacity:0.85;position:relative;z-index:1" src={`${base}/sponsors/safeheat-nav-outline-none.svg`} alt="Safeheat" />
+            <span class="nav-text" style="position:relative;z-index:1">Safeheat</span>
+          </div>
+          <div class="swatch-label" style="font-size:0.65rem;color:#555">hover above ↑</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Pink vs Red contrast section -->
+  <div class="logo-section">
+    <h2>Sparkworld Pink — contrast against red nav</h2>
+    <div class="swatch-row" id="contrast-row">
+      <!-- swatches injected by JS below -->
+    </div>
+    <table id="contrast-table" style="margin-top:20px;border-collapse:collapse;font-size:0.8rem;color:#ccc;width:100%;max-width:640px">
+      <thead><tr style="border-bottom:1px solid #333">
+        <th style="text-align:left;padding:6px 12px;color:#888">Treatment</th>
+        <th style="text-align:left;padding:6px 12px;color:#888">Rendered colour</th>
+        <th style="text-align:right;padding:6px 12px;color:#888">Contrast vs red</th>
+        <th style="text-align:left;padding:6px 12px;color:#888">WCAG</th>
+      </tr></thead>
+      <tbody id="contrast-tbody"></tbody>
+    </table>
+  </div>
+
+  <script is:inline>
+  (function() {
+    const RED = [220, 38, 38]; // #dc2626
+
+    function linearise(c) {
+      const s = c / 255;
+      return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+    }
+    function luminance([r, g, b]) {
+      return 0.2126 * linearise(r) + 0.7152 * linearise(g) + 0.0722 * linearise(b);
+    }
+    function contrast(a, b) {
+      const la = luminance(a), lb = luminance(b);
+      const hi = Math.max(la, lb), lo = Math.min(la, lb);
+      return (hi + 0.05) / (lo + 0.05);
+    }
+    function applyBrightness(rgb, factor) {
+      return rgb.map(c => Math.min(255, Math.round(c * factor)));
+    }
+    function toHex(rgb) {
+      return '#' + rgb.map(c => c.toString(16).padStart(2,'0')).join('');
+    }
+    function wcagLabel(r) {
+      if (r >= 4.5) return { text:'AA ✓', color:'#4ade80' };
+      if (r >= 3.0) return { text:'AA large ✓', color:'#facc15' };
+      return { text:'Fail ✗', color:'#f87171' };
+    }
+
+    const PINK = [217, 57, 149]; // #D93995
+    const variants = [
+      { label: 'Raw (no filter)',           factor: 1.0,   opacity: 1.0,  white: false },
+      { label: 'brightness(1.6) op 0.82',   factor: 1.6,   opacity: 0.82, white: false },
+      { label: 'brightness(4.0) op 0.65',   factor: 4.0,   opacity: 0.65, white: false },
+      // White-filter variants — converted to white first, then composited at opacity
+      { label: 'White filter op 0.50',      factor: null,  opacity: 0.50, white: true },
+      { label: 'White filter op 0.60',      factor: null,  opacity: 0.60, white: true },
+      { label: 'White filter op 0.70',      factor: null,  opacity: 0.70, white: true },
+      { label: 'White filter op 0.80',      factor: null,  opacity: 0.80, white: true },
+      { label: 'White filter op 0.85 (orig)',factor:null,  opacity: 0.85, white: true },
+    ];
+
+    const row = document.getElementById('contrast-row');
+    const tbody = document.getElementById('contrast-tbody');
+
+    variants.forEach(({ label, factor, opacity, white }) => {
+      // Compute the blended colour as it appears over red
+      const src = white ? [255, 255, 255] : applyBrightness(PINK, factor);
+      const blended = src.map((c, i) => Math.round(c * opacity + RED[i] * (1 - opacity)));
+      const cr = contrast(blended, RED);
+      const wcag = wcagLabel(cr);
+
+      const filterAttr = white
+        ? `brightness(0) invert(1)`
+        : `brightness(${factor})`;
+
+      // Swatch
+      const swatch = document.createElement('div');
+      swatch.style.cssText = 'border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);flex-shrink:0';
+      swatch.innerHTML = `
+        <div style="font-size:0.65rem;color:#666;text-transform:uppercase;letter-spacing:0.5px;padding:5px 10px;background:#111">${label}</div>
+        <div style="background:#dc2626;padding:16px 20px;display:flex;align-items:center;gap:8px">
+          <div style="width:56px;height:56px;background:${toHex(PINK)};filter:${filterAttr};opacity:${opacity};border-radius:4px"></div>
+        </div>
+        <div style="background:#111;padding:4px 10px;font-size:0.7rem;color:${wcag.color}">${cr.toFixed(2)}:1 — ${wcag.text}</div>
+      `;
+      row.appendChild(swatch);
+
+      // Table row
+      const tr = document.createElement('tr');
+      tr.style.borderBottom = '1px solid #222';
+      tr.innerHTML = `
+        <td style="padding:6px 12px">${label}</td>
+        <td style="padding:6px 12px"><span style="display:inline-block;width:14px;height:14px;background:${toHex(blended)};border-radius:2px;vertical-align:middle;margin-right:6px"></span>${toHex(blended)}</td>
+        <td style="padding:6px 12px;text-align:right;font-weight:600">${cr.toFixed(2)}:1</td>
+        <td style="padding:6px 12px;color:${wcag.color}">${wcag.text}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  })();
+  </script>
+
+  {logos.map(({ name, file, navFile, url }) => (
+    <div class="logo-section">
+      <h2>{name} — <a href={url} target="_blank" rel="noopener" style="color:#6688cc;font-weight:400;text-decoration:none">{url}</a></h2>
+      <div class="swatch-row">
+
+        <div class="swatch swatch-bg-white">
+          <div class="swatch-label">Large · White bg (natural)</div>
+          <div class="swatch-inner">
+            <img class="big-logo" src={`${base}/sponsors/${file}`} alt={name} />
+          </div>
+        </div>
+
+        <div class="swatch swatch-bg-red">
+          <div class="swatch-label">Large · Red bg — nav SVG, 85% opacity</div>
+          <div class="swatch-inner">
+            <img class="big-logo" style="opacity:0.85" src={`${base}/sponsors/${navFile}`} alt={name} />
+          </div>
+        </div>
+
+        <div class="swatch swatch-nav-white">
+          <div class="swatch-label">Nav size · White bg</div>
+          <div class="swatch-inner">
+            <img class="nav-logo" src={`${base}/sponsors/${file}`} alt={name} />
+            <span style="color:#333;font-size:0.75rem;font-weight:600">{name}</span>
+          </div>
+        </div>
+
+        <div class="swatch swatch-nav-red">
+          <div class="swatch-label">Nav size · Red bg (85% opacity)</div>
+          <div class="swatch-inner">
+            <img class="nav-logo nav-logo-on-red" src={`${base}/sponsors/${navFile}`} alt={name} />
+            <span class="nav-text">{name}</span>
+          </div>
+        </div>
+
+        <div class="swatch swatch-nav-red">
+          <div class="swatch-label">Nav size · Red bg (hover — 100%)</div>
+          <div class="swatch-inner">
+            <img class="nav-logo" src={`${base}/sponsors/${navFile}`} alt={name} />
+            <span class="nav-text">{name}</span>
+          </div>
+        </div>
+
+        {name === 'Sparkworld' && <>
+          <div style="width:1px;background:rgba(255,255,255,0.1);margin:0 4px;align-self:stretch" aria-hidden="true"></div>
+
+          <div class="swatch swatch-bg-red">
+            <div class="swatch-label">Large · Red bg — white icons variant</div>
+            <div class="swatch-inner">
+              <img class="big-logo" style="opacity:0.85" src={`${base}/sponsors/sparkworld-nav-white.svg`} alt={name} />
+            </div>
+          </div>
+
+          <div class="swatch swatch-nav-red">
+            <div class="swatch-label">Nav size · Red bg — white icons (85%)</div>
+            <div class="swatch-inner">
+              <img class="nav-logo" style="opacity:0.85" src={`${base}/sponsors/sparkworld-nav-white.svg`} alt={name} />
+              <span class="nav-text">{name}</span>
+            </div>
+          </div>
+        </>}
+
+      </div>
+    </div>
+  ))}
+</body>
+</html>

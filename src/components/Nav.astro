@@ -4,43 +4,71 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
 ---
 <div x-data="{ mo: false }">
   <nav>
+    <div class="nav-left">
     <a class="nav-logo" href={`${base}/`}>
       <img src={logo} alt="Logo" onerror="this.style.display='none'" />
       <span>Torquay Leander</span>
     </a>
+    <span class="nav-sponsor-sep" aria-hidden="true"></span>
+    <div class="nav-sponsors">
+      <span class="nav-sponsors-label">Sponsors</span>
+      <a class="nav-sponsor-item" href="https://www.sparkworld.co.uk" target="_blank" rel="noopener">
+        <span>Sparkworld</span>
+        <img src={`${base}/sponsors/sparkworld-nav.svg`} alt="Sparkworld" class="nav-sponsor-logo" />
+      </a>
+      <span class="nav-sponsors-divider" aria-hidden="true">·</span>
+      <a class="nav-sponsor-item" href="https://www.safeheat.co.uk" target="_blank" rel="noopener">
+        <span>Safeheat</span>
+        <img src={`${base}/sponsors/safeheat-nav.svg`} alt="Safeheat" class="nav-sponsor-logo" />
+      </a>
+    </div>
+    </div>
     <ul class="nav-links">
       <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
-        <a href={`${base}/#about`}>About Us</a>
+        <a href={`${base}/about/`}>About Us</a>
         <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
-          <li><a href={`${base}/#about`}>About the Club</a></li>
-          <li><a href={`${base}/#facilities`}>Our Facilities</a></li>
-          <li><a href={`${base}/#contact`}>How to Join</a></li>
-          <li><a href="#">Codes of Conduct</a></li>
+          <li><a href={`${base}/about/`}>About the Club</a></li>
+          <li><a href={`${base}/about/squads/`}>Our Squads</a></li>
+          <li><a href={`${base}/membership/`}>Membership</a></li>
+          <li><a href={`${base}/about/facilities/`}>Our Facilities</a></li>
+          <li><a href={`${base}/about/join/`}>Join Us</a></li>
+          <li><a href={`${base}/about/codes-of-conduct/`}>Codes of Conduct</a></li>
         </ul>
       </li>
       <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
         <a href={`${base}/training/`}>Training</a>
         <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
-          <li><a href={`${base}/training/`}>Our Programs</a></li>
-          <li><a href={`${base}/training/#timetable`}>Training Times</a></li>
-          <li><a href={`${base}/training/#squads`}>Learn to Swim</a></li>
+          <li><a href={`${base}/training/#timetable`}>Training Timetable</a></li>
           <li><a href={`${base}/training/#coaches`}>Our Coaches</a></li>
-          <li><a href={`${base}/training/#plymouth`}>Plymouth 50m (Long Course)</a></li>
+          <li><a href={`${base}/training/equipment/`}>Training Equipment</a></li>
+          <li><a href={`${base}/training/learn-to-swim/`}>Learn to Swim</a></li>
         </ul>
       </li>
+      <li><a href={`${base}/safeguarding/`}>Safeguarding</a></li>
       <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
-        <a href="#">Competitions</a>
+        <a href={`${base}/galas/`}>Galas &amp; Competitions</a>
         <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
-          <li><a href={`${base}/competitions/`}>Our Meets</a></li>
-          <li><a href={`${base}/competitions/#mini-league`}>Devon Mini League 🏆</a></li>
-          <li><a href={`${base}/competitions/`}>Competition Guide</a></li>
+          <li><a href={`${base}/galas/`}>Upcoming Meets</a></li>
+          <li><a href={`${base}/galas/club-championships/`}>Club Championships</a></li>
+          <li><a href={`${base}/galas/ribbon-gala/`}>Ribbon Gala</a></li>
+          <li><a href={`${base}/galas/competition-guide/`}>Competition Guide</a></li>
         </ul>
       </li>
-      <li><a href={`${base}/gallery/`}>Gallery</a></li>
-      <li><a href={`${base}/#sponsors`}>Sponsors</a></li>
+      <li><a href={`${base}/merchandise/`}>Club Shop</a></li>
       <li><a href={`${base}/login/`} class="nav-login">Members Login</a></li>
     </ul>
-    <button class="nav-cta">Free Trial</button>
+    <button class="nav-cta" onclick={`window.location='${base}/about/join/'`}>Free Trial</button>
+    <div class="nav-sponsors-mob">
+      <span class="nav-sponsors-label">Sponsors</span>
+      <div class="nav-sponsors-mob-logos">
+        <a class="nav-sponsor-item" href="https://www.sparkworld.co.uk" target="_blank" rel="noopener">
+          <img class="nav-sponsor-logo" src={`${base}/sponsors/sparkworld-nav.svg`} alt="Sparkworld" />
+        </a>
+        <a class="nav-sponsor-item" href="https://www.safeheat.co.uk" target="_blank" rel="noopener">
+          <img class="nav-sponsor-logo" src={`${base}/sponsors/safeheat-nav.svg`} alt="Safeheat" />
+        </a>
+      </div>
+    </div>
     <button class="nav-burger" @click="mo = !mo" :class="{ active: mo }" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -48,27 +76,29 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
   <div class="mobile-nav" x-show="mo" x-cloak @click.capture="mo = false">
     <div class="mob-group">
       <span class="mob-label">About Us</span>
-      <a href={`${base}/#about`}>About the Club</a>
-      <a href={`${base}/#facilities`}>Our Facilities</a>
-      <a href={`${base}/#contact`}>How to Join</a>
-      <a href="#">Codes of Conduct</a>
+      <a href={`${base}/about/`}>About the Club</a>
+      <a href={`${base}/about/squads/`}>Our Squads</a>
+      <a href={`${base}/membership/`}>Membership</a>
+      <a href={`${base}/about/facilities/`}>Our Facilities</a>
+      <a href={`${base}/about/join/`}>Join Us</a>
+      <a href={`${base}/about/codes-of-conduct/`}>Codes of Conduct</a>
     </div>
     <div class="mob-group">
       <span class="mob-label">Training</span>
-      <a href={`${base}/training/`}>Our Programs</a>
-      <a href={`${base}/training/#timetable`}>Training Times</a>
-      <a href={`${base}/training/#squads`}>Learn to Swim</a>
+      <a href={`${base}/training/#timetable`}>Training Timetable</a>
       <a href={`${base}/training/#coaches`}>Our Coaches</a>
-      <a href={`${base}/training/#plymouth`}>Plymouth 50m (Long Course)</a>
+      <a href={`${base}/training/equipment/`}>Training Equipment</a>
+      <a href={`${base}/training/learn-to-swim/`}>Learn to Swim</a>
     </div>
+    <a href={`${base}/safeguarding/`}>Safeguarding &amp; Welfare</a>
     <div class="mob-group">
-      <span class="mob-label">Competitions</span>
-      <a href={`${base}/competitions/`}>Our Meets</a>
-      <a href={`${base}/competitions/#mini-league`}>Devon Mini League 🏆</a>
-      <a href={`${base}/competitions/`}>Competition Guide</a>
+      <span class="mob-label">Galas &amp; Competitions</span>
+      <a href={`${base}/galas/`}>Upcoming Meets</a>
+      <a href={`${base}/galas/club-championships/`}>Club Championships</a>
+      <a href={`${base}/galas/ribbon-gala/`}>Ribbon Gala</a>
+      <a href={`${base}/galas/competition-guide/`}>Competition Guide</a>
     </div>
-    <a href={`${base}/gallery/`}>Gallery</a>
-    <a href={`${base}/#sponsors`}>Sponsors</a>
+    <a href={`${base}/merchandise/`}>Club Shop</a>
     <a href={`${base}/login/`}>Members Login</a>
   </div>
 </div>

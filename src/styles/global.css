@@ -21,9 +21,27 @@ nav {
   height: 70px;
   background: var(--red);
 }
+.nav-left { display: flex; align-items: center; gap: 0; }
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .nav-logo img { height: 42px; filter: brightness(0) invert(1); }
 .nav-logo span { color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: -0.3px; }
+.nav-sponsor-sep { width: 1px; height: 24px; background: rgba(255,255,255,0.25); margin: 0 16px; }
+.nav-sponsors { display: flex; align-items: center; gap: 8px; }
+.nav-sponsors-label { color: rgba(255,255,255,0.45); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-right: 2px; }
+.nav-sponsor-item { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 3px; color: rgba(255,255,255,0.85); font-size: 0.75rem; font-weight: 600; text-decoration: none; transition: color 0.15s; line-height: 1; padding: 4px 8px; border-radius: 4px; }
+.nav-sponsor-item::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.nav-sponsor-item:hover::before { opacity: 1; }
+.nav-sponsor-item:hover { color: #fff; }
+.nav-sponsor-logo { display: block; height: 22px; width: auto; object-fit: contain; opacity: 0.85; transition: opacity 0.2s; position: relative; z-index: 1; }
+.nav-sponsor-item:hover .nav-sponsor-logo { opacity: 1; }
+.nav-sponsors-divider { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+.nav-sponsors-mob { display: none; flex-direction: column; align-items: center; gap: 2px; }
+.nav-sponsors-mob-logos { display: flex; align-items: center; gap: 4px; }
+@media (max-width: 900px) {
+  .nav-sponsors, .nav-sponsor-sep { display: none; }
+  .nav-sponsors-mob { display: flex; }
+  .nav-sponsors-mob .nav-sponsors-label { margin-right: 0; }
+}
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: #000; }
