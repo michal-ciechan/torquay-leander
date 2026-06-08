@@ -6,18 +6,18 @@ Pages and sections marked as under construction that need real content added.
 
 ## About Us
 
-- [ ] **Codes of Conduct** (`/about/codes-of-conduct/`)
-  Copy content from existing website and club resources (Swim England Wavepower policy, club-specific rules).
+- [x] **Codes of Conduct** (`/about/codes-of-conduct/`)
+  Done — athlete (under/over 18) and parent/guardian codes in full, plus all five printable PDF downloads and a safeguarding cross-link.
 
 ---
 
 ## Membership
 
-- [ ] **Membership Costs** (`/membership/costs/`)
-  Add current fee table from existing website (ANNUAL MEMBERSHIP FEES onwards). Adjust last price band to "5+ Hours per week". Include the Join Us enquiry form at the bottom of this page.
+- [x] **Membership Costs** (`/membership/costs/`)
+  Done — annual fee cards (Standard/Second Club/Part Year/Reactivation) and the monthly bands 1–5 (last band set to "5+ hours per week"), with the Join Us enquiry form embedded at the bottom.
 
-- [ ] **Membership Benefits** (`/membership/benefits/`)
-  Copy content from Welcome Back pack, links, and QR codes.
+- [x] **Membership Benefits** (`/membership/benefits/`)
+  Done — benefits grid plus retailer-discount section. Note: still need the Welcome Back pack links/QR codes if we want them inline rather than via the Club Organiser app.
 
 ---
 
@@ -26,11 +26,11 @@ Pages and sections marked as under construction that need real content added.
 - [ ] **Training Timetable** (`/training/` → `#timetable` section)
   Replace placeholder with actual timetable from the welcome pack.
 
-- [ ] **Training Equipment** (`/training/equipment/`)
-  Expand with full kit list and purchasing details once Club Shop (Wyvern) is live.
+- [x] **Training Equipment** (`/training/equipment/`)
+  Done — full kit-bag list (drink bottle, mesh bag, fins, pull buoy/band, kickboard, optional snorkel & paddles) with intro and member-discount note. Still pending: purchasing details/links once Club Shop (Wyvern) is live.
 
-- [ ] **Learn to Swim** (`/training/learn-to-swim/`)
-  Add full programme details (as per existing website content).
+- [x] **Learn to Swim** (`/training/learn-to-swim/`)
+  Done — Swim Torquay partnership intro and the Stage 1–7 pathway (highlighting Stage 5+ as squad-ready). Still pending: a direct link/URL to Swim Torquay once confirmed.
 
 - [ ] **Our Coaches** (`/training/` → `#coaches` section)
   Add coach photos and bios once available.
@@ -42,14 +42,14 @@ Pages and sections marked as under construction that need real content added.
 - [ ] **Upcoming Meets** (`/galas/`)
   Add actual competition schedule. Consider auto-populating from Facebook Events or a simple manually-maintained list.
 
-- [ ] **Club Championships** (`/galas/club-championships/`)
-  Add event details, dates, qualifying criteria, results archive.
+- [x] **Club Championships** (`/galas/club-championships/`)
+  Done — format/age groups, the 2025 programme with heat-sheet PDF downloads, on-the-day FAQ, Devon qualifying-times link, and awards night. Refresh the dated programme each autumn when new dates are confirmed.
 
-- [ ] **Ribbon Gala** (`/galas/ribbon-gala/`)
-  Add event details, format, and how to enter.
+- [x] **Ribbon Gala** (`/galas/ribbon-gala/`)
+  Done — what it is, what to expect, and how to enter (built from the in-house gala content; no dedicated source page existed). Add specific dates/format if the club provides them.
 
-- [ ] **Competition Guide** (`/galas/competition-guide/`)
-  Add guide for first-time competitors: what to bring, warm-up process, race day tips, entry procedure.
+- [x] **Competition Guide** (`/galas/competition-guide/`)
+  Done — race rules, the start sequence, the four strokes, and a reassuring intro for first-time competitors and parents.
 
 ---
 

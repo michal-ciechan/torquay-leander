@@ -1,7 +1,57 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import UnderConstruction from '../../components/UnderConstruction.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const pdfBase = 'https://torquayleander.co.uk/wp-content/uploads/2025/12';
+
+const athleteRights = [
+  'Feel safe, and know how to raise any concerns.',
+  'Be listened to, and be involved in decisions within the club.',
+  'Be respected and treated fairly by every member of the club.',
+  'Feel welcomed and valued — never judged on race, gender, sexuality, faith, ability or any other characteristic.',
+  'Be encouraged and developed with our help and support.',
+  'Be looked after if there\'s an accident or injury, with your parent or emergency contact informed where appropriate.',
+];
+
+const athleteExpect = [
+  'Be aware of Swim England\'s Wavepower guidance and adhere to it.',
+  'Follow the Swim England regulations, Code of Ethics, Club Constitution and rules.',
+  'Listen to your coach, behave responsibly, and speak out when something isn\'t right.',
+  'Never leave the premises (in training or at competition) without first agreeing it with your coach or team manager.',
+  'Arrive on time, and let someone know if you\'re running late or having difficulty attending.',
+  'Bring the right kit, and take care of equipment and premises as if they were your own.',
+  'Support and encourage your teammates, and respect competitors and volunteers.',
+  'Respect committee members, coaches, teachers and helpers at all times.',
+];
+
+const parentRights = [
+  'Be assured your child is safeguarded at all times during club activity.',
+  'Be informed of Wavepower and the appropriate safeguarding and welfare reporting procedures.',
+  'Know that any concerns about your child\'s welfare will be listened and responded to.',
+  'Know that anyone looking after your child has the appropriate qualifications, checks and training.',
+  'Be informed of any problems or concerns relating to your child raised by their coach.',
+  'Know how to access club policies, rules, the complaints process, and who to contact.',
+  'Provide your consent (or otherwise) for photography and trips away.',
+];
+
+const parentExpect = [
+  'Make sure your child has the right kit, arrives on time, and is picked up promptly.',
+  'Let the club know about late collection or alternative arrangements for your child.',
+  'Complete all consent, contact and medical forms — and update us straight away if anything changes.',
+  'Respect the decisions of your child\'s coach, while raising any concerns at a mutually convenient time.',
+  'Remember it\'s not all about winning — children gain friends, fitness and new skills.',
+  'Not enter poolside or interrupt training or competition unless in an emergency.',
+  'Behave positively as a spectator and treat everyone — including other teams — with respect.',
+  'Respect and celebrate differences, and never use abusive language, bullying or violence.',
+];
+
+const downloads = [
+  { role: 'Athletes (Under 18)', file: 'Code-of-Conduct-Athletes-Under-18-TL-1.pdf' },
+  { role: 'Athletes (Over 18)', file: 'Code-of-Conduct-Athletes-Over-18-TL.pdf' },
+  { role: 'Coaches & Teachers', file: 'Code-of-Conduct-Coaches-and-Teachers-TL.pdf' },
+  { role: 'Committee, Officials & Volunteers', file: 'Code-of-Conduct-Committee-Members-Officials-and-VolunteersTL.pdf' },
+  { role: 'Parents & Guardians', file: 'Code-of-Conduct-Parents-and-Guardians-TL.pdf' },
+];
 ---
 <BaseLayout title="Codes of Conduct — Torquay Leander">
 
@@ -19,10 +69,90 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </div>
 </section>
 
-<UnderConstruction
-  title="Codes of Conduct"
-  message="Our codes of conduct are being updated. Please check back soon or contact us directly."
-/>
+<section class="intro">
+  <div class="inner intro-inner">
+    <p class="label">Our Code of Behaviour</p>
+    <p class="intro-text">As a club affiliated to Swim England, we are expected to conduct our activities within the rules of the Association — including the Swim England Code of Conduct, Code of Ethics and Equity Policy.</p>
+    <p class="intro-text">We ask all of our members, coaches, parents and guardians, officials and volunteers to follow our Code of Behaviour. Please read the section that applies to you carefully so you know what is expected as a member of our club. In addition, we expect all swimmers to sign up to the swimmers' code of conduct.</p>
+  </div>
+</section>
+
+<section class="code athletes">
+  <div class="inner">
+    <p class="label">Athletes (Under 18)</p>
+    <h2>For our swimmers</h2>
+    <p class="code-text">This code sets out your rights as an athlete — the respect you can expect, and that which you show to others — and what is expected of your behaviour as a member of the club.</p>
+    <div class="rights-grid">
+      <div class="rights-col">
+        <h3 class="col-head"><span class="dot ok"></span>You have the right to</h3>
+        <ul>
+          {athleteRights.map((r) => <li>{r}</li>)}
+        </ul>
+      </div>
+      <div class="rights-col">
+        <h3 class="col-head"><span class="dot do"></span>We expect you to</h3>
+        <ul>
+          {athleteExpect.map((r) => <li>{r}</li>)}
+        </ul>
+      </div>
+    </div>
+    <div class="standards-note">
+      <strong>Standards of behaviour.</strong> We expect members to respect and celebrate differences and never discriminate; to avoid abusive language, bullying or violence; to respect others' privacy in the changing rooms; to never use a mobile device in the changing areas; and to report any concerns — including about photography or bullying — to the welfare officer. Breaches may result in disciplinary action by the committee, and any behaviour that may be a criminal offence will be reported to the relevant authorities.
+    </div>
+  </div>
+</section>
+
+<section class="code parents">
+  <div class="inner">
+    <p class="label">Parents &amp; Guardians</p>
+    <h2>For parents and guardians</h2>
+    <p class="code-text">As a registered Swim England member, or as the parent or guardian of a club member under 18, you are required to agree to this code of conduct.</p>
+    <div class="rights-grid">
+      <div class="rights-col">
+        <h3 class="col-head"><span class="dot ok"></span>You have the right to</h3>
+        <ul>
+          {parentRights.map((r) => <li>{r}</li>)}
+        </ul>
+      </div>
+      <div class="rights-col">
+        <h3 class="col-head"><span class="dot do"></span>We expect you to</h3>
+        <ul>
+          {parentExpect.map((r) => <li>{r}</li>)}
+        </ul>
+      </div>
+    </div>
+    <p class="footnote">Continued breaches of this code by a parent or guardian (whether a member or not) may require the club to stop your child's continued participation in club activity.</p>
+  </div>
+</section>
+
+<section class="downloads">
+  <div class="inner">
+    <p class="label">Printable Versions</p>
+    <h2>Download the full codes</h2>
+    <p class="code-text">Each code of conduct is available as a printable PDF, including the codes for coaches &amp; teachers and for committee members, officials &amp; volunteers.</p>
+    <div class="dl-grid">
+      {downloads.map((d) => (
+        <a class="dl-card" href={`${pdfBase}/${d.file}`} target="_blank" rel="noopener noreferrer">
+          <span class="dl-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+          </span>
+          <span class="dl-role">{d.role}</span>
+          <span class="dl-go">PDF →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="welfare">
+  <div class="inner welfare-inner">
+    <div class="welfare-text">
+      <h3>Concerns or questions?</h3>
+      <p>If you have a concern about the welfare of any member, please speak to our welfare officer. Our safeguarding policies explain how to raise concerns and what happens next.</p>
+    </div>
+    <a class="welfare-btn" href={`${base}/safeguarding/`}>Safeguarding &amp; Welfare →</a>
+  </div>
+</section>
 
 </BaseLayout>
 
@@ -36,8 +166,72 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
   }
   .hero-inner { max-width: 1200px; margin: 0 auto; }
-  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
   .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
   .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
   .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 580px; line-height: 1.7; }
+
+  .inner { max-width: 1100px; margin: 0 auto; }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
+  .code-text { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 820px; margin-bottom: 36px; }
+
+  .intro { background: #fff; padding: 72px 5vw 48px; }
+  .intro-inner { max-width: 820px; }
+  .intro-text { color: var(--muted); font-size: 1.02rem; line-height: 1.85; margin-bottom: 18px; }
+
+  .code { padding: 64px 5vw; }
+  .athletes { background: #f8fafc; }
+  .parents { background: #fff; }
+  .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .rights-col { background: #fff; border: 1.5px solid var(--border); border-radius: 16px; padding: 28px 26px; }
+  .parents .rights-col { background: #f8fafc; }
+  .col-head { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 18px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .dot.ok { background: #16a34a; }
+  .dot.do { background: var(--red); }
+  .rights-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .rights-col li { position: relative; padding-left: 22px; color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+  .rights-col li::before { content: ''; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--red); opacity: 0.6; }
+
+  .standards-note {
+    margin-top: 24px; background: #fff; border: 1.5px solid var(--border); border-left: 4px solid var(--red);
+    border-radius: 12px; padding: 20px 24px; color: var(--muted); font-size: 0.88rem; line-height: 1.7;
+  }
+  .standards-note strong { color: var(--text); }
+  .footnote { margin-top: 24px; color: var(--muted); font-size: 0.86rem; line-height: 1.7; max-width: 820px; font-style: italic; }
+
+  .downloads { background: #f8fafc; padding: 64px 5vw; }
+  .dl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .dl-card {
+    display: flex; flex-direction: column; gap: 12px;
+    background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 24px 22px;
+    text-decoration: none; color: inherit; transition: all 0.2s;
+  }
+  .dl-card:hover { border-color: var(--red); box-shadow: 0 10px 30px rgba(220,38,38,0.1); transform: translateY(-3px); }
+  .dl-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--red-light); color: var(--red); display: flex; align-items: center; justify-content: center; }
+  .dl-role { font-size: 0.92rem; font-weight: 800; color: var(--text); flex: 1; }
+  .dl-go { font-size: 0.8rem; font-weight: 700; color: var(--red); }
+
+  .welfare { background: #fff; padding: 24px 5vw 80px; }
+  .welfare-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    background: var(--black); border-radius: 18px; padding: 36px 40px;
+  }
+  .welfare-text h3 { color: #fff; font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
+  .welfare-text p { color: rgba(255,255,255,0.7); font-size: 0.92rem; line-height: 1.7; margin: 0; max-width: 620px; }
+  .welfare-btn { background: var(--red); color: #fff; text-decoration: none; padding: 13px 26px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; white-space: nowrap; transition: transform 0.2s, background 0.2s; }
+  .welfare-btn:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+  @media (max-width: 900px) {
+    .dl-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .rights-grid { grid-template-columns: 1fr; }
+    .intro, .code, .downloads, .welfare { padding-left: 20px; padding-right: 20px; }
+  }
+  @media (max-width: 520px) {
+    .dl-grid { grid-template-columns: 1fr; }
+  }
 </style>

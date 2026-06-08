@@ -1,7 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import UnderConstruction from '../../components/UnderConstruction.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const kit = [
+  { icon: '💧', name: 'Drink Bottle', optional: false, desc: 'You should never come swimming without one — water is best, or juice (never milk or fizzy drinks). Swimmers work hard and need to stay hydrated. We are always happy to refill empty bottles.' },
+  { icon: '🎒', name: 'Large Mesh Bag', optional: false, desc: 'Keeps your kit together and lets it dry out, so you avoid smelly puddles and mouldy equipment.' },
+  { icon: '🦈', name: 'Swimming Fins', optional: false, desc: 'The shorter training fins (not long diving fins). They help develop a better, stronger kick, and take effort away from the legs when we focus on arm work.' },
+  { icon: '🏊', name: 'Pull Buoy or Band', optional: false, desc: 'Held between the legs to isolate the arms. Bands are also useful for developing streamlining and butterfly.' },
+  { icon: '🛹', name: 'Kickboard', optional: false, desc: 'Used often in training. Boards with hand positions are best, as they encourage the body to stay level while building leg kick.' },
+  { icon: '🤿', name: 'Snorkel', optional: true, desc: 'A centre-line snorkel that runs along the middle of the forehead. Great for developing strokes — practise in the bath for short periods if it feels strange at first.' },
+  { icon: '🤲', name: 'Hand / Finger Paddles', optional: true, desc: 'Help develop the underwater pulling action of the hands. Finger paddles are especially good for smaller hands.' },
+];
 ---
 <BaseLayout title="Training Equipment — Torquay Leander">
 
@@ -15,94 +24,94 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <span>Training Equipment</span>
     </div>
     <h1>Training Equipment</h1>
-    <p>Everything our swimmers use in training — from pool toys to performance gear.</p>
+    <p>Everything our swimmers use in training — from drink bottles to performance gear.</p>
   </div>
 </section>
 
 <section class="equip-intro">
   <div class="inner">
+    <p class="intro-text">Every swimmer is expected to bring the following kit to every session. This lets us run sessions that have been planned in advance without worrying whether there is enough equipment to go around. We know swimming can be expensive, so we keep a few spare pieces of kit swimmers can borrow — but not enough for everyone. Kit also makes great birthday or Christmas presents!</p>
+
     <div class="shop-callout">
       <span class="shop-icon">🛒</span>
-      <p>Training equipment and clothing can be purchased through our <a href={`${base}/merchandise/`}>Club Shop</a>.</p>
+      <p>Training equipment and clothing can be purchased through our <a href={`${base}/merchandise/`}>Club Shop</a>. Images are for reference only — other brands are available.</p>
     </div>
 
     <div class="equip-list">
-      <p class="label">Common Training Equipment</p>
+      <p class="label">Kit Bag Contents</p>
       <ul>
-        <li>
-          <span class="eq-icon">🦈</span>
-          <div><strong>Fins</strong><p>Used to build leg strength, improve kick technique, and increase speed through the water.</p></div>
-        </li>
-        <li>
-          <span class="eq-icon">🏊</span>
-          <div><strong>Pull Buoys</strong><p>Floatation aids held between the legs to isolate upper-body pulling technique.</p></div>
-        </li>
-        <li>
-          <span class="eq-icon">🛹</span>
-          <div><strong>Kickboards</strong><p>Held at arm's length to isolate and train leg kick without upper-body effort.</p></div>
-        </li>
-        <li>
-          <span class="eq-icon">🤲</span>
-          <div><strong>Hand Paddles</strong><p>Plastic paddles worn on the hands to increase resistance and strengthen the pull phase.</p></div>
-        </li>
-        <li>
-          <span class="eq-icon">🧢</span>
-          <div><strong>Swim Caps</strong><p>Required for all sessions. Silicone caps are recommended for longer hair. Club caps are available.</p></div>
-        </li>
-        <li>
-          <span class="eq-icon">🥽</span>
-          <div><strong>Goggles</strong><p>A well-fitting pair of goggles is essential. Bring a spare pair if you have one.</p></div>
-        </li>
+        {kit.map((item) => (
+          <li>
+            <span class="eq-icon">{item.icon}</span>
+            <div>
+              <strong>{item.name}{item.optional && <span class="opt">Optional</span>}</strong>
+              <p>{item.desc}</p>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
 
     <div class="benefits-note">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <span>Club members benefit from discounts — see <a href={`${base}/membership/benefits/`}>Membership Benefits</a> for details.</span>
+      <span>Club members benefit from exclusive retailer discounts. Codes are available in the Club Organiser app under Documents → TL Discount Codes — see <a href={`${base}/membership/benefits/`}>Membership Benefits</a> for details.</span>
     </div>
   </div>
 </section>
 
-<UnderConstruction title="Full Equipment Guide Coming Soon" message="We're putting together a comprehensive guide to the equipment used in our training sessions." />
-
 </BaseLayout>
 
 <style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
   .hero-inner { max-width: 1200px; margin: 0 auto; }
   .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
   .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
   .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
   .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 580px; line-height: 1.7; }
 
-  .equip-intro { background: #fff; }
-  .inner { max-width: 1200px; margin: 0 auto; }
+  .equip-intro { background: #fff; padding: 72px 5vw 80px; }
+  .inner { max-width: 1000px; margin: 0 auto; }
+  .intro-text { color: var(--muted); font-size: 1rem; line-height: 1.85; max-width: 720px; margin-bottom: 32px; }
 
   .shop-callout {
     display: flex; align-items: center; gap: 14px;
     background: var(--red-light); border: 1.5px solid #fecaca; border-radius: 12px;
-    padding: 18px 22px; margin-bottom: 40px; max-width: 560px;
+    padding: 18px 22px; margin-bottom: 44px; max-width: 680px;
   }
   .shop-icon { font-size: 1.5rem; flex-shrink: 0; }
-  .shop-callout p { color: var(--text); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+  .shop-callout p { color: var(--text); font-size: 0.92rem; line-height: 1.6; margin: 0; }
   .shop-callout a { color: var(--red); font-weight: 700; text-decoration: none; }
   .shop-callout a:hover { text-decoration: underline; }
 
   .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
 
-  .equip-list ul { list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 680px; }
-  .equip-list li { display: flex; align-items: flex-start; gap: 16px; padding: 16px 18px; border: 1.5px solid var(--border); border-radius: 12px; transition: border-color 0.2s; }
+  .equip-list ul { list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 720px; }
+  .equip-list li { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; border: 1.5px solid var(--border); border-radius: 12px; transition: border-color 0.2s; }
   .equip-list li:hover { border-color: var(--red); }
-  .eq-icon { flex-shrink: 0; width: 40px; height: 40px; background: var(--red-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-  .equip-list li strong { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 3px; }
-  .equip-list li p { color: var(--muted); font-size: 0.82rem; line-height: 1.55; margin: 0; }
+  .eq-icon { flex-shrink: 0; width: 44px; height: 44px; background: var(--red-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .equip-list li strong { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; margin-bottom: 4px; }
+  .opt { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); background: #f1f5f9; border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px; }
+  .equip-list li p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; margin: 0; }
 
   .benefits-note {
     display: flex; align-items: flex-start; gap: 10px;
     background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px;
-    padding: 16px 18px; margin-top: 28px; max-width: 560px;
+    padding: 16px 18px; margin-top: 32px; max-width: 680px;
     color: var(--muted); font-size: 0.88rem; line-height: 1.6;
   }
   .benefits-note svg { flex-shrink: 0; margin-top: 2px; color: var(--red); }
   .benefits-note a { color: var(--red); font-weight: 700; text-decoration: none; }
   .benefits-note a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .equip-intro { padding-left: 20px; padding-right: 20px; }
+  }
 </style>

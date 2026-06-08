@@ -1,7 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import UnderConstruction from '../../components/UnderConstruction.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const annualFees = [
+  { name: 'Standard', price: '£50', unit: '/year', note: 'Standard annual membership — due by 31st January every year.' },
+  { name: 'Second Club', price: '£25', unit: '/year', note: 'Reduced annual fee if transferring from another club with existing Swim England membership.' },
+  { name: 'Part Year', price: 'Reduced', unit: '', note: 'Reduced annual membership fee if joining after 1st October in any given year.' },
+  { name: 'Reactivation', price: '£15', unit: '/year', note: 'Re-activation fee when membership has lapsed during the year.' },
+];
+
+const monthlyBands = [
+  { band: 'Band 1', price: '£35', hours: '1 hour per week' },
+  { band: 'Band 2', price: '£43', hours: '2 hours per week' },
+  { band: 'Band 3', price: '£50', hours: '3 hours per week' },
+  { band: 'Band 4', price: '£57', hours: '4 hours per week' },
+  { band: 'Band 5', price: '£65', hours: '5+ hours per week' },
+];
 ---
 <BaseLayout title="Membership Costs — Torquay Leander">
 
@@ -19,10 +33,87 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </div>
 </section>
 
-<UnderConstruction
-  title="Membership Costs"
-  message="Membership pricing is being updated. Please contact us at torquayleander@hotmail.com for current fee information."
-/>
+<section class="annual">
+  <div class="inner">
+    <p class="label">Annual Membership Fees</p>
+    <p class="section-text">Every swimmer at the club must be a member of Torquay Leander and of Swim England. This ensures insurance coverage and allows swimmers to compete — and is managed by us, so the annual club membership fee includes Swim England membership. The fee is reviewed annually by the Finance Committee and is <strong>due by 31st January every year</strong>; any swimmer who has not renewed by that date will not be permitted to swim.</p>
+
+    <div class="fee-grid">
+      {annualFees.map((f) => (
+        <div class="fee-card">
+          <span class="fee-name">{f.name}</span>
+          <div class="fee-price">{f.price}<span class="fee-unit">{f.unit}</span></div>
+          <p class="fee-note">{f.note}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="monthly">
+  <div class="inner">
+    <p class="label">Monthly Swimming Fees</p>
+    <p class="section-text">Monthly subscriptions are based on the number of hours swum per week and are paid by <strong>direct debit set up via Club Organiser</strong>. They represent the annual subscription broken into 12 equal installments and are due every month of membership — regardless of holidays, illness, gala weeks, or the club's Christmas and summer shutdown periods.</p>
+
+    <div class="band-table">
+      {monthlyBands.map((b) => (
+        <div class="band-row">
+          <span class="band-name">{b.band}</span>
+          <span class="band-hours">{b.hours}</span>
+          <span class="band-price">{b.price}<small>/month</small></span>
+        </div>
+      ))}
+    </div>
+
+    <div class="note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>Swimmers joining mid-year or transferring from another club may qualify for a reduced annual fee. Contact us if you're unsure which band applies to your swimmer.</span>
+    </div>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="inner">
+    <div class="form-layout">
+      <div class="form-intro">
+        <p class="label">Arrange a Free Trial</p>
+        <p class="form-desc">Ready to get started? Fill in the form and one of our coaches will be in touch to discuss the best squad for your swimmer, confirm the relevant fee band, and arrange a free trial session.</p>
+        <div class="form-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>Minimum entry level is Stage 5. If you are unsure of your swimmer's level, please mention this in the form and we will be happy to assess them.</span>
+        </div>
+      </div>
+
+      <form class="interest-form" action="#" method="post">
+        <div class="field-group">
+          <label for="swimmer-name">Name of Swimmer</label>
+          <input type="text" id="swimmer-name" name="swimmer_name" placeholder="Full name" required />
+        </div>
+        <div class="field-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="date_of_birth" required />
+        </div>
+        <div class="field-group">
+          <label for="swim-level">Swim Level</label>
+          <input type="text" id="swim-level" name="swim_level" placeholder="e.g. Stage 5, Stage 6, Club standard" required />
+        </div>
+        <div class="field-group">
+          <label for="guardian-name">Name of Parent / Guardian</label>
+          <input type="text" id="guardian-name" name="guardian_name" placeholder="Full name" required />
+        </div>
+        <div class="field-group">
+          <label for="phone">Contact Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000" required />
+        </div>
+        <div class="field-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <button type="submit" class="form-submit">Send My Interest</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 </BaseLayout>
 
@@ -33,12 +124,94 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   .page-hero::after {
     content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
-    background: #fafafa; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
   }
   .hero-inner { max-width: 1200px; margin: 0 auto; }
-  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
   .crumb a { color: var(--red); text-decoration: none; }
   .crumb span { opacity: 0.5; }
   .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
   .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 580px; line-height: 1.7; }
+
+  .inner { max-width: 1100px; margin: 0 auto; }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
+  .section-text { color: var(--muted); font-size: 0.97rem; line-height: 1.8; max-width: 820px; margin-bottom: 36px; }
+  .section-text strong { color: var(--text); }
+
+  .annual { background: #fff; padding: 72px 5vw 56px; }
+  .fee-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .fee-card {
+    border: 1.5px solid var(--border); border-radius: 16px; padding: 26px 22px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .fee-card:hover { border-color: var(--red); box-shadow: 0 10px 30px rgba(220,38,38,0.08); }
+  .fee-name { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .fee-price { font-size: 2rem; font-weight: 900; color: var(--red); letter-spacing: -1px; margin: 8px 0 12px; }
+  .fee-unit { font-size: 0.9rem; font-weight: 700; color: var(--muted); letter-spacing: 0; }
+  .fee-note { color: var(--muted); font-size: 0.82rem; line-height: 1.6; margin: 0; }
+
+  .monthly { background: #f8fafc; padding: 64px 5vw; }
+  .band-table { border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; max-width: 720px; }
+  .band-row {
+    display: grid; grid-template-columns: 1fr 2fr auto; align-items: center; gap: 16px;
+    padding: 18px 26px; border-bottom: 1px solid var(--border);
+  }
+  .band-row:last-child { border-bottom: none; }
+  .band-row:nth-child(even) { background: #fafbfc; }
+  .band-name { font-weight: 800; font-size: 0.95rem; color: var(--text); }
+  .band-hours { color: var(--muted); font-size: 0.9rem; }
+  .band-price { font-size: 1.35rem; font-weight: 900; color: var(--red); letter-spacing: -0.5px; white-space: nowrap; }
+  .band-price small { font-size: 0.78rem; font-weight: 700; color: var(--muted); }
+
+  .note {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #fff; border: 1.5px solid var(--border); border-radius: 12px;
+    padding: 16px 18px; margin-top: 28px; max-width: 720px;
+    color: var(--muted); font-size: 0.86rem; line-height: 1.6;
+  }
+  .note svg { flex-shrink: 0; margin-top: 2px; color: var(--red); }
+
+  .form-section { background: var(--red-light); padding: 80px 5vw; }
+  .form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; }
+  .form-desc { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
+  .form-note {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; font-size: 0.83rem; color: var(--muted); line-height: 1.6;
+  }
+  .form-note svg { flex-shrink: 0; color: var(--red); margin-top: 2px; }
+
+  .interest-form { background: var(--black); border-radius: 18px; padding: 36px; display: flex; flex-direction: column; gap: 0; }
+  .field-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .field-group label { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.65); letter-spacing: 0.5px; }
+  .field-group input {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+    color: #fff; padding: 12px 14px; border-radius: 8px;
+    font-size: 0.9rem; font-family: inherit;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .field-group input:focus { outline: none; border-color: var(--red); background: rgba(255,255,255,0.11); }
+  .field-group input::placeholder { color: rgba(255,255,255,0.3); }
+  .field-group input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1) opacity(0.5); }
+
+  .form-submit {
+    width: 100%; background: var(--red); color: #fff;
+    border: none; padding: 14px 20px; border-radius: 10px;
+    font-weight: 700; font-size: 0.95rem; cursor: pointer;
+    margin-top: 8px; font-family: inherit;
+    box-shadow: 0 4px 20px rgba(220,38,38,0.35);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .form-submit:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  @media (max-width: 900px) {
+    .fee-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-layout { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (max-width: 600px) {
+    .fee-grid { grid-template-columns: 1fr; }
+    .band-row { grid-template-columns: 1fr auto; gap: 4px 12px; }
+    .band-hours { grid-column: 1 / -1; order: 3; }
+    .annual, .monthly, .form-section { padding-left: 20px; padding-right: 20px; }
+  }
 </style>
