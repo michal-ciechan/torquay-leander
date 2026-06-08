@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import UnderConstruction from '../../components/UnderConstruction.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Training Equipment — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/training/`}>Training</a>
+      <span>›</span>
+      <span>Training Equipment</span>
+    </div>
+    <h1>Training Equipment</h1>
+    <p>Everything our swimmers use in training — from pool toys to performance gear.</p>
+  </div>
+</section>
+
+<section class="equip-intro">
+  <div class="inner">
+    <div class="shop-callout">
+      <span class="shop-icon">🛒</span>
+      <p>Training equipment and clothing can be purchased through our <a href={`${base}/merchandise/`}>Club Shop</a>.</p>
+    </div>
+
+    <div class="equip-list">
+      <p class="label">Common Training Equipment</p>
+      <ul>
+        <li>
+          <span class="eq-icon">🦈</span>
+          <div><strong>Fins</strong><p>Used to build leg strength, improve kick technique, and increase speed through the water.</p></div>
+        </li>
+        <li>
+          <span class="eq-icon">🏊</span>
+          <div><strong>Pull Buoys</strong><p>Floatation aids held between the legs to isolate upper-body pulling technique.</p></div>
+        </li>
+        <li>
+          <span class="eq-icon">🛹</span>
+          <div><strong>Kickboards</strong><p>Held at arm's length to isolate and train leg kick without upper-body effort.</p></div>
+        </li>
+        <li>
+          <span class="eq-icon">🤲</span>
+          <div><strong>Hand Paddles</strong><p>Plastic paddles worn on the hands to increase resistance and strengthen the pull phase.</p></div>
+        </li>
+        <li>
+          <span class="eq-icon">🧢</span>
+          <div><strong>Swim Caps</strong><p>Required for all sessions. Silicone caps are recommended for longer hair. Club caps are available.</p></div>
+        </li>
+        <li>
+          <span class="eq-icon">🥽</span>
+          <div><strong>Goggles</strong><p>A well-fitting pair of goggles is essential. Bring a spare pair if you have one.</p></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="benefits-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>Club members benefit from discounts — see <a href={`${base}/membership/benefits/`}>Membership Benefits</a> for details.</span>
+    </div>
+  </div>
+</section>
+
+<UnderConstruction title="Full Equipment Guide Coming Soon" message="We're putting together a comprehensive guide to the equipment used in our training sessions." />
+
+</BaseLayout>
+
+<style>
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 580px; line-height: 1.7; }
+
+  .equip-intro { background: #fff; }
+  .inner { max-width: 1200px; margin: 0 auto; }
+
+  .shop-callout {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--red-light); border: 1.5px solid #fecaca; border-radius: 12px;
+    padding: 18px 22px; margin-bottom: 40px; max-width: 560px;
+  }
+  .shop-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .shop-callout p { color: var(--text); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+  .shop-callout a { color: var(--red); font-weight: 700; text-decoration: none; }
+  .shop-callout a:hover { text-decoration: underline; }
+
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+
+  .equip-list ul { list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 680px; }
+  .equip-list li { display: flex; align-items: flex-start; gap: 16px; padding: 16px 18px; border: 1.5px solid var(--border); border-radius: 12px; transition: border-color 0.2s; }
+  .equip-list li:hover { border-color: var(--red); }
+  .eq-icon { flex-shrink: 0; width: 40px; height: 40px; background: var(--red-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .equip-list li strong { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 3px; }
+  .equip-list li p { color: var(--muted); font-size: 0.82rem; line-height: 1.55; margin: 0; }
+
+  .benefits-note {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px;
+    padding: 16px 18px; margin-top: 28px; max-width: 560px;
+    color: var(--muted); font-size: 0.88rem; line-height: 1.6;
+  }
+  .benefits-note svg { flex-shrink: 0; margin-top: 2px; color: var(--red); }
+  .benefits-note a { color: var(--red); font-weight: 700; text-decoration: none; }
+  .benefits-note a:hover { text-decoration: underline; }
+</style>

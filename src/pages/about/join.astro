@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Join Us — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/about/`}>About Us</a>
+      <span>›</span>
+      <span>Join Us</span>
+    </div>
+    <h1>Join Us</h1>
+    <p>Whether your goal is to improve fitness, compete at a higher level, or simply enjoy swimming as part of a great community, Torquay Leander Swimming Club welcomes you.</p>
+  </div>
+</section>
+
+<section class="difference-section">
+  <div class="inner">
+    <p class="label">The Torquay Leander Difference</p>
+    <div class="difference-grid">
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="diff-text">
+          <strong>No minimum hour requirements for squad selection</strong>
+          <span>We understand life is busy! Swim the hours you have available across sessions throughout the week. Our competing swimmers are chosen on merit, ability and attitude — not the number of hours you commit to swim.</span>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="diff-text">
+          <strong>Professional qualified coaching every session</strong>
+          <span>Every training session is led by a professionally qualified coach who is passionate about your development in the water.</span>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="diff-text">
+          <strong>Specific annual training plan built around our Gala program</strong>
+          <span>Every session is designed with the next gala in mind ensuring optimal training volume and intensity.</span>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="diff-text">
+          <strong>Competitive squad pathway from learn-to-race to elite</strong>
+          <span>A structured progression through our Development Squad, Junior Squad, and Senior Squad for swimmers at every level.</span>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="diff-text">
+          <strong>Friendly, inclusive, and family-focused atmosphere</strong>
+          <span>High membership retention across all age groups speaks to the welcoming and supportive community we have built.</span>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="diff-text">
+          <strong>Opportunities to compete locally, regionally, and nationally</strong>
+          <span>We enter galas at every level so our swimmers can experience competition at the right stage of their development.</span>
+        </div>
+      </div>
+
+      <div class="diff-item">
+        <div class="diff-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="diff-text">
+          <strong>Focus on fitness, discipline, teamwork, and personal development</strong>
+          <span>Swimming at Torquay Leander builds more than speed — it builds character, confidence, and life skills.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="inner">
+    <div class="form-layout">
+      <div class="form-intro">
+        <p class="label">Enquiry Form</p>
+        <p class="form-desc">Fill in the form and one of our coaches will be in touch to discuss the best squad for your swimmer and arrange a free trial session.</p>
+        <div class="form-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>Minimum entry level is Stage 5. If you are unsure of your swimmer's level, please mention this in the form and we will be happy to assess them.</span>
+        </div>
+      </div>
+
+      <form class="interest-form" action="#" method="post">
+        <div class="field-group">
+          <label for="swimmer-name">Name of Swimmer</label>
+          <input type="text" id="swimmer-name" name="swimmer_name" placeholder="Full name" required />
+        </div>
+        <div class="field-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="date_of_birth" required />
+        </div>
+        <div class="field-group">
+          <label for="swim-level">Swim Level</label>
+          <input type="text" id="swim-level" name="swim_level" placeholder="e.g. Stage 5, Stage 6, Club standard" required />
+        </div>
+        <div class="field-group">
+          <label for="guardian-name">Name of Parent / Guardian</label>
+          <input type="text" id="guardian-name" name="guardian_name" placeholder="Full name" required />
+        </div>
+        <div class="field-group">
+          <label for="phone">Contact Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000" required />
+        </div>
+        <div class="field-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <button type="submit" class="form-submit">Send My Interest</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 600px; line-height: 1.7; }
+
+  .inner { max-width: 1200px; margin: 0 auto; }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+
+  .difference-section { background: #fff; }
+  .difference-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 36px; }
+  .diff-item { display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px; border: 1.5px solid var(--border); border-radius: 12px; transition: border-color 0.2s; }
+  .diff-item:hover { border-color: var(--red); }
+  .diff-icon { flex-shrink: 0; width: 36px; height: 36px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; margin-top: 2px; }
+  .diff-text strong { display: block; font-size: 0.88rem; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+  .diff-text span { font-size: 0.81rem; color: var(--muted); line-height: 1.6; }
+
+  .form-section { background: var(--red-light); }
+  .form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .form-desc { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
+  .form-note {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; font-size: 0.83rem; color: var(--muted); line-height: 1.6;
+  }
+  .form-note svg { flex-shrink: 0; color: var(--red); margin-top: 2px; }
+
+  .interest-form { background: var(--black); border-radius: 18px; padding: 36px; display: flex; flex-direction: column; gap: 0; }
+  .field-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .field-group label { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.65); letter-spacing: 0.5px; }
+  .field-group input {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+    color: #fff; padding: 12px 14px; border-radius: 8px;
+    font-size: 0.9rem; font-family: inherit;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .field-group input:focus { outline: none; border-color: var(--red); background: rgba(255,255,255,0.11); }
+  .field-group input::placeholder { color: rgba(255,255,255,0.3); }
+  .field-group input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1) opacity(0.5); }
+
+  .form-submit {
+    width: 100%; background: var(--red); color: #fff;
+    border: none; padding: 14px 20px; border-radius: 10px;
+    font-weight: 700; font-size: 0.95rem; cursor: pointer;
+    margin-top: 8px; font-family: inherit;
+    box-shadow: 0 4px 20px rgba(220,38,38,0.35);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .form-submit:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  @media (max-width: 900px) {
+    .difference-grid { grid-template-columns: 1fr; }
+    .form-layout { grid-template-columns: 1fr; gap: 36px; }
+  }
+</style>

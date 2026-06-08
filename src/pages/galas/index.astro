@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Galas & Competitions — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <span>Galas &amp; Competitions</span>
+    </div>
+    <h1>Galas &amp; Competitions</h1>
+    <p>Torquay Leander competes across Devon and beyond — from local team galas through to regional championships.</p>
+  </div>
+</section>
+
+<section class="sub-nav">
+  <div class="inner">
+    <div class="sub-cards">
+      <a class="sub-card active" href="#upcoming">
+        <span class="sub-icon">📅</span>
+        <strong>Upcoming Meets</strong>
+        <span>Latest competition schedule</span>
+      </a>
+      <a class="sub-card" href={`${base}/galas/club-championships/`}>
+        <span class="sub-icon">🏅</span>
+        <strong>Club Championships</strong>
+        <span>Internal club championship meet</span>
+      </a>
+      <a class="sub-card" href={`${base}/galas/ribbon-gala/`}>
+        <span class="sub-icon">🎀</span>
+        <strong>Ribbon Gala</strong>
+        <span>First competition experience</span>
+      </a>
+      <a class="sub-card" href={`${base}/galas/competition-guide/`}>
+        <span class="sub-icon">📖</span>
+        <strong>Competition Guide</strong>
+        <span>What to expect at your first meet</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="trophy-banner">
+  <div class="inner">
+    <div class="trophy-row">
+      <span class="trophy-icon">🏆</span>
+      <p>Torquay Leander are two-time Devon Mini League champions — 2024 and 2025.</p>
+    </div>
+  </div>
+</section>
+
+<section class="upcoming" id="upcoming">
+  <div class="inner">
+    <p class="label">Upcoming Meets</p>
+    <div class="upcoming-box">
+      <p>Check our Facebook page for the latest competition schedule and upcoming meet details.</p>
+      <a
+        class="fb-link"
+        href="https://www.facebook.com/TorquayLeanderSwimmingClub"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Torquay Leander on Facebook
+      </a>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 580px; line-height: 1.7; }
+
+  .sub-nav { background: #fff; padding: 48px 5vw; }
+  .inner { max-width: 1200px; margin: 0 auto; }
+  .sub-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .sub-card {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+    border: 1.5px solid var(--border); border-radius: 14px; padding: 22px 20px;
+    text-decoration: none; color: inherit; transition: all 0.2s;
+  }
+  .sub-card:hover { border-color: var(--red); box-shadow: 0 8px 28px rgba(220,38,38,0.1); transform: translateY(-3px); }
+  .sub-card.active { border-color: var(--red); background: var(--red-light); }
+  .sub-icon { font-size: 1.6rem; margin-bottom: 4px; }
+  .sub-card strong { font-size: 0.95rem; font-weight: 800; color: var(--text); }
+  .sub-card span { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+  .trophy-banner { background: linear-gradient(135deg, var(--red-dark), var(--red)); padding: 28px 5vw; }
+  .trophy-row { display: flex; align-items: center; gap: 18px; }
+  .trophy-icon { font-size: 2rem; flex-shrink: 0; }
+  .trophy-banner p { color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0; }
+
+  .upcoming { background: #f8fafc; }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .upcoming h2 { margin-bottom: 28px; }
+  .upcoming-box {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 14px;
+    padding: 32px; max-width: 600px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .upcoming-box p { color: var(--muted); font-size: 1rem; line-height: 1.7; margin: 0; }
+  .fb-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #1877f2; color: #fff; text-decoration: none;
+    padding: 11px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
+    transition: background 0.2s; align-self: flex-start;
+  }
+  .fb-link:hover { background: #1558b0; }
+
+  @media (max-width: 900px) {
+    .sub-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .sub-cards { grid-template-columns: 1fr; }
+  }
+</style>

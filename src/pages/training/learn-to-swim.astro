@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import UnderConstruction from '../../components/UnderConstruction.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Learn to Swim — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/training/`}>Training</a>
+      <span>›</span>
+      <span>Learn to Swim</span>
+    </div>
+    <h1>Learn to Swim</h1>
+    <p>Our Learn to Swim programme provides a safe and fun introduction to swimming for beginners from Stage 5 and above, building water confidence and core stroke technique.</p>
+  </div>
+</section>
+
+<UnderConstruction title="Learn to Swim" message="Details about our Learn to Swim programme are coming soon. Contact us at torquayleander@hotmail.com to find out more." />
+
+</BaseLayout>
+
+<style>
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+</style>

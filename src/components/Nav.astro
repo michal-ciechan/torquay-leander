@@ -13,12 +13,10 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
     <div class="nav-sponsors">
       <span class="nav-sponsors-label">Sponsors</span>
       <a class="nav-sponsor-item" href="https://www.sparkworld.co.uk" target="_blank" rel="noopener">
-        <span>Sparkworld</span>
         <img src={`${base}/sponsors/sparkworld-nav.svg`} alt="Sparkworld" class="nav-sponsor-logo" />
       </a>
       <span class="nav-sponsors-divider" aria-hidden="true">·</span>
       <a class="nav-sponsor-item" href="https://www.safeheat.co.uk" target="_blank" rel="noopener">
-        <span>Safeheat</span>
         <img src={`${base}/sponsors/safeheat-nav.svg`} alt="Safeheat" class="nav-sponsor-logo" />
       </a>
     </div>
@@ -44,7 +42,7 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
           <li><a href={`${base}/training/learn-to-swim/`}>Learn to Swim</a></li>
         </ul>
       </li>
-      <li><a href={`${base}/safeguarding/`}>Safeguarding</a></li>
+      <li><a href={`${base}/safeguarding/`}>Safeguarding &amp; Welfare</a></li>
       <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
         <a href={`${base}/galas/`}>Galas &amp; Competitions</a>
         <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
@@ -54,7 +52,7 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
           <li><a href={`${base}/galas/competition-guide/`}>Competition Guide</a></li>
         </ul>
       </li>
-      <li><a href={`${base}/merchandise/`}>Club Shop</a></li>
+      <li><a href={`${base}/merchandise/`}>Club Merchandise</a></li>
       <li><a href={`${base}/login/`} class="nav-login">Members Login</a></li>
     </ul>
     <button class="nav-cta" onclick={`window.location='${base}/about/join/'`}>Free Trial</button>
@@ -98,7 +96,7 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
       <a href={`${base}/galas/ribbon-gala/`}>Ribbon Gala</a>
       <a href={`${base}/galas/competition-guide/`}>Competition Guide</a>
     </div>
-    <a href={`${base}/merchandise/`}>Club Shop</a>
+    <a href={`${base}/merchandise/`}>Club Merchandise</a>
     <a href={`${base}/login/`}>Members Login</a>
   </div>
 </div>

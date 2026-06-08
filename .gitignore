@@ -10,3 +10,5 @@ screenshot-official.mjs
 # Astro
 dist/
 .astro/
+
+.memsearch/

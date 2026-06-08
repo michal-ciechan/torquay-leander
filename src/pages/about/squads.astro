@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Our Squads — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/about/`}>About Us</a>
+      <span>›</span>
+      <span>Our Squads</span>
+    </div>
+    <h1>Our Squads</h1>
+    <p>Putting our Swimmers First! A clear and supportive progression pathway for swimmers at every stage of their development.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="inner">
+    <p class="label">Putting our Swimmers First!</p>
+    <p class="lead">At Torquay Leander Swimming Club, we provide a clear and supportive progression pathway for swimmers at every stage of their development. We recognise that every swimmer progresses at their own pace, and our squad structure is designed around ability and development — not simply the number of training hours completed.</p>
+  </div>
+</section>
+
+<section class="squads-section">
+  <div class="inner">
+    <div class="squads-grid">
+
+      <div class="squad-card">
+        <div class="squad-header dev">
+          <div class="squad-level">Squad 1</div>
+          <h3>Development Squad</h3>
+        </div>
+        <div class="squad-body">
+          <p>Ideal for swimmers who are new to club swimming from Stage 5 and above. This squad focuses on developing core swimming techniques, building stamina, and growing confidence within a competitive swimming environment.</p>
+          <ul class="squad-highlights">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Stage 5 and above entry point
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Core technique development
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Stamina and confidence building
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Introduction to competitive environment
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-header junior">
+          <div class="squad-level">Squad 2</div>
+          <h3>Junior Squad</h3>
+        </div>
+        <div class="squad-body">
+          <p>Designed for swimmers beginning their competitive journey, including those preparing for events such as County Championships. Training sessions are structured around improving race skills, endurance, technique, and overall performance in the pool.</p>
+          <ul class="squad-highlights">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Competitive race skill development
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Endurance and technique focus
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              County Championships preparation
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Structured performance sessions
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-header senior">
+          <div class="squad-level">Squad 3</div>
+          <h3>Senior Squad</h3>
+        </div>
+        <div class="squad-body">
+          <p>Our highest-level training squad for swimmers competing at County, Regional, and National level competitions. Training plans are specifically tailored around upcoming gala events and individual swimmer development, providing focused preparation and performance-driven coaching.</p>
+          <ul class="squad-highlights">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              County, Regional and National level
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Tailored individual training plans
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Gala-focused preparation
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Performance-driven coaching
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="page-cta">
+  <h2>Ready to Join a Squad?</h2>
+  <p>Get in touch to find out which squad is the right fit for you and book a free trial session with our coaching team.</p>
+  <a class="btn-white" href={`${base}/about/join/`}>Register Your Interest</a>
+</section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 580px; line-height: 1.7; }
+
+  .inner { max-width: 1200px; margin: 0 auto; }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .lead { color: var(--muted); font-size: 1rem; line-height: 1.85; max-width: 800px; }
+
+  .intro-section { background: #fff; }
+
+  .squads-section { background: #f8fafc; }
+  .squads-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+
+  .squad-card { background: #fff; border-radius: 18px; overflow: hidden; border: 1.5px solid var(--border); transition: all 0.25s; }
+  .squad-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.1); }
+
+  .squad-header { padding: 28px 28px 24px; }
+  .squad-header.dev { background: linear-gradient(135deg, #0f766e, #0d9488); }
+  .squad-header.junior { background: linear-gradient(135deg, #4338ca, #6366f1); }
+  .squad-header.senior { background: linear-gradient(135deg, var(--red-dark), var(--red)); }
+  .squad-level { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 8px; }
+  .squad-header h3 { font-size: 1.35rem; font-weight: 900; color: #fff; letter-spacing: -0.5px; margin: 0; }
+
+  .squad-body { padding: 24px 28px; }
+  .squad-body p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 20px; }
+  .squad-highlights { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .squad-highlights li { display: flex; align-items: center; gap: 10px; font-size: 0.83rem; font-weight: 600; color: var(--text); }
+  .squad-highlights svg { flex-shrink: 0; color: var(--red); }
+
+  .page-cta { background: linear-gradient(135deg, var(--red-dark), var(--red)); text-align: center; padding: 72px 5vw; }
+  .page-cta h2 { color: #fff; margin-bottom: 12px; }
+  .page-cta p { color: rgba(255,255,255,0.9); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+  .btn-white { background: #000; color: #fff; padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; display: inline-block; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); background: #222; }
+
+  @media (max-width: 900px) {
+    .squads-grid { grid-template-columns: 1fr; }
+  }
+</style>
