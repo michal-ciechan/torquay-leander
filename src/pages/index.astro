@@ -1,5 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const meets = [
+  { when: 'Jan – Feb', name: 'Devon County Championships', note: 'For qualifying swimmers — qualifying window runs March to December.' },
+  { when: 'May', name: 'South West Regional Championships', note: 'Held over three weekends across two age groups.' },
+  { when: 'Season', name: 'Local Open Meets', note: 'Level 3 meets at other venues — a route to county and regional qualification.' },
+  { when: 'Nov', name: 'Club Championships', note: 'Our in-house licensed meet — open to all club members.' },
+  { when: 'Year-round', name: 'Ribbon Galas', note: 'Fun in-house galas — a first taste of competition.' },
+];
 ---
 <BaseLayout title="Torquay Leander Swimming Club">
 
@@ -23,61 +32,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </svg>
   </section>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat">
-      <span class="stat-icon"><i data-lucide="users"></i></span>
-      <span class="stat-num">200+</span>
-      <span class="stat-label">Active Swimmers</span>
-    </div>
-    <div class="stat">
-      <span class="stat-icon"><i data-lucide="calendar-days"></i></span>
-      <span class="stat-num">30+</span>
-      <span class="stat-label">Years of Excellence</span>
-    </div>
-    <div class="stat">
-      <span class="stat-icon"><i data-lucide="calendar-check"></i></span>
-      <span class="stat-num">5</span>
-      <span class="stat-label">Training Sessions / Week</span>
-    </div>
-    <div class="stat">
-      <span class="stat-icon"><i data-lucide="gift"></i></span>
-      <span class="stat-num">Free</span>
-      <span class="stat-label">Trial Session</span>
-    </div>
-  </div>
-
-  <!-- SPONSORS -->
-  <section id="sponsors" style="background:#fff; padding:48px 5vw; border-bottom:1px solid #e5e7eb;">
-    <div style="max-width:1200px; margin:0 auto; text-align:center;">
-      <div style="display:flex; justify-content:center; align-items:center; gap:48px; flex-wrap:wrap;">
-        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/08/Sparkworld-Logo.png" alt="Sparkworld" style="height:63px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
-        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/08/Safeheat-Homecover-Logo-MAIN-HIGH-RES.jpg" alt="Safeheat" style="height:63px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
-        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/09/abbey-school-logo-300x84.png" alt="Abbey School" style="height:63px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
-        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/09/Velocity-Plumbing-logo-300x134.png" alt="Velocity Plumbing" style="height:63px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
-        <img src="https://torquayleander.co.uk/wp-content/uploads/2025/09/Stockman-Loram-300x123.jpg" alt="Stockman Loram" style="height:63px; object-fit:contain; filter:grayscale(1); opacity:0.55; transition:all 0.2s;" onmouseover="this.style.filter='grayscale(0)';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.55'" />
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-item"><span class="t-icon"><i data-lucide="shield-check"></i></span><span>SwimMark Registered</span></div>
-    <div class="trust-item"><span class="t-icon"><i data-lucide="award"></i></span><span>Swim England Affiliated</span></div>
-    <div class="trust-item"><span class="t-icon"><i data-lucide="heart"></i></span><span>Non-Profit Club</span></div>
-    <div class="trust-item"><span class="t-icon"><i data-lucide="users"></i></span><span>Family Friendly</span></div>
-    <div class="trust-item"><span class="t-icon"><i data-lucide="ticket"></i></span><span>Free First Session</span></div>
-  </div>
-
-  <!-- WELCOME -->
+  <!-- WELCOME + UPCOMING MEETS SIDEBAR -->
   <section class="welcome" id="about">
-    <div class="welcome-inner">
-      <p class="section-label">Welcome to Torquay Leander Swimming Club</p>
-      <div class="welcome-body">
-        <p>Founded with a passion for swimming excellence and community spirit, Torquay Leander Swimming Club is one of Devon's leading competitive swimming clubs. Based in the beautiful coastal town of Torquay, we provide a supportive and inspiring environment for swimmers to reach their potential.</p>
-        <p>We coach swimming from swimmers stage 5 upwards, continuing to develop confidence, refine technique, stamina and performance to not only county but also regional and national level.</p>
-        <p>Our experienced coaching team is dedicated to helping every swimmer reach their full potential through structured training, skill development, and a positive team culture.</p>
+    <div class="welcome-meets-grid">
+      <div>
+        <p class="section-label">Welcome to Torquay Leander Swimming Club</p>
+        <div class="welcome-body">
+          <p>Founded with a passion for swimming excellence and community spirit, Torquay Leander Swimming Club is one of Devon's leading competitive swimming clubs. Based in the beautiful coastal town of Torquay, we provide a supportive and inspiring environment for swimmers to reach their potential.</p>
+          <p>We coach swimming from swimmers stage 5 upwards, continuing to develop confidence, refine technique, stamina and performance to not only county but also regional and national level.</p>
+          <p>Our experienced coaching team is dedicated to helping every swimmer reach their full potential through structured training, skill development, and a positive team culture.</p>
+        </div>
       </div>
+      <aside class="meets-aside">
+        <div class="meets-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <h3>Upcoming Meets</h3>
+        </div>
+        <ul class="meets-list">
+          {meets.map((m) => (
+            <li>
+              <span class="meet-when">{m.when}</span>
+              <div class="meet-body">
+                <strong>{m.name}</strong>
+                <span>{m.note}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <a class="meets-fb" href="https://www.facebook.com/TorquayLeanderSwimmingClub/events" target="_blank" rel="noopener">
+          Confirmed dates on our Facebook events →
+        </a>
+        <a class="meets-more" href={`${base}/galas/`}>Galas &amp; Competitions</a>
+      </aside>
     </div>
   </section>
 
@@ -98,7 +84,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- ABOUT / MORE THAN JUST A SWIMMING CLUB -->
+  <!-- MORE THAN JUST A SWIMMING CLUB -->
   <section class="about" id="community">
     <div class="about-inner">
       <div>
@@ -150,79 +136,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="emoji"><i data-lucide="waves"></i></div>
           <strong>Free Trial</strong>
           <span>No commitment</span>
-        </div>
-        <div class="col-badge2">
-          <strong>200+</strong>
-          <span>Happy Swimmers</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="gallery" id="gallery">
-    <div class="gallery-inner">
-      <div class="gallery-header">
-        <p class="section-label">Gallery</p>
-        <p class="section-intro">Moments from training, competition, and club life.</p>
-      </div>
-      <div class="photo-grid">
-        <div class="photo-item wide tall"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="" /></div>
-        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_6586-400x284.jpg" alt="" /></div>
-        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7998-400x284.jpg" alt="" /></div>
-        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8181-400x284.jpg" alt="" /></div>
-        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7634-400x284.jpg" alt="" /></div>
-        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/06/DSC_7480-400x284.jpg" alt="" /></div>
-        <div class="photo-item"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8904-400x284.jpg" alt="" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FACEBOOK FEED -->
-  <section class="fb-section" id="news">
-    <div class="fb-inner">
-      <div class="fb-header">
-        <div>
-          <p class="section-label">Latest from Facebook</p>
-        </div>
-        <a class="fb-follow" href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          Follow on Facebook
-        </a>
-      </div>
-      <div class="fb-posts">
-        <div class="fb-post">
-          <div class="fb-post-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8030-400x284.jpg" alt="" /></div>
-          <div class="fb-post-body">
-            <div class="fb-post-header">
-              <div class="fb-avatar"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="" style="filter:brightness(0) invert(1); background:#0a0a0a; padding:4px;" /></div>
-              <div class="fb-meta"><strong>Torquay Leander Swimming Club</strong><span>1 week ago</span></div>
-            </div>
-            <p>3rd and final round! Let's Go Torquay! 👏👏👏 What a performance from all our swimmers today — so proud of every one of them.</p>
-            <a class="fb-post-link" href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank">View on Facebook →</a>
-          </div>
-        </div>
-        <div class="fb-post">
-          <div class="fb-post-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7899-400x284.jpg" alt="" /></div>
-          <div class="fb-post-body">
-            <div class="fb-post-header">
-              <div class="fb-avatar"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="" style="filter:brightness(0) invert(1); background:#0a0a0a; padding:4px;" /></div>
-              <div class="fb-meta"><strong>Torquay Leander Swimming Club</strong><span>2 weeks ago</span></div>
-            </div>
-            <p>Brilliant results at the Devon County Championships this weekend. Congratulations to all our swimmers who competed and gave their absolute best! 🏆</p>
-            <a class="fb-post-link" href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank">View on Facebook →</a>
-          </div>
-        </div>
-        <div class="fb-post">
-          <div class="fb-post-img"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_8181-400x284.jpg" alt="" /></div>
-          <div class="fb-post-body">
-            <div class="fb-post-header">
-              <div class="fb-avatar"><img src="https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png" alt="" style="filter:brightness(0) invert(1); background:#0a0a0a; padding:4px;" /></div>
-              <div class="fb-meta"><strong>Torquay Leander Swimming Club</strong><span>3 weeks ago</span></div>
-            </div>
-            <p>Welcome to all our new members joining us this term! 🌊 If you're interested in a free trial, get in touch — we'd love to have you join the Leander family.</p>
-            <a class="fb-post-link" href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank">View on Facebook →</a>
-          </div>
         </div>
       </div>
     </div>
@@ -279,3 +192,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </script>
   <script is:inline async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFulZw8ODr_AwZv7qCFLTqvPEryJrCbuw&loading=async&callback=initJoinMap"></script>
 </BaseLayout>
+
+<style>
+  .welcome-meets-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: start;
+  }
+
+  .meets-aside {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 18px;
+    padding: 26px 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  }
+  .meets-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; color: var(--red); }
+  .meets-head h3 { font-size: 1.05rem; font-weight: 900; color: var(--text); letter-spacing: -0.3px; margin: 0; }
+  .meets-list { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; }
+  .meets-list li {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 13px 0; border-bottom: 1px solid var(--border);
+  }
+  .meets-list li:last-child { border-bottom: none; }
+  .meet-when {
+    flex-shrink: 0; min-width: 76px; text-align: center;
+    background: var(--red-light); color: var(--red-dark);
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;
+    border-radius: 8px; padding: 6px 8px; margin-top: 2px;
+  }
+  .meet-body strong { display: block; font-size: 0.88rem; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+  .meet-body span { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+  .meets-fb {
+    display: block; color: var(--red); font-weight: 700; font-size: 0.85rem;
+    text-decoration: none; margin-bottom: 14px;
+  }
+  .meets-fb:hover { text-decoration: underline; }
+  .meets-more {
+    display: block; text-align: center; background: var(--black); color: #fff;
+    text-decoration: none; font-weight: 700; font-size: 0.85rem;
+    padding: 11px 16px; border-radius: 10px; transition: background 0.2s;
+  }
+  .meets-more:hover { background: #222; }
+
+  @media (max-width: 900px) {
+    .welcome-meets-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>

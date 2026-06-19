@@ -26,6 +26,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="swimline-grid">
       <div class="swimline-col">
         <h3>Who Can Use Swimline</h3>
+        <p class="swimline-text">Swimline is available to both adults and children who may be worried about:</p>
         <ul class="concern-list">
           <li>
             <span class="concern-dot"></span>
@@ -49,27 +50,34 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </li>
           <li>
             <span class="concern-dot"></span>
-            Any safeguarding concern
+            Any safeguarding concern involving a child or young person
           </li>
         </ul>
+        <p class="swimline-text" style="margin-top: 18px;">Even if you are unsure whether your concern is serious, you are encouraged to seek advice.</p>
       </div>
 
       <div class="swimline-col">
         <h3>How Swimline Works</h3>
-        <p class="swimline-text">Leave your name, contact details, and brief information about your concern. A Swim England Safeguarding Team member or trained volunteer will return your call.</p>
+        <p class="swimline-text">When you contact Swimline, you will reach a confidential answerphone service. You can leave:</p>
+        <ul class="concern-list" style="margin-bottom: 18px;">
+          <li><span class="concern-dot"></span>Your name</li>
+          <li><span class="concern-dot"></span>Contact details</li>
+          <li><span class="concern-dot"></span>Brief information about your concern (optional)</li>
+        </ul>
+        <p class="swimline-text">A member of the Swim England Safeguarding Team or a trained Swimline volunteer will return your call to discuss the concern and help decide on the most appropriate course of action.</p>
         <div class="response-cards">
           <div class="response-card">
-            <strong>Standard response</strong>
-            <p>Calls returned next working day. Calls received after 3pm on Friday or over the weekend are returned on Monday.</p>
+            <strong>Response times</strong>
+            <p>Messages are normally returned on the next working day. Messages left after 3pm on Fridays or over weekends will be returned on Monday.</p>
           </div>
           <div class="response-card response-card--urgent">
             <strong>Urgent concerns</strong>
-            <p>Urgent calls are transferred directly to the NSPCC for immediate support.</p>
+            <p>If urgent support is needed, callers can choose to be transferred directly to the NSPCC for immediate advice from a trained counsellor.</p>
           </div>
         </div>
         <div class="swimline-note">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span>Calls are free. Calls from landlines will not appear on itemised bills. Mobile providers may record calls.</span>
+          <span>Calls to Swimline are free of charge. Calls made from landlines will not appear on itemised bills, although mobile phone providers may record outgoing calls on billing statements. Where safeguarding concerns are identified, Swim England will always take appropriate action to help protect children and young people.</span>
         </div>
       </div>
     </div>
@@ -162,6 +170,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<section class="resources-section">
+  <div class="inner">
+    <p class="label">Useful Resources</p>
+    <a class="resource-card" href="https://www.swimming.org/swimengland/wavepower-child-safeguarding-for-clubs/" target="_blank" rel="noopener">
+      <div class="resource-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div class="resource-body">
+        <strong>Wavepower</strong>
+        <span>Swim England Safeguarding Policy</span>
+      </div>
+      <span class="resource-go">View →</span>
+    </a>
   </div>
 </section>
 
@@ -307,6 +331,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .helplines-table td strong { font-weight: 700; color: var(--text); }
   .helplines-table td a { color: var(--red); text-decoration: none; font-weight: 600; }
   .helplines-table td a:hover { text-decoration: underline; }
+
+  .resources-section { background: var(--red-light); padding: 56px 5vw; }
+  .resource-card {
+    display: flex; align-items: center; gap: 18px; max-width: 520px;
+    background: #fff; border: 1.5px solid var(--border); border-radius: 14px;
+    padding: 22px 24px; margin-top: 24px; text-decoration: none; color: inherit;
+    transition: all 0.2s;
+  }
+  .resource-card:hover { border-color: var(--red); box-shadow: 0 10px 30px rgba(220,38,38,0.1); transform: translateY(-2px); }
+  .resource-icon {
+    flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px;
+    background: var(--red-light); color: var(--red);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .resource-body { flex: 1; }
+  .resource-body strong { display: block; font-size: 1rem; font-weight: 800; color: var(--text); }
+  .resource-body span { font-size: 0.85rem; color: var(--muted); }
+  .resource-go { font-size: 0.85rem; font-weight: 700; color: var(--red); white-space: nowrap; }
 
   .local-section { background: #f8fafc; padding: 80px 5vw; }
   .local-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }

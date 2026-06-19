@@ -34,7 +34,6 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
           <li><a href={`${base}/training/learn-to-swim/`}>Learn to Swim</a></li>
           <li><a href={`${base}/galas/`}>Galas &amp; Competitions</a></li>
           <li><a href={`${base}/merchandise/`}>Club Merchandise</a></li>
-          <li><a href={`${base}/gallery/`}>Gallery</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -49,9 +48,39 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
         </ul>
       </div>
     </div>
+    <div class="footer-sponsors">
+      <span class="footer-sponsors-label">Our Sponsors</span>
+      <div class="footer-sponsors-logos">
+        <a href="https://www.sparkworld.co.uk" target="_blank" rel="noopener">
+          <img src={`${base}/sponsors/sparkworld-nav.svg`} alt="Sparkworld" />
+        </a>
+        <a href="https://www.safeheat.co.uk" target="_blank" rel="noopener">
+          <img src={`${base}/sponsors/safeheat-nav.svg`} alt="Safeheat" />
+        </a>
+      </div>
+    </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Torquay Leander Swimming Club. All rights reserved.</span>
       <span>Non-profit &middot; SwimMark Registered &middot; Swim England Affiliated</span>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-sponsors {
+    display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap;
+    padding: 28px 0; margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-sponsors-label {
+    color: rgba(255,255,255,0.45); font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
+  }
+  .footer-sponsors-logos { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
+  .footer-sponsors-logos a { display: block; }
+  .footer-sponsors-logos img {
+    height: 34px; width: auto; object-fit: contain; display: block;
+    opacity: 0.75; filter: grayscale(1); transition: opacity 0.2s, filter 0.2s;
+  }
+  .footer-sponsors-logos a:hover img { opacity: 1; filter: grayscale(0); }
+</style>

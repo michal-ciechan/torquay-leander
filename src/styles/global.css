@@ -37,7 +37,7 @@ nav {
 .nav-sponsors-divider { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
 .nav-sponsors-mob { display: none; flex-direction: column; align-items: center; gap: 2px; }
 .nav-sponsors-mob-logos { display: flex; align-items: center; gap: 4px; }
-@media (max-width: 1575px) {
+@media (max-width: 1700px) {
   .nav-sponsors, .nav-sponsor-sep { display: none; }
   .nav-sponsors-mob { display: flex; }
   .nav-sponsors-mob .nav-sponsors-label { margin-right: 0; }
@@ -421,7 +421,7 @@ footer {
 }
 .mobile-nav a:hover { color: #f87171; }
 
-@media (max-width: 1575px) {
+@media (max-width: 1700px) {
   .nav-links, .nav-menu, .nav-list { display: none !important; }
   .nav-cta, .nav-pill { display: none !important; }
   .nav-login { display: none !important; }

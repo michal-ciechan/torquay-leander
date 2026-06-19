@@ -34,6 +34,14 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
         </ul>
       </li>
       <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
+        <a href={`${base}/membership/`}>Membership</a>
+        <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
+          <li><a href={`${base}/membership/costs/`}>Membership Costs</a></li>
+          <li><a href={`${base}/membership/benefits/`}>Membership Benefits</a></li>
+          <li><a href={`${base}/about/join/`}>Join Us</a></li>
+        </ul>
+      </li>
+      <li class="has-drop" x-data="{ open: false, t: null }" @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
         <a href={`${base}/training/`}>Training</a>
         <ul class="drop" x-show="open" x-cloak @mouseenter="clearTimeout(t); open = true" @mouseleave="t = setTimeout(() => open = false, 150)">
           <li><a href={`${base}/training/#timetable`}>Training Timetable</a></li>
@@ -80,6 +88,12 @@ const logo = 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png';
       <a href={`${base}/about/facilities/`}>Our Facilities</a>
       <a href={`${base}/about/join/`}>Join Us</a>
       <a href={`${base}/about/codes-of-conduct/`}>Codes of Conduct</a>
+    </div>
+    <div class="mob-group">
+      <span class="mob-label">Membership</span>
+      <a href={`${base}/membership/costs/`}>Membership Costs</a>
+      <a href={`${base}/membership/benefits/`}>Membership Benefits</a>
+      <a href={`${base}/about/join/`}>Join Us</a>
     </div>
     <div class="mob-group">
       <span class="mob-label">Training</span>

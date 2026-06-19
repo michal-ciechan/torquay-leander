@@ -105,13 +105,15 @@ We are proud to be the only swimming club in Torbay with permanent diving blocks
 
 For the convenience of our members and families, the venue also benefits from free on-site parking, subject to vehicle registration being entered into the parking system tablet.
 
-As a non-profit swimming club, we are committed to continually reinvesting back into the club, our swimmers, and our training environment. Our equipment includes:
+As a non-profit swimming club, we are committed to continually reinvesting back into the club, our swimmers, and our training environment. This ongoing investment allows us to provide access to high-quality equipment and facilities that support swimmer development and performance. Our equipment includes:
 
 - FINA-approved backstroke ledges
 - Colorado Timing System
 - Competition-standard anti-wave lane ropes
 - Underwater filming equipment
 - Video analysis technology for swimmer performance review
+
+This commitment ensures our swimmers have access to one of the best training environments in the local area.
 
 ### Codes of Conduct
 *(Copy information from existing website and resources)*
@@ -160,7 +162,7 @@ Creating a safe, supportive, and inclusive environment for all children and youn
 
 ### Swimline – Confidential Support Service
 
-Swim England works in partnership with the NSPCC to provide Swimline, a confidential freephone helpline for anyone involved in aquatic sports.
+Swim England works in partnership with the NSPCC (National Society for the Prevention of Cruelty to Children) to provide Swimline, a confidential freephone helpline for anyone involved in aquatic sports.
 
 Swimline is available to both adults and children who may be worried about:
 - Bullying
