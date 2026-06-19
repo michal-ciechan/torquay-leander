@@ -4,7 +4,7 @@ Astro static site for the Torquay Leander swimming club, deployed to GitHub Page
 
 ## Commands
 
-- `npm run dev` — dev server on http://localhost:12700 with HMR.
+- `npm run dev` — dev server on http://localhost:12700 with HMR. Also live over HTTPS at `https://torquay.desktop.codeperf.net/torquay-leander/` (Caddy proxy + links dashboard tile; see `.claude/skills/run/SKILL.md` → "Preview over HTTPS").
 - `npm run build` — static build to `dist/`.
 - `npm run preview` — serve `dist/` locally on port 12700.
 - `node contrast-check.mjs` — WCAG audit of the site's colour pairs.
