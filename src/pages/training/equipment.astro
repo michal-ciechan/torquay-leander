@@ -3,13 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const kit = [
-  { icon: '💧', name: 'Drink Bottle', optional: false, desc: 'You should never come swimming without one — water is best, or juice (never milk or fizzy drinks). Swimmers work hard and need to stay hydrated. We are always happy to refill empty bottles.' },
-  { icon: '🎒', name: 'Large Mesh Bag', optional: false, desc: 'Keeps your kit together and lets it dry out, so you avoid smelly puddles and mouldy equipment.' },
-  { icon: '🦈', name: 'Swimming Fins', optional: false, desc: 'The shorter training fins (not long diving fins). They help develop a better, stronger kick, and take effort away from the legs when we focus on arm work.' },
-  { icon: '🏊', name: 'Pull Buoy or Band', optional: false, desc: 'Held between the legs to isolate the arms. Bands are also useful for developing streamlining and butterfly.' },
-  { icon: '🛹', name: 'Kickboard', optional: false, desc: 'Used often in training. Boards with hand positions are best, as they encourage the body to stay level while building leg kick.' },
-  { icon: '🤿', name: 'Snorkel', optional: true, desc: 'A centre-line snorkel that runs along the middle of the forehead. Great for developing strokes — practise in the bath for short periods if it feels strange at first.' },
-  { icon: '🤲', name: 'Hand / Finger Paddles', optional: true, desc: 'Help develop the underwater pulling action of the hands. Finger paddles are especially good for smaller hands.' },
+  { img: 'bottle.jpg', name: 'Drink Bottle', optional: false, desc: 'You should never come swimming without one — water is best, or juice (never milk or fizzy drinks). Swimmers work hard and need to stay hydrated. We are always happy to refill empty bottles.' },
+  { img: 'mesh-bag.jpg', name: 'Large Mesh Bag', optional: false, desc: 'Keeps your kit together and lets it dry out, so you avoid smelly puddles and mouldy equipment.' },
+  { img: 'fins.jpg', name: 'Swimming Fins', optional: false, desc: 'The shorter training fins (not long diving fins). They help develop a better, stronger kick, and take effort away from the legs when we focus on arm work.' },
+  { img: 'pull-buoy.jpg', name: 'Pull Buoy or Band', optional: false, desc: 'Held between the legs to isolate the arms. Bands are also useful for developing streamlining and butterfly.' },
+  { img: 'kickboard.jpg', name: 'Kickboard', optional: false, desc: 'Used often in training. Boards with hand positions are best, as they encourage the body to stay level while building leg kick.' },
+  { img: 'snorkel.jpg', name: 'Snorkel', optional: true, desc: 'A centre-line snorkel that runs along the middle of the forehead. Great for developing strokes — practise in the bath for short periods if it feels strange at first.' },
+  { img: 'paddles.jpg', name: 'Hand / Finger Paddles', optional: true, desc: 'Help develop the underwater pulling action of the hands. Finger paddles are especially good for smaller hands.' },
 ];
 ---
 <BaseLayout title="Training Equipment — Torquay Leander">
@@ -42,7 +42,7 @@ const kit = [
       <ul>
         {kit.map((item) => (
           <li>
-            <span class="eq-icon">{item.icon}</span>
+            <span class="eq-img"><img src={`${base}/kit/${item.img}`} alt={item.name} loading="lazy" width="80" height="80" /></span>
             <div>
               <strong>{item.name}{item.optional && <span class="opt">Optional</span>}</strong>
               <p>{item.desc}</p>
@@ -96,7 +96,8 @@ const kit = [
   .equip-list ul { list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 720px; }
   .equip-list li { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; border: 1.5px solid var(--border); border-radius: 12px; transition: border-color 0.2s; }
   .equip-list li:hover { border-color: var(--red); }
-  .eq-icon { flex-shrink: 0; width: 44px; height: 44px; background: var(--red-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .eq-img { flex-shrink: 0; width: 80px; height: 80px; background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 6px; }
+  .eq-img img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
   .equip-list li strong { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; margin-bottom: 4px; }
   .opt { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); background: #f1f5f9; border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px; }
   .equip-list li p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; margin: 0; }

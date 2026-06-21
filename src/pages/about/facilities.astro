@@ -67,7 +67,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <section class="equipment-section">
   <div class="inner">
     <p class="label">Competition-Grade Kit</p>
-    <p class="lead">As a non-profit swimming club, we are committed to continually reinvesting back into the club, our swimmers, and our training environment.</p>
+    <p class="lead">As a non-profit swimming club, we are committed to continually reinvesting back into the club, our swimmers, and our training environment. This ongoing investment allows us to provide access to high-quality equipment and facilities that support swimmer development and performance.</p>
     <ul class="equipment-list">
       <li>
         <div class="eq-dot"></div>
@@ -87,9 +87,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </li>
       <li>
         <div class="eq-dot"></div>
-        <span>Video analysis technology</span>
+        <span>Video analysis technology for swimmer performance review</span>
       </li>
     </ul>
+    <p class="lead closing">This commitment ensures our swimmers have access to one of the best training environments in the local area.</p>
   </div>
 </section>
 
@@ -126,6 +127,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   .equipment-section { background: var(--red-light); }
   .equipment-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; max-width: 560px; }
+  .lead.closing { margin: 32px 0 0; }
   .equipment-list li { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: #fff; border: 1.5px solid var(--border); border-radius: 10px; font-size: 0.9rem; font-weight: 600; color: var(--text); transition: border-color 0.2s; }
   .equipment-list li:hover { border-color: var(--red); }
   .eq-dot { width: 10px; height: 10px; background: var(--red); border-radius: 50%; flex-shrink: 0; }

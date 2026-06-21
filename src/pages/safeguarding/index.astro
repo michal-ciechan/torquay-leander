@@ -65,20 +65,33 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <li><span class="concern-dot"></span>Brief information about your concern (optional)</li>
         </ul>
         <p class="swimline-text">A member of the Swim England Safeguarding Team or a trained Swimline volunteer will return your call to discuss the concern and help decide on the most appropriate course of action.</p>
-        <div class="response-cards">
-          <div class="response-card">
-            <strong>Response times</strong>
-            <p>Messages are normally returned on the next working day. Messages left after 3pm on Fridays or over weekends will be returned on Monday.</p>
-          </div>
-          <div class="response-card response-card--urgent">
-            <strong>Urgent concerns</strong>
-            <p>If urgent support is needed, callers can choose to be transferred directly to the NSPCC for immediate advice from a trained counsellor.</p>
-          </div>
-        </div>
-        <div class="swimline-note">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span>Calls to Swimline are free of charge. Calls made from landlines will not appear on itemised bills, although mobile phone providers may record outgoing calls on billing statements. Where safeguarding concerns are identified, Swim England will always take appropriate action to help protect children and young people.</span>
-        </div>
+      </div>
+    </div>
+
+    <div class="swimline-cards">
+      <div class="response-card">
+        <strong>Response times</strong>
+        <ul class="response-list">
+          <li><span class="concern-dot"></span>Messages are normally returned on the next working day.</li>
+          <li><span class="concern-dot"></span>Messages left after 3pm on Fridays or over weekends will be returned on Monday.</li>
+        </ul>
+      </div>
+      <div class="response-card response-card--urgent">
+        <strong>Urgent concerns</strong>
+        <p>If urgent support is needed, callers can choose to be transferred directly to the NSPCC for immediate advice from a trained counsellor.</p>
+      </div>
+    </div>
+
+    <div class="swimline-note">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div class="swimline-note-body">
+        <strong>Important Information</strong>
+        <ul class="swimline-note-list">
+          <li><span class="note-dot"></span>Calls to Swimline are free of charge</li>
+          <li><span class="note-dot"></span>Calls made from landlines will not appear on itemised bills</li>
+          <li><span class="note-dot"></span>Mobile phone providers may record outgoing calls on billing statements</li>
+        </ul>
+        <p>Where safeguarding concerns are identified, Swim England will always take appropriate action to help protect children and young people.</p>
       </div>
     </div>
   </div>
@@ -198,51 +211,51 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <div class="local-group">
         <h3>Safeguarding Adults</h3>
         <div class="local-card">
-          <span class="local-area">Devon</span>
-          <div class="local-contacts">
-            <a href="tel:03451551007">0345 155 1007</a>
-            <a href="mailto:mashsecure@devon.gov.uk">mashsecure@devon.gov.uk</a>
+          <div class="local-top">
+            <span class="local-area">Devon</span>
+            <a class="local-link" href="tel:03451551007">0345 155 1007</a>
           </div>
+          <a class="local-link local-email" href="mailto:mashsecure@devon.gov.uk">mashsecure@devon.gov.uk</a>
         </div>
         <div class="local-card">
-          <span class="local-area">Torbay</span>
-          <div class="local-contacts">
-            <a href="tel:01803219700">01803 219700</a>
-            <a href="mailto:mash@torbay.gov.uk">mash@torbay.gov.uk</a>
+          <div class="local-top">
+            <span class="local-area">Torbay</span>
+            <a class="local-link" href="tel:01803219700">01803 219700</a>
           </div>
+          <a class="local-link local-email" href="mailto:mash@torbay.gov.uk">mash@torbay.gov.uk</a>
         </div>
       </div>
 
       <div class="local-group">
         <h3>Safeguarding Children</h3>
         <div class="local-card">
-          <span class="local-area">Devon</span>
-          <div class="local-contacts">
-            <a href="tel:03451551071">0345 155 1071</a>
-            <a href="mailto:mashsecure@devon.cgsx.gov.uk">mashsecure@devon.cgsx.gov.uk</a>
+          <div class="local-top">
+            <span class="local-area">Devon</span>
+            <a class="local-link" href="tel:03451551071">0345 155 1071</a>
           </div>
+          <a class="local-link local-email" href="mailto:mashsecure@devon.cgsx.gov.uk">mashsecure@devon.cgsx.gov.uk</a>
         </div>
         <div class="local-card">
-          <span class="local-area">Torbay</span>
-          <div class="local-contacts">
-            <a href="tel:01803208100">01803 208100</a>
-            <a href="mailto:torbay.safeguardinghub@torbay.gcsx.co.uk">torbay.safeguardinghub@torbay.gcsx.co.uk</a>
+          <div class="local-top">
+            <span class="local-area">Torbay</span>
+            <a class="local-link" href="tel:01803208100">01803 208100</a>
           </div>
+          <a class="local-link local-email" href="mailto:torbay.safeguardinghub@torbay.gcsx.co.uk">torbay.safeguardinghub@torbay.gcsx.co.uk</a>
         </div>
       </div>
 
       <div class="local-group local-group--ooh">
         <h3>Out of Hours</h3>
         <div class="local-card local-card--dark">
-          <span class="local-area">Devon</span>
-          <div class="local-contacts">
-            <a href="tel:03456000388">0345 6000 388</a>
+          <div class="local-top">
+            <span class="local-area">Devon</span>
+            <a class="local-link" href="tel:03456000388">0345 6000 388</a>
           </div>
         </div>
         <div class="local-card local-card--dark">
-          <span class="local-area">Torbay</span>
-          <div class="local-contacts">
-            <a href="tel:03004564876">0300 456 4876</a>
+          <div class="local-top">
+            <span class="local-area">Torbay</span>
+            <a class="local-link" href="tel:03004564876">0300 456 4876</a>
           </div>
         </div>
       </div>
@@ -281,18 +294,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .concern-list li { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text); }
   .concern-dot { flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
   .swimline-text { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
-  .response-cards { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  .swimline-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; align-items: stretch; }
   .response-card { background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px; padding: 16px 18px; }
   .response-card strong { display: block; font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
   .response-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.6; margin: 0; }
+  .response-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .response-list li { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.6; }
+  .response-list .concern-dot { margin-top: 6px; }
   .response-card--urgent { border-color: #fecaca; background: var(--red-light); }
   .response-card--urgent strong { color: var(--red-dark); }
   .swimline-note {
-    background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px;
-    padding: 12px 16px; display: flex; gap: 10px; align-items: flex-start;
+    background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: 12px; margin-top: 16px;
+    padding: 16px 18px; display: flex; gap: 10px; align-items: flex-start;
     color: #0369a1; font-size: 0.82rem; line-height: 1.6;
   }
   .swimline-note svg { flex-shrink: 0; margin-top: 1px; color: #0369a1; }
+  .swimline-note-body { display: flex; flex-direction: column; gap: 8px; }
+  .swimline-note-body strong { font-size: 0.85rem; font-weight: 700; }
+  .swimline-note-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .swimline-note-list li { display: flex; align-items: flex-start; gap: 10px; }
+  .note-dot { flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #0369a1; margin-top: 6px; }
+  .swimline-note-body p { margin: 0; }
 
   .welfare-section { background: var(--red-light); padding: 80px 5vw; }
   .welfare-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
@@ -356,20 +378,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .local-group h3 { font-size: 0.88rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text); margin-bottom: 14px; }
   .local-card {
     background: #fff; border: 1.5px solid var(--border); border-radius: 12px;
-    padding: 16px 18px; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start;
+    padding: 16px 18px; margin-bottom: 10px; display: flex; flex-direction: column; gap: 8px;
   }
   .local-card--dark { background: var(--black); border-color: var(--black); }
+  .local-top { display: flex; align-items: center; gap: 12px; }
   .local-area {
     flex-shrink: 0; font-size: 0.7rem; font-weight: 800; letter-spacing: 1px;
     text-transform: uppercase; color: var(--red); background: var(--red-light);
-    padding: 3px 8px; border-radius: 6px; margin-top: 2px;
+    padding: 3px 8px; border-radius: 6px;
   }
   .local-card--dark .local-area { background: rgba(220,38,38,0.15); color: #f87171; }
-  .local-contacts { display: flex; flex-direction: column; gap: 5px; }
-  .local-contacts a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.2s; word-break: break-all; }
-  .local-contacts a:hover { color: var(--red); }
-  .local-card--dark .local-contacts a { color: rgba(255,255,255,0.7); }
-  .local-card--dark .local-contacts a:hover { color: #f87171; }
+  .local-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: color 0.2s; }
+  .local-link:hover { color: var(--red); }
+  .local-email { display: block; word-break: break-all; }
+  .local-card--dark .local-link { color: rgba(255,255,255,0.7); }
+  .local-card--dark .local-link:hover { color: #f87171; }
   .local-group--ooh h3 { color: var(--muted); }
 
   @media (max-width: 900px) {
@@ -379,6 +402,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   @media (max-width: 640px) {
     .local-grid { grid-template-columns: 1fr; }
+    .swimline-cards { grid-template-columns: 1fr; }
     .swimline-section, .welfare-section, .helplines-section, .local-section { padding: 48px 20px; }
   }
 </style>

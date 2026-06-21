@@ -35,7 +35,41 @@ const benefits = [
   },
 ];
 
-const retailers = ['Pro-Swimwear', 'Allens Swimwear', 'Maru', 'Sporty Swim', 'Ness Swimwear', 'Wyvern Swimwear'];
+const pdfHref = `${base}/docs/TL-Discount-Codes.pdf`;
+
+const retailers = [
+  {
+    name: 'ProSwimwear',
+    url: 'https://www.proswimwear.com/swim-clubs/swim-clubs-t/torquay-leander-swimming-club.html?c=f98e33',
+    discount: '10% off',
+    note: 'Set up or link your account via the club link — the discount applies automatically.',
+  },
+  {
+    name: 'Allens of Kingsbury',
+    url: 'https://allensswimwear.uk/hZBGw',
+    discount: '10% off',
+    code: 'TORQUAY10',
+    note: 'Enter the code at checkout.',
+  },
+  {
+    name: 'Maru Swimwear',
+    url: 'https://www.maruswim.com/TLSC62797',
+    discount: '10% off',
+    note: 'A pop-up at the link gives your unique discount code.',
+  },
+  {
+    name: 'Sporty Swim',
+    url: 'https://sportyswim.co.uk/',
+    discount: '10% off',
+    code: 'TORQUAY10',
+    note: 'Enter the code at checkout.',
+  },
+  {
+    name: 'Wyvern Swimwear',
+    url: 'https://wyvernswimwear.co.uk/',
+    note: 'Members’ code available in Club Organiser.',
+  },
+];
 ---
 <BaseLayout title="Membership Benefits — Torquay Leander">
 
@@ -79,14 +113,23 @@ const retailers = ['Pro-Swimwear', 'Allens Swimwear', 'Maru', 'Sporty Swim', 'Ne
 <section class="discounts">
   <div class="inner discounts-inner">
     <p class="label">Member Discounts</p>
-    <h2>Exclusive savings on swim gear</h2>
     <p class="discounts-text">Our members enjoy exclusive discounts at a range of popular online swim retailers, making it easier to access quality swimwear, equipment and accessories at a better price.</p>
-    <div class="retailer-chips">
-      {retailers.map((r) => <span class="chip">{r}</span>)}
+    <div class="retailer-grid">
+      {retailers.map((r) => (
+        <a class="retailer-card" href={r.url} target="_blank" rel="noopener">
+          <div class="retailer-head">
+            <span class="retailer-name">{r.name}</span>
+            {r.discount && <span class="retailer-discount">{r.discount}</span>}
+          </div>
+          {r.code && <div class="retailer-code">Code <strong>{r.code}</strong></div>}
+          <p class="retailer-note">{r.note}</p>
+          <span class="retailer-go">Visit store →</span>
+        </a>
+      ))}
     </div>
     <div class="codes-callout">
       <span class="codes-icon">🔑</span>
-      <p>Discount codes are available to members in the <strong>Club Organiser app</strong>, under <strong>Documents → TL Discount Codes</strong>.</p>
+      <p>Full details and the latest codes are in our <a href={pdfHref} target="_blank" rel="noopener">discount guide (PDF)</a>, and in the <strong>Club Organiser app</strong> under <strong>Documents → TL Discount Codes</strong>.</p>
     </div>
   </div>
 </section>
@@ -140,13 +183,33 @@ const retailers = ['Pro-Swimwear', 'Allens Swimwear', 'Maru', 'Sporty Swim', 'Ne
 
   .discounts { background: #f8fafc; padding: 72px 5vw; }
   .discounts-inner { max-width: 820px; }
-  .discounts h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
   .discounts-text { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 24px; }
-  .retailer-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
-  .chip {
-    background: #fff; border: 1.5px solid var(--border); border-radius: 999px;
-    padding: 9px 18px; font-size: 0.85rem; font-weight: 700; color: var(--text);
+  .retailer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+  .retailer-card {
+    display: flex; flex-direction: column; gap: 8px;
+    background: #fff; border: 1.5px solid var(--border); border-radius: 14px;
+    padding: 18px 20px; text-decoration: none; color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
   }
+  .retailer-card:hover { border-color: var(--red); box-shadow: 0 10px 30px rgba(220,38,38,0.1); transform: translateY(-3px); }
+  .retailer-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .retailer-name { font-size: 0.95rem; font-weight: 800; color: var(--text); }
+  .retailer-discount {
+    flex-shrink: 0; background: var(--red); color: #fff; font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 0.3px; padding: 3px 9px; border-radius: 999px;
+  }
+  .retailer-code {
+    font-size: 0.82rem; color: var(--muted);
+  }
+  .retailer-code strong {
+    font-family: ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+    color: var(--red); background: var(--red-light); border: 1px solid #fecaca;
+    border-radius: 6px; padding: 2px 8px; letter-spacing: 0.5px; margin-left: 4px;
+  }
+  .retailer-note { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin: 0; }
+  .retailer-go { margin-top: auto; font-size: 0.78rem; font-weight: 700; color: var(--red); }
+  .codes-callout a { color: var(--red); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+  .codes-callout a:hover { color: var(--red-dark); }
   .codes-callout {
     display: flex; align-items: center; gap: 14px;
     background: var(--red-light); border: 1.5px solid #fecaca; border-radius: 12px;
@@ -171,6 +234,7 @@ const retailers = ['Pro-Swimwear', 'Allens Swimwear', 'Maru', 'Sporty Swim', 'Ne
   }
   @media (max-width: 600px) {
     .benefit-grid { grid-template-columns: 1fr; }
+    .retailer-grid { grid-template-columns: 1fr; }
     .intro, .benefits, .discounts, .cta-band { padding-left: 20px; padding-right: 20px; }
   }
 </style>

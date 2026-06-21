@@ -94,6 +94,8 @@ const pairs = [
   ['rgba(255,255,255,0.6)',  '#0a0a0a', 'Footer column links (60% white)'],
   ['rgba(255,255,255,0.6)',  '#0a0a0a', 'Footer copyright (60% white)'],
   ['#ffffff',                '#0a0a0a', 'Footer column headings (white, uppercase)'],
+  // CTA heading: big bold white text on the red gradient (the page-foot CTA band).
+  ['#ffffff',                '#dc2626', 'CTA heading — white on red (lighter gradient end)', true],
 ];
 
 const rows = pairs.map(([fg, bg, label, large]) => {

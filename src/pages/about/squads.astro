@@ -22,6 +22,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <div class="inner">
     <p class="label">Putting our Swimmers First!</p>
     <p class="lead">At Torquay Leander Swimming Club, we provide a clear and supportive progression pathway for swimmers at every stage of their development. We recognise that every swimmer progresses at their own pace, and our squad structure is designed around ability and development — not simply the number of training hours completed.</p>
+    <p class="lead">Swimmers are placed into squads that best match their current skill level, allowing them to train in an environment where they can progress confidently and effectively. Our structured training programmes are carefully tailored to each squad, ensuring swimmers receive the right balance of technique work, endurance training, and race preparation at the appropriate intensity.</p>
   </div>
 </section>
 
@@ -143,6 +144,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .inner { max-width: 1200px; margin: 0 auto; }
   .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
   .lead { color: var(--muted); font-size: 1rem; line-height: 1.85; max-width: 800px; }
+  .lead + .lead { margin-top: 18px; }
 
   .intro-section { background: #fff; }
 
@@ -166,7 +168,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .squad-highlights svg { flex-shrink: 0; color: var(--red); }
 
   .page-cta { background: linear-gradient(135deg, var(--red-dark), var(--red)); text-align: center; padding: 72px 5vw; }
-  .page-cta h2 { color: #fff; margin-bottom: 12px; }
+  .page-cta h2 { color: #fff; font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 900; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 14px; }
   .page-cta p { color: rgba(255,255,255,0.9); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
   .btn-white { background: #000; color: #fff; padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; display: inline-block; }
   .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); background: #222; }
