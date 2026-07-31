@@ -178,7 +178,7 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 
 > **Note (site check / decision):** the site has **no contact page** — the "dark and heavy contact form" in the mail is the home page's "Ready to Dive In?" join section (the black card at `#contact`). **Decision: create a new standalone Contact page** reusing that same section, with the home page keeping its copy. The new nav "Contact" item (§1) links to it.
 
-- [ ] **New Contact page** — Create `/contact/` reusing the home page contact/join section on its own page.
+- [x] **New Contact page** — Create `/contact/` reusing the home page contact/join section on its own page. *(done — also added Contact to nav after Safeguarding, completing the §1 nav order)*
 - [ ] **Lighter form UI** — Contact form section feels dark/heavy; use a lighter background.
 - [ ] **Enquiry split (optional)** — Consider separate paths for membership vs general enquiries.
 
