@@ -2,6 +2,13 @@
 
 Astro static site for the Torquay Leander swimming club, deployed to GitHub Pages at `https://michal-ciechan.github.io/torquay-leander/`.
 
+## URLs
+
+When asked for "the URL", always give **both** the local and the public URL:
+
+- **Local (dev):** http://localhost:12700/torquay-leander/ (also over HTTPS at `https://torquay.desktop.codeperf.net/torquay-leander/`)
+- **Public (GitHub Pages):** https://michal-ciechan.github.io/torquay-leander/
+
 ## Commands
 
 - `npm run dev` — dev server on http://localhost:12700 with HMR. Also live over HTTPS at `https://torquay.desktop.codeperf.net/torquay-leander/` (Caddy proxy + links dashboard tile; see `.claude/skills/run/SKILL.md` → "Preview over HTTPS").

@@ -18,9 +18,12 @@ Attachments expected (not in raw.md):
   4. About  
   5. Welfare / Safeguarding  
   6. Contact  
+  > **Note (site check):** the proposed order omits **Club Merchandise** and **Members Login** — decide where they land. "Membership / Join" merges what is currently two separate top-level items (Membership dropdown + Join Us). "Contact" will be the **new Contact page** (see §8).
 - [ ] **Footer — Swim England** — Add Swim England affiliate logo and link (club is Swim England affiliated).
+  > **Note (site check):** footer already *says* "Swim England Affiliated" in the brand blurb and bottom bar — only the logo + link are missing.
 - [ ] **Logo — header** — Replace club logo in the header with the new attached logo.
 - [ ] **Logo — footer** — Replace club logo in the footer with the same new logo.
+  > **Note (site check):** both `Nav.astro` and `Footer.astro` currently hotlink the logo from the old WordPress site (`torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png`) — host the new logo locally in `public/` when replacing.
 
 ---
 
@@ -28,7 +31,9 @@ Attachments expected (not in raw.md):
 
 - [ ] **Hero banner** — Compress / de-emphasise main title banner (“Building Confidence…”) so it is less dominant.
 - [ ] **News feed** — Add a Facebook page feed section titled **News**.
+  > **Note (site check):** the Facebook page URL is already known — `facebook.com/TorquayLeanderSwimmingClub` (used in Footer, galas page, and home `/events` link). Only the **embed method** is still open.
 - [ ] **Replace upcoming meets** — Put the News (Facebook) section in place of the current “Upcoming meets” block.
+  > **Note (site check):** "Upcoming Meets" is not a standalone block — it's a sidebar `<aside>` in a two-column grid beside the welcome text on `index.astro`. Replacing it means reworking that grid layout.
 
 ---
 
@@ -36,14 +41,17 @@ Attachments expected (not in raw.md):
 
 - [ ] **Facilities — electronic timing** — On the facilities highlight cards/windows, add:  
   *FINA Approved Electronic Timing* — Torquay Leander is proud to be the only club in Torbay and the surrounding areas to have Electronic Timing and Scoreboard which is used to enhance training and galas.
+  > **Note (site check):** genuine add — timing currently only appears as a "Colorado Timing System" bullet in the equipment list on `/about/facilities/`; no fact card, no scoreboard mention, no "only club in Torbay" claim.
 - [ ] **Facilities — diving blocks** — On the facilities highlight cards/windows, add:  
   *Diving Blocks* — We are fortunate to be the only club in Torbay to have FINA approved diving blocks, allowing us to train in real-world competition environments.
+  > **Note (site check):** this is an **update, not an add** — `/about/facilities/` already has a fact card ("Diving Blocks on Every Lane — Only club in Torbay with permanent poolside blocks…"). Fold in the "FINA approved" + "real-world competition environments" wording.
 
 ---
 
 ## 4. Training & membership
 
 - [ ] **Learn to Swim → Swim Torquay** — Add a button/link on stages 1–4 through to the Swim Torquay page.
+  > **Note (site check):** the "Stages 1–4" card on `/training/learn-to-swim/` currently has no button, and the "Lessons are run by Swim Torquay" callout has no link either — the button could serve both. Swim Torquay URL still needed (see open questions).
 - [ ] **Tab — Warm-up video** — Add a Warm Up Video tab (content TBD / linked from mail assets if provided).
 - [ ] **Tab — Stretches** — Add a Stretches tab (content TBD / linked from mail assets if provided).
 - [ ] **Training videos hub** — Add a section (or page area) for training videos / helpful guidance; link content to competition guides (e.g. “what to expect at your first gala”).
@@ -72,6 +80,7 @@ Clean YouTube URLs (Outlook SafeLinks stripped). Playlist: `PLu-pVYBawZo5vXQBZU2
 
 - [ ] **Banner — Scott Ormsby** — Where “two-time Devon Mini League” is shown, add **2026 Scott Ormsby Champions**.
 - [ ] **Banner — William Shield** — Same area: add **2026 William Shield Champions**.
+  > **Note (site check):** confirmed anchor — the trophy banner on `/galas/` reads exactly "Torquay Leander are two-time Devon Mini League champions — 2024 and 2025."
 
 ---
 
@@ -82,6 +91,7 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 ### 6a. Structure & intro
 
 - [ ] **Page shell** — Create/update gala guide page with title and short intro.
+  > **Note (site check):** `/galas/competition-guide/` already exists with **different content** (race starts, whistle signals, the four strokes) — none of which is in the mail. Merge the Parent's Guide around it; do not overwrite the existing sections.
 - [ ] **What is a Swimming Gala?** — Definition: competition; practice training; racing experience.
 - [ ] **Range of events** — Friendly beginner → National Championships; confidence, skills, PBs.
 - [ ] **Licensed levels intro** — Licensed comps under Swim England Rules; four levels.
@@ -153,7 +163,9 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 ## 7. Club Championships 2026
 
 - [ ] **Year update** — Update Club Championships content to **2026**.
+  > **Note (site check):** also reword the section heading ("2025 Club Championships") and the intro text ("Heat sheets from our most recent championships are below…") on `/galas/club-championships/`.
 - [ ] **Remove heat sheets** — Remove existing heat sheet links for now (add later when available).
+  > **Note (site check):** the current `programme` data has one entry per day with a `pdf` field and no session concept — Sun 15 Nov needs **two sessions**, so the data shape/rendering needs a small rework.
 - [ ] **Session — Thu 5 Nov** — 400m Freestyle.
 - [ ] **Session — Mon 9 Nov** — 100IM, 25 Backstroke (7 and under), 200 Breaststroke, 50 Backstroke, 100 Freestyle.
 - [ ] **Session — Sun 15 Nov (1)** — 25 Butterfly (7 and under), 50 Butterfly, 100 Backstroke, 200 Freestyle.
@@ -164,6 +176,9 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 
 ## 8. Contact page
 
+> **Note (site check / decision):** the site has **no contact page** — the "dark and heavy contact form" in the mail is the home page's "Ready to Dive In?" join section (the black card at `#contact`). **Decision: create a new standalone Contact page** reusing that same section, with the home page keeping its copy. The new nav "Contact" item (§1) links to it.
+
+- [ ] **New Contact page** — Create `/contact/` reusing the home page contact/join section on its own page.
 - [ ] **Lighter form UI** — Contact form section feels dark/heavy; use a lighter background.
 - [ ] **Enquiry split (optional)** — Consider separate paths for membership vs general enquiries.
 
@@ -172,6 +187,7 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 ## 9. Coaches
 
 - [ ] **Lisa Matthieson photo** — Replace existing photo with the attached image.
+  > **Note (site check):** coaches on `/training/#coaches` are listed by first name only ("Lisa"), with the photo hotlinked from the old WordPress site — host the new photo locally when replacing. Surname spelling ("Matthieson") can't be verified from the site.
 
 ---
 
@@ -181,7 +197,8 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 - [ ] Confirm Lisa Matthieson photo delivery.
 - [ ] Confirm Swim England logo assets + official URL for affiliate link.
 - [ ] Confirm Swim Torquay URL for Learn to Swim stages 1–4 button.
-- [ ] Confirm Facebook page URL / embed method for News feed (plugin, manual posts, etc.).
+- [ ] Confirm Facebook **embed method** for News feed (plugin, manual posts, etc.). ~~Page URL~~ — already known: `facebook.com/TorquayLeanderSwimmingClub`.
+- [ ] Decide where **Club Merchandise** and **Members Login** sit in the new nav order (omitted from the mail's proposed order).
 - [ ] Confirm titles for unnamed training playlist videos (or fetch from YouTube).
 - [ ] Confirm where Warm-up / Stretches media lives.
 - [ ] Confirm preferred home for Parent’s Guide (new page under Galas vs long section on galas index).
