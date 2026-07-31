@@ -11,7 +11,7 @@ Attachments expected (not in raw.md):
 
 ## 1. Navigation & site chrome
 
-- [ ] **Nav order** — Reorder main menu to match user intent:
+- [x] **Nav order** — Reorder main menu to match user intent: *(done — desktop + mobile; Contact item pending §8 page)*
   1. Training  
   2. Competitions  
   3. Membership / Join  

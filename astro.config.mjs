@@ -8,6 +8,15 @@ export default defineConfig({
   build: {
     format: 'directory',
   },
+  // The /galas/ section was renamed to /competitions/ (002-mail-changes).
+  // These keep old bookmarks and shared links working via meta-refresh pages.
+  // Destinations must carry the base themselves — Astro emits them verbatim.
+  redirects: {
+    '/galas/': '/torquay-leander/competitions/',
+    '/galas/club-championships/': '/torquay-leander/competitions/club-championships/',
+    '/galas/ribbon-gala/': '/torquay-leander/competitions/ribbon-gala/',
+    '/galas/competition-guide/': '/torquay-leander/competitions/competition-guide/',
+  },
   // Dev-only: adds a "Dev Pages" app to the Astro dev toolbar (the bar at the
   // bottom during `astro dev`) linking to the /dev/ hub + tooling pages. The
   // toolbar never ships to `astro build`, and the `command === 'dev'` guard keeps
