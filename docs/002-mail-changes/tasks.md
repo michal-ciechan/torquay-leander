@@ -4,8 +4,8 @@ Source: [raw.md](./raw.md)
 Status: open · not started unless noted
 
 Attachments expected (not in raw.md):
-- [ ] New club logo (header + footer)
-- [ ] Updated photo of Lisa Matthieson (coaches)
+- [x] New club logo (header + footer) — received: `Logo 2026.png`
+- [x] Updated photo of Lisa Matthieson (coaches) — received: `PHOTO-2026-07-03-18-55-24.jpg`
 
 ---
 
@@ -21,8 +21,8 @@ Attachments expected (not in raw.md):
   > **Note (site check):** the proposed order omits **Club Merchandise** and **Members Login** — decide where they land. "Membership / Join" merges what is currently two separate top-level items (Membership dropdown + Join Us). "Contact" will be the **new Contact page** (see §8).
 - [ ] **Footer — Swim England** — Add Swim England affiliate logo and link (club is Swim England affiliated).
   > **Note (site check):** footer already *says* "Swim England Affiliated" in the brand blurb and bottom bar — only the logo + link are missing.
-- [ ] **Logo — header** — Replace club logo in the header with the new attached logo.
-- [ ] **Logo — footer** — Replace club logo in the footer with the same new logo.
+- [x] **Logo — header** — Replace club logo in the header with the new attached logo. *(done — cleaned + optimised to `public/logo.png`, colour logo on white chip)*
+- [x] **Logo — footer** — Replace club logo in the footer with the same new logo. *(done — same treatment; login page also uses the new asset, kept as white silhouette)*
   > **Note (site check):** both `Nav.astro` and `Footer.astro` currently hotlink the logo from the old WordPress site (`torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png`) — host the new logo locally in `public/` when replacing.
 
 ---
@@ -186,15 +186,15 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 
 ## 9. Coaches
 
-- [ ] **Lisa Matthieson photo** — Replace existing photo with the attached image.
+- [x] **Lisa Matthieson photo** — Replace existing photo with the attached image. *(done — un-mirrored, cropped to coach ratio, hosted at `public/coaches/lisa.jpg`)*
   > **Note (site check):** coaches on `/training/#coaches` are listed by first name only ("Lisa"), with the photo hotlinked from the old WordPress site — host the new photo locally when replacing. Surname spelling ("Matthieson") can't be verified from the site.
 
 ---
 
 ## Open questions / needs from club
 
-- [ ] Confirm new logo file delivery and preferred formats (SVG/PNG).
-- [ ] Confirm Lisa Matthieson photo delivery.
+- [x] Confirm new logo file delivery and preferred formats (SVG/PNG). *(PNG received)*
+- [x] Confirm Lisa Matthieson photo delivery. *(received)*
 - [ ] Confirm Swim England logo assets + official URL for affiliate link.
 - [ ] Confirm Swim Torquay URL for Learn to Swim stages 1–4 button.
 - [ ] Confirm Facebook **embed method** for News feed (plugin, manual posts, etc.). ~~Page URL~~ — already known: `facebook.com/TorquayLeanderSwimmingClub`.

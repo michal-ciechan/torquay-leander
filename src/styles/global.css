@@ -23,7 +23,7 @@ nav {
 }
 .nav-left { display: flex; align-items: center; gap: 0; }
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-logo img { height: 42px; filter: brightness(0) invert(1); }
+.nav-logo img { height: 42px; background: #fff; border-radius: 8px; padding: 3px; }
 .nav-logo span { color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: -0.3px; }
 .nav-sponsor-sep { width: 1px; height: 24px; background: rgba(255,255,255,0.25); margin: 0 16px; }
 .nav-sponsors { display: flex; align-items: center; gap: 8px; }
@@ -349,7 +349,7 @@ footer {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .footer-brand .f-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.footer-brand .f-logo img { height: 40px; filter: brightness(0) invert(1); opacity: 0.9; }
+.footer-brand .f-logo img { height: 40px; background: #fff; border-radius: 8px; padding: 3px; }
 .footer-brand .f-logo span { color: #fff; font-weight: 700; font-size: 1rem; }
 .footer-brand p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.55); max-width: 360px; }
 .footer-col h4 {
