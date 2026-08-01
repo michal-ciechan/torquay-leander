@@ -4,20 +4,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const variations = [
   {
-    key: 'red',
-    name: 'Red background',
-    desc: 'Standard logo flattened onto the club scarlet (#dc2626).',
-    file: 'logo-red.png',
-    previewBg: 'red',
-  },
-  {
-    key: 'white',
-    name: 'White background',
-    desc: 'Standard logo flattened onto white — for print, documents and light backgrounds.',
-    file: 'logo-white.png',
-    previewBg: 'white',
-  },
-  {
     key: 'transparent',
     name: 'Transparent',
     desc: 'Standard logo with transparent background — takes the colour of whatever sits behind it.',
@@ -26,9 +12,23 @@ const variations = [
   },
   {
     key: 'outlined',
-    name: 'White outlined bird — transparent',
+    name: 'White outlined bird',
     desc: 'The bird carries a white keyline matching the lettering, so the full logo reads on dark or busy backgrounds.',
     file: 'logo-outlined-transparent.png',
+    previewBg: 'checker',
+  },
+  {
+    key: 'outlined-full',
+    name: 'White outlined bird + thick word outline',
+    desc: 'Same bird keyline, plus a thicker white halo around the wording for maximum contrast on any background.',
+    file: 'logo-outlined-full-transparent.png',
+    previewBg: 'checker',
+  },
+  {
+    key: 'outlined-words',
+    name: 'Thick word outline only',
+    desc: 'Thicker white halo around the wording, with the bird left as standard (no keyline).',
+    file: 'logo-outlined-words-transparent.png',
     previewBg: 'checker',
   },
 ];
@@ -151,10 +151,10 @@ const variations = [
 <script is:inline>
   window.logoPicker = function () {
     const NAMES = {
-      red: 'Red background',
-      white: 'White background',
       transparent: 'Transparent',
-      outlined: 'White outlined bird — transparent',
+      outlined: 'White outlined bird',
+      'outlined-full': 'White outlined bird + thick word outline',
+      'outlined-words': 'Thick word outline only',
     };
     return {
       sel: { nav: null, footer: null, login: null },
@@ -248,8 +248,6 @@ const variations = [
     border: 1.5px solid var(--border);
   }
   .var-preview img { max-height: 190px; max-width: 100%; width: auto; }
-  .bg-red { background: var(--red); }
-  .bg-white { background: #fff; }
   .bg-checker {
     background:
       repeating-conic-gradient(#e2e8f0 0% 25%, #f8fafc 0% 50%)
