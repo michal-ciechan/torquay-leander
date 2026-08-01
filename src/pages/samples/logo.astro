@@ -3,10 +3,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const variations = [
-  { key: 'transparent', name: 'Transparent', file: 'logo-transparent.png' },
-  { key: 'outlined', name: 'White outlined bird', file: 'logo-outlined-transparent.png' },
-  { key: 'outlined-full', name: 'Bird + thick word outline', file: 'logo-outlined-full-transparent.png' },
-  { key: 'outlined-words', name: 'Thick word outline only', file: 'logo-outlined-words-transparent.png' },
+  { key: 'std', name: 'Standard', file: 'logo-b0-t0.png' },
+  { key: 'b1', name: 'Bird outline', file: 'logo-b1-t0.png' },
+  { key: 'b2', name: 'Thick bird outline', file: 'logo-b2-t0.png' },
+  { key: 't1', name: 'Medium word outline', file: 'logo-b0-t1.png' },
+  { key: 'b1t1', name: 'Bird outline + medium words', file: 'logo-b1-t1.png' },
+  { key: 'b2t1', name: 'Thick bird + medium words', file: 'logo-b2-t1.png' },
+  { key: 't2', name: 'Thick word outline', file: 'logo-b0-t2.png' },
+  { key: 'b1t2', name: 'Bird outline + thick words', file: 'logo-b1-t2.png' },
+  { key: 'b2t2', name: 'Thick bird + thick words', file: 'logo-b2-t2.png' },
 ];
 
 ---
@@ -36,7 +41,7 @@ const variations = [
 
       <span class="strip-caption">Desktop</span>
       <div class="strip strip-nav">
-        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-transparent.png`} alt="Navbar logo preview" />
+        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-b0-t0.png`} alt="Navbar logo preview" />
         <span class="strip-brand">Torquay Leander</span>
         <span class="strip-links" aria-hidden="true">Training&ensp;Competitions&ensp;Membership</span>
         <span class="strip-cta" aria-hidden="true">Free Trial</span>
@@ -44,7 +49,7 @@ const variations = [
 
       <span class="strip-caption">iPhone 15 width</span>
       <div class="strip strip-nav strip-phone">
-        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-transparent.png`} alt="Mobile navbar logo preview" />
+        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-b0-t0.png`} alt="Mobile navbar logo preview" />
         <span class="strip-brand">Torquay Leander</span>
         <span class="strip-burger" aria-hidden="true"><i></i><i></i><i></i></span>
       </div>
@@ -68,7 +73,7 @@ const variations = [
       <p class="place-desc">Black footer at the bottom of every page.</p>
 
       <div class="strip strip-footer">
-        <img :src="fileOf(sel.footer)" src={`${base}/samples/logo/logo-transparent.png`} alt="Footer logo preview" />
+        <img :src="fileOf(sel.footer)" src={`${base}/samples/logo/logo-b0-t0.png`} alt="Footer logo preview" />
         <span class="strip-brand">Torquay Leander</span>
         <span class="strip-sub" aria-hidden="true">A non-profit, SwimMark registered swimming club…</span>
       </div>
@@ -92,7 +97,7 @@ const variations = [
       <p class="place-desc">Dark navy login page.</p>
 
       <div class="strip strip-login">
-        <img :src="fileOf(sel.login)" src={`${base}/samples/logo/logo-transparent.png`} alt="Login logo preview" />
+        <img :src="fileOf(sel.login)" src={`${base}/samples/logo/logo-b0-t0.png`} alt="Login logo preview" />
         <span class="strip-brand">Torquay Leander</span>
         <span class="strip-sub" aria-hidden="true">Members Login</span>
       </div>
@@ -143,16 +148,26 @@ const variations = [
 <script is:inline define:vars={{ base }}>
   window.logoPicker = function () {
     const NAMES = {
-      transparent: 'Transparent',
-      outlined: 'White outlined bird',
-      'outlined-full': 'Bird + thick word outline',
-      'outlined-words': 'Thick word outline only',
+      std: 'Standard',
+      b1: 'Bird outline',
+      b2: 'Thick bird outline',
+      t1: 'Medium word outline',
+      b1t1: 'Bird outline + medium words',
+      b2t1: 'Thick bird + medium words',
+      t2: 'Thick word outline',
+      b1t2: 'Bird outline + thick words',
+      b2t2: 'Thick bird + thick words',
     };
     const FILES = {
-      transparent: 'logo-transparent.png',
-      outlined: 'logo-outlined-transparent.png',
-      'outlined-full': 'logo-outlined-full-transparent.png',
-      'outlined-words': 'logo-outlined-words-transparent.png',
+      std: 'logo-b0-t0.png',
+      b1: 'logo-b1-t0.png',
+      b2: 'logo-b2-t0.png',
+      t1: 'logo-b0-t1.png',
+      b1t1: 'logo-b1-t1.png',
+      b2t1: 'logo-b2-t1.png',
+      t2: 'logo-b0-t2.png',
+      b1t2: 'logo-b1-t2.png',
+      b2t2: 'logo-b2-t2.png',
     };
     return {
       sel: { nav: null, footer: null, login: null },
@@ -177,7 +192,7 @@ const variations = [
         for (const k of ['nav', 'footer', 'login']) if (this.sel[k]) p.set(k, this.sel[k]);
         history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p.toString() : ''));
       },
-      fileOf(key) { return base + '/samples/logo/' + (FILES[key] || FILES.transparent); },
+      fileOf(key) { return base + '/samples/logo/' + (FILES[key] || FILES.std); },
       label(key) { return key ? NAMES[key] : '—'; },
       text() {
         return 'Torquay Leander logo picks\n'
