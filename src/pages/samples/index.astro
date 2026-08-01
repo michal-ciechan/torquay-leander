@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Samples — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <span>Samples</span>
+    </div>
+    <h1>Samples</h1>
+    <p>Brand and asset samples for Torquay Leander Swimming Club — logo variations, colours and usage examples.</p>
+  </div>
+</section>
+
+<section class="sample-list">
+  <div class="inner">
+    <div class="sample-cards">
+      <a class="sample-card" href={`${base}/samples/logo/`}>
+        <img src={`${base}/logo.png`} alt="Club logo" />
+        <div class="sample-body">
+          <strong>Logo</strong>
+          <span>Club logo variations — backgrounds, outline treatments and downloads</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 600px; line-height: 1.7; }
+
+  .sample-list { background: #fff; padding: 72px 5vw 90px; }
+  .inner { max-width: 1100px; margin: 0 auto; }
+  .sample-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .sample-card {
+    display: flex; align-items: center; gap: 18px;
+    border: 1.5px solid var(--border); border-radius: 16px; padding: 24px 22px;
+    text-decoration: none; color: inherit; transition: all 0.2s;
+  }
+  .sample-card:hover { border-color: var(--red); box-shadow: 0 8px 28px rgba(220,38,38,0.1); transform: translateY(-3px); }
+  .sample-card img { height: 64px; width: auto; background: var(--black); border-radius: 10px; padding: 5px; }
+  .sample-body strong { display: block; font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+  .sample-body span { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+</style>

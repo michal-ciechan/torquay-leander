@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const variations = [
+  {
+    name: 'Red background',
+    desc: 'Standard logo on the club scarlet (#dc2626) — for red merchandise, banners and social headers.',
+    file: 'logo-red.png',
+    bg: 'red',
+  },
+  {
+    name: 'White background',
+    desc: 'Standard logo flattened onto white — for print, documents and light backgrounds.',
+    file: 'logo-white.png',
+    bg: 'white',
+  },
+  {
+    name: 'Transparent',
+    desc: 'Standard logo with transparent background — place over any mid/light surface.',
+    file: 'logo-transparent.png',
+    bg: 'checker',
+  },
+  {
+    name: 'White outlined bird — transparent',
+    desc: 'The bird carries a white keyline matching the lettering, so the full logo reads on dark or busy backgrounds. Transparent PNG.',
+    file: 'logo-outlined-transparent.png',
+    bg: 'checker',
+  },
+];
+---
+<BaseLayout title="Logo Samples — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/samples/`}>Samples</a>
+      <span>›</span>
+      <span>Logo</span>
+    </div>
+    <h1>Logo Variations</h1>
+    <p>Club logo in different background and outline treatments. Each tile links to a full-resolution PNG (1024px) for download.</p>
+  </div>
+</section>
+
+<section class="variations">
+  <div class="inner">
+    <div class="var-grid">
+      {variations.map((v) => (
+        <div class="var-card">
+          <a class={`var-preview bg-${v.bg}`} href={`${base}/samples/logo/${v.file}`} target="_blank" rel="noopener">
+            <img src={`${base}/samples/logo/${v.file}`} alt={`Torquay Leander logo — ${v.name}`} loading="lazy" />
+          </a>
+          <div class="var-body">
+            <strong>{v.name}</strong>
+            <p>{v.desc}</p>
+            <a class="var-dl" href={`${base}/samples/logo/${v.file}`} download>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PNG
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #f8fafc; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 640px; line-height: 1.7; }
+
+  .variations { background: #f8fafc; padding: 72px 5vw 90px; }
+  .inner { max-width: 1100px; margin: 0 auto; }
+  .var-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .var-card {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
+    overflow: hidden; display: flex; flex-direction: column; transition: all 0.2s;
+  }
+  .var-card:hover { border-color: var(--red); box-shadow: 0 8px 28px rgba(220,38,38,0.08); }
+  .var-preview {
+    display: flex; align-items: center; justify-content: center;
+    padding: 34px; min-height: 260px;
+  }
+  .var-preview img { max-height: 220px; max-width: 100%; width: auto; }
+  .bg-red { background: var(--red); }
+  .bg-white { background: #fff; border-bottom: 1.5px solid var(--border); }
+  .bg-checker {
+    background:
+      repeating-conic-gradient(#e2e8f0 0% 25%, #f8fafc 0% 50%)
+      50% / 24px 24px;
+  }
+  .var-body { padding: 20px 22px 22px; border-top: 1.5px solid var(--border); }
+  .var-body strong { display: block; font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .var-body p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 14px; }
+  .var-dl {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--red-light); color: var(--red);
+    border-radius: 8px; padding: 8px 14px; font-size: 0.8rem; font-weight: 700;
+    text-decoration: none; transition: background 0.2s, color 0.2s;
+  }
+  .var-dl:hover { background: var(--red); color: #fff; }
+
+  @media (max-width: 760px) {
+    .var-grid { grid-template-columns: 1fr; }
+  }
+</style>

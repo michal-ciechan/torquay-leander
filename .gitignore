@@ -12,3 +12,4 @@ dist/
 .astro/
 
 .memsearch/
+scratch-*
