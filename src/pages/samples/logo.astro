@@ -3,15 +3,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const variations = [
-  { key: 'std', name: 'Standard', file: 'logo-b0-t0.png' },
-  { key: 'b1', name: 'Bird outline', file: 'logo-b1-t0.png' },
-  { key: 'b2', name: 'Thick bird outline', file: 'logo-b2-t0.png' },
-  { key: 't1', name: 'Medium word outline', file: 'logo-b0-t1.png' },
-  { key: 'b1t1', name: 'Bird outline + medium words', file: 'logo-b1-t1.png' },
-  { key: 'b2t1', name: 'Thick bird + medium words', file: 'logo-b2-t1.png' },
-  { key: 't2', name: 'Thick word outline', file: 'logo-b0-t2.png' },
-  { key: 'b1t2', name: 'Bird outline + thick words', file: 'logo-b1-t2.png' },
-  { key: 'b2t2', name: 'Thick bird + thick words', file: 'logo-b2-t2.png' },
+  { key: 'std', words: 'Standard', bird: 'Standard', file: 'logo-b0-t0.png' },
+  { key: 'b1', words: 'Standard', bird: 'Thin Outline', file: 'logo-b1-t0.png' },
+  { key: 'b2', words: 'Standard', bird: 'Thick Outline', file: 'logo-b2-t0.png' },
+  { key: 't1', words: 'Thin Outline', bird: 'Standard', file: 'logo-b0-t1.png' },
+  { key: 'b1t1', words: 'Thin Outline', bird: 'Thin Outline', file: 'logo-b1-t1.png' },
+  { key: 'b2t1', words: 'Thin Outline', bird: 'Thick Outline', file: 'logo-b2-t1.png' },
+  { key: 't2', words: 'Thick Outline', bird: 'Standard', file: 'logo-b0-t2.png' },
+  { key: 'b1t2', words: 'Thick Outline', bird: 'Thin Outline', file: 'logo-b1-t2.png' },
+  { key: 'b2t2', words: 'Thick Outline', bird: 'Thick Outline', file: 'logo-b2-t2.png' },
 ];
 
 ---
@@ -50,8 +50,8 @@ const variations = [
       <div class="options">
         {variations.map((v) => (
           <button class="opt" :class={`{ picked: sel.nav === '${v.key}' }`} @click={`pick('nav', '${v.key}')`}>
-            <span class="opt-thumb thumb-nav"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
-            <span class="opt-name">{v.name}</span>
+            <span class="opt-thumb thumb-nav"><img src={`${base}/samples/logo/${v.file}`} alt={`Words ${v.words}, Bird ${v.bird}`} loading="lazy" /></span>
+            <span class="opt-name"><span>Words: {v.words}</span><span>Bird: {v.bird}</span></span>
             <span class="opt-check" x-show={`sel.nav === '${v.key}'`} x-cloak>✓</span>
           </button>
         ))}
@@ -75,8 +75,8 @@ const variations = [
       <div class="options">
         {variations.map((v) => (
           <button class="opt" :class={`{ picked: sel.footer === '${v.key}' }`} @click={`pick('footer', '${v.key}')`}>
-            <span class="opt-thumb thumb-footer"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
-            <span class="opt-name">{v.name}</span>
+            <span class="opt-thumb thumb-footer"><img src={`${base}/samples/logo/${v.file}`} alt={`Words ${v.words}, Bird ${v.bird}`} loading="lazy" /></span>
+            <span class="opt-name"><span>Words: {v.words}</span><span>Bird: {v.bird}</span></span>
             <span class="opt-check" x-show={`sel.footer === '${v.key}'`} x-cloak>✓</span>
           </button>
         ))}
@@ -93,7 +93,7 @@ const variations = [
         {variations.map((v) => (
           <a class="var-dl" href={`${base}/samples/logo/${v.file}`} download>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            {v.name}
+            Words: {v.words} · Bird: {v.bird}
           </a>
         ))}
       </div>
@@ -117,15 +117,15 @@ const variations = [
 <script is:inline define:vars={{ base }}>
   window.logoPicker = function () {
     const NAMES = {
-      std: 'Standard',
-      b1: 'Bird outline',
-      b2: 'Thick bird outline',
-      t1: 'Medium word outline',
-      b1t1: 'Bird outline + medium words',
-      b2t1: 'Thick bird + medium words',
-      t2: 'Thick word outline',
-      b1t2: 'Bird outline + thick words',
-      b2t2: 'Thick bird + thick words',
+      std: 'Words: Standard · Bird: Standard',
+      b1: 'Words: Standard · Bird: Thin Outline',
+      b2: 'Words: Standard · Bird: Thick Outline',
+      t1: 'Words: Thin Outline · Bird: Standard',
+      b1t1: 'Words: Thin Outline · Bird: Thin Outline',
+      b2t1: 'Words: Thin Outline · Bird: Thick Outline',
+      t2: 'Words: Thick Outline · Bird: Standard',
+      b1t2: 'Words: Thick Outline · Bird: Thin Outline',
+      b2t2: 'Words: Thick Outline · Bird: Thick Outline',
     };
     const FILES = {
       std: 'logo-b0-t0.png',
@@ -247,7 +247,7 @@ const variations = [
   .thumb-nav img { height: 42px; width: auto; }
   .thumb-footer { background: var(--black); }
   .thumb-footer img { height: 40px; width: auto; }
-  .opt-name { padding: 10px 12px; font-size: 0.8rem; font-weight: 700; color: var(--text); border-top: 1.5px solid var(--border); background: #fff; }
+  .opt-name { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; font-size: 0.78rem; font-weight: 700; color: var(--text); border-top: 1.5px solid var(--border); background: #fff; }
   .opt-check {
     position: absolute; top: 8px; right: 8px;
     width: 22px; height: 22px; border-radius: 50%;
