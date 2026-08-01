@@ -3,35 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const variations = [
-  {
-    key: 'transparent',
-    name: 'Transparent',
-    desc: 'Standard logo with transparent background — takes the colour of whatever sits behind it.',
-    file: 'logo-transparent.png',
-    previewBg: 'checker',
-  },
-  {
-    key: 'outlined',
-    name: 'White outlined bird',
-    desc: 'The bird carries a white keyline matching the lettering, so the full logo reads on dark or busy backgrounds.',
-    file: 'logo-outlined-transparent.png',
-    previewBg: 'checker',
-  },
-  {
-    key: 'outlined-full',
-    name: 'White outlined bird + thick word outline',
-    desc: 'Same bird keyline, plus a thicker white halo around the wording for maximum contrast on any background.',
-    file: 'logo-outlined-full-transparent.png',
-    previewBg: 'checker',
-  },
-  {
-    key: 'outlined-words',
-    name: 'Thick word outline only',
-    desc: 'Thicker white halo around the wording, with the bird left as standard (no keyline).',
-    file: 'logo-outlined-words-transparent.png',
-    previewBg: 'checker',
-  },
+  { key: 'transparent', name: 'Transparent', file: 'logo-transparent.png' },
+  { key: 'outlined', name: 'White outlined bird', file: 'logo-outlined-transparent.png' },
+  { key: 'outlined-full', name: 'Bird + thick word outline', file: 'logo-outlined-full-transparent.png' },
+  { key: 'outlined-words', name: 'Thick word outline only', file: 'logo-outlined-words-transparent.png' },
 ];
+
 ---
 <BaseLayout title="Logo Samples — Torquay Leander">
 
@@ -44,94 +21,109 @@ const variations = [
       <span>›</span>
       <span>Logo</span>
     </div>
-    <h1>Logo Variations</h1>
-    <p>Each variation is shown big, then in place — navbar at desktop size, navbar at iPhone 15 width, and the footer. Click a strip to pick that variation for that spot, then copy or share your picks from the bar below.</p>
+    <h1>Logo Picker</h1>
+    <p>For each place the logo appears, the bar below previews your pick live. Choose a variation from the list under each bar, then copy or share your picks from the bottom bar.</p>
   </div>
 </section>
 
 <div x-data="logoPicker()" x-init="init()">
 
-  {variations.map((v) => (
-    <section class="var-section" id={v.key}>
-      <div class="inner">
-        <div class="var-head">
-          <h2>{v.name}</h2>
-          <p>{v.desc}</p>
+  <!-- NAVBAR -->
+  <section class="place-section" id="nav">
+    <div class="inner">
+      <h2>Navbar</h2>
+      <p class="place-desc">Red bar at the top of every page. Shown at real desktop size and at iPhone 15 width.</p>
+
+      <span class="strip-caption">Desktop</span>
+      <div class="strip strip-nav">
+        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-transparent.png`} alt="Navbar logo preview" />
+        <span class="strip-brand">Torquay Leander</span>
+        <span class="strip-links" aria-hidden="true">Training&ensp;Competitions&ensp;Membership</span>
+        <span class="strip-cta" aria-hidden="true">Free Trial</span>
+      </div>
+
+      <span class="strip-caption">iPhone 15 width</span>
+      <div class="strip strip-nav strip-phone">
+        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-transparent.png`} alt="Mobile navbar logo preview" />
+        <span class="strip-brand">Torquay Leander</span>
+        <span class="strip-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+
+      <div class="options">
+        {variations.map((v) => (
+          <button class="opt" :class={`{ picked: sel.nav === '${v.key}' }`} @click={`pick('nav', '${v.key}')`}>
+            <span class="opt-thumb"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
+            <span class="opt-name">{v.name}</span>
+            <span class="opt-check" x-show={`sel.nav === '${v.key}'`} x-cloak>✓</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="place-section" id="footer">
+    <div class="inner">
+      <h2>Footer</h2>
+      <p class="place-desc">Black footer at the bottom of every page.</p>
+
+      <div class="strip strip-footer">
+        <img :src="fileOf(sel.footer)" src={`${base}/samples/logo/logo-transparent.png`} alt="Footer logo preview" />
+        <span class="strip-brand">Torquay Leander</span>
+        <span class="strip-sub" aria-hidden="true">A non-profit, SwimMark registered swimming club…</span>
+      </div>
+
+      <div class="options">
+        {variations.map((v) => (
+          <button class="opt" :class={`{ picked: sel.footer === '${v.key}' }`} @click={`pick('footer', '${v.key}')`}>
+            <span class="opt-thumb"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
+            <span class="opt-name">{v.name}</span>
+            <span class="opt-check" x-show={`sel.footer === '${v.key}'`} x-cloak>✓</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN -->
+  <section class="place-section" id="login">
+    <div class="inner">
+      <h2>Members Login</h2>
+      <p class="place-desc">Dark navy login page.</p>
+
+      <div class="strip strip-login">
+        <img :src="fileOf(sel.login)" src={`${base}/samples/logo/logo-transparent.png`} alt="Login logo preview" />
+        <span class="strip-brand">Torquay Leander</span>
+        <span class="strip-sub" aria-hidden="true">Members Login</span>
+      </div>
+
+      <div class="options">
+        {variations.map((v) => (
+          <button class="opt" :class={`{ picked: sel.login === '${v.key}' }`} @click={`pick('login', '${v.key}')`}>
+            <span class="opt-thumb"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
+            <span class="opt-name">{v.name}</span>
+            <span class="opt-check" x-show={`sel.login === '${v.key}'`} x-cloak>✓</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section class="place-section dl-section">
+    <div class="inner">
+      <h2>Downloads</h2>
+      <p class="place-desc">Full-resolution transparent PNGs (1024px).</p>
+      <div class="dl-list">
+        {variations.map((v) => (
           <a class="var-dl" href={`${base}/samples/logo/${v.file}`} download>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download PNG (1024px)
+            {v.name}
           </a>
-        </div>
-
-        <div class="var-layout">
-          <a class={`var-preview bg-${v.previewBg}`} href={`${base}/samples/logo/${v.file}`} target="_blank" rel="noopener">
-            <img src={`${base}/samples/logo/${v.file}`} alt={`Torquay Leander logo — ${v.name}`} loading="lazy" />
-          </a>
-
-          <div class="strips">
-
-            <div class="strip-block">
-              <span class="strip-caption">Navbar — desktop size <em>(click to pick for navbar)</em></span>
-              <button
-                class="strip strip-nav"
-                :class={`{ picked: sel.nav === '${v.key}' }`}
-                @click={`pick('nav', '${v.key}')`}
-              >
-                <img src={`${base}/samples/logo/${v.file}`} alt="" />
-                <span class="strip-brand">Torquay Leander</span>
-                <span class="strip-links" aria-hidden="true">Training&ensp;Competitions&ensp;Membership</span>
-                <span class="strip-cta" aria-hidden="true">Free Trial</span>
-                <span class="picked-badge" x-show={`sel.nav === '${v.key}'`} x-cloak>✓ Navbar</span>
-              </button>
-            </div>
-
-            <div class="strip-block">
-              <span class="strip-caption">Navbar — iPhone 15 width <em>(click to pick for navbar)</em></span>
-              <button
-                class="strip strip-nav strip-phone"
-                :class={`{ picked: sel.nav === '${v.key}' }`}
-                @click={`pick('nav', '${v.key}')`}
-              >
-                <img src={`${base}/samples/logo/${v.file}`} alt="" />
-                <span class="strip-brand">Torquay Leander</span>
-                <span class="strip-burger" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="picked-badge" x-show={`sel.nav === '${v.key}'`} x-cloak>✓ Navbar</span>
-              </button>
-            </div>
-
-            <div class="strip-block">
-              <span class="strip-caption">Footer <em>(click to pick for footer)</em></span>
-              <button
-                class="strip strip-footer"
-                :class={`{ picked: sel.footer === '${v.key}' }`}
-                @click={`pick('footer', '${v.key}')`}
-              >
-                <img src={`${base}/samples/logo/${v.file}`} alt="" />
-                <span class="strip-brand">Torquay Leander</span>
-                <span class="strip-sub" aria-hidden="true">A non-profit, SwimMark registered swimming club…</span>
-                <span class="picked-badge" x-show={`sel.footer === '${v.key}'`} x-cloak>✓ Footer</span>
-              </button>
-            </div>
-
-            <div class="strip-block">
-              <span class="strip-caption">Members login page <em>(click to pick for login)</em></span>
-              <button
-                class="strip strip-login"
-                :class={`{ picked: sel.login === '${v.key}' }`}
-                @click={`pick('login', '${v.key}')`}
-              >
-                <img src={`${base}/samples/logo/${v.file}`} alt="" />
-                <span class="strip-brand">Torquay Leander</span>
-                <span class="strip-sub" aria-hidden="true">Members Login</span>
-                <span class="picked-badge" x-show={`sel.login === '${v.key}'`} x-cloak>✓ Login</span>
-              </button>
-            </div>
-
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
-  ))}
+    </div>
+  </section>
 
   <!-- floating selection bar -->
   <div class="pick-bar">
@@ -148,13 +140,19 @@ const variations = [
 
 </div>
 
-<script is:inline>
+<script is:inline define:vars={{ base }}>
   window.logoPicker = function () {
     const NAMES = {
       transparent: 'Transparent',
       outlined: 'White outlined bird',
-      'outlined-full': 'White outlined bird + thick word outline',
+      'outlined-full': 'Bird + thick word outline',
       'outlined-words': 'Thick word outline only',
+    };
+    const FILES = {
+      transparent: 'logo-transparent.png',
+      outlined: 'logo-outlined-transparent.png',
+      'outlined-full': 'logo-outlined-full-transparent.png',
+      'outlined-words': 'logo-outlined-words-transparent.png',
     };
     return {
       sel: { nav: null, footer: null, login: null },
@@ -173,12 +171,13 @@ const variations = [
         }
       },
       pick(place, key) {
-        this.sel[place] = this.sel[place] === key ? null : key;
+        this.sel[place] = key;
         try { localStorage.setItem('logo-picks', JSON.stringify(this.sel)); } catch {}
         const p = new URLSearchParams();
         for (const k of ['nav', 'footer', 'login']) if (this.sel[k]) p.set(k, this.sel[k]);
         history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p.toString() : ''));
       },
+      fileOf(key) { return base + '/samples/logo/' + (FILES[key] || FILES.transparent); },
       label(key) { return key ? NAMES[key] : '—'; },
       text() {
         return 'Torquay Leander logo picks\n'
@@ -225,48 +224,21 @@ const variations = [
   .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
   .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 680px; line-height: 1.7; }
 
-  .inner { max-width: 1100px; margin: 0 auto; }
+  .inner { max-width: 1000px; margin: 0 auto; }
 
-  .var-section { padding: 56px 5vw 40px; background: #f8fafc; }
-  .var-section:nth-of-type(even) { background: #fff; }
-  .var-section:last-of-type { padding-bottom: 140px; }
-  .var-head { margin-bottom: 24px; }
-  .var-head h2 { font-size: clamp(1.35rem, 2.6vw, 1.8rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
-  .var-head p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; max-width: 640px; margin-bottom: 12px; }
-  .var-dl {
-    display: inline-flex; align-items: center; gap: 7px;
-    background: var(--red-light); color: var(--red);
-    border-radius: 8px; padding: 8px 14px; font-size: 0.8rem; font-weight: 700;
-    text-decoration: none; transition: background 0.2s, color 0.2s;
-  }
-  .var-dl:hover { background: var(--red); color: #fff; }
+  .place-section { padding: 56px 5vw 44px; background: #f8fafc; }
+  .place-section:nth-of-type(even) { background: #fff; }
+  .place-section h2 { font-size: clamp(1.35rem, 2.6vw, 1.8rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .place-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.65; margin-bottom: 22px; }
 
-  .var-layout { display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; }
-  .var-preview {
-    display: flex; align-items: center; justify-content: center;
-    padding: 26px; min-height: 240px; border-radius: 16px;
-    border: 1.5px solid var(--border);
-  }
-  .var-preview img { max-height: 190px; max-width: 100%; width: auto; }
-  .bg-checker {
-    background:
-      repeating-conic-gradient(#e2e8f0 0% 25%, #f8fafc 0% 50%)
-      50% / 24px 24px;
-  }
-
-  .strips { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
-  .strip-block { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-  .strip-caption { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
-  .strip-caption em { font-style: normal; text-transform: none; letter-spacing: 0; font-weight: 600; color: #94a3b8; }
+  .strip-caption { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 
   .strip {
-    position: relative; display: flex; align-items: center; gap: 12px;
-    width: 100%; text-align: left; border: 2px solid transparent; border-radius: 12px;
-    padding: 11px 18px; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s;
-    font: inherit;
+    display: flex; align-items: center; gap: 12px;
+    width: 100%; border-radius: 12px;
+    padding: 11px 18px; margin-bottom: 18px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
   }
-  .strip:hover { box-shadow: 0 6px 22px rgba(0,0,0,0.18); }
-  .strip.picked { border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,0.25); }
   .strip img { height: 42px; width: auto; flex-shrink: 0; }
   .strip-brand { color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: -0.3px; white-space: nowrap; }
   .strip-links { margin-left: auto; color: rgba(255,255,255,0.85); font-weight: 600; font-size: 0.82rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -283,11 +255,37 @@ const variations = [
   .strip-burger { margin-left: auto; display: flex; flex-direction: column; gap: 4px; }
   .strip-burger i { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; }
 
-  .picked-badge {
-    position: absolute; top: -9px; right: 10px;
-    background: #16a34a; color: #fff; font-size: 0.66rem; font-weight: 800;
-    border-radius: 999px; padding: 3px 9px; letter-spacing: 0.5px;
+  .options { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-top: 8px; }
+  .opt {
+    position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    font: inherit; text-align: left; cursor: pointer;
+    background: #fff; border: 2px solid var(--border); border-radius: 12px; overflow: hidden;
+    padding: 0; transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
   }
+  .opt:hover { border-color: var(--red); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(220,38,38,0.12); }
+  .opt.picked { border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,0.2); }
+  .opt-thumb {
+    display: flex; align-items: center; justify-content: center; padding: 14px; min-height: 110px;
+    background: repeating-conic-gradient(#e2e8f0 0% 25%, #f8fafc 0% 50%) 50% / 20px 20px;
+  }
+  .opt-thumb img { max-height: 84px; max-width: 100%; width: auto; }
+  .opt-name { padding: 10px 12px; font-size: 0.8rem; font-weight: 700; color: var(--text); border-top: 1.5px solid var(--border); background: #fff; }
+  .opt-check {
+    position: absolute; top: 8px; right: 8px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #16a34a; color: #fff; font-size: 0.75rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .dl-section { padding-bottom: 150px; }
+  .dl-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .var-dl {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--red-light); color: var(--red);
+    border-radius: 8px; padding: 8px 14px; font-size: 0.8rem; font-weight: 700;
+    text-decoration: none; transition: background 0.2s, color 0.2s;
+  }
+  .var-dl:hover { background: var(--red); color: #fff; }
 
   .pick-bar {
     position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
@@ -313,9 +311,8 @@ const variations = [
   [x-cloak] { display: none !important; }
 
   @media (max-width: 860px) {
-    .var-layout { grid-template-columns: 1fr; }
-    .var-preview { min-height: 200px; }
     .strip-links, .strip-cta { display: none; }
+    .options { grid-template-columns: repeat(2, 1fr); }
     .pick-bar { flex-direction: column; align-items: stretch; gap: 10px; padding: 10px 14px; }
     .pick-summary { gap: 10px; font-size: 0.76rem; justify-content: center; }
     .pick-actions { justify-content: center; }
