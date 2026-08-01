@@ -37,9 +37,8 @@ const variations = [
   <section class="place-section" id="nav">
     <div class="inner">
       <h2>Navbar</h2>
-      <p class="place-desc">Red bar at the top of every page. Shown at real desktop size and at iPhone 15 width.</p>
+      <p class="place-desc">Red bar at the top of every page.</p>
 
-      <span class="strip-caption">Desktop</span>
       <div class="strip strip-nav">
         <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-b0-t0.png`} alt="Navbar logo preview" />
         <span class="strip-brand">Torquay Leander</span>
@@ -47,13 +46,7 @@ const variations = [
         <span class="strip-cta" aria-hidden="true">Free Trial</span>
       </div>
 
-      <span class="strip-caption">iPhone 15 width</span>
-      <div class="strip strip-nav strip-phone">
-        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-b0-t0.png`} alt="Mobile navbar logo preview" />
-        <span class="strip-brand">Torquay Leander</span>
-        <span class="strip-burger" aria-hidden="true"><i></i><i></i><i></i></span>
-      </div>
-
+      <h3 class="options-heading">Select one</h3>
       <div class="options">
         {variations.map((v) => (
           <button class="opt" :class={`{ picked: sel.nav === '${v.key}' }`} @click={`pick('nav', '${v.key}')`}>
@@ -78,36 +71,13 @@ const variations = [
         <span class="strip-sub" aria-hidden="true">A non-profit, SwimMark registered swimming club…</span>
       </div>
 
+      <h3 class="options-heading">Select one</h3>
       <div class="options">
         {variations.map((v) => (
           <button class="opt" :class={`{ picked: sel.footer === '${v.key}' }`} @click={`pick('footer', '${v.key}')`}>
             <span class="opt-thumb thumb-footer"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
             <span class="opt-name">{v.name}</span>
             <span class="opt-check" x-show={`sel.footer === '${v.key}'`} x-cloak>✓</span>
-          </button>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- LOGIN -->
-  <section class="place-section" id="login">
-    <div class="inner">
-      <h2>Members Login</h2>
-      <p class="place-desc">Dark navy login page.</p>
-
-      <div class="strip strip-login">
-        <img :src="fileOf(sel.login)" src={`${base}/samples/logo/logo-b0-t0.png`} alt="Login logo preview" />
-        <span class="strip-brand">Torquay Leander</span>
-        <span class="strip-sub" aria-hidden="true">Members Login</span>
-      </div>
-
-      <div class="options">
-        {variations.map((v) => (
-          <button class="opt" :class={`{ picked: sel.login === '${v.key}' }`} @click={`pick('login', '${v.key}')`}>
-            <span class="opt-thumb thumb-login"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
-            <span class="opt-name">{v.name}</span>
-            <span class="opt-check" x-show={`sel.login === '${v.key}'`} x-cloak>✓</span>
           </button>
         ))}
       </div>
@@ -135,7 +105,6 @@ const variations = [
     <div class="pick-summary">
       <span class="pick-item"><b>Navbar:</b> <span x-text="label(sel.nav)"></span></span>
       <span class="pick-item"><b>Footer:</b> <span x-text="label(sel.footer)"></span></span>
-      <span class="pick-item"><b>Login:</b> <span x-text="label(sel.login)"></span></span>
     </div>
     <div class="pick-actions">
       <button class="pick-btn" @click="copy()" x-text="copied ? '✓ Copied' : 'Copy'"></button>
@@ -170,18 +139,18 @@ const variations = [
       b2t2: 'logo-b2-t2.png',
     };
     return {
-      sel: { nav: null, footer: null, login: null },
+      sel: { nav: null, footer: null },
       copied: false,
       init() {
         const p = new URLSearchParams(location.search);
-        for (const k of ['nav', 'footer', 'login']) {
+        for (const k of ['nav', 'footer']) {
           const v = p.get(k);
           if (v && NAMES[v]) this.sel[k] = v;
         }
         if (!p.toString()) {
           try {
             const saved = JSON.parse(localStorage.getItem('logo-picks') || '{}');
-            for (const k of ['nav', 'footer', 'login']) if (NAMES[saved[k]]) this.sel[k] = saved[k];
+            for (const k of ['nav', 'footer']) if (NAMES[saved[k]]) this.sel[k] = saved[k];
           } catch {}
         }
       },
@@ -189,7 +158,7 @@ const variations = [
         this.sel[place] = key;
         try { localStorage.setItem('logo-picks', JSON.stringify(this.sel)); } catch {}
         const p = new URLSearchParams();
-        for (const k of ['nav', 'footer', 'login']) if (this.sel[k]) p.set(k, this.sel[k]);
+        for (const k of ['nav', 'footer']) if (this.sel[k]) p.set(k, this.sel[k]);
         history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p.toString() : ''));
       },
       fileOf(key) { return base + '/samples/logo/' + (FILES[key] || FILES.std); },
@@ -198,7 +167,6 @@ const variations = [
         return 'Torquay Leander logo picks\n'
           + '• Navbar: ' + this.label(this.sel.nav) + '\n'
           + '• Footer: ' + this.label(this.sel.footer) + '\n'
-          + '• Login: ' + this.label(this.sel.login) + '\n'
           + location.href;
       },
       async copy() {
@@ -246,8 +214,6 @@ const variations = [
   .place-section h2 { font-size: clamp(1.35rem, 2.6vw, 1.8rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
   .place-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.65; margin-bottom: 22px; }
 
-  .strip-caption { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-
   .strip {
     display: flex; align-items: center; gap: 12px;
     width: 100%; border-radius: 12px;
@@ -262,13 +228,8 @@ const variations = [
 
   .strip-nav { background: var(--red); }
   .strip-footer { background: var(--black); }
-  .strip-login { background: #0b1220; }
 
-  .strip-phone { width: 393px; max-width: 100%; padding: 9px 14px; }
-  .strip-phone img { height: 36px; }
-  .strip-phone .strip-brand { font-size: 0.9rem; }
-  .strip-burger { margin-left: auto; display: flex; flex-direction: column; gap: 4px; }
-  .strip-burger i { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; }
+  .options-heading { font-size: 0.85rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--text); margin: 18px 0 10px; }
 
   .options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px; }
   .opt {
@@ -286,8 +247,6 @@ const variations = [
   .thumb-nav img { height: 42px; width: auto; }
   .thumb-footer { background: var(--black); }
   .thumb-footer img { height: 40px; width: auto; }
-  .thumb-login { background: #0b1220; }
-  .thumb-login img { height: 38px; width: auto; }
   .opt-name { padding: 10px 12px; font-size: 0.8rem; font-weight: 700; color: var(--text); border-top: 1.5px solid var(--border); background: #fff; }
   .opt-check {
     position: absolute; top: 8px; right: 8px;
@@ -335,7 +294,6 @@ const variations = [
     .opt-thumb { padding: 8px; min-height: 52px; }
     .thumb-nav img { height: 30px; }
     .thumb-footer img { height: 28px; }
-    .thumb-login img { height: 27px; }
     .opt-name { padding: 7px 8px; font-size: 0.66rem; }
     .opt-check { width: 18px; height: 18px; font-size: 0.62rem; top: 5px; right: 5px; }
     .pick-bar { flex-direction: column; align-items: stretch; gap: 10px; padding: 10px 14px; }
