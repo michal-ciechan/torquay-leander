@@ -270,7 +270,7 @@ const variations = [
   .strip-burger { margin-left: auto; display: flex; flex-direction: column; gap: 4px; }
   .strip-burger i { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; }
 
-  .options { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-top: 8px; }
+  .options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px; }
   .opt {
     position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 0;
     font: inherit; text-align: left; cursor: pointer;
@@ -331,7 +331,13 @@ const variations = [
 
   @media (max-width: 860px) {
     .strip-links, .strip-cta { display: none; }
-    .options { grid-template-columns: repeat(2, 1fr); }
+    .options { gap: 8px; }
+    .opt-thumb { padding: 8px; min-height: 52px; }
+    .thumb-nav img { height: 30px; }
+    .thumb-footer img { height: 28px; }
+    .thumb-login img { height: 27px; }
+    .opt-name { padding: 7px 8px; font-size: 0.66rem; }
+    .opt-check { width: 18px; height: 18px; font-size: 0.62rem; top: 5px; right: 5px; }
     .pick-bar { flex-direction: column; align-items: stretch; gap: 10px; padding: 10px 14px; }
     .pick-summary { gap: 10px; font-size: 0.76rem; justify-content: center; }
     .pick-actions { justify-content: center; }
