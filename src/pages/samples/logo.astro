@@ -52,7 +52,7 @@ const variations = [
       <div class="options">
         {variations.map((v) => (
           <button class="opt" :class={`{ picked: sel.nav === '${v.key}' }`} @click={`pick('nav', '${v.key}')`}>
-            <span class="opt-thumb"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
+            <span class="opt-thumb thumb-nav"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
             <span class="opt-name">{v.name}</span>
             <span class="opt-check" x-show={`sel.nav === '${v.key}'`} x-cloak>✓</span>
           </button>
@@ -76,7 +76,7 @@ const variations = [
       <div class="options">
         {variations.map((v) => (
           <button class="opt" :class={`{ picked: sel.footer === '${v.key}' }`} @click={`pick('footer', '${v.key}')`}>
-            <span class="opt-thumb"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
+            <span class="opt-thumb thumb-footer"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
             <span class="opt-name">{v.name}</span>
             <span class="opt-check" x-show={`sel.footer === '${v.key}'`} x-cloak>✓</span>
           </button>
@@ -100,7 +100,7 @@ const variations = [
       <div class="options">
         {variations.map((v) => (
           <button class="opt" :class={`{ picked: sel.login === '${v.key}' }`} @click={`pick('login', '${v.key}')`}>
-            <span class="opt-thumb"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
+            <span class="opt-thumb thumb-login"><img src={`${base}/samples/logo/${v.file}`} alt={v.name} loading="lazy" /></span>
             <span class="opt-name">{v.name}</span>
             <span class="opt-check" x-show={`sel.login === '${v.key}'`} x-cloak>✓</span>
           </button>
@@ -265,10 +265,14 @@ const variations = [
   .opt:hover { border-color: var(--red); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(220,38,38,0.12); }
   .opt.picked { border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,0.2); }
   .opt-thumb {
-    display: flex; align-items: center; justify-content: center; padding: 14px; min-height: 110px;
-    background: repeating-conic-gradient(#e2e8f0 0% 25%, #f8fafc 0% 50%) 50% / 20px 20px;
+    display: flex; align-items: center; justify-content: center; padding: 14px; min-height: 72px;
   }
-  .opt-thumb img { max-height: 84px; max-width: 100%; width: auto; }
+  .thumb-nav { background: var(--red); }
+  .thumb-nav img { height: 42px; width: auto; }
+  .thumb-footer { background: var(--black); }
+  .thumb-footer img { height: 40px; width: auto; }
+  .thumb-login { background: #0b1220; }
+  .thumb-login img { height: 38px; width: auto; }
   .opt-name { padding: 10px 12px; font-size: 0.8rem; font-weight: 700; color: var(--text); border-top: 1.5px solid var(--border); background: #fff; }
   .opt-check {
     position: absolute; top: 8px; right: 8px;
