@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title = 'Torquay Leander Swimming Club', description = 'A non-profit, SwimMark registered swimming club in Torquay, Devon.' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <!doctype html>
 <html lang="en">
@@ -30,6 +31,28 @@ const { title = 'Torquay Leander Swimming Club', description = 'A non-profit, Sw
       document.addEventListener('DOMContentLoaded', () => {
         if (window.lucide) window.lucide.createIcons();
       });
+    </script>
+    <!-- Logo preview: picks made on /samples/logo/ apply to the real nav + footer.
+         't2' (thick word outline) is baked into public/logo.png, so only other picks swap. -->
+    <script is:inline define:vars={{ base }}>
+      (function () {
+        try {
+          var FILES = {
+            std: 'logo-b0-t0.png', b1: 'logo-b1-t0.png', b2: 'logo-b2-t0.png',
+            t1: 'logo-b0-t1.png', b1t1: 'logo-b1-t1.png', b2t1: 'logo-b2-t1.png',
+            t2: 'logo-b0-t2.png', b1t2: 'logo-b1-t2.png', b2t2: 'logo-b2-t2.png',
+          };
+          var picks = JSON.parse(localStorage.getItem('logo-picks') || '{}');
+          var navImg = document.querySelector('.nav-logo img');
+          if (navImg && picks.nav && picks.nav !== 't2' && FILES[picks.nav]) {
+            navImg.src = base + '/samples/logo/' + FILES[picks.nav];
+          }
+          var fImg = document.querySelector('.f-logo img');
+          if (fImg && picks.footer && picks.footer !== 't2' && FILES[picks.footer]) {
+            fImg.src = base + '/samples/logo/' + FILES[picks.footer];
+          }
+        } catch (e) {}
+      })();
     </script>
   </body>
 </html>
