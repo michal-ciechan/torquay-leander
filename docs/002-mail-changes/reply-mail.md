@@ -22,8 +22,7 @@ Thanks for the detailed feedback and the attachments (new logo + Lisa's photo) �
 - It's also in the menu, so people no longer have to scroll to the bottom of the home page to reach the form.
 
 **New club logo**
-- The new logo is live, but after trying a few variations ([you can see them all here](https://michal-ciechan.github.io/torquay-leander/samples/logo/)) I've gone with adding a **thick white outline around the words**, to make it more readable on the red and black at the smaller size a logo actually appears at.
-- On that page you can tap any variation to preview it on the real site, and the **Share** button sends your choice back to me — so if you'd prefer a different one, just send it over.
+- The new logo is live, but after trying a few variations ([you can see them all here](https://michal-ciechan.github.io/torquay-leander/samples/logo/) — tap any one to preview it on the real site, then hit **Share** to send your choice to me) I've gone with adding a **thick white outline around the words**, to make it more readable at the smaller size a logo actually appears at. The standard logo looks fine small on the black footer, so we could keep that one there, but for now I've used the same thick outline in both places for consistency.
 
 **Footer**
 - The official **Swim England logo** now sits in the footer as an affiliate badge, linking to swimming.org (the "Swim England Affiliated" text links there too).
