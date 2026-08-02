@@ -2,13 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const meets = [
-  { when: 'Jan – Feb', name: 'Devon County Championships', note: 'For qualifying swimmers — qualifying window runs March to December.' },
-  { when: 'May', name: 'South West Regional Championships', note: 'Held over three weekends across two age groups.' },
-  { when: 'Season', name: 'Local Open Meets', note: 'Level 3 meets at other venues — a route to county and regional qualification.' },
-  { when: 'Nov', name: 'Club Championships', note: 'Our in-house licensed meet — open to all club members.' },
-  { when: 'Year-round', name: 'Ribbon Galas', note: 'Fun in-house galas — a first taste of competition.' },
-];
+const fbPage = 'https://www.facebook.com/torquayleander';
+const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(fbPage)}&tabs=timeline&width=340&height=560&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`;
 ---
 <BaseLayout title="Torquay Leander Swimming Club">
 
@@ -45,22 +40,24 @@ const meets = [
       </div>
       <aside class="meets-aside">
         <div class="meets-head">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <h3>Upcoming Meets</h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+          <h3>News</h3>
         </div>
-        <ul class="meets-list">
-          {meets.map((m) => (
-            <li>
-              <span class="meet-when">{m.when}</span>
-              <div class="meet-body">
-                <strong>{m.name}</strong>
-                <span>{m.note}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <a class="meets-fb" href="https://www.facebook.com/TorquayLeanderSwimmingClub/events" target="_blank" rel="noopener">
-          Confirmed dates on our Facebook events →
+        <div class="fb-feed">
+          <iframe
+            src={fbEmbed}
+            width="340"
+            height="560"
+            style="border:none;overflow:hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            title="Torquay Leander on Facebook"
+            loading="lazy"></iframe>
+        </div>
+        <a class="meets-fb" href={fbPage} target="_blank" rel="noopener">
+          Follow us on Facebook →
         </a>
         <a class="meets-more" href={`${base}/competitions/`}>Competitions</a>
       </aside>
@@ -205,20 +202,8 @@ const meets = [
   }
   .meets-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; color: var(--red); }
   .meets-head h3 { font-size: 1.05rem; font-weight: 900; color: var(--text); letter-spacing: -0.3px; margin: 0; }
-  .meets-list { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; }
-  .meets-list li {
-    display: flex; align-items: flex-start; gap: 14px;
-    padding: 13px 0; border-bottom: 1px solid var(--border);
-  }
-  .meets-list li:last-child { border-bottom: none; }
-  .meet-when {
-    flex-shrink: 0; min-width: 76px; text-align: center;
-    background: var(--red-light); color: var(--red-dark);
-    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;
-    border-radius: 8px; padding: 6px 8px; margin-top: 2px;
-  }
-  .meet-body strong { display: block; font-size: 0.88rem; font-weight: 800; color: var(--text); margin-bottom: 2px; }
-  .meet-body span { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+  .fb-feed { display: flex; justify-content: center; margin-bottom: 16px; }
+  .fb-feed iframe { max-width: 100%; }
   .meets-fb {
     display: block; color: var(--red); font-weight: 700; font-size: 0.85rem;
     text-decoration: none; margin-bottom: 14px;

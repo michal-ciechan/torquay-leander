@@ -30,10 +30,8 @@ Attachments expected (not in raw.md):
 ## 2. Home page
 
 - [ ] **Hero banner** — Compress / de-emphasise main title banner (“Building Confidence…”) so it is less dominant.
-- [ ] **News feed** — Add a Facebook page feed section titled **News**.
-  > **Note (site check):** the Facebook page URL is already known — `facebook.com/TorquayLeanderSwimmingClub` (used in Footer, galas page, and home `/events` link). Only the **embed method** is still open.
-- [ ] **Replace upcoming meets** — Put the News (Facebook) section in place of the current “Upcoming meets” block.
-  > **Note (site check):** "Upcoming Meets" is not a standalone block — it's a sidebar `<aside>` in a two-column grid beside the welcome text on `index.astro`. Replacing it means reworking that grid layout.
+- [x] **News feed (replaces Upcoming Meets)** — Add a Facebook page feed section titled **News**, in place of the current “Upcoming meets” block. *(one and the same task — the News section IS the replacement; done via Facebook Page Plugin iframe of facebook.com/torquayleander)*
+  > **Note (site check):** the Facebook page URL is known — `facebook.com/torquayleander`. "Upcoming Meets" is a sidebar `<aside>` in a two-column grid beside the welcome text on `index.astro`; the News feed takes over that aside.
 
 ---
 
@@ -197,7 +195,7 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 - [x] Confirm Lisa Matthieson photo delivery. *(received)*
 - [x] Confirm Swim England logo assets + official URL for affiliate link. *(used the official transparent PNG from swimming.org)*
 - [ ] Confirm Swim Torquay URL for Learn to Swim stages 1–4 button.
-- [ ] Confirm Facebook **embed method** for News feed (plugin, manual posts, etc.). ~~Page URL~~ — already known: `facebook.com/TorquayLeanderSwimmingClub`.
+- [x] Confirm Facebook **embed method** for News feed. *(Page Plugin iframe, no API key; page: `facebook.com/torquayleander`)*
 - [ ] Decide where **Club Merchandise** and **Members Login** sit in the new nav order (omitted from the mail's proposed order).
 - [ ] Confirm titles for unnamed training playlist videos (or fetch from YouTube).
 - [ ] Confirm where Warm-up / Stretches media lives.
