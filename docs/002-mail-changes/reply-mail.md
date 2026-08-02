@@ -2,7 +2,7 @@
 
 > **Living document** — update this as more of the 002 tasks land, then send/refresh with Dom.
 > Source feedback: [raw.md](./raw.md) · task tracking: [tasks.md](./tasks.md)
-> Last updated: 1 Aug 2026
+> Last updated: 2 Aug 2026
 
 ---
 
@@ -26,12 +26,14 @@ Thanks for the detailed feedback and the attachments (new logo + Lisa's photo) �
 - After trying a few treatments, the version now live has a **thick white outline around the wording** (bird left standard) so it stays readable on the red header — have a look and see what you think.
 - **You can preview every option yourself**: we built a picker at https://michal-ciechan.github.io/torquay-leander/samples/logo/ — it shows nine outline treatments in the actual navbar and footer, you tap one to preview it across the real site on your device, and the **Share** button sends us your choice. Full-resolution PNGs of all nine are downloadable on the same page.
 
+**Footer**
+- The official **Swim England logo** now sits in the footer as an affiliate badge, linking to swimming.org (the "Swim England Affiliated" text links there too).
+
 **Coaches**
 - Lisa's photo is updated on the Training page (we also mirrored it the right way round so the club logo on her shirt reads correctly).
 
 ## In progress / coming next
 
-- **Swim England logo + link in the footer** (the footer already says "Swim England Affiliated" in text).
 - **Home page** — compressing the hero banner, and replacing "Upcoming Meets" with a **News** feed from the club Facebook page.
 - **Facilities** — adding the FINA Electronic Timing & Scoreboard highlight, and folding the "FINA approved" wording into the diving blocks card.
 - **Training** — Learn to Swim stages 1–4 button through to Swim Torquay, warm-up video & stretches tabs, and the training/nutrition/sports-psychology video content (also on the Safeguarding page).
@@ -41,11 +43,10 @@ Thanks for the detailed feedback and the attachments (new logo + Lisa's photo) �
 ## Things we need from you
 
 1. **Logo choice** — use the picker page above and Share your preferred treatment (or just reply with what you'd like).
-2. **Swim England logo** — do you have a preferred official asset/brand file, or shall we take the standard one from swimming.org?
-3. **Swim Torquay link** — what's the best web address (or contact) for the Learn to Swim stages 1–4 button?
-4. **Facebook feed** — happy for us to embed the club page feed directly, or would you rather we hand-pick posts as "News"?
-5. **Warm-up video & stretches** — where does that content live (YouTube links, PDFs, something else)?
-6. **Video titles** — a few of the YouTube links you sent have no obvious titles; if you have names for them it'll make the training video section tidier.
+2. **Swim Torquay link** — what's the best web address (or contact) for the Learn to Swim stages 1–4 button?
+3. **Facebook feed** — happy for us to embed the club page feed directly, or would you rather we hand-pick posts as "News"?
+4. **Warm-up video & stretches** — where does that content live (YouTube links, PDFs, something else)?
+5. **Video titles** — a few of the YouTube links you sent have no obvious titles; if you have names for them it'll make the training video section tidier.
 
 Cheers,
 Mike
@@ -57,4 +58,5 @@ Mike
 | Date | Change |
 |---|---|
 | 31 Jul 2026 | Nav reordered; Competitions rename + `/galas/` → `/competitions/` redirects; Contact page created and added to nav; Safeguarding/Merchandise labels shortened |
+| 2 Aug 2026 | Swim England affiliate badge + links in footer |
 | 1 Aug 2026 | New logo live (cleaned, optimised); logo picker at `/samples/logo/` with 3×3 outline matrix, live site preview + share; site logo set to thick-word-outline variant; nav chip removed; Lisa's photo updated |

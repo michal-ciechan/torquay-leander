@@ -10,7 +10,10 @@ const logo = `${base}/logo.png`;
           <img src={logo} alt="" onerror="this.style.display='none'" />
           <span>Torquay Leander</span>
         </div>
-        <p>A non-profit, SwimMark registered swimming club in Torquay, Devon. Swim England affiliated. Open to all ages and abilities.</p>
+        <p>A non-profit, SwimMark registered swimming club in Torquay, Devon. <a class="f-se-text" href="https://www.swimming.org/" target="_blank" rel="noopener">Swim England</a> affiliated. Open to all ages and abilities.</p>
+        <a class="f-affiliate" href="https://www.swimming.org/" target="_blank" rel="noopener" title="Swim England — the national governing body for swimming in England">
+          <img src={`${base}/affiliates/swim-england.png`} alt="Swim England" />
+        </a>
       </div>
       <div class="footer-col">
         <h4>Club</h4>
@@ -78,12 +81,17 @@ const logo = `${base}/logo.png`;
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Torquay Leander Swimming Club. All rights reserved.</span>
-      <span>Non-profit &middot; SwimMark Registered &middot; Swim England Affiliated</span>
+      <span>Non-profit &middot; SwimMark Registered &middot; <a class="f-se-text" href="https://www.swimming.org/" target="_blank" rel="noopener">Swim England Affiliated</a></span>
     </div>
   </div>
 </footer>
 
 <style>
+  .f-se-text { color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.3); text-underline-offset: 3px; }
+  .f-se-text:hover { text-decoration-color: currentColor; }
+  .f-affiliate { display: inline-block; margin-top: 16px; background: #fff; border-radius: 10px; padding: 8px 14px; }
+  .f-affiliate img { height: 30px; width: auto; display: block; }
+
   .footer-contact a { display: inline-flex; align-items: center; gap: 9px; }
   .footer-contact .contact-address { display: flex; align-items: flex-start; gap: 9px; color: rgba(255,255,255,0.6); }
   .footer-contact svg { flex-shrink: 0; width: 15px; height: 15px; opacity: 0.85; }

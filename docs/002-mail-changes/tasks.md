@@ -19,7 +19,7 @@ Attachments expected (not in raw.md):
   5. Welfare / Safeguarding  
   6. Contact  
   > **Note (site check):** the proposed order omits **Club Merchandise** and **Members Login** — decide where they land. "Membership / Join" merges what is currently two separate top-level items (Membership dropdown + Join Us). "Contact" will be the **new Contact page** (see §8).
-- [ ] **Footer — Swim England** — Add Swim England affiliate logo and link (club is Swim England affiliated).
+- [x] **Footer — Swim England** — Add Swim England affiliate logo and link (club is Swim England affiliated). *(done — official logo badge under the brand blurb + both footer text mentions link to swimming.org)*
   > **Note (site check):** footer already *says* "Swim England Affiliated" in the brand blurb and bottom bar — only the logo + link are missing.
 - [x] **Logo — header** — Replace club logo in the header with the new attached logo. *(done — cleaned + optimised to `public/logo.png`, colour logo on white chip)*
 - [x] **Logo — footer** — Replace club logo in the footer with the same new logo. *(done — same treatment; login page also uses the new asset, kept as white silhouette)*
@@ -195,7 +195,7 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 
 - [x] Confirm new logo file delivery and preferred formats (SVG/PNG). *(PNG received)*
 - [x] Confirm Lisa Matthieson photo delivery. *(received)*
-- [ ] Confirm Swim England logo assets + official URL for affiliate link.
+- [x] Confirm Swim England logo assets + official URL for affiliate link. *(used the official transparent PNG from swimming.org)*
 - [ ] Confirm Swim Torquay URL for Learn to Swim stages 1–4 button.
 - [ ] Confirm Facebook **embed method** for News feed (plugin, manual posts, etc.). ~~Page URL~~ — already known: `facebook.com/TorquayLeanderSwimmingClub`.
 - [ ] Decide where **Club Merchandise** and **Members Login** sit in the new nav order (omitted from the mail's proposed order).
