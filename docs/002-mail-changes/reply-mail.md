@@ -14,7 +14,8 @@ Thanks for the detailed feedback and the attachments (new logo + Lisa's photo) �
 
 **Navigation**
 - The main menu is reordered to match how visitors browse, exactly as you suggested: **Training · Competitions · Membership · About Us · Safeguarding · Contact · Merchandise · Members Login** (same order in the mobile menu).
-- "Galas & Competitions" is renamed to just **Competitions**, and the section's web address moved to `/competitions/` (old `/galas/` links still redirect, so nothing shared on Facebook breaks).
+- One thing to decide: your suggested order didn't include **Merchandise** — do we keep it in the menu now, or hold it back until that side of things is ready? Easy to do either.
+- "Galas & Competitions" is renamed to just **Competitions**.
 
 **Contact page**
 - There's a brand-new **Contact** page — the "Ready to Dive In?" interest form plus the pool map on its own page: https://michal-ciechan.github.io/torquay-leander/contact/
