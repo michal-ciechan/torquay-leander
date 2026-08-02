@@ -12,7 +12,8 @@ const logo = `${base}/logo.png`;
         </div>
         <p>A non-profit, SwimMark registered swimming club in Torquay, Devon. <a class="f-se-text" href="https://www.swimming.org/" target="_blank" rel="noopener">Swim England</a> affiliated. Open to all ages and abilities.</p>
         <a class="f-affiliate" href="https://www.swimming.org/" target="_blank" rel="noopener" title="Swim England — the national governing body for swimming in England">
-          <img src={`${base}/affiliates/swim-england.png`} alt="Swim England" />
+          <span class="f-affiliate-logo"><img src={`${base}/affiliates/swim-england.png`} alt="Swim England" /></span>
+          <span class="f-affiliate-text">Swim England affiliated</span>
         </a>
       </div>
       <div class="footer-col">
@@ -81,7 +82,13 @@ const logo = `${base}/logo.png`;
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Torquay Leander Swimming Club. All rights reserved.</span>
-      <span>Non-profit &middot; SwimMark Registered &middot; <a class="f-se-text" href="https://www.swimming.org/" target="_blank" rel="noopener">Swim England Affiliated</a></span>
+      <span class="footer-bottom-se">
+        Non-profit &middot; SwimMark Registered &middot;
+        <a class="f-se-text f-se-inline" href="https://www.swimming.org/" target="_blank" rel="noopener">
+          <img src={`${base}/affiliates/swim-england.png`} alt="" />
+          Swim England Affiliated
+        </a>
+      </span>
     </div>
   </div>
 </footer>
@@ -89,8 +96,18 @@ const logo = `${base}/logo.png`;
 <style>
   .f-se-text { color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.3); text-underline-offset: 3px; }
   .f-se-text:hover { text-decoration-color: currentColor; }
-  .f-affiliate { display: inline-block; margin-top: 16px; background: #fff; border-radius: 10px; padding: 8px 14px; }
-  .f-affiliate img { height: 30px; width: auto; display: block; }
+  .f-affiliate {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-top: 16px; text-decoration: none;
+  }
+  .f-affiliate-logo { background: #fff; border-radius: 10px; padding: 8px 14px; display: block; }
+  .f-affiliate-logo img { height: 30px; width: auto; display: block; }
+  .f-affiliate-text { color: rgba(255,255,255,0.75); font-size: 0.85rem; font-weight: 700; }
+  .f-affiliate:hover .f-affiliate-text { color: #fff; }
+
+  .footer-bottom-se { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .f-se-inline { display: inline-flex; align-items: center; gap: 7px; }
+  .f-se-inline img { height: 16px; width: auto; background: #fff; border-radius: 3px; padding: 2px 4px; }
 
   .footer-contact a { display: inline-flex; align-items: center; gap: 9px; }
   .footer-contact .contact-address { display: flex; align-items: flex-start; gap: 9px; color: rgba(255,255,255,0.6); }
