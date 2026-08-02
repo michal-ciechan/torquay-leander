@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const fbPage = 'https://www.facebook.com/torquayleander';
-const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(fbPage)}&tabs=timeline&width=340&height=560&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`;
+const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(fbPage)}&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`;
 ---
 <BaseLayout title="Torquay Leander Swimming Club">
 
@@ -46,7 +46,7 @@ const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURICompo
         <div class="fb-feed">
           <iframe
             src={fbEmbed}
-            width="340"
+            width="500"
             height="560"
             style="border:none;overflow:hidden"
             scrolling="no"
@@ -193,26 +193,27 @@ const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURICompo
 <style>
   .welcome-meets-grid {
     max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: start;
+    display: grid; grid-template-columns: 1fr 500px; gap: 48px; align-items: start;
   }
 
   .meets-aside {
     background: #fff; border: 1.5px solid var(--border); border-radius: 18px;
-    padding: 26px 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    padding: 24px 0; box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    overflow: hidden;
   }
-  .meets-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; color: var(--red); }
+  .meets-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding: 0 22px; color: var(--red); }
   .meets-head h3 { font-size: 1.05rem; font-weight: 900; color: var(--text); letter-spacing: -0.3px; margin: 0; }
   .fb-feed { display: flex; justify-content: center; margin-bottom: 16px; }
-  .fb-feed iframe { max-width: 100%; }
+  .fb-feed iframe { width: 100%; max-width: 500px; }
   .meets-fb {
     display: block; color: var(--red); font-weight: 700; font-size: 0.85rem;
-    text-decoration: none; margin-bottom: 14px;
+    text-decoration: none; margin: 0 22px 14px;
   }
   .meets-fb:hover { text-decoration: underline; }
   .meets-more {
     display: block; text-align: center; background: var(--black); color: #fff;
     text-decoration: none; font-weight: 700; font-size: 0.85rem;
-    padding: 11px 16px; border-radius: 10px; transition: background 0.2s;
+    padding: 11px 16px; margin: 0 22px; border-radius: 10px; transition: background 0.2s;
   }
   .meets-more:hover { background: #222; }
 
