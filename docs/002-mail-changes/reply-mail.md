@@ -10,7 +10,7 @@ Hi Dom,
 
 Thanks for the detailed feedback and the attachments — really useful. A good chunk of it is now live: https://michal-ciechan.github.io/torquay-leander/
 
-Below I've split things into what I need from you, decisions I've made that you might want to change, and then everything that's actually changed so far.
+Below I've split things into what I need from you, decisions I've made that you might want to change, and then everything that's actually changed.
 
 ## 1. Things I need from you
 
@@ -29,16 +29,14 @@ Below I've split things into what I need from you, decisions I've made that you 
 
 **Contact page** — rather than only fixing the form on the home page, I've given it its own **Contact** page in the menu, so people don't have to scroll to the bottom of the home page to find it: https://michal-ciechan.github.io/torquay-leander/contact/
 
-**News feed** — the Facebook page feed is embedded live, so posts appear on the website automatically with nothing extra to maintain. The alternative would be hand-picking posts, which looks tidier but needs someone to keep it updated.
-
-## 3. What's changed so far
+## 3. What's changed
 
 **Navigation**
 - Menu reordered exactly as you suggested: **Training · Competitions · Membership · About Us · Safeguarding · Contact · Merchandise · Members Login** (same on mobile).
 - "Galas & Competitions" renamed to just **Competitions**.
 
 **Home page**
-- "Upcoming Meets" replaced by a **News** section showing the live club Facebook feed.
+- "Upcoming Meets" replaced by a **News** section showing the live club Facebook feed — posts appear on the website automatically, nothing extra to maintain.
 
 **Contact**
 - New Contact page with the interest form and the pool map.
