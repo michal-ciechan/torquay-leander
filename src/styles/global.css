@@ -344,6 +344,27 @@ textarea.form-field { min-height: 120px; resize: vertical; }
 .form-field-date::-webkit-calendar-picker-indicator:hover { opacity: 0.85; }
 .form-field-date::-webkit-inner-spin-button { display: none; }
 
+/* Date inputs ignore `placeholder`, so fake one: while the field is empty
+   (`:invalid` on a required input) and unfocused, blank out the browser's own
+   dd/mm/yyyy hint and show our overlay instead. Only where we can hide that
+   hint — Firefox lacks ::-webkit-datetime-edit, so it keeps its native text. */
+.date-field { position: relative; }
+.date-ph {
+  display: none;
+  position: absolute; left: 17px; top: 0; height: 50px;
+  align-items: center;
+  color: #94a3b8; font-size: 1rem; pointer-events: none;
+}
+@supports selector(::-webkit-datetime-edit) {
+  .form-field-date:invalid:not(:focus)::-webkit-datetime-edit { color: transparent; }
+  .form-field-date:invalid:not(:focus) + .date-ph { display: flex; }
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
 .form-note { font-size: 0.83rem; color: var(--muted); line-height: 1.6; margin-top: 14px; text-align: center; }
 .form-note a { color: var(--red); font-weight: 700; text-decoration: none; }
 .form-note a:hover { text-decoration: underline; }

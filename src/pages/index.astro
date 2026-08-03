@@ -148,8 +148,11 @@ const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURICompo
           <h3>Ready to Dive In?</h3>
           <p class="join-form-intro">Interested in coming for a free trial? Please register your interest below. We understand it's not just about your ability but also the environment you train in — feeling comfortable with your fellow swimmers, coaches and surroundings is the best way to reach your potential.</p>
           <input class="form-field" type="text" placeholder="Name of Swimmer" />
-          <label class="form-field-label" for="dob">Date of Birth</label>
-          <input id="dob" class="form-field form-field-date" type="date" />
+          <label class="sr-only" for="dob">Date of Birth</label>
+          <div class="date-field">
+            <input id="dob" class="form-field form-field-date" type="date" required />
+            <span class="date-ph">Date of Birth</span>
+          </div>
           <input class="form-field" type="text" placeholder="Swim level of swimmer (Stage 5 minimum)" />
           <input class="form-field" type="text" placeholder="Name of parent / guardian" />
           <input class="form-field" type="tel" placeholder="Contact number" />
