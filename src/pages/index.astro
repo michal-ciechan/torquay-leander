@@ -148,13 +148,14 @@ const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURICompo
           <h3>Ready to Dive In?</h3>
           <p class="join-form-intro">Interested in coming for a free trial? Please register your interest below. We understand it's not just about your ability but also the environment you train in — feeling comfortable with your fellow swimmers, coaches and surroundings is the best way to reach your potential.</p>
           <input class="form-field" type="text" placeholder="Name of Swimmer" />
-          <label class="form-field-label">Date of Birth</label>
-          <input class="form-field form-field-date" type="date" />
+          <label class="form-field-label" for="dob">Date of Birth</label>
+          <input id="dob" class="form-field form-field-date" type="date" />
           <input class="form-field" type="text" placeholder="Swim level of swimmer (Stage 5 minimum)" />
           <input class="form-field" type="text" placeholder="Name of parent / guardian" />
           <input class="form-field" type="tel" placeholder="Contact number" />
           <input class="form-field" type="email" placeholder="Email address" />
-          <button class="form-submit" onclick="window.location='mailto:torquayleander@hotmail.com'">Send My Interest</button>
+          <button class="form-submit" onclick="window.location='mailto:torquayleander@hotmail.com?subject=Membership%20enquiry'">Send My Interest</button>
+          <p class="form-note">Not about joining? <a href={`${base}/contact/?enquiry=general`}>Send a general enquiry</a> instead.</p>
         </div>
         <div class="join-card join-map-card">
           <div class="join-map-embed">

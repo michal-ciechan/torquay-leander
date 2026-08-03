@@ -27,6 +27,10 @@ Below I've split things into what I need from you, decisions I've made that you 
 
 **Logo treatment** — after trying a few variations ([you can see them all here](https://michal-ciechan.github.io/torquay-leander/samples/logo/) — tap any one to preview it on the real site, then hit **Share** to send your choice to me) I've gone with adding a **thick white outline around the words**, to make it more readable at the smaller size a logo actually appears at. The standard logo looks fine small on the black footer, so we could keep that one there, but for now I've used the same thick outline in both places for consistency.
 
+**Contact form colour** — I've lightened the form to a white card with light grey fields, which is a big improvement on the dark version. If you'd like a different look, [here are four treatments side by side](https://michal-ciechan.github.io/torquay-leander/samples/contact/) — just tell me which you prefer.
+
+**Where the enquiry split lives** — the Contact page now has **Membership** and **General enquiry** tabs. On the home page I've kept only the membership form, since that's what most first-time visitors are there for, with a small "not about joining?" link through to the general form. Happy to show both on the home page if you'd rather.
+
 **Contact page** — rather than only fixing the form on the home page, I've given it its own **Contact** page in the menu, so people don't have to scroll to the bottom of the home page to find it: https://michal-ciechan.github.io/torquay-leander/contact/
 
 ## 3. What's changed
@@ -39,7 +43,9 @@ Below I've split things into what I need from you, decisions I've made that you 
 - "Upcoming Meets" replaced by a **News** section showing the live club Facebook feed — posts appear on the website automatically, nothing extra to maintain.
 
 **Contact**
-- New Contact page with the interest form and the pool map.
+- New Contact page with the enquiry form and the pool map, now split into **Membership** and **General enquiry**.
+- The form is lighter — white card and light fields instead of the dark block.
+- Fixed the date-of-birth box so it's the same size as the other fields on phones (it was rendering oddly on iPhones).
 
 **Logo & branding**
 - New club logo live in the header, footer and members-login page (cleaned up and web-optimised).
@@ -56,7 +62,6 @@ Below I've split things into what I need from you, decisions I've made that you 
 - **Home page** — compressing the main title banner so it's less dominant.
 - **Training** — Learn to Swim stages 1–4 button through to Swim Torquay, warm-up video & stretches tabs, and the training/nutrition/sports-psychology videos (also on Safeguarding).
 - **Competitions** — 2026 Scott Ormsby and William Shield champions on the banner; your full **Swimming Galas – A Parent's Guide**; **Club Championships updated to the 2026 dates** with heat sheets removed until nearer the time.
-- **Contact form** — lightening the look of the form, and possibly splitting membership vs general enquiries.
 
 Cheers,
 Mike
@@ -67,7 +72,7 @@ Mike
 
 | Date | Change |
 |---|---|
-| 3 Aug 2026 | Facilities: timing + diving blocks cards using Dom's verbatim wording; mail restructured (questions → decisions → changes) |
+| 3 Aug 2026 | Contact form lightened + Membership/General split, iOS date-field fix, `/samples/contact/` colour options; Facilities: timing + diving blocks cards using Dom's verbatim wording; mail restructured (questions → decisions → changes) |
 | 2 Aug 2026 | Swim England affiliate badge + links in footer; home "Upcoming Meets" replaced with live Facebook News feed |
 | 1 Aug 2026 | New logo live (cleaned, optimised); logo picker at `/samples/logo/` with 3×3 outline matrix, live site preview + share; site logo set to thick-word-outline variant; nav chip removed; Lisa's photo updated |
 | 31 Jul 2026 | Nav reordered; Competitions rename + redirects; Contact page created and added to nav; Safeguarding/Merchandise labels shortened |

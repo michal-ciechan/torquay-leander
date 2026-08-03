@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const variants = [
+  {
+    key: 'light',
+    name: 'Light (live)',
+    desc: 'White card, light grey fields. What the site uses now — brightest and easiest to read.',
+  },
+  {
+    key: 'tinted',
+    name: 'Soft red tint',
+    desc: 'Very light club-red wash on the card, so the form still reads as light but is clearly club-branded.',
+  },
+  {
+    key: 'bordered',
+    name: 'Outlined',
+    desc: 'White card with a red keyline and white fields — the airiest option, closest to a printed form.',
+  },
+  {
+    key: 'dark',
+    name: 'Dark (previous)',
+    desc: 'The original black card, for comparison.',
+  },
+];
+---
+<BaseLayout title="Contact Form Samples — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/samples/`}>Samples</a>
+      <span>›</span>
+      <span>Contact form</span>
+    </div>
+    <h1>Contact Form Colours</h1>
+    <p>The same form and surrounding section in four colour treatments, so you can see which reads best. The live site currently uses the first one.</p>
+  </div>
+</section>
+
+{variants.map((v) => (
+  <section class={`join sample-join tone-${v.key}`}>
+    <div class="join-inner">
+      <div class="variant-head">
+        <h2>{v.name}</h2>
+        <p>{v.desc}</p>
+      </div>
+      <div class="join-grid">
+        <div class="join-card join-form-card">
+          <div class="enq-tabs">
+            <button class="enq-tab active" type="button">Membership</button>
+            <button class="enq-tab" type="button">General enquiry</button>
+          </div>
+          <h3>Ready to Dive In?</h3>
+          <p class="join-form-intro">Interested in coming for a free trial? Please register your interest below — it's not just about ability, but feeling comfortable with your fellow swimmers, coaches and surroundings.</p>
+          <input class="form-field" type="text" placeholder="Name of Swimmer" />
+          <label class="form-field-label">Date of Birth</label>
+          <input class="form-field form-field-date" type="date" />
+          <input class="form-field" type="text" placeholder="Swim level of swimmer (Stage 5 minimum)" />
+          <input class="form-field" type="text" placeholder="Name of parent / guardian" />
+          <input class="form-field" type="tel" placeholder="Contact number" />
+          <input class="form-field" type="email" placeholder="Email address" />
+          <button class="form-submit" type="button">Send My Interest</button>
+        </div>
+        <div class="join-card join-map-card">
+          <div class="map-stand-in">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Map of the pool sits here</span>
+          </div>
+          <div class="join-map-foot">
+            <strong>Swim Torquay — Plainmoor</strong>
+            <p>We train at Swim Torquay in the Plainmoor area of Torquay, Devon. Parking and spectator access available on session nights.</p>
+            <a href="https://www.google.com/maps?q=Swim+Torquay+Plainmoor" target="_blank" rel="noopener">Open in Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+))}
+
+</BaseLayout>
+
+<style is:global>
+  .sample-join .variant-head { max-width: 1200px; margin: 0 auto 28px; }
+  .sample-join .variant-head h2 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .sample-join .variant-head p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; max-width: 640px; }
+  .sample-join { padding: 56px 5vw; }
+
+  .sample-join .map-stand-in {
+    flex: 1; min-height: 300px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+    background: repeating-conic-gradient(#e2e8f0 0% 25%, #f1f5f9 0% 50%) 50% / 28px 28px;
+    color: var(--muted); font-size: 0.85rem; font-weight: 600;
+  }
+
+  /* Soft red tint */
+  .tone-tinted .join-form-card { background: #fff6f6; border-color: #fbd5d5; }
+  .tone-tinted .form-field { background: #fff; border-color: #f3c9c9; }
+  .tone-tinted .enq-tabs { background: #fdeaea; border-color: #f3c9c9; }
+
+  /* Outlined */
+  .tone-bordered .join-form-card { background: #fff; border: 2px solid var(--red); }
+  .tone-bordered .form-field { background: #fff; border-color: #e2e8f0; }
+  .tone-bordered .form-field:focus { background: #fff; }
+
+  /* Dark (previous look) */
+  .tone-dark { background: #fdf2f2; }
+  .tone-dark .join-form-card { background: var(--black); border-color: transparent; color: #fff; }
+  .tone-dark .join-form-card h3 { color: #fff; }
+  .tone-dark .join-form-intro { color: rgba(255,255,255,0.7); }
+  .tone-dark .form-field {
+    background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); color: #fff;
+  }
+  .tone-dark .form-field::placeholder { color: rgba(255,255,255,0.6); }
+  .tone-dark .form-field:focus { background: rgba(255,255,255,0.12); box-shadow: none; }
+  .tone-dark .form-field-label { color: rgba(255,255,255,0.55); }
+  .tone-dark .form-field-date { color: rgba(255,255,255,0.85); }
+  .tone-dark .form-field-date::-webkit-calendar-picker-indicator { filter: invert(1) opacity(0.5); }
+  .tone-dark .enq-tabs { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); }
+  .tone-dark .enq-tab { color: rgba(255,255,255,0.6); }
+  .tone-dark .enq-tab.active { background: rgba(255,255,255,0.14); color: #fff; }
+</style>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: var(--red-light); clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 660px; line-height: 1.7; }
+</style>

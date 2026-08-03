@@ -24,17 +24,39 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <p class="join-sub-intro">We are always excited to hear from new swimmers and families interested in becoming part of the club.</p>
     </div>
     <div class="join-grid">
-      <div class="join-card join-form-card">
-        <h3>Ready to Dive In?</h3>
-        <p class="join-form-intro">Interested in coming for a free trial? Please register your interest below. We understand it's not just about your ability but also the environment you train in — feeling comfortable with your fellow swimmers, coaches and surroundings is the best way to reach your potential.</p>
-        <input class="form-field" type="text" placeholder="Name of Swimmer" />
-        <label class="form-field-label">Date of Birth</label>
-        <input class="form-field form-field-date" type="date" />
-        <input class="form-field" type="text" placeholder="Swim level of swimmer (Stage 5 minimum)" />
-        <input class="form-field" type="text" placeholder="Name of parent / guardian" />
-        <input class="form-field" type="tel" placeholder="Contact number" />
-        <input class="form-field" type="email" placeholder="Email address" />
-        <button class="form-submit" onclick="window.location='mailto:torquayleander@hotmail.com'">Send My Interest</button>
+      <div class="join-card join-form-card" x-data="{ tab: initialTab() }">
+        <div class="enq-tabs" role="tablist">
+          <button class="enq-tab" :class="{ active: tab === 'membership' }" @click="tab = 'membership'" role="tab">Membership</button>
+          <button class="enq-tab" :class="{ active: tab === 'general' }" @click="tab = 'general'" role="tab">General enquiry</button>
+        </div>
+
+        <template x-if="tab === 'membership'">
+          <div>
+            <h3>Ready to Dive In?</h3>
+            <p class="join-form-intro">Interested in coming for a free trial? Please register your interest below. We understand it's not just about your ability but also the environment you train in — feeling comfortable with your fellow swimmers, coaches and surroundings is the best way to reach your potential.</p>
+            <input class="form-field" type="text" placeholder="Name of Swimmer" />
+            <label class="form-field-label" for="dob">Date of Birth</label>
+            <input id="dob" class="form-field form-field-date" type="date" />
+            <input class="form-field" type="text" placeholder="Swim level of swimmer (Stage 5 minimum)" />
+            <input class="form-field" type="text" placeholder="Name of parent / guardian" />
+            <input class="form-field" type="tel" placeholder="Contact number" />
+            <input class="form-field" type="email" placeholder="Email address" />
+            <button class="form-submit" onclick="window.location='mailto:torquayleander@hotmail.com?subject=Membership%20enquiry'">Send My Interest</button>
+          </div>
+        </template>
+
+        <template x-if="tab === 'general'">
+          <div>
+            <h3>Get in Touch</h3>
+            <p class="join-form-intro">Any other question — training times, galas, volunteering, or anything else about the club — send it over and a member of the committee will get back to you.</p>
+            <input class="form-field" type="text" placeholder="Your name" />
+            <input class="form-field" type="email" placeholder="Email address" />
+            <input class="form-field" type="tel" placeholder="Contact number (optional)" />
+            <input class="form-field" type="text" placeholder="Subject" />
+            <textarea class="form-field" placeholder="How can we help?"></textarea>
+            <button class="form-submit" onclick="window.location='mailto:torquayleander@hotmail.com?subject=General%20enquiry'">Send Enquiry</button>
+          </div>
+        </template>
       </div>
       <div class="join-card join-map-card">
         <div class="join-map-embed">
@@ -51,6 +73,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 </section>
 
 <script is:inline>
+  // Deep links from the home page: /contact/?enquiry=general opens that tab.
+  function initialTab() {
+    return new URLSearchParams(location.search).get('enquiry') === 'general' ? 'general' : 'membership';
+  }
   function initJoinMap() {
     const location = { lat: 50.475731, lng: -3.524576 }; // Swim Torquay, Marnham Rd, Plainmoor, TQ1 3QP
     const map = new google.maps.Map(document.getElementById('join-map'), {
