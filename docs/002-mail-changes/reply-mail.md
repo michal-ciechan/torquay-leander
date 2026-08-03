@@ -23,9 +23,6 @@ Below I've split things into what I need from you, decisions I've made that you 
 
 *Roughly least to most confident, so the ones I'd most like a second opinion on are first.*
 
-**Facilities wording** — you gave me full sentences for the Electronic Timing and Diving Blocks highlights. I've split them: the fuller explanation now sits in the paragraph above the cards (including "FINA approved equipment" and the real-world competition environments point), and the cards carry a shorter headline version so they stay even in height and quick to scan.
-→ [Here's your wording used verbatim in the cards](https://michal-ciechan.github.io/torquay-leander/samples/facilities/) so you can compare with [the live page](https://michal-ciechan.github.io/torquay-leander/about/facilities/). Happy to switch to yours if you prefer it.
-
 **"FINA approved"** — worth flagging that FINA renamed itself to World Aquatics a couple of years ago, so the term is slightly dated. I've kept FINA since it's what the club and most suppliers still say, but easy to swap if you'd rather be current.
 
 **Logo treatment** — after trying a few variations ([you can see them all here](https://michal-ciechan.github.io/torquay-leander/samples/logo/) — tap any one to preview it on the real site, then hit **Share** to send your choice to me) I've gone with adding a **thick white outline around the words**, to make it more readable at the smaller size a logo actually appears at. The standard logo looks fine small on the black footer, so we could keep that one there, but for now I've used the same thick outline in both places for consistency.
@@ -51,7 +48,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 - Official **Swim England logo** added to the footer as an affiliate badge, linking to swimming.org.
 
 **About us**
-- Facilities page now highlights **FINA Approved Electronic Timing** (with scoreboard) and the **FINA Approved Diving Blocks**, both noting we're the only club in Torbay with them.
+- Facilities page now has highlight cards for **FINA Approved Electronic Timing** and **Diving Blocks**, using your wording: https://michal-ciechan.github.io/torquay-leander/about/facilities/
 
 **Coaches**
 - Lisa's photo updated on the Training page.
@@ -72,7 +69,7 @@ Mike
 
 | Date | Change |
 |---|---|
-| 3 Aug 2026 | Facilities: timing + diving blocks (paragraph & cards); `/samples/facilities/` alternative-wording page; mail restructured (questions → decisions → changes) |
+| 3 Aug 2026 | Facilities: timing + diving blocks cards using Dom's verbatim wording; mail restructured (questions → decisions → changes) |
 | 2 Aug 2026 | Swim England affiliate badge + links in footer; home "Upcoming Meets" replaced with live Facebook News feed |
 | 1 Aug 2026 | New logo live (cleaned, optimised); logo picker at `/samples/logo/` with 3×3 outline matrix, live site preview + share; site logo set to thick-word-outline variant; nav chip removed; Lisa's photo updated |
 | 31 Jul 2026 | Nav reordered; Competitions rename + redirects; Contact page created and added to nav; Safeguarding/Merchandise labels shortened |

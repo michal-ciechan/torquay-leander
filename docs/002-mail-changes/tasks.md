@@ -40,11 +40,11 @@ Attachments expected (not in raw.md):
 - [x] **Facilities — electronic timing** — On the facilities highlight cards/windows, add:  
   *FINA Approved Electronic Timing* — Torquay Leander is proud to be the only club in Torbay and the surrounding areas to have Electronic Timing and Scoreboard which is used to enhance training and galas.
   > **Note (site check):** genuine add — timing currently only appears as a "Colorado Timing System" bullet in the equipment list on `/about/facilities/`; no fact card, no scoreboard mention, no "only club in Torbay" claim.
-  > *(done — new fact card + paragraph mention; equipment bullet now "Colorado Timing System with poolside scoreboard")*
+  > *(done — new fact card using the mail's wording verbatim; equipment bullet now "Colorado Timing System with poolside scoreboard")*
 - [x] **Facilities — diving blocks** — On the facilities highlight cards/windows, add:  
   *Diving Blocks* — We are fortunate to be the only club in Torbay to have FINA approved diving blocks, allowing us to train in real-world competition environments.
   > **Note (site check):** this is an **update, not an add** — `/about/facilities/` already has a fact card ("Diving Blocks on Every Lane — Only club in Torbay with permanent poolside blocks…"). Fold in the "FINA approved" + "real-world competition environments" wording.
-  > *(done — card retitled "FINA Approved Diving Blocks"; fuller wording moved into the paragraph above. Dom's verbatim wording shown at `/samples/facilities/` for comparison)*
+  > *(done — card now uses the mail's wording verbatim; the old diving-blocks sentence removed from the paragraph above to avoid saying it twice)*
 
 ---
 
