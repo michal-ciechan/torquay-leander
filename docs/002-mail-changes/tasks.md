@@ -29,7 +29,7 @@ Attachments expected (not in raw.md):
 
 ## 2. Home page
 
-- [x] **Hero banner** — Compress / de-emphasise main title banner (“Building Confidence…”) so it is less dominant. *(done — full-screen height kept for now with a smaller unified headline, clamp(2rem–2.6rem) on every device; compact + other treatments and per-device fold screenshots at `/samples/hero/`)*
+- [x] **Hero banner** — Compress / de-emphasise main title banner (“Building Confidence…”) so it is less dominant. *(done — full-screen kept; headline slimmed to just above intro-text size (clamp 1.35–1.5rem), uniform on all devices. Original large-type version + compact/banner/split treatments with per-device fold screenshots at `/samples/hero/`)*
 - [x] **News feed (replaces Upcoming Meets)** — Add a Facebook page feed section titled **News**, in place of the current “Upcoming meets” block. *(one and the same task — the News section IS the replacement; done via Facebook Page Plugin iframe of facebook.com/torquayleander)*
   > **Note (site check):** the Facebook page URL is known — `facebook.com/torquayleander`. "Upcoming Meets" is a sidebar `<aside>` in a two-column grid beside the welcome text on `index.astro`; the News feed takes over that aside.
 

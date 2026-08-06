@@ -90,11 +90,11 @@ nav {
   margin-bottom: 24px;
 }
 .hero h1 {
-  /* 002 §2: one clamp for every device — reduced from clamp(2.4rem, 5vw, 4rem),
-     and deliberately narrow (2rem–2.6rem) so phones and desktops look similar */
-  font-size: clamp(2rem, 1.6rem + 1.6vw, 2.6rem);
-  font-weight: 900; line-height: 1.1;
-  letter-spacing: -1.5px;
+  /* 002 §2: headline sits just above the intro text size (1.1rem) — only a
+     little bigger, uniform on every device. Larger versions at /samples/hero/. */
+  font-size: clamp(1.35rem, 1.25rem + 0.4vw, 1.5rem);
+  font-weight: 900; line-height: 1.25;
+  letter-spacing: -0.4px;
   margin-bottom: 20px;
 }
 .hero h1 em { color: var(--red); font-style: normal; }

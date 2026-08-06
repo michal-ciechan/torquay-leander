@@ -19,6 +19,7 @@ const devices = [
 ];
 
 const totals = {
+  original: scores.reduce((a, s) => a + s.original, 0),
   full: scores.reduce((a, s) => a + s.full, 0),
   compact: scores.reduce((a, s) => a + s.compact, 0),
   banner: scores.reduce((a, s) => a + s.banner, 0),
@@ -37,7 +38,7 @@ const totals = {
       <span>Hero banner</span>
     </div>
     <h1>Home Hero — Size &amp; Layout</h1>
-    <p>Four treatments of the home page's main banner, scored against criteria we fixed before comparing (spec-first, so the winner is argued, not just felt). The live site currently uses Full screen with the smaller headline; Compact scored best and is ready if we switch.</p>
+    <p>Four treatments of the home page's main banner, scored against criteria we fixed before comparing (spec-first, so the winner is argued, not just felt). The live site uses the full-screen banner with a slim headline (barely bigger than the intro text). The Original large-type version is kept below for comparison; Compact scored best on the criteria and is ready if we switch.</p>
   </div>
 </section>
 
@@ -48,12 +49,13 @@ const totals = {
     <div class="score-scroll">
       <table>
         <thead>
-          <tr><th>Criterion</th><th>Full screen<br /><em>(now live)</em></th><th>Compact<br /><em>(scored winner)</em></th><th>Banner</th><th>Split</th></tr>
+          <tr><th>Criterion</th><th>Original<br /><em>(previous)</em></th><th>Full + slim headline<br /><em>(now live)</em></th><th>Compact<br /><em>(scored winner)</em></th><th>Banner</th><th>Split</th></tr>
         </thead>
         <tbody>
           {scores.map((s) => (
             <tr>
               <td>{s.criterion}</td>
+              <td>{s.original}</td>
               <td>{s.full}</td>
               <td>{s.compact}</td>
               <td>{s.banner}</td>
@@ -62,6 +64,7 @@ const totals = {
           ))}
           <tr class="total-row">
             <td>Total</td>
+            <td>{totals.original}</td>
             <td>{totals.full}</td>
             <td class="winner">{totals.compact} ★</td>
             <td>{totals.banner}</td>
@@ -73,8 +76,37 @@ const totals = {
   </div>
 </section>
 
-<!-- 1. FULL SCREEN -->
-<div class="variant-label"><div class="inner"><h2>Full screen — now live</h2><p>Fills the whole viewport. Maximum drama, but nothing hints that the site continues below.</p></div></div>
+<!-- 0. ORIGINAL -->
+<div class="variant-label"><div class="inner"><h2>Original — large headline</h2><p>The banner as it first shipped: full screen with display-size type (up to 4rem on desktop).</p></div></div>
+<section class="hero sample-hero v-original">
+  <div class="hero-bg" style={`background-image: url('${heroImg}')`}></div>
+  <div class="hero-content">
+    <div class="hero-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/></svg> SwimMark Registered Club</div>
+    <h1>Building Confidence, Fitness &amp; <em>Champions</em> in the Water</h1>
+    <p>Torquay Leander Swimming Club — one of Devon's leading competitive swimming clubs, based in the beautiful coastal town of Torquay.</p>
+    <div class="hero-btns"><span class="btn-primary">About the Club</span><span class="btn-outline">Get in Touch</span></div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
+</section>
+
+<div class="device-strip">
+  <div class="inner">
+    <span class="ds-caption">How it looks above the fold, per device</span>
+    <div class="ds-row">
+      {devices.map((d) => (
+        <figure class="ds-card">
+          <a href={`${base}/samples/hero/shots/v-original-${d.key}.jpg`} target="_blank" rel="noopener">
+            <img src={`${base}/samples/hero/shots/v-original-${d.key}.jpg`} alt={`v-original on ${d.label}`} loading="lazy" />
+          </a>
+          <figcaption>{d.label} <span>{d.dims}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</div>
+
+<!-- 1. FULL SCREEN (slim headline = live) -->
+<div class="variant-label"><div class="inner"><h2>Full screen + slim headline — now live ★</h2><p>Same full-viewport banner, but the headline sits only a little above the intro text size — the photo carries the drama instead of the type.</p></div></div>
 <section class="hero sample-hero v-full">
   <div class="hero-bg" style={`background-image: url('${heroImg}')`}></div>
   <div class="hero-content">
@@ -227,6 +259,11 @@ const totals = {
   /* Stacked sample heroes must not pull up under the nav like the real one */
   .sample-hero { margin-top: 0 !important; }
   .v-full { height: 100vh; }
+  .v-original { height: 100vh; }
+  .v-original .hero-content h1 { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.1; letter-spacing: -1.5px; }
+  @media (max-width: 768px) {
+    .v-original .hero-content h1 { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+  }
   .v-compact { height: clamp(540px, 72vh, 720px); }
   .v-banner { height: clamp(380px, 48vh, 480px); }
   .v-banner .hero-content h1 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
