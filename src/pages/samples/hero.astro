@@ -37,7 +37,7 @@ const totals = {
       <span>Hero banner</span>
     </div>
     <h1>Home Hero — Size &amp; Layout</h1>
-    <p>Four treatments of the home page's main banner, scored against criteria we fixed before comparing (spec-first, so the winner is argued, not just felt). The live site now uses the Compact version.</p>
+    <p>Four treatments of the home page's main banner, scored against criteria we fixed before comparing (spec-first, so the winner is argued, not just felt). The live site currently uses Full screen with the smaller headline; Compact scored best and is ready if we switch.</p>
   </div>
 </section>
 
@@ -48,7 +48,7 @@ const totals = {
     <div class="score-scroll">
       <table>
         <thead>
-          <tr><th>Criterion</th><th>Full screen<br /><em>(previous)</em></th><th>Compact<br /><em>(now live)</em></th><th>Banner</th><th>Split</th></tr>
+          <tr><th>Criterion</th><th>Full screen<br /><em>(now live)</em></th><th>Compact<br /><em>(scored winner)</em></th><th>Banner</th><th>Split</th></tr>
         </thead>
         <tbody>
           {scores.map((s) => (
@@ -74,7 +74,7 @@ const totals = {
 </section>
 
 <!-- 1. FULL SCREEN -->
-<div class="variant-label"><div class="inner"><h2>Full screen — previous</h2><p>Fills the whole viewport. Maximum drama, but nothing hints that the site continues below.</p></div></div>
+<div class="variant-label"><div class="inner"><h2>Full screen — now live</h2><p>Fills the whole viewport. Maximum drama, but nothing hints that the site continues below.</p></div></div>
 <section class="hero sample-hero v-full">
   <div class="hero-bg" style={`background-image: url('${heroImg}')`}></div>
   <div class="hero-content">
@@ -103,7 +103,7 @@ const totals = {
 
 
 <!-- 2. COMPACT -->
-<div class="variant-label"><div class="inner"><h2>Compact — now live ★</h2><p>Same content and photo at roughly three-quarters height, so the next section peeks above the fold and invites scrolling.</p></div></div>
+<div class="variant-label"><div class="inner"><h2>Compact — scored winner ★</h2><p>Same content and photo at roughly three-quarters height, so the next section peeks above the fold and invites scrolling.</p></div></div>
 <section class="hero sample-hero v-compact">
   <div class="hero-bg" style={`background-image: url('${heroImg}')`}></div>
   <div class="hero-content">

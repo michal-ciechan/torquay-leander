@@ -27,7 +27,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 
 **Logo treatment** — after trying a few variations ([you can see them all here](https://michal-ciechan.github.io/torquay-leander/samples/logo/) — tap any one to preview it on the real site, then hit **Share** to send your choice to me) I've gone with adding a **thick white outline around the words**, to make it more readable at the smaller size a logo actually appears at. The standard logo looks fine small on the black footer, so we could keep that one there, but for now I've used the same thick outline in both places for consistency.
 
-**Hero banner size** — I've compressed the big "Building Confidence…" banner to about three-quarters of the screen, so visitors can see the page continues below (full-screen banners tend to hide that). I mocked up four treatments — full screen, compact, a half-height banner, and a side-by-side layout — and scored them against a fixed set of criteria; [the comparison and scorecard are here](https://michal-ciechan.github.io/torquay-leander/samples/hero/). Compact won and is now live — with the headline itself also a notch smaller on desktop. Under each option you'll find real screenshots of how it looks above the fold on an iPhone SE, iPhone 15 Pro Max, iPad, and 720p/1080p screens, so you can compare devices at a glance.
+**Hero banner** — I've kept the full-screen banner for now but made the "Building Confidence…" headline noticeably smaller, and the same size on every device, which takes away most of the dominance. I also mocked up four treatments — full screen, compact (~3/4 height), a half-height banner, and a side-by-side layout — and scored them against a fixed set of criteria; [the comparison and scorecard are here](https://michal-ciechan.github.io/torquay-leander/samples/hero/), with real above-the-fold screenshots under each option for iPhone SE, iPhone 15 Pro Max, iPad, and 720p/1080p screens. Compact actually scored best (it shows visitors the page continues below), so say the word if you'd like to switch to it.
 
 **Championship event names** — your email lists events in shorthand ("100IM", "25 Backstroke"); the page has always written them out in full ("100m Individual Medley"), so I've kept that style for the 2026 programme. [Both versions side by side here](https://michal-ciechan.github.io/torquay-leander/samples/club-championships/) — say the word if you'd rather use the short names.
 
@@ -44,7 +44,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 - "Galas & Competitions" renamed to just **Competitions**.
 
 **Home page**
-- Main title banner compressed to ~3/4 screen height with a slightly smaller headline, so the content below shows.
+- Main title banner headline made smaller and consistent across devices (banner stays full screen for now).
 - The "SwimMark Registered Club" badge now links to Swim England's SwimMark accreditation page.
 - "Upcoming Meets" replaced by a **News** section showing the live club Facebook feed — posts appear on the website automatically, nothing extra to maintain.
 

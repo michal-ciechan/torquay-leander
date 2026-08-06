@@ -56,10 +56,9 @@ nav {
 /* HERO */
 .hero {
   position: relative;
-  /* Compact treatment (002 §2): ~3/4 viewport so the stats strip peeks above
-     the fold — full-screen heroes hide that the page continues (NN/g).
-     Winner of the scored comparison at /samples/hero/. */
-  height: clamp(540px, 72vh, 720px);
+  /* 002 §2: full-screen kept (client choice) — de-emphasis comes from the
+     smaller unified headline below. Compact variant remains at /samples/hero/. */
+  height: 100vh;
   display: flex; align-items: center;
   overflow: hidden;
   background: var(--black);
@@ -91,8 +90,9 @@ nav {
   margin-bottom: 24px;
 }
 .hero h1 {
-  /* 002 §2: reduced from clamp(2.4rem, 5vw, 4rem) so the banner is less dominant on desktop */
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  /* 002 §2: one clamp for every device — reduced from clamp(2.4rem, 5vw, 4rem),
+     and deliberately narrow (2rem–2.6rem) so phones and desktops look similar */
+  font-size: clamp(2rem, 1.6rem + 1.6vw, 2.6rem);
   font-weight: 900; line-height: 1.1;
   letter-spacing: -1.5px;
   margin-bottom: 20px;
@@ -502,8 +502,7 @@ footer {
   .photo-grid .wide { grid-column: span 1; }
   .fb-posts { grid-template-columns: 1fr; }
 
-  .hero { height: auto; min-height: clamp(480px, 74svh, 660px); }
-  .hero h1 { font-size: clamp(1.8rem, 6vw, 2.8rem) !important; }
+  .hero { height: auto; min-height: 100svh; }
   .hero p { font-size: 1rem !important; }
   .hero-btns { flex-direction: column !important; gap: 12px !important; align-items: flex-start !important; }
 
