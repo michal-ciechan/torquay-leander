@@ -162,17 +162,19 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 
 ## 7. Club Championships 2026
 
-- [ ] **Year update** — Update Club Championships content to **2026**.
+- [x] **Year update** — Update Club Championships content to **2026**.
   > **Note (site check):** also reword the section heading ("2025 Club Championships") and the intro text ("Heat sheets from our most recent championships are below…") on `/galas/club-championships/`.
-- [ ] **Remove heat sheets** — Remove existing heat sheet links for now (add later when available).
+- [x] **Remove heat sheets** — Remove existing heat sheet links for now (add later when available).
   > **Note (site check):** the current `programme` data has one entry per day with a `pdf` field and no session concept — Sun 15 Nov needs **two sessions**, so the data shape/rendering needs a small rework.
-- [ ] **Session — Thu 5 Nov** — 400m Freestyle.
-- [ ] **Session — Mon 9 Nov** — 100IM, 25 Backstroke (7 and under), 200 Breaststroke, 50 Backstroke, 100 Freestyle.
-- [ ] **Session — Sun 15 Nov (1)** — 25 Butterfly (7 and under), 50 Butterfly, 100 Backstroke, 200 Freestyle.
-- [ ] **Session — Sun 15 Nov (2)** — 25m Breaststroke (7 and under), 50m Freestyle, 100 Breaststroke.
-- [ ] **Session — Thu 19 Nov** — 200IM, 25 Freestyle (7 and under), 50 Breaststroke, 200 Backstroke, 100 Butterfly.
+- [x] **Session — Thu 5 Nov** — 400m Freestyle.
+- [x] **Session — Mon 9 Nov** — 100IM, 25 Backstroke (7 and under), 200 Breaststroke, 50 Backstroke, 100 Freestyle.
+- [x] **Session — Sun 15 Nov (1)** — 25 Butterfly (7 and under), 50 Butterfly, 100 Backstroke, 200 Freestyle.
+- [x] **Session — Sun 15 Nov (2)** — 25m Breaststroke (7 and under), 50m Freestyle, 100 Breaststroke.
+- [x] **Session — Thu 19 Nov** — 200IM, 25 Freestyle (7 and under), 50 Breaststroke, 200 Backstroke, 100 Butterfly.
 
 ---
+
+> *(§7 done — heading/intro reworded, session chips added for the Sunday double, heat-sheet links removed. Event names written out in site style; short-name alternative shown at `/samples/club-championships/`.)*
 
 ## 8. Contact page
 

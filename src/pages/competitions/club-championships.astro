@@ -2,26 +2,30 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
+// 2026 programme (002-mail-changes §7). Heat sheet links removed for now —
+// they come back nearer the time once the sheets exist.
 const programme = [
   {
-    date: 'Tuesday 4th Nov',
+    date: 'Thursday 5th Nov',
     events: ['400m Freestyle'],
-    pdf: 'https://torquayleander.co.uk/wp-content/uploads/2025/11/400-Free-Heat-Sheets-4th-Nov_.pdf',
   },
   {
-    date: 'Monday 10th Nov',
-    events: ['100m Individual Medley', '25m Backstroke', '200m Breaststroke', '50m Backstroke', '100m Freestyle'],
-    pdf: 'https://torquayleander.co.uk/wp-content/uploads/2025/11/Heat-Sheets-Monday-10th-Nov-Sponsors.pdf',
+    date: 'Monday 9th Nov',
+    events: ['100m Individual Medley', '25m Backstroke (7 & under)', '200m Breaststroke', '50m Backstroke', '100m Freestyle'],
   },
   {
-    date: 'Sunday 16th Nov',
-    events: ['25m Butterfly', '50m Freestyle', '100m Butterfly', '200m Backstroke', '25m Breaststroke', '50m Butterfly', '100m Breaststroke', '200m Freestyle'],
-    pdf: 'https://torquayleander.co.uk/wp-content/uploads/2025/11/Heat-Sheets-Sunday-16th-Nov-Sponsors.pdf',
+    date: 'Sunday 15th Nov',
+    session: 'Session 1',
+    events: ['25m Butterfly (7 & under)', '50m Butterfly', '100m Backstroke', '200m Freestyle'],
   },
   {
-    date: 'Thursday 20th Nov',
-    events: ['200m Individual Medley', '25m Freestyle', '50m Breaststroke', '100m Backstroke', '200m Butterfly'],
-    pdf: 'https://torquayleander.co.uk/wp-content/uploads/2025/11/Thursday-20th-November-Heat-Sheets_.pdf',
+    date: 'Sunday 15th Nov',
+    session: 'Session 2',
+    events: ['25m Breaststroke (7 & under)', '50m Freestyle', '100m Breaststroke'],
+  },
+  {
+    date: 'Thursday 19th Nov',
+    events: ['200m Individual Medley', '25m Freestyle (7 & under)', '50m Breaststroke', '200m Backstroke', '100m Butterfly'],
   },
 ];
 
@@ -80,19 +84,16 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
 
 <section class="programme">
   <div class="inner">
-    <p class="label">Latest Programme &amp; Heat Sheets</p>
-    <h2>2025 Club Championships</h2>
-    <p class="prog-text">Heat sheets from our most recent championships are below. Dates for the next championships are confirmed each autumn — keep an eye on our Facebook page for announcements.</p>
+    <p class="label">Programme</p>
+    <h2>2026 Club Championships</h2>
+    <p class="prog-text">This year's championships run across the sessions below. Heat sheets will be published here nearer the time — keep an eye on our Facebook page for announcements.</p>
 
     <div class="prog-list">
       {programme.map((day) => (
         <div class="prog-day">
           <div class="prog-head">
             <span class="prog-date">{day.date}</span>
-            <a class="prog-pdf" href={day.pdf} target="_blank" rel="noopener noreferrer">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
-              Heat sheets
-            </a>
+            {day.session && <span class="prog-session">{day.session}</span>}
           </div>
           <div class="prog-events">
             {day.events.map((e) => <span class="event-tag">{e}</span>)}
@@ -193,10 +194,9 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
   .prog-text { color: var(--muted); font-size: 0.97rem; line-height: 1.75; max-width: 760px; margin-bottom: 32px; }
   .prog-list { display: flex; flex-direction: column; gap: 16px; }
   .prog-day { border: 1.5px solid var(--border); border-radius: 14px; padding: 22px 24px; }
-  .prog-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .prog-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
   .prog-date { font-size: 1.05rem; font-weight: 800; color: var(--text); }
-  .prog-pdf { display: inline-flex; align-items: center; gap: 7px; background: var(--red-light); color: var(--red); border-radius: 8px; padding: 8px 14px; font-size: 0.8rem; font-weight: 700; text-decoration: none; transition: background 0.2s, color 0.2s; }
-  .prog-pdf:hover { background: var(--red); color: #fff; }
+  .prog-session { background: var(--red-light); color: var(--red-dark); border-radius: 999px; padding: 5px 13px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
   .prog-events { display: flex; flex-wrap: wrap; gap: 8px; }
   .event-tag { background: #f1f5f9; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; color: var(--text); }
 

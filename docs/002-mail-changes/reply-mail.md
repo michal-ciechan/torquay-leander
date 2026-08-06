@@ -2,7 +2,7 @@
 
 > **Living document** — update this as more of the 002 tasks land, then send/refresh with Dom.
 > Source feedback: [raw.md](./raw.md) · task tracking: [tasks.md](./tasks.md)
-> Last updated: 3 Aug 2026
+> Last updated: 6 Aug 2026
 
 ---
 
@@ -26,6 +26,8 @@ Below I've split things into what I need from you, decisions I've made that you 
 **"FINA approved"** — worth flagging that FINA renamed itself to World Aquatics a couple of years ago, so the term is slightly dated. I've kept FINA since it's what the club and most suppliers still say, but easy to swap if you'd rather be current.
 
 **Logo treatment** — after trying a few variations ([you can see them all here](https://michal-ciechan.github.io/torquay-leander/samples/logo/) — tap any one to preview it on the real site, then hit **Share** to send your choice to me) I've gone with adding a **thick white outline around the words**, to make it more readable at the smaller size a logo actually appears at. The standard logo looks fine small on the black footer, so we could keep that one there, but for now I've used the same thick outline in both places for consistency.
+
+**Championship event names** — your email lists events in shorthand ("100IM", "25 Backstroke"); the page has always written them out in full ("100m Individual Medley"), so I've kept that style for the 2026 programme. [Both versions side by side here](https://michal-ciechan.github.io/torquay-leander/samples/club-championships/) — say the word if you'd rather use the short names.
 
 **Contact form colour** — I've lightened the form to a white card with light grey fields, which is a big improvement on the dark version. If you'd like a different look, [here are four treatments side by side](https://michal-ciechan.github.io/torquay-leander/samples/contact/) — just tell me which you prefer.
 
@@ -54,6 +56,9 @@ Below I've split things into what I need from you, decisions I've made that you 
 **About us**
 - Facilities page now has highlight cards for **FINA Approved Electronic Timing** and **Diving Blocks**, using your wording: https://michal-ciechan.github.io/torquay-leander/about/facilities/
 
+**Competitions**
+- **Club Championships updated to 2026** — the five sessions from your email (Thu 5, Mon 9, Sun 15 ×2, Thu 19 Nov), with heat-sheet links removed until the sheets exist: https://michal-ciechan.github.io/torquay-leander/competitions/club-championships/
+
 **Coaches**
 - Lisa's photo updated on the Training page.
 
@@ -61,7 +66,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 
 - **Home page** — compressing the main title banner so it's less dominant.
 - **Training** — Learn to Swim stages 1–4 button through to Swim Torquay, warm-up video & stretches tabs, and the training/nutrition/sports-psychology videos (also on Safeguarding).
-- **Competitions** — 2026 Scott Ormsby and William Shield champions on the banner; your full **Swimming Galas – A Parent's Guide**; **Club Championships updated to the 2026 dates** with heat sheets removed until nearer the time.
+- **Competitions** — 2026 Scott Ormsby and William Shield champions on the banner; your full **Swimming Galas – A Parent's Guide**.
 
 Cheers,
 Mike
@@ -72,6 +77,7 @@ Mike
 
 | Date | Change |
 |---|---|
+| 6 Aug 2026 | Club Championships updated to the 2026 programme (sessions, no heat sheets); naming comparison at `/samples/club-championships/` |
 | 3 Aug 2026 | Contact form lightened + Membership/General split, iOS date-field fix, `/samples/contact/` colour options; Facilities: timing + diving blocks cards using Dom's verbatim wording; mail restructured (questions → decisions → changes) |
 | 2 Aug 2026 | Swim England affiliate badge + links in footer; home "Upcoming Meets" replaced with live Facebook News feed |
 | 1 Aug 2026 | New logo live (cleaned, optimised); logo picker at `/samples/logo/` with 3×3 outline matrix, live site preview + share; site logo set to thick-word-outline variant; nav chip removed; Lisa's photo updated |
