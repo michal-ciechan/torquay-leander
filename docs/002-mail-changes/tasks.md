@@ -90,75 +90,77 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 
 ### 6a. Structure & intro
 
-- [ ] **Page shell** — Create/update gala guide page with title and short intro.
+- [x] **Page shell** — Create/update gala guide page with title and short intro.
   > **Note (site check):** `/galas/competition-guide/` already exists with **different content** (race starts, whistle signals, the four strokes) — none of which is in the mail. Merge the Parent's Guide around it; do not overwrite the existing sections.
-- [ ] **What is a Swimming Gala?** — Definition: competition; practice training; racing experience.
-- [ ] **Range of events** — Friendly beginner → National Championships; confidence, skills, PBs.
-- [ ] **Licensed levels intro** — Licensed comps under Swim England Rules; four levels.
+- [x] **What is a Swimming Gala?** — Definition: competition; practice training; racing experience.
+- [x] **Range of events** — Friendly beginner → National Championships; confidence, skills, PBs.
+- [x] **Licensed levels intro** — Licensed comps under Swim England Rules; four levels.
 
 ### 6b. Competition levels
 
-- [ ] **Level 1** — Long Course (50m); National/Regional/County; qualifying for majors.
-- [ ] **Level 2** — Short Course (25m); National/Regional/County; qualifying in 25m pool.
-- [ ] **Level 3** — 25m or 50m; County/Regional and higher-level meet quals.
-- [ ] **Level 4** — Entry-level licensed; intro to racing outside club; stepping stone to L3.
-- [ ] **Club note** — Torquay Leander regularly competes L1–L3; newer swimmers start at L4.
+- [x] **Level 1** — Long Course (50m); National/Regional/County; qualifying for majors.
+- [x] **Level 2** — Short Course (25m); National/Regional/County; qualifying in 25m pool.
+- [x] **Level 3** — 25m or 50m; County/Regional and higher-level meet quals.
+- [x] **Level 4** — Entry-level licensed; intro to racing outside club; stepping stone to L3.
+- [x] **Club note** — Torquay Leander regularly competes L1–L3; newer swimmers start at L4.
 
 ### 6c. Heats & HDW
 
-- [ ] **Heats** — More competitors than lanes → heats; seeded by entry times (slower early, faster late).
-- [ ] **Heat Declared Winners (HDW)** — Common at L3/L4; no final; all heats ranked by time.
-- [ ] **HDW example** — e.g. 40 swimmers / five heats of eight; win heat ≠ win event.
-- [ ] **Heats + finals** — Higher level (County/Regional/National): heats then finals for some events.
-- [ ] **Race own race** — Focus on best time, not only winning the heat.
+- [x] **Heats** — More competitors than lanes → heats; seeded by entry times (slower early, faster late).
+- [x] **Heat Declared Winners (HDW)** — Common at L3/L4; no final; all heats ranked by time.
+- [x] **HDW example** — e.g. 40 swimmers / five heats of eight; win heat ≠ win event.
+- [x] **Heats + finals** — Higher level (County/Regional/National): heats then finals for some events.
+- [x] **Race own race** — Focus on best time, not only winning the heat.
 
 ### 6d. Course length & times
 
-- [ ] **Short Course (SC)** — 25m pool.
-- [ ] **Long Course (LC)** — 50m pool.
-- [ ] **Advertised course** — Club gala notices state SC or LC.
-- [ ] **Entry times** — Best time for full race distance, not one length.
-- [ ] **SC vs LC examples** — 100 Free SC vs 100 Free LC definitions.
-- [ ] **Entry form time type** — Forms specify SC, LC, or “all times as 25m (SC)”.
-- [ ] **Why times differ** — More turns/push-offs in 25m → usually faster; SC/LC not directly comparable.
-- [ ] **Time conversions** — Some LC meets seed on SC times; Regional/National often need LC quals; convert via Swim England system when needed.
+- [x] **Short Course (SC)** — 25m pool.
+- [x] **Long Course (LC)** — 50m pool.
+- [x] **Advertised course** — Club gala notices state SC or LC.
+- [x] **Entry times** — Best time for full race distance, not one length.
+- [x] **SC vs LC examples** — 100 Free SC vs 100 Free LC definitions.
+- [x] **Entry form time type** — Forms specify SC, LC, or “all times as 25m (SC)”.
+- [x] **Why times differ** — More turns/push-offs in 25m → usually faster; SC/LC not directly comparable.
+- [x] **Time conversions** — Some LC meets seed on SC times; Regional/National often need LC quals; convert via Swim England system when needed.
 
 ### 6e. Roles at a gala
 
-- [ ] **Volunteers intro** — Galas rely on volunteers (often swimming parents); invite interest.
-- [ ] **Coach** — Prep, warm-up/cool-down, race plan, feedback, encouragement.
-- [ ] **Team Manager (TM)** — Welfare, safety, organisation; Swim England trained + enhanced DBS.
-- [ ] **TM duties** — Look after swimmers; act in their interests; warm-up/race readiness; marshalling escort; support coaches; need male & female TMs where possible; club cannot attend without TMs.
-- [ ] **Starter** — Fair/safe race starts.
-- [ ] **Timekeepers** — Record times; electronic timing + manual backup; Head Timekeeper role.
-- [ ] **Judges and Referees** — Fair racing under Swim England rules; DQ decisions via Referee.
+- [x] **Volunteers intro** — Galas rely on volunteers (often swimming parents); invite interest.
+- [x] **Coach** — Prep, warm-up/cool-down, race plan, feedback, encouragement.
+- [x] **Team Manager (TM)** — Welfare, safety, organisation; Swim England trained + enhanced DBS.
+- [x] **TM duties** — Look after swimmers; act in their interests; warm-up/race readiness; marshalling escort; support coaches; need male & female TMs where possible; club cannot attend without TMs.
+- [x] **Starter** — Fair/safe race starts.
+- [x] **Timekeepers** — Record times; electronic timing + manual backup; Head Timekeeper role.
+- [x] **Judges and Referees** — Fair racing under Swim England rules; DQ decisions via Referee.
 
 ### 6f. What to bring
 
-- [ ] **Kit list** — Two costumes (incl. race suit if owned); two goggles; two club hats; two towels; club T-shirt/hoodie; poolside footwear; water/sugar-free drinks; healthy snacks; full-day lunch; large bag; phone only if venue allows (often not on poolside).
-- [ ] **Extras note** — Any meet-specific kit communicated before the event.
+- [x] **Kit list** — Two costumes (incl. race suit if owned); two goggles; two club hats; two towels; club T-shirt/hoodie; poolside footwear; water/sugar-free drinks; healthy snacks; full-day lunch; large bag; phone only if venue allows (often not on poolside).
+- [x] **Extras note** — Any meet-specific kit communicated before the event.
 
 ### 6g. What happens at a gala
 
-- [ ] **Arrival** — Arrive early; report to TM; changing rooms / team base.
-- [ ] **Warm-up** — Supervised; often boys/girls separate; TM/coach call times; coach sets warm-up.
-- [ ] **Before racing** — Dry, race costume if needed, rest with team (chat, read, cards, music).
-- [ ] **Marshalling** — TM → coach briefing → marshalling → heats → blocks.
-- [ ] **The race** — Compete when called.
-- [ ] **After the race** — Coach feedback; warm-down if available; dry, refuel, next event.
-- [ ] **Going home** — Tell TM before leaving with parent/guardian after all races done.
+- [x] **Arrival** — Arrive early; report to TM; changing rooms / team base.
+- [x] **Warm-up** — Supervised; often boys/girls separate; TM/coach call times; coach sets warm-up.
+- [x] **Before racing** — Dry, race costume if needed, rest with team (chat, read, cards, music).
+- [x] **Marshalling** — TM → coach briefing → marshalling → heats → blocks.
+- [x] **The race** — Compete when called.
+- [x] **After the race** — Coach feedback; warm-down if available; dry, refuel, next event.
+- [x] **Going home** — Tell TM before leaving with parent/guardian after all races done.
 
 ### 6h. Medals, closing & links
 
-- [ ] **Medals and awards** — Usually collected at the event (little time for formal presentations); **Club Championships** exception: awards night (usually January) for trophies/medals and celebration.
-- [ ] **Final word** — Enjoyment, learn/improve, represent club; support teammates; PBs & sportsmanship as important as medals.
-- [ ] **Link — individual best times** — http://www.swimmingresults.org/individualbest/
-- [ ] **Link — individual rankings** — http://www.swimmingresults.org/individualrankings/
-- [ ] **Link — membership / ASA number check** — https://www.swimmingresults.org/membershipcheck/
-- [ ] **Link — licensed meets list** — https://www.swimmingresults.org/licensed_meets/
-- [ ] **Copy-edit guide text** — Fix mail-export artifacts (`\*`), typos (e.g. achievements), tone pass once content is on the site.
+- [x] **Medals and awards** — Usually collected at the event (little time for formal presentations); **Club Championships** exception: awards night (usually January) for trophies/medals and celebration.
+- [x] **Final word** — Enjoyment, learn/improve, represent club; support teammates; PBs & sportsmanship as important as medals.
+- [x] **Link — individual best times** — http://www.swimmingresults.org/individualbest/
+- [x] **Link — individual rankings** — http://www.swimmingresults.org/individualrankings/
+- [x] **Link — membership / ASA number check** — https://www.swimmingresults.org/membershipcheck/
+- [x] **Link — licensed meets list** — https://www.swimmingresults.org/licensed_meets/
+- [x] **Copy-edit guide text** — Fix mail-export artifacts (`\*`), typos (e.g. achievements), tone pass once content is on the site.
 
 ---
+
+> *(§6 done — full Parent's Guide merged into `/competitions/competition-guide/`: gala definition, four licensed levels, heats & HDW with example, SC/LC & entry times/conversions, roles (volunteer invite), kit list, day-by-day timeline, medals/awards-night, final word, and the four swimmingresults.org links. Existing race-rules/starts/strokes sections kept in place; copy-edited (galas, achievements, artifacts removed).)*
 
 ## 7. Club Championships 2026
 
@@ -203,4 +205,4 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 - [ ] Decide where **Club Merchandise** and **Members Login** sit in the new nav order (omitted from the mail's proposed order).
 - [ ] Confirm titles for unnamed training playlist videos (or fetch from YouTube).
 - [ ] Confirm where Warm-up / Stretches media lives.
-- [ ] Confirm preferred home for Parent’s Guide (new page under Galas vs long section on galas index).
+- [x] Confirm preferred home for Parent’s Guide. *(merged into the existing `/competitions/competition-guide/` page around its race-rules/starts/strokes content)*

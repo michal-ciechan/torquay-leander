@@ -60,6 +60,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 - Facilities page now has highlight cards for **FINA Approved Electronic Timing** and **Diving Blocks**, using your wording: https://michal-ciechan.github.io/torquay-leander/about/facilities/
 
 **Competitions**
+- Your full **Swimming Galas — A Parent's Guide** is now live as the Competition Guide: https://michal-ciechan.github.io/torquay-leander/competitions/competition-guide/ — what a gala is, the four licensed levels, heats & Heat Declared Winners, short vs long course and entry times, roles on the day (with a volunteering nudge), the kit list, a step-by-step gala day, and the handy swimmingresults.org links. The page's existing sections on race starts and the four strokes are kept in among it.
 - **Club Championships updated to 2026** — the five sessions from your email (Thu 5, Mon 9, Sun 15 ×2, Thu 19 Nov), with heat-sheet links removed until the sheets exist: https://michal-ciechan.github.io/torquay-leander/competitions/club-championships/
 
 **Coaches**
@@ -68,7 +69,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 ## 4. Still to come
 
 - **Training** — Learn to Swim stages 1–4 button through to Swim Torquay, warm-up video & stretches tabs, and the training/nutrition/sports-psychology videos (also on Safeguarding).
-- **Competitions** — 2026 Scott Ormsby and William Shield champions on the banner; your full **Swimming Galas – A Parent's Guide**.
+- **Competitions** — 2026 Scott Ormsby and William Shield champions on the banner.
 
 Cheers,
 Mike
@@ -79,7 +80,7 @@ Mike
 
 | Date | Change |
 |---|---|
-| 6 Aug 2026 | Hero compressed to compact (~72vh) with scored comparison at `/samples/hero/`; Club Championships updated to the 2026 programme (sessions, no heat sheets); naming comparison at `/samples/club-championships/` |
+| 6 Aug 2026 | Parent's Guide merged into the Competition Guide page; Hero compressed to compact (~72vh) with scored comparison at `/samples/hero/`; Club Championships updated to the 2026 programme (sessions, no heat sheets); naming comparison at `/samples/club-championships/` |
 | 3 Aug 2026 | Contact form lightened + Membership/General split, iOS date-field fix, `/samples/contact/` colour options; Facilities: timing + diving blocks cards using Dom's verbatim wording; mail restructured (questions → decisions → changes) |
 | 2 Aug 2026 | Swim England affiliate badge + links in footer; home "Upcoming Meets" replaced with live Facebook News feed |
 | 1 Aug 2026 | New logo live (cleaned, optimised); logo picker at `/samples/logo/` with 3×3 outline matrix, live site preview + share; site logo set to thick-word-outline variant; nav chip removed; Lisa's photo updated |
