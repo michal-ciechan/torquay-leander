@@ -202,8 +202,11 @@ const totals = {
   (function () {
     const only = new URLSearchParams(location.search).get('only');
     if (!only) return;
+    var st = document.createElement('style');
+    st.textContent = 'astro-dev-toolbar{display:none!important}';
+    document.head.appendChild(st);
     addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.page-hero, .scorecard, .variant-label, .closing, .device-strip, footer, astro-dev-toolbar').forEach(function (e) { e.remove(); });
+      document.querySelectorAll('.page-hero, .scorecard, .variant-label, .closing, .device-strip, footer').forEach(function (e) { e.remove(); });
       document.querySelectorAll('.sample-hero').forEach(function (e) {
         if (!e.classList.contains(only)) e.remove();
       });
