@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const heroImg = 'https://torquayleander.co.uk/wp-content/uploads/2021/08/DSC_7213-scaled.jpg';
+
+const scores = [
+  { criterion: 'Content discoverability (can you tell there\'s more below?)', full: 1, compact: 4, banner: 5, split: 3 },
+  { criterion: 'Brand & photo impact', full: 5, compact: 4, banner: 2, split: 3 },
+  { criterion: 'Time to CTA (how fast the buttons are reachable)', full: 3, compact: 4, banner: 5, split: 4 },
+  { criterion: 'Readability & hierarchy', full: 4, compact: 4, banner: 3, split: 4 },
+  { criterion: 'Mobile behaviour (viewport quirks, stacking)', full: 2, compact: 4, banner: 4, split: 3 },
+];
+const totals = {
+  full: scores.reduce((a, s) => a + s.full, 0),
+  compact: scores.reduce((a, s) => a + s.compact, 0),
+  banner: scores.reduce((a, s) => a + s.banner, 0),
+  split: scores.reduce((a, s) => a + s.split, 0),
+};
+---
+<BaseLayout title="Hero Banner Samples — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/samples/`}>Samples</a>
+      <span>›</span>
+      <span>Hero banner</span>
+    </div>
+    <h1>Home Hero — Size &amp; Layout</h1>
+    <p>Four treatments of the home page's main banner, scored against criteria we fixed before comparing (spec-first, so the winner is argued, not just felt). The live site now uses the Compact version.</p>
+  </div>
+</section>
+
+<section class="scorecard">
+  <div class="inner">
+    <h2>Scorecard</h2>
+    <p class="score-note">Criteria set first, each variant scored 1–5 against them. Discoverability and mobile behaviour follow Nielsen Norman Group guidance — full-screen heroes create an "illusion of completeness" where visitors don't realise there's anything to scroll to.</p>
+    <div class="score-scroll">
+      <table>
+        <thead>
+          <tr><th>Criterion</th><th>Full screen<br /><em>(previous)</em></th><th>Compact<br /><em>(now live)</em></th><th>Banner</th><th>Split</th></tr>
+        </thead>
+        <tbody>
+          {scores.map((s) => (
+            <tr>
+              <td>{s.criterion}</td>
+              <td>{s.full}</td>
+              <td>{s.compact}</td>
+              <td>{s.banner}</td>
+              <td>{s.split}</td>
+            </tr>
+          ))}
+          <tr class="total-row">
+            <td>Total</td>
+            <td>{totals.full}</td>
+            <td class="winner">{totals.compact} ★</td>
+            <td>{totals.banner}</td>
+            <td>{totals.split}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 1. FULL SCREEN -->
+<div class="variant-label"><div class="inner"><h2>Full screen — previous</h2><p>Fills the whole viewport. Maximum drama, but nothing hints that the site continues below.</p></div></div>
+<section class="hero sample-hero v-full">
+  <div class="hero-bg" style={`background-image: url('${heroImg}')`}></div>
+  <div class="hero-content">
+    <div class="hero-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/></svg> SwimMark Registered Club</div>
+    <h1>Building Confidence, Fitness &amp; <em>Champions</em> in the Water</h1>
+    <p>Torquay Leander Swimming Club — one of Devon's leading competitive swimming clubs, based in the beautiful coastal town of Torquay.</p>
+    <div class="hero-btns"><span class="btn-primary">About the Club</span><span class="btn-outline">Get in Touch</span></div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
+</section>
+
+<!-- 2. COMPACT -->
+<div class="variant-label"><div class="inner"><h2>Compact — now live ★</h2><p>Same content and photo at roughly three-quarters height, so the next section peeks above the fold and invites scrolling.</p></div></div>
+<section class="hero sample-hero v-compact">
+  <div class="hero-bg" style={`background-image: url('${heroImg}')`}></div>
+  <div class="hero-content">
+    <div class="hero-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/></svg> SwimMark Registered Club</div>
+    <h1>Building Confidence, Fitness &amp; <em>Champions</em> in the Water</h1>
+    <p>Torquay Leander Swimming Club — one of Devon's leading competitive swimming clubs, based in the beautiful coastal town of Torquay.</p>
+    <div class="hero-btns"><span class="btn-primary">About the Club</span><span class="btn-outline">Get in Touch</span></div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
+</section>
+
+<!-- 3. BANNER -->
+<div class="variant-label"><div class="inner"><h2>Banner</h2><p>Half height with tightened copy — the badge folds into the strapline and the intro is a single sentence. Fastest to the content, least atmosphere.</p></div></div>
+<section class="hero sample-hero v-banner">
+  <div class="hero-bg" style={`background-image: url('${heroImg}')`}></div>
+  <div class="hero-content">
+    <h1>Building Confidence, Fitness &amp; <em>Champions</em> in the Water</h1>
+    <p>One of Devon's leading competitive swimming clubs — SwimMark registered, based in Torquay.</p>
+    <div class="hero-btns"><span class="btn-primary">About the Club</span><span class="btn-outline">Get in Touch</span></div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
+</section>
+
+<!-- 4. SPLIT -->
+<div class="variant-label"><div class="inner"><h2>Split</h2><p>Reordered layout — text on the left, photo as a framed card on the right, badge demoted to a trust line under the buttons.</p></div></div>
+<section class="hero sample-hero v-split">
+  <div class="split-grid">
+    <div class="hero-content">
+      <h1>Building Confidence, Fitness &amp; <em>Champions</em> in the Water</h1>
+      <p>Torquay Leander Swimming Club — one of Devon's leading competitive swimming clubs, based in the beautiful coastal town of Torquay.</p>
+      <div class="hero-btns"><span class="btn-primary">About the Club</span><span class="btn-outline">Get in Touch</span></div>
+      <div class="trust-line"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/></svg> SwimMark Registered · Swim England Affiliated</div>
+    </div>
+    <div class="split-photo"><img src={heroImg} alt="Torquay Leander swimmers" loading="lazy" /></div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
+</section>
+
+<section class="closing">
+  <div class="inner">
+    <a class="note-link" href={`${base}/`}>View the live home page →</a>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style is:global>
+  /* Stacked sample heroes must not pull up under the nav like the real one */
+  .sample-hero { margin-top: 0 !important; }
+  .v-full { height: 100vh; }
+  .v-compact { height: clamp(540px, 72vh, 720px); }
+  .v-banner { height: clamp(380px, 48vh, 480px); }
+  .v-banner .hero-content h1 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
+  .v-banner .hero-content p { margin-bottom: 26px; }
+
+  .v-split { height: auto; padding: 70px 5vw 90px; display: block; }
+  .v-split .split-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center;
+  }
+  .v-split .hero-content { margin-left: 0; max-width: none; }
+  .v-split .split-photo img {
+    width: 100%; height: 380px; object-fit: cover; display: block;
+    border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .v-split .trust-line {
+    display: flex; align-items: center; gap: 8px; margin-top: 26px;
+    color: rgba(255,255,255,0.55); font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .v-split .trust-line svg { color: var(--red); }
+  @media (max-width: 800px) {
+    .v-split .split-grid { grid-template-columns: 1fr; }
+    .v-split .split-photo img { height: 240px; }
+  }
+</style>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 680px; line-height: 1.7; }
+
+  .inner { max-width: 1100px; margin: 0 auto; }
+
+  .scorecard { background: #fff; padding: 56px 5vw; }
+  .scorecard h2 { font-size: clamp(1.4rem, 2.6vw, 1.8rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .score-note { color: var(--muted); font-size: 0.92rem; line-height: 1.7; max-width: 760px; margin-bottom: 24px; }
+  .score-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 640px; }
+  th, td { padding: 12px 14px; text-align: center; border: 1px solid var(--border); }
+  th:first-child, td:first-child { text-align: left; }
+  thead th { background: #f8fafc; font-weight: 800; }
+  thead em { font-weight: 600; color: var(--muted); font-style: normal; font-size: 0.78rem; }
+  .total-row td { font-weight: 800; background: #f8fafc; }
+  .total-row .winner { background: var(--red-light); color: var(--red-dark); }
+
+  .variant-label { background: #f8fafc; padding: 40px 5vw 24px; border-top: 1.5px solid var(--border); }
+  .variant-label h2 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .variant-label p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; max-width: 720px; }
+
+  .closing { background: #fff; padding: 40px 5vw 80px; }
+  .note-link { color: var(--red); font-weight: 700; font-size: 0.92rem; text-decoration: none; }
+  .note-link:hover { text-decoration: underline; }
+</style>

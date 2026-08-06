@@ -29,7 +29,7 @@ Attachments expected (not in raw.md):
 
 ## 2. Home page
 
-- [ ] **Hero banner** — Compress / de-emphasise main title banner (“Building Confidence…”) so it is less dominant.
+- [x] **Hero banner** — Compress / de-emphasise main title banner (“Building Confidence…”) so it is less dominant. *(done — ~72vh compact treatment, capped at 720px; scored comparison of four treatments at `/samples/hero/`)*
 - [x] **News feed (replaces Upcoming Meets)** — Add a Facebook page feed section titled **News**, in place of the current “Upcoming meets” block. *(one and the same task — the News section IS the replacement; done via Facebook Page Plugin iframe of facebook.com/torquayleander)*
   > **Note (site check):** the Facebook page URL is known — `facebook.com/torquayleander`. "Upcoming Meets" is a sidebar `<aside>` in a two-column grid beside the welcome text on `index.astro`; the News feed takes over that aside.
 
