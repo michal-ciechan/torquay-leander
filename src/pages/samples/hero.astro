@@ -10,6 +10,14 @@ const scores = [
   { criterion: 'Readability & hierarchy', full: 4, compact: 4, banner: 3, split: 4 },
   { criterion: 'Mobile behaviour (viewport quirks, stacking)', full: 2, compact: 4, banner: 4, split: 3 },
 ];
+const devices = [
+  { key: 'iphone-se', label: 'iPhone SE', dims: '375 × 667' },
+  { key: 'iphone-15-pro-max', label: 'iPhone 15 Pro Max', dims: '430 × 932' },
+  { key: 'ipad', label: 'iPad', dims: '820 × 1180' },
+  { key: 'laptop-720p', label: 'Laptop 720p', dims: '1280 × 720' },
+  { key: 'desktop-1080p', label: 'Desktop 1080p', dims: '1920 × 1080' },
+];
+
 const totals = {
   full: scores.reduce((a, s) => a + s.full, 0),
   compact: scores.reduce((a, s) => a + s.compact, 0),
@@ -77,6 +85,22 @@ const totals = {
   </div>
   <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
 </section>
+<div class="device-strip">
+  <div class="inner">
+    <span class="ds-caption">How it looks above the fold, per device</span>
+    <div class="ds-row">
+      {devices.map((d) => (
+        <figure class="ds-card">
+          <a href={`${base}/samples/hero/shots/v-full-${d.key}.jpg`} target="_blank" rel="noopener">
+            <img src={`${base}/samples/hero/shots/v-full-${d.key}.jpg`} alt={`v-full on ${d.label}`} loading="lazy" />
+          </a>
+          <figcaption>{d.label} <span>{d.dims}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</div>
+
 
 <!-- 2. COMPACT -->
 <div class="variant-label"><div class="inner"><h2>Compact — now live ★</h2><p>Same content and photo at roughly three-quarters height, so the next section peeks above the fold and invites scrolling.</p></div></div>
@@ -90,6 +114,22 @@ const totals = {
   </div>
   <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
 </section>
+<div class="device-strip">
+  <div class="inner">
+    <span class="ds-caption">How it looks above the fold, per device</span>
+    <div class="ds-row">
+      {devices.map((d) => (
+        <figure class="ds-card">
+          <a href={`${base}/samples/hero/shots/v-compact-${d.key}.jpg`} target="_blank" rel="noopener">
+            <img src={`${base}/samples/hero/shots/v-compact-${d.key}.jpg`} alt={`v-compact on ${d.label}`} loading="lazy" />
+          </a>
+          <figcaption>{d.label} <span>{d.dims}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</div>
+
 
 <!-- 3. BANNER -->
 <div class="variant-label"><div class="inner"><h2>Banner</h2><p>Half height with tightened copy — the badge folds into the strapline and the intro is a single sentence. Fastest to the content, least atmosphere.</p></div></div>
@@ -102,6 +142,22 @@ const totals = {
   </div>
   <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
 </section>
+<div class="device-strip">
+  <div class="inner">
+    <span class="ds-caption">How it looks above the fold, per device</span>
+    <div class="ds-row">
+      {devices.map((d) => (
+        <figure class="ds-card">
+          <a href={`${base}/samples/hero/shots/v-banner-${d.key}.jpg`} target="_blank" rel="noopener">
+            <img src={`${base}/samples/hero/shots/v-banner-${d.key}.jpg`} alt={`v-banner on ${d.label}`} loading="lazy" />
+          </a>
+          <figcaption>{d.label} <span>{d.dims}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</div>
+
 
 <!-- 4. SPLIT -->
 <div class="variant-label"><div class="inner"><h2>Split</h2><p>Reordered layout — text on the left, photo as a framed card on the right, badge demoted to a trust line under the buttons.</p></div></div>
@@ -117,12 +173,50 @@ const totals = {
   </div>
   <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#dc2626"/></svg>
 </section>
+<div class="device-strip">
+  <div class="inner">
+    <span class="ds-caption">How it looks above the fold, per device</span>
+    <div class="ds-row">
+      {devices.map((d) => (
+        <figure class="ds-card">
+          <a href={`${base}/samples/hero/shots/v-split-${d.key}.jpg`} target="_blank" rel="noopener">
+            <img src={`${base}/samples/hero/shots/v-split-${d.key}.jpg`} alt={`v-split on ${d.label}`} loading="lazy" />
+          </a>
+          <figcaption>{d.label} <span>{d.dims}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</div>
+
 
 <section class="closing">
   <div class="inner">
     <a class="note-link" href={`${base}/`}>View the live home page →</a>
   </div>
 </section>
+
+<script is:inline>
+  // Screenshot rig: ?only=v-compact strips the page down to that one hero
+  // variant at the top, so a viewport capture shows its exact fold behaviour.
+  (function () {
+    const only = new URLSearchParams(location.search).get('only');
+    if (!only) return;
+    addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.page-hero, .scorecard, .variant-label, .closing, .device-strip, footer, astro-dev-toolbar').forEach(function (e) { e.remove(); });
+      document.querySelectorAll('.sample-hero').forEach(function (e) {
+        if (!e.classList.contains(only)) e.remove();
+      });
+      if (new URLSearchParams(location.search).has('dbg')) {
+        var h1 = document.querySelector('.sample-hero h1');
+        var d = document.createElement('div');
+        d.style.cssText = 'position:fixed;top:0;left:0;z-index:999;background:#ff0;color:#000;font:14px monospace;padding:4px;';
+        d.textContent = 'vw=' + innerWidth + ' h1=' + getComputedStyle(h1).fontSize;
+        document.body.appendChild(d);
+      }
+    });
+  })();
+</script>
 
 </BaseLayout>
 
@@ -192,6 +286,18 @@ const totals = {
   .variant-label p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; max-width: 720px; }
 
   .closing { background: #fff; padding: 40px 5vw 80px; }
+
+  .device-strip { background: #fff; padding: 26px 5vw 40px; }
+  .ds-caption { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .ds-row { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 10px; align-items: flex-start; }
+  .ds-card { margin: 0; flex-shrink: 0; }
+  .ds-card img {
+    height: 320px; width: auto; display: block; border-radius: 10px;
+    border: 1.5px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .ds-card a { display: block; }
+  .ds-card figcaption { margin-top: 8px; font-size: 0.78rem; font-weight: 700; color: var(--text); }
+  .ds-card figcaption span { color: var(--muted); font-weight: 600; margin-left: 6px; }
   .note-link { color: var(--red); font-weight: 700; font-size: 0.92rem; text-decoration: none; }
   .note-link:hover { text-decoration: underline; }
 </style>
