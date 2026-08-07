@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { categories } from '../../data/training-videos.mjs';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const mind = categories.find((c) => c.key === 'mind');
 ---
 <BaseLayout title="Safeguarding — Torquay Leander">
 
@@ -206,32 +208,31 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <div class="inner">
     <p class="label">Mental Wellbeing</p>
     <p class="lead">Looking after the mind matters as much as looking after the body. These short videos from Swim England's sport psychologists teach two simple techniques every swimmer can use — for competition nerves, setbacks, or any time things feel overwhelming. You'll also find them in our <a class="wb-link" href={`${base}/training/videos/`}>training video library</a>.</p>
-    <div class="wb-grid">
-      <div class="wb-card">
-        <button class="vid-embed" data-vid="LNu4xUo2P50" aria-label="Play Understanding Your Emotions">
-          <img src="https://i.ytimg.com/vi/LNu4xUo2P50/hqdefault.jpg" alt="Understanding Your Emotions" loading="lazy" />
-          <span class="vid-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-          <span class="vid-duration">1:58</span>
-        </button>
-        <div class="wb-body">
-          <strong>Understanding Your Emotions</strong>
-          <p>The "emotions wheel" — a simple tool for naming what you're feeling, and the first step to dealing with it.</p>
-        </div>
-      </div>
-      <div class="wb-card">
-        <button class="vid-embed" data-vid="M_YyoZ7WsnU" aria-label="Play Grounding Under Pressure">
-          <img src="https://i.ytimg.com/vi/M_YyoZ7WsnU/hqdefault.jpg" alt="Grounding Under Pressure" loading="lazy" />
-          <span class="vid-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-          <span class="vid-duration">2:20</span>
-        </button>
-        <div class="wb-body">
-          <strong>Grounding Under Pressure</strong>
-          <p>The 5-4-3-2-1 senses technique athletes use to calm down quickly and stay in the present.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
+
+{mind.videos.map((v, i) => (
+  <section class={`video-block ${i % 2 ? 'flip' : ''}`}>
+    <div class="vb-grid">
+      <div class="vb-media">
+        <button class="vid-embed" data-vid={v.id} aria-label={`Play ${v.title}`}>
+          <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt={v.title} loading="lazy" />
+          <span class="vid-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vid-duration">{v.duration}</span>
+        </button>
+      </div>
+      <div class="vb-text">
+        <h2><span class="vb-emoji">{v.emoji}</span> {v.title}</h2>
+        <p class="vb-summary">{v.summary}</p>
+        <ul class="vb-points">
+          {v.points.map((p) => (
+            <li><span class="vb-point-emoji">{p.emoji}</span><span>{p.text}</span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+))}
 
 <script is:inline>
   document.addEventListener('click', function (e) {
@@ -452,36 +453,59 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     .swimline-section, .welfare-section, .helplines-section, .local-section { padding: 48px 20px; }
   }
 
-  .wellbeing-section { background: #f8fafc; }
+  /* Mental Wellbeing — same section-per-video format as the training video
+     category pages (alternating media/text, emoji heading, key-point chips). */
+  .wellbeing-section { background: #fff; padding: 72px 5vw 0; }
   .wb-link { color: var(--red); font-weight: 700; text-decoration: none; }
   .wb-link:hover { text-decoration: underline; }
-  .wb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin-top: 28px; }
-  .wb-card { background: #fff; border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.2s; }
-  .wb-card:hover { border-color: var(--red); box-shadow: 0 8px 28px rgba(220,38,38,0.08); }
-  .vid-embed {
+
+  .video-block { padding: 56px 5vw; background: #fff; }
+  .video-block.flip { background: #f8fafc; }
+  .vb-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+  .video-block.flip .vb-media { order: 2; }
+  .video-block.flip .vb-text { order: 1; }
+
+  .vb-media .vid-embed {
     position: relative; display: block; width: 100%; aspect-ratio: 16 / 9;
-    border: none; padding: 0; cursor: pointer; background: var(--black); overflow: hidden;
+    border: none; padding: 0; cursor: pointer; background: var(--black);
+    border-radius: 16px; overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.16);
   }
-  .vid-embed img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.2s, transform 0.3s; }
+  .vid-embed img { width: 100%; height: 100%; object-fit: cover; opacity: 0.88; transition: opacity 0.2s, transform 0.3s; }
   .vid-embed:hover img { opacity: 1; transform: scale(1.03); }
   .vid-play {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 52px; height: 52px; border-radius: 50%;
+    width: 60px; height: 60px; border-radius: 50%;
     background: rgba(220,38,38,0.92); color: #fff;
     display: flex; align-items: center; justify-content: center;
     box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.2s;
   }
   .vid-embed:hover .vid-play { transform: translate(-50%, -50%) scale(1.1); }
   .vid-duration {
-    position: absolute; bottom: 10px; right: 10px;
+    position: absolute; bottom: 12px; right: 12px;
     background: rgba(10,10,10,0.85); color: #fff;
-    font-size: 0.72rem; font-weight: 700; border-radius: 6px; padding: 3px 8px;
+    font-size: 0.74rem; font-weight: 700; border-radius: 6px; padding: 3px 9px;
   }
-  :global(.vid-frame) { width: 100%; aspect-ratio: 16 / 9; border: none; display: block; }
-  .wb-body { padding: 16px 18px 18px; }
-  .wb-body strong { display: block; font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
-  .wb-body p { color: var(--muted); font-size: 0.85rem; line-height: 1.65; margin: 0; }
-  @media (max-width: 640px) {
-    .wb-grid { grid-template-columns: 1fr; }
+  :global(.vid-frame) { width: 100%; aspect-ratio: 16 / 9; border: none; display: block; border-radius: 16px; box-shadow: 0 16px 44px rgba(0,0,0,0.16); }
+
+  .vb-text h2 {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    font-size: clamp(1.15rem, 2vw, 1.42rem); font-weight: 800; letter-spacing: -0.4px;
+    margin-bottom: 12px;
+  }
+  .vb-emoji { font-size: 1.5rem; }
+  .vb-summary { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 18px; }
+  .vb-points { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
+  .vb-points li {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 10px 14px; font-size: 0.86rem; color: var(--text); font-weight: 600; line-height: 1.5;
+  }
+  .vb-point-emoji { flex-shrink: 0; }
+
+  @media (max-width: 820px) {
+    .vb-grid { grid-template-columns: 1fr; gap: 24px; }
+    .video-block.flip .vb-media { order: 0; }
+    .video-block.flip .vb-text { order: 1; }
   }
 </style>
