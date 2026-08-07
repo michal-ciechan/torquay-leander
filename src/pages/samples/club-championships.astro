@@ -2,32 +2,43 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const variants = [
-  {
-    name: 'Full event names (live)',
-    desc: 'Event names written out in the style the page already used — "100m Individual Medley", "25m Backstroke (7 & under)".',
-    programme: [
-      { date: 'Thursday 5th Nov', events: ['400m Freestyle'] },
-      { date: 'Monday 9th Nov', events: ['100m Individual Medley', '25m Backstroke (7 & under)', '200m Breaststroke', '50m Backstroke', '100m Freestyle'] },
-      { date: 'Sunday 15th Nov', session: 'Session 1', events: ['25m Butterfly (7 & under)', '50m Butterfly', '100m Backstroke', '200m Freestyle'] },
-      { date: 'Sunday 15th Nov', session: 'Session 2', events: ['25m Breaststroke (7 & under)', '50m Freestyle', '100m Breaststroke'] },
-      { date: 'Thursday 19th Nov', events: ['200m Individual Medley', '25m Freestyle (7 & under)', '50m Breaststroke', '200m Backstroke', '100m Butterfly'] },
-    ],
-  },
-  {
-    name: 'Short names — as in your email',
-    desc: 'Event names exactly as written in the mail — "100IM", "25 Backstroke (7 and under)". More compact, assumes readers know the shorthand.',
-    programme: [
-      { date: 'Thursday 5th November', events: ['400m Freestyle'] },
-      { date: 'Monday 9th November', events: ['100IM', '25 Backstroke (7 and under)', '200 Breaststroke', '50 Backstroke', '100 Freestyle'] },
-      { date: 'Sunday 15th November', session: 'Session 1', events: ['25 Butterfly (7 and under)', '50 Butterfly', '100 Backstroke', '200 Freestyle'] },
-      { date: 'Sunday 15th November', session: 'Session 2', events: ['25m Breaststroke (7 and under)', '50m Freestyle', '100 Breaststroke'] },
-      { date: 'Thursday 19th November', events: ['200IM', '25 Freestyle (7 and under)', '50 Breaststroke', '200 Backstroke', '100 Butterfly'] },
-    ],
-  },
+const programme = [
+  { date: 'Thursday 5th Nov', short: 'Thu', day: 5, events: ['400m Freestyle'] },
+  { date: 'Monday 9th Nov', short: 'Mon', day: 9, events: ['100m Individual Medley', '25m Backstroke (7 & under)', '200m Breaststroke', '50m Backstroke', '100m Freestyle'] },
+  { date: 'Sunday 15th Nov', short: 'Sun', day: 15, session: 'Session 1', events: ['25m Butterfly (7 & under)', '50m Butterfly', '100m Backstroke', '200m Freestyle'] },
+  { date: 'Sunday 15th Nov', short: 'Sun', day: 15, session: 'Session 2', events: ['25m Breaststroke (7 & under)', '50m Freestyle', '100m Breaststroke'] },
+  { date: 'Thursday 19th Nov', short: 'Thu', day: 19, events: ['200m Individual Medley', '25m Freestyle (7 & under)', '50m Breaststroke', '200m Backstroke', '100m Butterfly'] },
+];
+
+// stroke x distance matrix: which session is each event in?
+const strokes = ['Freestyle', 'Backstroke', 'Breaststroke', 'Butterfly', 'Ind. Medley'];
+const distances = ['25m*', '50m', '100m', '200m', '400m'];
+const matrix = {
+  'Freestyle':    { '25m*': { label: 'Thu 19', cls: 'd19' }, '50m': { label: 'Sun 15 · S2', cls: 'd15b' }, '100m': { label: 'Mon 9', cls: 'd9' }, '200m': { label: 'Sun 15 · S1', cls: 'd15a' }, '400m': { label: 'Thu 5', cls: 'd5' } },
+  'Backstroke':   { '25m*': { label: 'Mon 9', cls: 'd9' }, '50m': { label: 'Mon 9', cls: 'd9' }, '100m': { label: 'Sun 15 · S1', cls: 'd15a' }, '200m': { label: 'Thu 19', cls: 'd19' } },
+  'Breaststroke': { '25m*': { label: 'Sun 15 · S2', cls: 'd15b' }, '50m': { label: 'Thu 19', cls: 'd19' }, '100m': { label: 'Sun 15 · S2', cls: 'd15b' }, '200m': { label: 'Mon 9', cls: 'd9' } },
+  'Butterfly':    { '25m*': { label: 'Sun 15 · S1', cls: 'd15a' }, '50m': { label: 'Sun 15 · S1', cls: 'd15a' }, '100m': { label: 'Thu 19', cls: 'd19' } },
+  'Ind. Medley':  { '100m': { label: 'Mon 9', cls: 'd9' }, '200m': { label: 'Thu 19', cls: 'd19' } },
+};
+const legend = [
+  { label: 'Thu 5 Nov', cls: 'd5' },
+  { label: 'Mon 9 Nov', cls: 'd9' },
+  { label: 'Sun 15 Nov · Session 1', cls: 'd15a' },
+  { label: 'Sun 15 Nov · Session 2', cls: 'd15b' },
+  { label: 'Thu 19 Nov', cls: 'd19' },
+];
+
+const calendarDays = [
+  { num: 5, wd: 'Thursday', sessions: [{ events: ['400m Freestyle'] }] },
+  { num: 9, wd: 'Monday', sessions: [{ events: ['100m Individual Medley', '25m Backstroke (7 & under)', '200m Breaststroke', '50m Backstroke', '100m Freestyle'] }] },
+  { num: 15, wd: 'Sunday', sessions: [
+    { label: 'Session 1', events: ['25m Butterfly (7 & under)', '50m Butterfly', '100m Backstroke', '200m Freestyle'] },
+    { label: 'Session 2', events: ['25m Breaststroke (7 & under)', '50m Freestyle', '100m Breaststroke'] },
+  ] },
+  { num: 19, wd: 'Thursday', sessions: [{ events: ['200m Individual Medley', '25m Freestyle (7 & under)', '50m Breaststroke', '200m Backstroke', '100m Butterfly'] }] },
 ];
 ---
-<BaseLayout title="Club Championships Sample — Torquay Leander">
+<BaseLayout title="Club Championships Samples — Torquay Leander">
 
 <section class="page-hero">
   <div class="hero-inner">
@@ -38,36 +49,151 @@ const variants = [
       <span>›</span>
       <span>Club Championships</span>
     </div>
-    <h1>Championships Programme — Naming</h1>
-    <p>The 2026 programme shown two ways: event names written out in full (what the live page uses), and the short names exactly as they appeared in the email. Same dates and sessions in both.</p>
+    <h1>Championships Programme — Design Options</h1>
+    <p>The 2026 programme presented four different ways — the card list the live page uses, plus three alternative treatments. Same data in each; pick whichever reads best.</p>
   </div>
 </section>
 
-{variants.map((v) => (
-  <section class="programme-sample">
-    <div class="inner">
-      <div class="variant-head">
-        <h2>{v.name}</h2>
-        <p>{v.desc}</p>
-      </div>
-      <div class="prog-list">
-        {v.programme.map((day) => (
-          <div class="prog-day">
-            <div class="prog-head">
-              <span class="prog-date">{day.date}</span>
+<!-- 1. CARDS (live) -->
+<section class="variant">
+  <div class="inner">
+    <div class="variant-head">
+      <h2>1 · Session cards <span class="live-chip">live</span></h2>
+      <p>One card per session with event tags — what the page uses today.</p>
+    </div>
+    <div class="prog-list">
+      {programme.map((day) => (
+        <div class="prog-day">
+          <div class="prog-head">
+            <span class="prog-date">{day.date}</span>
+            {day.session && <span class="prog-session">{day.session}</span>}
+          </div>
+          <div class="prog-events">
+            {day.events.map((e) => <span class="event-tag">{e}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 2. TIMELINE -->
+<section class="variant alt">
+  <div class="inner">
+    <div class="variant-head">
+      <h2>2 · Timeline</h2>
+      <p>The championships as a journey through November — reads top to bottom, session by session.</p>
+    </div>
+    <div class="timeline">
+      {programme.map((day) => (
+        <div class="tl-item">
+          <div class="tl-node">
+            <span class="tl-day">{day.day}</span>
+            <span class="tl-mon">Nov</span>
+          </div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <strong>{day.date}</strong>
               {day.session && <span class="prog-session">{day.session}</span>}
             </div>
             <div class="prog-events">
               {day.events.map((e) => <span class="event-tag">{e}</span>)}
             </div>
           </div>
-        ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 3. CALENDAR TILES -->
+<section class="variant">
+  <div class="inner">
+    <div class="variant-head">
+      <h2>3 · Calendar tiles</h2>
+      <p>Big date tiles, calendar-style — easiest to photograph for the fridge door.</p>
+    </div>
+    <div class="cal-grid">
+      {calendarDays.map((d) => (
+        <div class="cal-tile">
+          <div class="cal-date">
+            <span class="cal-num">{d.num}</span>
+            <span class="cal-meta"><b>{d.wd}</b><i>November 2026</i></span>
+          </div>
+          {d.sessions.map((sess) => (
+            <div class="cal-session">
+              {sess.label && <span class="cal-sess-label">{sess.label}</span>}
+              <ul>
+                {sess.events.map((e) => <li>{e}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 4. MATRIX -->
+<section class="variant alt">
+  <div class="inner">
+    <div class="variant-head">
+      <h2>4 · Stroke &amp; distance grid</h2>
+      <p>Answers a swimmer's real question — "when is my event?" — at a glance. Colour = session.</p>
+    </div>
+    <div class="mx-legend">
+      {legend.map((l) => <span class={`mx-key ${l.cls}`}>{l.label}</span>)}
+    </div>
+    <div class="mx-scroll">
+      <table class="mx-table">
+        <thead>
+          <tr>
+            <th></th>
+            {strokes.map((s) => <th>{s}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {distances.map((dist) => (
+            <tr>
+              <th>{dist}</th>
+              {strokes.map((s) => {
+                const cell = matrix[s] && matrix[s][dist];
+                return <td>{cell ? <span class={`mx-chip ${cell.cls}`}>{cell.label}</span> : <span class="mx-none">—</span>}</td>;
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mx-note">* 25m events are for swimmers aged 7 &amp; under.</p>
+  </div>
+</section>
+
+<!-- 5. NAMING -->
+<section class="variant">
+  <div class="inner">
+    <div class="variant-head">
+      <h2>5 · Short event names — as in your email</h2>
+      <p>Any of the layouts above can also use the short names from your email ("100IM", "25 Backstroke") instead of the written-out style. One session shown for comparison:</p>
+    </div>
+    <div class="prog-list">
+      <div class="prog-day">
+        <div class="prog-head">
+          <span class="prog-date">Monday 9th November</span>
+        </div>
+        <div class="prog-events">
+          <span class="event-tag">100IM</span>
+          <span class="event-tag">25 Backstroke (7 and under)</span>
+          <span class="event-tag">200 Breaststroke</span>
+          <span class="event-tag">50 Backstroke</span>
+          <span class="event-tag">100 Freestyle</span>
+        </div>
       </div>
     </div>
-  </section>
-))}
+  </div>
+</section>
 
-<section class="live-link">
+<section class="closing">
   <div class="inner">
     <a class="note-link" href={`${base}/competitions/club-championships/`}>View the live Club Championships page →</a>
   </div>
@@ -82,7 +208,7 @@ const variants = [
   }
   .page-hero::after {
     content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
-    background: #f8fafc; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
   }
   .hero-inner { max-width: 1200px; margin: 0 auto; }
   .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
@@ -93,23 +219,89 @@ const variants = [
 
   .inner { max-width: 1100px; margin: 0 auto; }
 
-  .programme-sample { padding: 56px 5vw 24px; background: #f8fafc; }
-  .programme-sample:nth-of-type(even) { background: #fff; }
-  .variant-head { margin-bottom: 24px; }
-  .variant-head h2 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .variant { background: #fff; padding: 56px 5vw; }
+  .variant.alt { background: #f8fafc; }
+  .variant-head { margin-bottom: 26px; }
+  .variant-head h2 { display: flex; align-items: center; gap: 12px; font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
   .variant-head p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; max-width: 680px; }
+  .live-chip { background: #dcfce7; color: #15803d; border-radius: 999px; padding: 4px 12px; font-size: 0.68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
 
-  .prog-list { display: flex; flex-direction: column; gap: 16px; }
-  .prog-day { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 22px 24px; }
-  .programme-sample:nth-of-type(even) .prog-day { background: #f8fafc; }
-  .prog-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
-  .prog-date { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+  /* shared bits */
   .prog-session { background: var(--red-light); color: var(--red-dark); border-radius: 999px; padding: 5px 13px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
   .prog-events { display: flex; flex-wrap: wrap; gap: 8px; }
   .event-tag { background: #f1f5f9; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; color: var(--text); }
-  .programme-sample:nth-of-type(even) .event-tag { background: #fff; }
+  .variant.alt .event-tag { background: #fff; }
 
-  .live-link { padding: 24px 5vw 80px; background: #fff; }
+  /* 1: cards */
+  .prog-list { display: flex; flex-direction: column; gap: 16px; }
+  .prog-day { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 22px 24px; }
+  .prog-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .prog-date { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+
+  /* 2: timeline */
+  .timeline { position: relative; padding-left: 6px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 33px; top: 10px; bottom: 10px;
+    width: 3px; background: linear-gradient(var(--red), var(--red-dark)); border-radius: 2px;
+  }
+  .tl-item { position: relative; display: flex; gap: 24px; padding: 14px 0; }
+  .tl-node {
+    position: relative; z-index: 1; flex-shrink: 0;
+    width: 58px; height: 58px; border-radius: 16px;
+    background: var(--red); color: #fff;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 8px 22px rgba(220,38,38,0.35);
+  }
+  .tl-day { font-size: 1.25rem; font-weight: 900; line-height: 1; }
+  .tl-mon { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+  .tl-card {
+    flex: 1; background: #fff; border: 1.5px solid var(--border); border-radius: 14px;
+    padding: 18px 22px;
+  }
+  .tl-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .tl-head strong { font-size: 0.98rem; font-weight: 800; color: var(--text); }
+
+  /* 3: calendar tiles */
+  .cal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .cal-tile { background: #fff; border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .cal-date {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--black); color: #fff; padding: 16px 20px;
+  }
+  .cal-num { font-size: 2.2rem; font-weight: 900; line-height: 1; color: #fff; }
+  .cal-meta { display: flex; flex-direction: column; }
+  .cal-meta b { font-size: 0.92rem; font-weight: 800; }
+  .cal-meta i { font-style: normal; font-size: 0.74rem; color: rgba(255,255,255,0.6); }
+  .cal-session { padding: 16px 20px; border-top: 1px solid var(--border); }
+  .cal-sess-label { display: inline-block; background: var(--red-light); color: var(--red-dark); border-radius: 999px; padding: 3px 11px; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
+  .cal-session ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .cal-session li { position: relative; padding-left: 18px; font-size: 0.85rem; font-weight: 600; color: var(--text); }
+  .cal-session li::before { content: ''; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+
+  /* 4: matrix */
+  .mx-legend { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .mx-key, .mx-chip {
+    display: inline-block; border-radius: 999px; padding: 5px 12px;
+    font-size: 0.72rem; font-weight: 800; white-space: nowrap;
+  }
+  .d5   { background: #fee2e2; color: #b91c1c; }
+  .d9   { background: #ffedd5; color: #c2410c; }
+  .d15a { background: #dbeafe; color: #1d4ed8; }
+  .d15b { background: #e0e7ff; color: #4338ca; }
+  .d19  { background: #dcfce7; color: #15803d; }
+  .mx-scroll { overflow-x: auto; }
+  .mx-table { width: 100%; border-collapse: collapse; min-width: 680px; background: #fff; border-radius: 14px; overflow: hidden; }
+  .mx-table th, .mx-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: center; }
+  .mx-table thead th { background: var(--black); color: #fff; font-size: 0.82rem; font-weight: 800; }
+  .mx-table tbody th { background: #f8fafc; font-size: 0.82rem; font-weight: 800; color: var(--text); }
+  .mx-none { color: #cbd5e1; }
+  .mx-note { margin-top: 12px; color: var(--muted); font-size: 0.8rem; }
+
+  .closing { background: #fff; padding: 40px 5vw 80px; }
   .note-link { color: var(--red); font-weight: 700; font-size: 0.92rem; text-decoration: none; }
   .note-link:hover { text-decoration: underline; }
+
+  @media (max-width: 700px) {
+    .cal-grid { grid-template-columns: 1fr; }
+  }
 </style>
