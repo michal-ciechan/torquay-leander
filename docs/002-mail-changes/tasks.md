@@ -52,8 +52,8 @@ Attachments expected (not in raw.md):
 
 - [x] **Learn to Swim → Swim Torquay** — Add a button/link on stages 1–4 through to the Swim Torquay page. *(done — researched online: swimtorquay.com 301s to `swimtorquay.co.uk`; buttons on the Stages 1–4 card and the partner callout link to the lessons page, plus tel: link for 01803 323400)*
   > **Note (site check):** the "Stages 1–4" card on `/training/learn-to-swim/` currently has no button, and the "Lessons are run by Swim Torquay" callout has no link either — the button could serve both. Swim Torquay URL still needed (see open questions).
-- [x] **Tab — Warm-up video** — Add a Warm Up Video tab (content TBD / linked from mail assets if provided). *(done as a **Warm-Up section** in the `/training/videos/` hub — Swim England warm-up & mobility-for-starts video; Dom's own media can be added when supplied)*
-- [x] **Tab — Stretches** — Add a Stretches tab (content TBD / linked from mail assets if provided). *(done as a **Stretches section** in the hub — arms & shoulders flexibility routine)*
+- [x] **Tab — Warm-up video** — Add a Warm Up Video tab (content TBD / linked from mail assets if provided). *(done as a **Warm-Up section** in the hub — re-reading the mail, Dom meant picks from the same Swim England playlist his links came from: added Supple Strength Warm-Up (idx 26), Mobility for Turns (66) and Streamlining Mobility for Young Swimmers (57) alongside Mobility for Starts)*
+- [x] **Tab — Stretches** — Add a Stretches tab (content TBD / linked from mail assets if provided). *(done as a **Stretches section** in the hub — arms & shoulders (45), plus Hamstrings (60) and Splits (59) flexibility sessions from the same playlist)*
 - [x] **Training videos hub** — Add a section (or page area) for training videos / helpful guidance; link content to competition guides (e.g. “what to expect at your first gala”).
 
 > *(§4 hub done — `/training/videos/` library with four categories (S&C, Flexibility & Mobility, Race-Day Mindset, Nutrition), click-to-play embeds, transcript-based descriptions, durations, and a competition-guide cross-link; both psychology videos also on Safeguarding under Mental Wellbeing. Still open: Learn to Swim button (needs Swim Torquay URL) and warm-up/stretches tabs (needs media).)*
@@ -207,5 +207,5 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 - [x] Confirm Facebook **embed method** for News feed. *(Page Plugin iframe, no API key; page: `facebook.com/torquayleander`)*
 - [ ] Decide where **Club Merchandise** and **Members Login** sit in the new nav order (omitted from the mail's proposed order).
 - [x] Confirm titles for unnamed training playlist videos. *(fetched via oEmbed + transcripts pulled via yt-dlp captions — all ten are official Swim England videos: trunk workout, calisthenics, 3-level lower-body conditioning, mobility for starts, arms/shoulders flexibility, nutrition, 2x sports psychology)*
-- [x] Confirm where Warm-up / Stretches media lives. *(covered with Swim England videos in the hub's Warm-Up and Stretches sections; anything specific from Dom slots straight in)*
+- [x] Confirm where Warm-up / Stretches media lives. *(resolved — the media lives in the same Swim England playlist as all his other links; warm-up and stretches videos picked from it)*
 - [x] Confirm preferred home for Parent’s Guide. *(merged into the existing `/competitions/competition-guide/` page around its race-rules/starts/strokes content)*

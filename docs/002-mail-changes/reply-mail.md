@@ -15,7 +15,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 ## 1. Things I need from you
 
 1. **Merchandise in the menu** — your suggested menu order didn't include it. Keep it there now, or hold it back until that side of things is ready?
-2. **Warm-up video & stretches** — the video library now has dedicated **Warm-Up** and **Stretches** sections using Swim England's videos, so this is covered — but if you had specific videos or documents in mind, send them over and they'll slot straight in.
+2. **Warm-up video & stretches** — done: the video library has dedicated **Warm-Up** and **Stretches** sections, filled with picks from the same Swim England playlist your links came from (the supple strength warm-up, mobility for starts & turns, streamlining for young swimmers, and the arms/shoulders, hamstrings and splits flexibility sessions). Shout if you'd have picked different ones.
 
 ## 2. Decisions I've made — happy to change any of these
 
@@ -86,7 +86,7 @@ Mike
 
 | Date | Change |
 |---|---|
-| 7 Aug 2026 | Hub restructured with Warm-Up + Stretches sections; Learn to Swim: Swim Torquay lessons buttons (researched URL); Training Videos library at `/training/videos/` (10 Swim England videos, transcript-based descriptions); Mental Wellbeing section with psych videos on Safeguarding |
+| 7 Aug 2026 | Warm-Up/Stretches filled from Dom's playlist (5 more videos, 15 total); Hub restructured with Warm-Up + Stretches sections; Learn to Swim: Swim Torquay lessons buttons (researched URL); Training Videos library at `/training/videos/` (10 Swim England videos, transcript-based descriptions); Mental Wellbeing section with psych videos on Safeguarding |
 | 7 Aug 2026 | Trophy banner: three honours incl. 2026 Scott Ormsby + William Shield |
 | 6 Aug 2026 | Hero headline reduced on desktop; per-device fold screenshots added to `/samples/hero/`; SwimMark badge linked; Parent's Guide merged into the Competition Guide page; Hero compressed to compact (~72vh) with scored comparison at `/samples/hero/`; Club Championships updated to the 2026 programme (sessions, no heat sheets); naming comparison at `/samples/club-championships/` |
 | 3 Aug 2026 | Contact form lightened + Membership/General split, iOS date-field fix, `/samples/contact/` colour options; Facilities: timing + diving blocks cards using Dom's verbatim wording; mail restructured (questions → decisions → changes) |
