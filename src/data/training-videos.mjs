@@ -18,7 +18,6 @@ export const categories = [
         points: [
           { emoji: '🧘', text: 'Pilates-meets-yoga movements designed for swimmers' },
           { emoji: '🏠', text: 'No equipment — a mat or carpet and a clear space is enough' },
-          { emoji: '👨‍👩‍👧', text: 'Parents and coaches are invited to join in too' },
           { emoji: '🎯', text: 'Targets core strength, posture and balance' },
         ],
       },
@@ -30,7 +29,6 @@ export const categories = [
         summary: 'A follow-along session that starts with a five-minute skipping pyramid — two feet, alternating legs, A-skips, heel flicks and high knees — then builds into mobility work aimed squarely at a more explosive start off the blocks.',
         points: [
           { emoji: '⏱️', text: 'Five-minute skipping pyramid to raise the heart rate' },
-          { emoji: '🍑', text: 'Glute bridges — "two up, one down" with a slow three-second lower' },
           { emoji: '🦵', text: 'Squat-to-stands for hip mobility and hamstring length' },
           { emoji: '🚀', text: 'Big lunges with a streamline reach, extending through the spine' },
         ],
@@ -120,7 +118,6 @@ export const categories = [
         points: [
           { emoji: '🐚', text: 'Clams for the muscles around the hip' },
           { emoji: '🐕', text: 'Down-dog to pigeon — upper body plus a hip stretch' },
-          { emoji: '🧭', text: 'Compass touches for single-leg balance and control' },
           { emoji: '🧱', text: 'Planks and bent-leg lowers with strict pelvis position' },
         ],
       },
@@ -133,14 +130,13 @@ export const categories = [
         points: [
           { emoji: '🤲', text: 'Two to three minutes of wrist prep before anything else' },
           { emoji: '🐸', text: 'Toe taps → double take-offs → timed holds' },
-          { emoji: '⏳', text: 'Hold 10+ seconds before trying kick-outs' },
           { emoji: '🏆', text: 'Advanced finish: the full press to headstand' },
         ],
       },
       {
         id: 'lJQxKumukI0',
         duration: '1:15',
-        title: 'Lower-Body Conditioning — Level 1',
+        title: 'Lower-Body Conditioning',
         emoji: '1️⃣',
         level: 'Level 1',
         summary: 'The foundation level of a three-stage eccentric/isometric progression for stronger, more powerful legs — slow, controlled work that builds the strength behind starts and turns.',
@@ -153,7 +149,7 @@ export const categories = [
       {
         id: 'ZDhQZtYxpLM',
         duration: '1:12',
-        title: 'Lower-Body Conditioning — Level 2',
+        title: 'Lower-Body Conditioning',
         emoji: '2️⃣',
         level: 'Level 2',
         summary: 'The middle stage of the progression — move on once the Level 1 movements feel controlled and comfortable through the full range.',
@@ -165,7 +161,7 @@ export const categories = [
       {
         id: 'oTA1COEj_00',
         duration: '1:06',
-        title: 'Lower-Body Conditioning — Level 3',
+        title: 'Lower-Body Conditioning',
         emoji: '3️⃣',
         level: 'Level 3',
         summary: 'The most advanced stage, for swimmers confident with Levels 1 and 2 — maximum control under the hardest positions.',
@@ -215,6 +211,18 @@ export const categories = [
     strap: 'What swimmers eat shapes how they train and recover.',
     videos: [
       {
+        id: 'DglmmVJ0MgA',
+        duration: '2:57',
+        title: 'Your Nutrition Questions Answered',
+        emoji: '🥪',
+        summary: 'Swim England\'s current nutrition Q&A (2026) — real swimmers\' questions answered: what to eat the night before a race, whether eating before a swim is bad (it isn\'t — "like a car needs petrol, we need energy to swim"), fuelling for distance events, dietary restrictions, and whether young swimmers need electrolytes (usually not).',
+        points: [
+          { emoji: '🍝', text: 'Night before racing: easy-to-digest carbs — nothing you\'ve never tried before' },
+          { emoji: '🥯', text: 'Before a session: toast with jam, a peanut butter & banana bagel, yoghurt with granola' },
+          { emoji: '🥛', text: 'After: carbs plus protein — a chocolate milk does the job' },
+        ],
+      },
+      {
         id: 'yLVoq8fZDys',
         duration: '1:49',
         title: 'Nutrition Essentials for Swimmers',
@@ -223,7 +231,6 @@ export const categories = [
         points: [
           { emoji: '🌈', text: 'Keep the plate colourful — more vegetables' },
           { emoji: '🍗', text: 'Regular protein: roughly 20g a portion (up to 40g for bigger athletes)' },
-          { emoji: '🍓', text: 'Smarter snacks: yoghurt, fresh fruit, nuts' },
           { emoji: '🍝', text: 'Recover soon after training, with carbohydrates included' },
         ],
       },
