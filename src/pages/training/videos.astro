@@ -5,6 +5,28 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // All videos are official Swim England content (transcript-reviewed).
 const categories = [
   {
+    key: 'warm-up',
+    label: 'Warm-Up',
+    blurb: 'What to do before training or racing — get the body moving and ready to work.',
+    videos: [
+      {
+        id: 'CfNoFpwLV4w', duration: '8:16', title: 'Warm-Up & Mobility for Starts',
+        desc: 'A follow-along warm-up building into start-focused mobility: five minutes of skipping, A-skips, heel flicks and high knees, then glute bridges, squat-to-stands and lunges with a streamline reach — aimed at a more explosive dive.',
+      },
+    ],
+  },
+  {
+    key: 'stretches',
+    label: 'Stretches',
+    blurb: 'Better range of movement means a better streamline and fewer injuries.',
+    videos: [
+      {
+        id: 'F4AKzbqPPP0', duration: '4:25', title: 'Arms & Shoulders Flexibility',
+        desc: 'A short follow-along stretching routine for the arms and shoulders — the areas swimmers load most.',
+      },
+    ],
+  },
+  {
     key: 'sc',
     label: 'Strength & Conditioning',
     blurb: 'Land-training sessions that build the strength swimmers use in the water — no equipment needed beyond a mat and some floor space.',
@@ -28,21 +50,6 @@ const categories = [
       {
         id: 'oTA1COEj_00', duration: '1:06', title: 'Lower-Body Conditioning — Level 3', level: 'Level 3',
         desc: 'The most advanced stage of the progression, for swimmers confident with Levels 1 and 2.',
-      },
-    ],
-  },
-  {
-    key: 'mobility',
-    label: 'Flexibility & Mobility',
-    blurb: 'Better range of movement means a better streamline, stronger starts and fewer injuries.',
-    videos: [
-      {
-        id: 'CfNoFpwLV4w', duration: '8:16', title: 'Mobility for Starts',
-        desc: 'A start-focused mobility session: skipping and A-skip warm-up, glute bridges, squat-to-stands and lunges with a streamline reach — directly aimed at a more explosive dive.',
-      },
-      {
-        id: 'F4AKzbqPPP0', duration: '4:25', title: 'Arms & Shoulders Flexibility',
-        desc: 'A short follow-along stretching routine for the arms and shoulders — the areas swimmers load most.',
       },
     ],
   },
@@ -86,7 +93,7 @@ const categories = [
       <span>Training Videos</span>
     </div>
     <h1>Training Videos</h1>
-    <p>A land-training library from Swim England — strength &amp; conditioning, flexibility, race-day mindset and nutrition. Every session is swimmer-specific and most need nothing more than floor space.</p>
+    <p>A land-training library from Swim England — warm-up, stretches, strength &amp; conditioning, race-day mindset and nutrition. Every session is swimmer-specific and most need nothing more than floor space.</p>
   </div>
 </section>
 
