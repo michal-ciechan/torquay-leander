@@ -87,6 +87,7 @@ Mike
 
 | Date | Change |
 |---|---|
+| 7 Aug 2026 | Parent's Guide polish: pool-length line in course cards (no orphaned "A"), roles section redesigned (featured dark TM card + symmetric 2×2 icon grid), TM bullet shortened to one line, kit list emojis; footer address links to Google Maps, Samples moved to bottom bar |
 | 7 Aug 2026 | Wellbeing videos on Safeguarding now use the library's section-per-video layout; DOB placeholder fixed in Firefox; video pages trimmed to 3 key points each; "Level X" removed from titles (chip only); Swim England 2026 nutrition Q&A added to library; mail: intro says everything live, warm-up/stretches moved to decisions, video-vintage entry updated with researched alternatives, FINA moved to bottom |
 | 7 Aug 2026 | Video library restructured: landing + page per category, per-video summaries & key points in alternating layout; Warm-Up/Stretches filled from Dom's playlist (5 more videos, 15 total); Hub restructured with Warm-Up + Stretches sections; Learn to Swim: Swim Torquay lessons buttons (researched URL); Training Videos library at `/training/videos/` (10 Swim England videos, transcript-based descriptions); Mental Wellbeing section with psych videos on Safeguarding |
 | 7 Aug 2026 | Trophy banner: three honours incl. 2026 Scott Ormsby + William Shield |
