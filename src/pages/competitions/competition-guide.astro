@@ -23,49 +23,55 @@ const strokes = [
   { icon: '🏊', name: 'Freestyle', text: 'Any stroke may be used — almost all swimmers choose front crawl for speed.' },
 ];
 
+const teamManager = {
+  name: 'Team Manager (TM)',
+  icon: '🛡️',
+  text: 'One of the most important roles at any gala. Team Managers are trained volunteers responsible for the welfare, safety and organisation of our swimmers throughout the competition. Every Team Manager has completed Swim England training and holds an enhanced DBS check.',
+  duties: [
+    'Looking after swimmers throughout the day',
+    'Acting in the swimmer\'s best interests when parents aren\'t present',
+    'Making sure swimmers are ready for warm-up and races on time',
+    'Escorting swimmers to marshalling',
+    'Supporting the coaching team',
+  ],
+  footer: 'Without Team Managers, the club would be unable to attend competitions. We always aim to have both male and female Team Managers available wherever possible.',
+};
+
 const roles = [
   {
+    icon: '📣',
     name: 'Coach',
     text: 'Our coaches prepare swimmers before each race, oversee warm-ups and cool-downs, and provide feedback afterwards. They help swimmers understand their race plan and offer encouragement and technical advice throughout the day.',
   },
   {
-    name: 'Team Manager (TM)',
-    text: 'One of the most important roles at any gala. Team Managers are trained volunteers responsible for the welfare, safety and organisation of our swimmers throughout the competition. Every Team Manager has completed Swim England training and holds an enhanced DBS check.',
-    duties: [
-      'Looking after swimmers throughout the day',
-      'Acting in the swimmer\'s best interests, particularly when parents are not present',
-      'Making sure swimmers are ready for warm-up and races on time',
-      'Escorting swimmers to marshalling',
-      'Supporting the coaching team',
-    ],
-    footer: 'Without Team Managers, the club would be unable to attend competitions. We always aim to have both male and female Team Managers available wherever possible.',
-  },
-  {
+    icon: '🏁',
     name: 'Starter',
     text: 'The Starter is responsible for ensuring each race begins fairly and safely by giving the official start.',
   },
   {
+    icon: '⏱️',
     name: 'Timekeepers',
     text: 'Timekeepers record swimmers\' finishing times. At many competitions electronic timing equipment is used, with manual timekeepers providing an important backup. The Head Timekeeper oversees the timing team and ensures all recorded times are accurate.',
   },
   {
+    icon: '⚖️',
     name: 'Judges and Referees',
     text: 'Judges and Referees ensure every race is conducted fairly and according to Swim England rules. Officials observe starts, turns, finishes and swimming technique. Any rule infringements are reported to the Referee, who makes the final decision regarding any disqualification.',
   },
 ];
 
 const kit = [
-  'Two swimsuits or racing costumes (if you have a separate race suit)',
-  'Two pairs of goggles',
-  'Two club swim hats',
-  'Two towels',
-  'Club T-shirt or hoodie',
-  'Poolside footwear',
-  'Plenty of water or sugar-free drinks',
-  'Healthy snacks such as fruit, cereal bars, popcorn or rice cakes',
-  'Lunch for full-day competitions (sandwiches, pasta, wraps etc.)',
-  'A large bag to carry everything',
-  'Mobile phone — only if permitted by the venue; many pools do not allow phones on poolside',
+  { emoji: '🩱', text: 'Two swimsuits or racing costumes (if you have a separate race suit)' },
+  { emoji: '🥽', text: 'Two pairs of goggles' },
+  { emoji: '🧢', text: 'Two club swim hats' },
+  { emoji: '🛁', text: 'Two towels' },
+  { emoji: '👕', text: 'Club T-shirt or hoodie' },
+  { emoji: '🩴', text: 'Poolside footwear' },
+  { emoji: '🥤', text: 'Plenty of water or sugar-free drinks' },
+  { emoji: '🍎', text: 'Healthy snacks such as fruit, cereal bars, popcorn or rice cakes' },
+  { emoji: '🥪', text: 'Lunch for full-day competitions (sandwiches, pasta, wraps etc.)' },
+  { emoji: '🎒', text: 'A large bag to carry everything' },
+  { emoji: '📱', text: 'Mobile phone — only if permitted by the venue; many pools do not allow phones on poolside' },
 ];
 
 const galaDay = [
@@ -172,12 +178,14 @@ const handyLinks = [
       <div class="course-card">
         <span class="course-tag">SC</span>
         <strong>Short Course</strong>
-        <p>A <strong>25-metre</strong> pool. Swimmers are often slightly quicker here — more turns and push-offs from the wall provide extra speed.</p>
+        <span class="course-len">25-metre pool</span>
+        <p>Swimmers are often slightly quicker here — more turns and push-offs from the wall provide extra speed.</p>
       </div>
       <div class="course-card">
         <span class="course-tag">LC</span>
         <strong>Long Course</strong>
-        <p>A <strong>50-metre</strong> pool — the format used for National, Regional and County championships at Level 1.</p>
+        <span class="course-len">50-metre pool</span>
+        <p>The format used for National, Regional and County championships at Level 1.</p>
       </div>
     </div>
 
@@ -242,17 +250,29 @@ const handyLinks = [
       <span>If any of these roles interest you, we'd love to hear from you — we're always looking for new volunteers.</span>
     </div>
 
+    <div class="tm-card">
+      <div class="tm-head">
+        <span class="tm-icon">{teamManager.icon}</span>
+        <div class="tm-title">
+          <span class="tm-chip">The key volunteer role</span>
+          <strong>{teamManager.name}</strong>
+        </div>
+      </div>
+      <p class="tm-text">{teamManager.text}</p>
+      <ul class="tm-duties">
+        {teamManager.duties.map((d) => (
+          <li><span class="tm-check">✓</span><span>{d}</span></li>
+        ))}
+      </ul>
+      <p class="tm-footer">{teamManager.footer}</p>
+    </div>
+
     <div class="roles-grid">
       {roles.map((r) => (
-        <div class={`role-card${r.duties ? ' role-wide' : ''}`}>
+        <div class="role-card">
+          <span class="role-icon">{r.icon}</span>
           <strong>{r.name}</strong>
           <p>{r.text}</p>
-          {r.duties && (
-            <ul class="duty-list">
-              {r.duties.map((d) => <li>{d}</li>)}
-            </ul>
-          )}
-          {r.footer && <p class="role-footer">{r.footer}</p>}
         </div>
       ))}
     </div>
@@ -268,8 +288,8 @@ const handyLinks = [
     <ul class="kit-list">
       {kit.map((k) => (
         <li>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>{k}</span>
+          <span class="kit-emoji">{k.emoji}</span>
+          <span>{k.text}</span>
         </li>
       ))}
     </ul>
@@ -405,7 +425,8 @@ const handyLinks = [
   .course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 8px; max-width: 820px; }
   .course-card { background: #f8fafc; border: 1.5px solid var(--border); border-radius: 14px; padding: 22px 20px; }
   .course-tag { display: inline-block; background: var(--black); color: #fff; border-radius: 8px; padding: 4px 12px; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 12px; }
-  .course-card strong { display: block; font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .course-card strong { display: block; font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+  .course-len { display: block; color: var(--red); font-size: 0.82rem; font-weight: 800; margin-bottom: 8px; }
   .course-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.65; margin: 0; }
 
   .rules { background: #f8fafc; padding: 56px 5vw 8px; }
@@ -435,20 +456,52 @@ const handyLinks = [
     max-width: 820px; margin-bottom: 26px;
   }
   .volunteer-note svg { flex-shrink: 0; margin-top: 2px; color: var(--red); }
+  /* Featured Team Manager card — dark, sits above the grid of four equal roles */
+  .tm-card {
+    background: var(--black); border-radius: 18px; padding: 30px 30px 28px;
+    margin-bottom: 16px;
+  }
+  .tm-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .tm-icon {
+    flex-shrink: 0; width: 54px; height: 54px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--red-dark), var(--red));
+    display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+  }
+  .tm-chip {
+    display: inline-block; background: rgba(220,38,38,0.18); color: #f87171;
+    border-radius: 999px; padding: 3px 12px; font-size: 0.68rem; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .tm-title strong { display: block; color: #fff; font-size: 1.15rem; font-weight: 800; letter-spacing: -0.3px; }
+  .tm-text { color: rgba(255,255,255,0.72); font-size: 0.9rem; line-height: 1.7; margin: 0 0 18px; max-width: 900px; }
+  .tm-duties { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+  .tm-duties li {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12);
+    border-radius: 10px; padding: 11px 14px;
+    color: #fff; font-size: 0.86rem; font-weight: 600; line-height: 1.5;
+  }
+  .tm-check { flex-shrink: 0; color: #f87171; font-weight: 900; }
+  .tm-footer { color: rgba(255,255,255,0.55); font-size: 0.84rem; line-height: 1.65; margin: 18px 0 0; }
+
   .roles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .role-card { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 24px 24px; }
-  .role-wide { grid-column: span 2; }
+  .role-card {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 26px 24px; transition: all 0.2s;
+  }
+  .role-card:hover { border-color: var(--red); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(220,38,38,0.08); }
+  .role-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; border-radius: 12px; background: var(--red-light);
+    font-size: 1.4rem; margin-bottom: 14px;
+  }
   .role-card strong { display: block; font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
   .role-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; margin: 0; }
-  .duty-list { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
-  .duty-list li { position: relative; padding-left: 20px; color: var(--text); font-size: 0.86rem; line-height: 1.5; font-weight: 600; }
-  .duty-list li::before { content: ''; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
-  .role-footer { margin-top: 14px !important; font-size: 0.84rem !important; color: var(--muted); }
 
   .bring { background: #fff; padding: 64px 5vw; }
   .kit-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; max-width: 900px; }
   .kit-list li { display: flex; align-items: flex-start; gap: 10px; background: #f8fafc; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 16px; font-size: 0.88rem; color: var(--text); font-weight: 600; line-height: 1.5; }
-  .kit-list svg { flex-shrink: 0; color: var(--red); margin-top: 3px; }
+  .kit-emoji { flex-shrink: 0; font-size: 1.05rem; line-height: 1.35; }
 
   .day { background: #f8fafc; padding: 64px 5vw; }
   .day-list { display: flex; flex-direction: column; gap: 14px; max-width: 820px; margin-top: 24px; }
@@ -497,8 +550,8 @@ const handyLinks = [
   }
   @media (max-width: 640px) {
     .start-grid, .stroke-grid, .links-grid, .levels-grid, .course-grid, .medals-grid, .roles-grid { grid-template-columns: 1fr; }
-    .role-wide { grid-column: span 1; }
-    .duty-list, .kit-list { grid-template-columns: 1fr; }
+    .tm-duties, .kit-list { grid-template-columns: 1fr; }
+    .tm-card { padding: 24px 20px; }
     .intro, .what-is, .heats, .course, .rules, .start, .strokes, .roles, .bring, .day, .medals, .links, .next { padding-left: 20px; padding-right: 20px; }
   }
 </style>

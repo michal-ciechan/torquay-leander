@@ -26,7 +26,6 @@ const logo = `${base}/logo.png`;
           <li><a href={`${base}/about/join/`}>Join Us</a></li>
           <li><a href={`${base}/about/codes-of-conduct/`}>Codes of Conduct</a></li>
           <li><a href={`${base}/safeguarding/`}>Safeguarding</a></li>
-          <li><a href={`${base}/samples/`}>Samples</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -52,8 +51,10 @@ const logo = `${base}/logo.png`;
             </a>
           </li>
           <li class="contact-address">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="addr">Swim Torquay<br />Plainmoor, Torquay<br />Devon, UK</span>
+            <a href="https://www.google.com/maps?q=Swim+Torquay+Plainmoor" target="_blank" rel="noopener" title="Open in Google Maps">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="addr">Swim Torquay<br />Plainmoor, Torquay<br />Devon, UK</span>
+            </a>
           </li>
           <li>
             <a href="https://www.facebook.com/TorquayLeanderSwimmingClub" target="_blank" rel="noopener">
@@ -82,7 +83,7 @@ const logo = `${base}/logo.png`;
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Torquay Leander Swimming Club. All rights reserved.</span>
+      <span>&copy; 2026 Torquay Leander Swimming Club. All rights reserved. &middot; <a class="f-se-text" href={`${base}/samples/`}>Samples</a></span>
       <span class="footer-bottom-se">
         Non-profit &middot; SwimMark Registered &middot;
         <a class="f-se-text f-se-inline" href="https://www.swimming.org/" target="_blank" rel="noopener">
@@ -111,7 +112,7 @@ const logo = `${base}/logo.png`;
   .f-se-inline img { height: 16px; width: auto; background: #fff; border-radius: 3px; padding: 2px 4px; }
 
   .footer-contact a { display: inline-flex; align-items: center; gap: 9px; }
-  .footer-contact .contact-address { display: flex; align-items: flex-start; gap: 9px; color: rgba(255,255,255,0.6); }
+  .footer-contact .contact-address a { align-items: flex-start; }
   .footer-contact svg { flex-shrink: 0; width: 15px; height: 15px; opacity: 0.85; }
   .footer-contact .contact-address svg { margin-top: 3px; }
   .footer-contact .addr { line-height: 1.55; font-size: 0.88rem; }
