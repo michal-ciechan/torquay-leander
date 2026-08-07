@@ -50,7 +50,7 @@ export const categories = [
       {
         id: 'lB0vcCklwH0',
         duration: '7:17',
-        title: 'Streamlining Mobility for Young Swimmers',
+        title: 'Streamlining for Young Swimmers',
         emoji: '🧒',
         summary: 'Aimed at younger swimmers, this follow-along session uses skipping variations and alternating glute-bridge work to build towards a taller, tighter streamline — the position that wins lengths.',
         points: [
