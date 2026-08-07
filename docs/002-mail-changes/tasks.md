@@ -54,25 +54,27 @@ Attachments expected (not in raw.md):
   > **Note (site check):** the "Stages 1–4" card on `/training/learn-to-swim/` currently has no button, and the "Lessons are run by Swim Torquay" callout has no link either — the button could serve both. Swim Torquay URL still needed (see open questions).
 - [ ] **Tab — Warm-up video** — Add a Warm Up Video tab (content TBD / linked from mail assets if provided).
 - [ ] **Tab — Stretches** — Add a Stretches tab (content TBD / linked from mail assets if provided).
-- [ ] **Training videos hub** — Add a section (or page area) for training videos / helpful guidance; link content to competition guides (e.g. “what to expect at your first gala”).
+- [x] **Training videos hub** — Add a section (or page area) for training videos / helpful guidance; link content to competition guides (e.g. “what to expect at your first gala”).
+
+> *(§4 hub done — `/training/videos/` library with four categories (S&C, Flexibility & Mobility, Race-Day Mindset, Nutrition), click-to-play embeds, transcript-based descriptions, durations, and a competition-guide cross-link; both psychology videos also on Safeguarding under Mental Wellbeing. Still open: Learn to Swim button (needs Swim Torquay URL) and warm-up/stretches tabs (needs media).)*
 
 ### 4a. Video links to include
 
 Clean YouTube URLs (Outlook SafeLinks stripped). Playlist: `PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0`.
 
-- [ ] **Nutrition advice** — Embed/link: https://www.youtube.com/watch?v=yLVoq8fZDys&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=5
-- [ ] **Sports Psychology Support 1** — Add to training content: https://www.youtube.com/watch?v=LNu4xUo2P50&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=3  
-  - [ ] Also add the same video on **Safeguarding / wellbeing**.
-- [ ] **Sports Psychology Support 2** — Add to training content: https://www.youtube.com/watch?v=M_YyoZ7WsnU&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=11  
-  - [ ] Also add the same video on **Safeguarding / wellbeing**.
-- [ ] **Training video (index 21)** — https://www.youtube.com/watch?v=lJQxKumukI0&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=21
-- [ ] **Training video (index 22)** — https://www.youtube.com/watch?v=ZDhQZtYxpLM&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=22
-- [ ] **Training video (index 23)** — https://www.youtube.com/watch?v=oTA1COEj_00&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=23
-- [ ] **Training video (index 24)** — https://www.youtube.com/watch?v=j_lAhRF5vQI&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=24
-- [ ] **Training video (index 45)** — https://www.youtube.com/watch?v=F4AKzbqPPP0&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=45
-- [ ] **Training video (index 53)** — https://www.youtube.com/watch?v=CfNoFpwLV4w&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=53
-- [ ] **Training video (index 58)** — https://www.youtube.com/watch?v=EXW1WDLFxPw&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=58
-- [ ] **Fetch titles** for untitled playlist items (index 21–24, 45, 53, 58) so UI labels are readable, not raw URLs.
+- [x] **Nutrition advice** — Embed/link: https://www.youtube.com/watch?v=yLVoq8fZDys&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=5
+- [x] **Sports Psychology Support 1** — Add to training content: https://www.youtube.com/watch?v=LNu4xUo2P50&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=3  
+  - [x] Also add the same video on **Safeguarding / wellbeing**.
+- [x] **Sports Psychology Support 2** — Add to training content: https://www.youtube.com/watch?v=M_YyoZ7WsnU&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=11  
+  - [x] Also add the same video on **Safeguarding / wellbeing**.
+- [x] **Training video (index 21)** — https://www.youtube.com/watch?v=lJQxKumukI0&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=21
+- [x] **Training video (index 22)** — https://www.youtube.com/watch?v=ZDhQZtYxpLM&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=22
+- [x] **Training video (index 23)** — https://www.youtube.com/watch?v=oTA1COEj_00&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=23
+- [x] **Training video (index 24)** — https://www.youtube.com/watch?v=j_lAhRF5vQI&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=24
+- [x] **Training video (index 45)** — https://www.youtube.com/watch?v=F4AKzbqPPP0&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=45
+- [x] **Training video (index 53)** — https://www.youtube.com/watch?v=CfNoFpwLV4w&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=53
+- [x] **Training video (index 58)** — https://www.youtube.com/watch?v=EXW1WDLFxPw&list=PLu-pVYBawZo5vXQBZU2fVrOuCL1U6Qak0&index=58
+- [x] **Fetch titles** for untitled playlist items (index 21–24, 45, 53, 58) so UI labels are readable, not raw URLs.
 
 ---
 
@@ -204,6 +206,6 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 - [ ] Confirm Swim Torquay URL for Learn to Swim stages 1–4 button.
 - [x] Confirm Facebook **embed method** for News feed. *(Page Plugin iframe, no API key; page: `facebook.com/torquayleander`)*
 - [ ] Decide where **Club Merchandise** and **Members Login** sit in the new nav order (omitted from the mail's proposed order).
-- [ ] Confirm titles for unnamed training playlist videos (or fetch from YouTube).
+- [x] Confirm titles for unnamed training playlist videos. *(fetched via oEmbed + transcripts pulled via yt-dlp captions — all ten are official Swim England videos: trunk workout, calisthenics, 3-level lower-body conditioning, mobility for starts, arms/shoulders flexibility, nutrition, 2x sports psychology)*
 - [ ] Confirm where Warm-up / Stretches media lives.
 - [x] Confirm preferred home for Parent’s Guide. *(merged into the existing `/competitions/competition-guide/` page around its race-rules/starts/strokes content)*

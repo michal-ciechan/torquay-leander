@@ -202,6 +202,52 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </div>
 </section>
 
+<section class="wellbeing-section">
+  <div class="inner">
+    <p class="label">Mental Wellbeing</p>
+    <p class="lead">Looking after the mind matters as much as looking after the body. These short videos from Swim England's sport psychologists teach two simple techniques every swimmer can use — for competition nerves, setbacks, or any time things feel overwhelming. You'll also find them in our <a class="wb-link" href={`${base}/training/videos/`}>training video library</a>.</p>
+    <div class="wb-grid">
+      <div class="wb-card">
+        <button class="vid-embed" data-vid="LNu4xUo2P50" aria-label="Play Understanding Your Emotions">
+          <img src="https://i.ytimg.com/vi/LNu4xUo2P50/hqdefault.jpg" alt="Understanding Your Emotions" loading="lazy" />
+          <span class="vid-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vid-duration">1:58</span>
+        </button>
+        <div class="wb-body">
+          <strong>Understanding Your Emotions</strong>
+          <p>The "emotions wheel" — a simple tool for naming what you're feeling, and the first step to dealing with it.</p>
+        </div>
+      </div>
+      <div class="wb-card">
+        <button class="vid-embed" data-vid="M_YyoZ7WsnU" aria-label="Play Grounding Under Pressure">
+          <img src="https://i.ytimg.com/vi/M_YyoZ7WsnU/hqdefault.jpg" alt="Grounding Under Pressure" loading="lazy" />
+          <span class="vid-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vid-duration">2:20</span>
+        </button>
+        <div class="wb-body">
+          <strong>Grounding Under Pressure</strong>
+          <p>The 5-4-3-2-1 senses technique athletes use to calm down quickly and stay in the present.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.vid-embed');
+    if (!btn) return;
+    const id = btn.getAttribute('data-vid');
+    const frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    frame.title = btn.getAttribute('aria-label') || 'Video';
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.allowFullscreen = true;
+    frame.className = 'vid-frame';
+    btn.replaceWith(frame);
+  });
+</script>
+
 <section class="local-section">
   <div class="inner">
     <p class="label">Local Safeguarding Contact Information</p>
@@ -404,5 +450,38 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     .local-grid { grid-template-columns: 1fr; }
     .swimline-cards { grid-template-columns: 1fr; }
     .swimline-section, .welfare-section, .helplines-section, .local-section { padding: 48px 20px; }
+  }
+
+  .wellbeing-section { background: #f8fafc; }
+  .wb-link { color: var(--red); font-weight: 700; text-decoration: none; }
+  .wb-link:hover { text-decoration: underline; }
+  .wb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin-top: 28px; }
+  .wb-card { background: #fff; border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.2s; }
+  .wb-card:hover { border-color: var(--red); box-shadow: 0 8px 28px rgba(220,38,38,0.08); }
+  .vid-embed {
+    position: relative; display: block; width: 100%; aspect-ratio: 16 / 9;
+    border: none; padding: 0; cursor: pointer; background: var(--black); overflow: hidden;
+  }
+  .vid-embed img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.2s, transform 0.3s; }
+  .vid-embed:hover img { opacity: 1; transform: scale(1.03); }
+  .vid-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(220,38,38,0.92); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.2s;
+  }
+  .vid-embed:hover .vid-play { transform: translate(-50%, -50%) scale(1.1); }
+  .vid-duration {
+    position: absolute; bottom: 10px; right: 10px;
+    background: rgba(10,10,10,0.85); color: #fff;
+    font-size: 0.72rem; font-weight: 700; border-radius: 6px; padding: 3px 8px;
+  }
+  :global(.vid-frame) { width: 100%; aspect-ratio: 16 / 9; border: none; display: block; }
+  .wb-body { padding: 16px 18px 18px; }
+  .wb-body strong { display: block; font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .wb-body p { color: var(--muted); font-size: 0.85rem; line-height: 1.65; margin: 0; }
+  @media (max-width: 640px) {
+    .wb-grid { grid-template-columns: 1fr; }
   }
 </style>

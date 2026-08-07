@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// All videos are official Swim England content (transcript-reviewed).
+const categories = [
+  {
+    key: 'sc',
+    label: 'Strength & Conditioning',
+    blurb: 'Land-training sessions that build the strength swimmers use in the water — no equipment needed beyond a mat and some floor space.',
+    videos: [
+      {
+        id: 'EXW1WDLFxPw', duration: '13:52', title: 'Trunk & Core Workout',
+        desc: 'A full follow-along core session: clams, down-dog to pigeon, compass balance touches, side lunges, planks and bent-leg lowers — with careful coaching cues for each movement.',
+      },
+      {
+        id: 'j_lAhRF5vQI', duration: '3:26', title: 'Calisthenics — Frog Stand Progressions',
+        desc: 'A 10–15 minute gymnastics-style set building towards the frog stand: wrist warm-up, toe taps, holds and kick-outs. Develops balance, bracing and upper-body strength.',
+      },
+      {
+        id: 'lJQxKumukI0', duration: '1:15', title: 'Lower-Body Conditioning — Level 1', level: 'Level 1',
+        desc: 'Eccentric and isometric lower-body exercises — the foundation level of a three-stage progression for stronger, more powerful legs.',
+      },
+      {
+        id: 'ZDhQZtYxpLM', duration: '1:12', title: 'Lower-Body Conditioning — Level 2', level: 'Level 2',
+        desc: 'The middle stage — move on once the Level 1 movements feel controlled and comfortable.',
+      },
+      {
+        id: 'oTA1COEj_00', duration: '1:06', title: 'Lower-Body Conditioning — Level 3', level: 'Level 3',
+        desc: 'The most advanced stage of the progression, for swimmers confident with Levels 1 and 2.',
+      },
+    ],
+  },
+  {
+    key: 'mobility',
+    label: 'Flexibility & Mobility',
+    blurb: 'Better range of movement means a better streamline, stronger starts and fewer injuries.',
+    videos: [
+      {
+        id: 'CfNoFpwLV4w', duration: '8:16', title: 'Mobility for Starts',
+        desc: 'A start-focused mobility session: skipping and A-skip warm-up, glute bridges, squat-to-stands and lunges with a streamline reach — directly aimed at a more explosive dive.',
+      },
+      {
+        id: 'F4AKzbqPPP0', duration: '4:25', title: 'Arms & Shoulders Flexibility',
+        desc: 'A short follow-along stretching routine for the arms and shoulders — the areas swimmers load most.',
+      },
+    ],
+  },
+  {
+    key: 'mind',
+    label: 'Race-Day Mindset',
+    blurb: 'From Swim England\'s sport psychologists. These techniques help with competition nerves just as much as with any setback — you\'ll also find them on our Safeguarding page.',
+    videos: [
+      {
+        id: 'LNu4xUo2P50', duration: '1:58', title: 'Sports Psychology — Understanding Your Emotions',
+        desc: 'Helen and Hannah introduce the "emotions wheel" — a simple tool for naming what you\'re feeling when things are uncertain or don\'t go to plan, and the first step to dealing with it.',
+      },
+      {
+        id: 'M_YyoZ7WsnU', duration: '2:20', title: 'Sports Psychology — Grounding Under Pressure',
+        desc: 'The 5-4-3-2-1 grounding technique athletes use to calm down quickly and stay in the present — a mental-skills tool for the marshalling area as much as anywhere else.',
+      },
+    ],
+  },
+  {
+    key: 'nutrition',
+    label: 'Nutrition',
+    blurb: 'What swimmers eat shapes how they train and recover.',
+    videos: [
+      {
+        id: 'yLVoq8fZDys', duration: '1:49', title: 'Nutrition Essentials for Swimmers',
+        desc: 'Swim England\'s performance nutritionist on the basics: colourful plates, regular protein (20–40g a portion), smart snacks, and carbohydrate-led recovery after training.',
+      },
+    ],
+  },
+];
+---
+<BaseLayout title="Training Videos — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/training/`}>Training</a>
+      <span>›</span>
+      <span>Training Videos</span>
+    </div>
+    <h1>Training Videos</h1>
+    <p>A land-training library from Swim England — strength &amp; conditioning, flexibility, race-day mindset and nutrition. Every session is swimmer-specific and most need nothing more than floor space.</p>
+  </div>
+</section>
+
+{categories.map((cat, i) => (
+  <section class={`vid-section ${i % 2 ? 'alt' : ''}`} id={cat.key}>
+    <div class="inner">
+      <p class="label">{cat.label}</p>
+      <p class="cat-blurb">{cat.blurb}</p>
+      <div class="vid-grid">
+        {cat.videos.map((v) => (
+          <div class="vid-card">
+            <button class="vid-embed" data-vid={v.id} aria-label={`Play ${v.title}`}>
+              <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt={v.title} loading="lazy" />
+              <span class="vid-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="vid-duration">{v.duration}</span>
+            </button>
+            <div class="vid-body">
+              <strong>{v.title} {v.level && <span class="vid-level">{v.level}</span>}</strong>
+              <p>{v.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+))}
+
+<section class="guide-band">
+  <div class="inner guide-band-inner">
+    <div>
+      <h2>Training for a first competition?</h2>
+      <p>Our Swimming Galas — A Parent's Guide covers everything from entry times to what happens on the day.</p>
+    </div>
+    <a class="band-btn" href={`${base}/competitions/competition-guide/`}>Read the competition guide →</a>
+  </div>
+</section>
+
+<script is:inline>
+  // Click-to-play: swap the thumbnail button for the YouTube iframe on demand,
+  // so the page loads no player code until a video is actually wanted.
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.vid-embed');
+    if (!btn) return;
+    const id = btn.getAttribute('data-vid');
+    const frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    frame.title = btn.getAttribute('aria-label') || 'Video';
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.allowFullscreen = true;
+    frame.className = 'vid-frame';
+    btn.replaceWith(frame);
+  });
+</script>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 660px; line-height: 1.7; }
+
+  .inner { max-width: 1100px; margin: 0 auto; }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+
+  .vid-section { background: #fff; padding: 56px 5vw 48px; }
+  .vid-section.alt { background: #f8fafc; }
+  .cat-blurb { color: var(--muted); font-size: 0.95rem; line-height: 1.7; max-width: 720px; margin-bottom: 26px; }
+
+  .vid-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .vid-card {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
+    overflow: hidden; display: flex; flex-direction: column; transition: all 0.2s;
+  }
+  .vid-section.alt .vid-card { background: #fff; }
+  .vid-card:hover { border-color: var(--red); box-shadow: 0 8px 28px rgba(220,38,38,0.08); }
+
+  .vid-embed {
+    position: relative; display: block; width: 100%; aspect-ratio: 16 / 9;
+    border: none; padding: 0; cursor: pointer; background: var(--black); overflow: hidden;
+  }
+  .vid-embed img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.2s, transform 0.3s; }
+  .vid-embed:hover img { opacity: 1; transform: scale(1.03); }
+  .vid-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 56px; height: 56px; border-radius: 50%;
+    background: rgba(220,38,38,0.92); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.2s;
+  }
+  .vid-embed:hover .vid-play { transform: translate(-50%, -50%) scale(1.1); }
+  .vid-duration {
+    position: absolute; bottom: 10px; right: 10px;
+    background: rgba(10,10,10,0.85); color: #fff;
+    font-size: 0.72rem; font-weight: 700; border-radius: 6px; padding: 3px 8px;
+  }
+  :global(.vid-frame) { width: 100%; aspect-ratio: 16 / 9; border: none; display: block; }
+
+  .vid-body { padding: 16px 18px 18px; }
+  .vid-body strong { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .vid-level { background: var(--red-light); color: var(--red-dark); border-radius: 999px; padding: 2px 10px; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
+  .vid-body p { color: var(--muted); font-size: 0.85rem; line-height: 1.65; margin: 0; }
+
+  .guide-band { background: var(--black); padding: 56px 5vw; }
+  .guide-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .guide-band h2 { color: #fff; font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .guide-band p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6; margin: 0; max-width: 560px; }
+  .band-btn {
+    flex-shrink: 0; background: var(--red); color: #fff; text-decoration: none;
+    padding: 13px 26px; border-radius: 10px; font-weight: 700; font-size: 0.92rem;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .band-btn:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+  @media (max-width: 640px) {
+    .vid-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -23,6 +23,8 @@ Below I've split things into what I need from you, decisions I've made that you 
 
 *Roughly least to most confident, so the ones I'd most like a second opinion on are first.*
 
+**Video vintage** — worth knowing: the nutrition and sports-psychology videos are from Swim England's 2020 lockdown series (they talk about training at home and "unprecedented times"). The techniques themselves — the emotions wheel, 5-4-3-2-1 grounding, the nutrition basics — hold up fine, and I've written the descriptions around those rather than the lockdown framing. If you'd rather we found current equivalents, Swim England's channel has plenty.
+
 **"FINA approved"** — worth flagging that FINA renamed itself to World Aquatics a couple of years ago, so the term is slightly dated. I've kept FINA since it's what the club and most suppliers still say, but easy to swap if you'd rather be current.
 
 **Logo treatment** — after trying a few variations ([you can see them all here](https://michal-ciechan.github.io/torquay-leander/samples/logo/) — tap any one to preview it on the real site, then hit **Share** to send your choice to me) I've gone with adding a **thick white outline around the words**, to make it more readable at the smaller size a logo actually appears at. The standard logo looks fine small on the black footer, so we could keep that one there, but for now I've used the same thick outline in both places for consistency.
@@ -65,12 +67,16 @@ Below I've split things into what I need from you, decisions I've made that you 
 - Your full **Swimming Galas — A Parent's Guide** is now live as the Competition Guide: https://michal-ciechan.github.io/torquay-leander/competitions/competition-guide/ — what a gala is, the four licensed levels, heats & Heat Declared Winners, short vs long course and entry times, roles on the day (with a volunteering nudge), the kit list, a step-by-step gala day, and the handy swimmingresults.org links. The page's existing sections on race starts and the four strokes are kept in among it.
 - **Club Championships updated to 2026** — the five sessions from your email (Thu 5, Mon 9, Sun 15 ×2, Thu 19 Nov), with heat-sheet links removed until the sheets exist: https://michal-ciechan.github.io/torquay-leander/competitions/club-championships/
 
+**Training**
+- All the videos you sent are now live in a proper **Training Videos library**: https://michal-ciechan.github.io/torquay-leander/training/videos/ — organised into Strength & Conditioning, Flexibility & Mobility, Race-Day Mindset and Nutrition, each with a description of what's actually in the session (we pulled the transcripts to write them). It's linked from the Training menu and page.
+- The two **sports psychology videos** are also on the Safeguarding page under a new Mental Wellbeing section, as you asked.
+
 **Coaches**
 - Lisa's photo updated on the Training page.
 
 ## 4. Still to come
 
-- **Training** — Learn to Swim stages 1–4 button through to Swim Torquay, warm-up video & stretches tabs, and the training/nutrition/sports-psychology videos (also on Safeguarding).
+- **Training** — Learn to Swim stages 1–4 button through to Swim Torquay (needs the link from you), and the warm-up video & stretches tabs (needs the content location from you).
 
 Cheers,
 Mike
@@ -81,6 +87,7 @@ Mike
 
 | Date | Change |
 |---|---|
+| 7 Aug 2026 | Training Videos library at `/training/videos/` (10 Swim England videos, transcript-based descriptions); Mental Wellbeing section with psych videos on Safeguarding |
 | 7 Aug 2026 | Trophy banner: three honours incl. 2026 Scott Ormsby + William Shield |
 | 6 Aug 2026 | Hero headline reduced on desktop; per-device fold screenshots added to `/samples/hero/`; SwimMark badge linked; Parent's Guide merged into the Competition Guide page; Hero compressed to compact (~72vh) with scored comparison at `/samples/hero/`; Club Championships updated to the 2026 programme (sessions, no heat sheets); naming comparison at `/samples/club-championships/` |
 | 3 Aug 2026 | Contact form lightened + Membership/General split, iOS date-field fix, `/samples/contact/` colour options; Facilities: timing + diving blocks cards using Dom's verbatim wording; mail restructured (questions → decisions → changes) |
