@@ -39,8 +39,7 @@ const expect = [
     <div class="expect-grid">
       {expect.map((e) => (
         <div class="expect-card">
-          <span class="expect-icon">{e.icon}</span>
-          <h3>{e.title}</h3>
+          <h3><span class="expect-icon">{e.icon}</span>{e.title}</h3>
           <p>{e.text}</p>
         </div>
       ))}
@@ -93,8 +92,8 @@ const expect = [
   .expect-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
   .expect-card { background: #fff; border: 1.5px solid var(--border); border-radius: 16px; padding: 26px 22px; transition: border-color 0.2s, transform 0.2s; }
   .expect-card:hover { border-color: var(--red); transform: translateY(-3px); }
-  .expect-icon { font-size: 1.8rem; display: block; margin-bottom: 12px; }
-  .expect-card h3 { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .expect-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .expect-card h3 { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
   .expect-card p { color: var(--muted); font-size: 0.84rem; line-height: 1.65; margin: 0; }
 
   .enter { background: #fff; padding: 24px 5vw 80px; }
