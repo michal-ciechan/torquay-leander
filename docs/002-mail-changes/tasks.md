@@ -78,9 +78,10 @@ Clean YouTube URLs (Outlook SafeLinks stripped). Playlist: `PLu-pVYBawZo5vXQBZU2
 
 ## 5. Galas & competitions — banner & champions
 
-- [ ] **Banner — Scott Ormsby** — Where “two-time Devon Mini League” is shown, add **2026 Scott Ormsby Champions**.
-- [ ] **Banner — William Shield** — Same area: add **2026 William Shield Champions**.
+- [x] **Banner — Scott Ormsby** — Where “two-time Devon Mini League” is shown, add **2026 Scott Ormsby Champions**.
+- [x] **Banner — William Shield** — Same area: add **2026 William Shield Champions**.
   > **Note (site check):** confirmed anchor — the trophy banner on `/galas/` reads exactly "Torquay Leander are two-time Devon Mini League champions — 2024 and 2025."
+  > *(§5 done — banner is now three trophy chips: Devon Mini League two-time champions 2024 & 2025, Scott Ormsby 2026 Champions, William Shield 2026 Champions)*
 
 ---
 

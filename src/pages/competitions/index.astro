@@ -46,8 +46,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <section class="trophy-banner">
   <div class="inner">
     <div class="trophy-row">
-      <span class="trophy-icon">🏆</span>
-      <p>Torquay Leander are two-time Devon Mini League champions — 2024 and 2025.</p>
+      <div class="trophy-item">
+        <span class="trophy-icon">🏆</span>
+        <p><strong>Devon Mini League</strong><span>Two-time champions — 2024 &amp; 2025</span></p>
+      </div>
+      <div class="trophy-item">
+        <span class="trophy-icon">🏆</span>
+        <p><strong>Scott Ormsby</strong><span>2026 Champions</span></p>
+      </div>
+      <div class="trophy-item">
+        <span class="trophy-icon">🏆</span>
+        <p><strong>William Shield</strong><span>2026 Champions</span></p>
+      </div>
     </div>
   </div>
 </section>
@@ -103,9 +113,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .sub-card span { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
 
   .trophy-banner { background: linear-gradient(135deg, var(--red-dark), var(--red)); padding: 28px 5vw; }
-  .trophy-row { display: flex; align-items: center; gap: 18px; }
+  .trophy-row { display: flex; align-items: stretch; justify-content: space-around; gap: 24px; flex-wrap: wrap; }
+  .trophy-item { display: flex; align-items: center; gap: 14px; }
   .trophy-icon { font-size: 2rem; flex-shrink: 0; }
-  .trophy-banner p { color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0; }
+  .trophy-item p { margin: 0; display: flex; flex-direction: column; gap: 2px; }
+  .trophy-item strong { color: #fff; font-size: 1.02rem; font-weight: 800; letter-spacing: -0.2px; }
+  .trophy-item span { color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 600; }
 
   .upcoming { background: #f8fafc; }
   .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
