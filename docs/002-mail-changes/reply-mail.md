@@ -67,7 +67,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 
 **Training**
 - The **Learn to Swim page now links through to Swim Torquay** — a "Book lessons with Swim Torquay" button on the Stages 1–4 card and in the lessons callout (their lessons page at swimtorquay.co.uk, plus their phone number). Do check it's the page you'd want people landing on.
-- All the videos you sent are now live in a proper **Training Videos library**: https://michal-ciechan.github.io/torquay-leander/training/videos/ — organised into Warm-Up, Stretches, Strength & Conditioning, Race-Day Mindset and Nutrition, each with a description of what's actually in the session (we pulled the transcripts to write them). It's linked from the Training menu and page.
+- All the videos you sent are now live in a proper **Training Videos library**: https://michal-ciechan.github.io/torquay-leander/training/videos/ — a page each for Warm-Up, Stretches, Strength & Conditioning, Race-Day Mindset and Nutrition. Every video gets its own section with a written summary and key points of what's actually in it (we pulled the transcripts to write them), laid out alternately alongside the player. Linked from the Training menu and page.
 - The two **sports psychology videos** are also on the Safeguarding page under a new Mental Wellbeing section, as you asked.
 
 **Coaches**
@@ -86,7 +86,7 @@ Mike
 
 | Date | Change |
 |---|---|
-| 7 Aug 2026 | Warm-Up/Stretches filled from Dom's playlist (5 more videos, 15 total); Hub restructured with Warm-Up + Stretches sections; Learn to Swim: Swim Torquay lessons buttons (researched URL); Training Videos library at `/training/videos/` (10 Swim England videos, transcript-based descriptions); Mental Wellbeing section with psych videos on Safeguarding |
+| 7 Aug 2026 | Video library restructured: landing + page per category, per-video summaries & key points in alternating layout; Warm-Up/Stretches filled from Dom's playlist (5 more videos, 15 total); Hub restructured with Warm-Up + Stretches sections; Learn to Swim: Swim Torquay lessons buttons (researched URL); Training Videos library at `/training/videos/` (10 Swim England videos, transcript-based descriptions); Mental Wellbeing section with psych videos on Safeguarding |
 | 7 Aug 2026 | Trophy banner: three honours incl. 2026 Scott Ormsby + William Shield |
 | 6 Aug 2026 | Hero headline reduced on desktop; per-device fold screenshots added to `/samples/hero/`; SwimMark badge linked; Parent's Guide merged into the Competition Guide page; Hero compressed to compact (~72vh) with scored comparison at `/samples/hero/`; Club Championships updated to the 2026 programme (sessions, no heat sheets); naming comparison at `/samples/club-championships/` |
 | 3 Aug 2026 | Contact form lightened + Membership/General split, iOS date-field fix, `/samples/contact/` colour options; Facilities: timing + diving blocks cards using Dom's verbatim wording; mail restructured (questions → decisions → changes) |
