@@ -3,6 +3,7 @@
 > **Living document** — update this as more of the 002 tasks land, then send/refresh with Dom.
 > Source feedback: [raw.md](./raw.md) · task tracking: [tasks.md](./tasks.md)
 > Last updated: 7 Aug 2026
+> **Sent 7 Aug 2026** to Dom Loram (chairtorquayleander@outlook.com) as an HTML reply on his "Website changes" thread.
 
 ---
 
@@ -65,6 +66,7 @@ Below I've split things into what I need from you, decisions I've made that you 
 - The trophy banner now shows all three honours — Devon Mini League (two-time champions 2024 & 2025), **2026 Scott Ormsby Champions** and **2026 William Shield Champions**: https://michal-ciechan.github.io/torquay-leander/competitions/
 - Your full **Swimming Galas — A Parent's Guide** is now live as the Competition Guide: https://michal-ciechan.github.io/torquay-leander/competitions/competition-guide/ — what a gala is, the four licensed levels, heats & Heat Declared Winners, short vs long course and entry times, roles on the day (with a volunteering nudge), the kit list, a step-by-step gala day, and the handy swimmingresults.org links. The page's existing sections on race starts and the four strokes are kept in among it.
 - **Club Championships updated to 2026** — the five sessions from your email (Thu 5, Mon 9, Sun 15 ×2, Thu 19 Nov), with heat-sheet links removed until the sheets exist: https://michal-ciechan.github.io/torquay-leander/competitions/club-championships/
+- The Parent's Guide has also had a visual polish — clearer pool-length cards, a redesigned "people who make it happen" section with a featured Team Manager card, and a tidier kit list with icons and tap-for-more tooltips.
 
 **Training**
 - The **Learn to Swim page now links through to Swim Torquay** — a "Book lessons with Swim Torquay" button on the Stages 1–4 card and in the lessons callout (their lessons page at swimtorquay.co.uk, plus their phone number). Do check it's the page you'd want people landing on.
@@ -87,6 +89,7 @@ Mike
 
 | Date | Change |
 |---|---|
+| 7 Aug 2026 | Kit list: emojis → stroke SVG icons (Lucide + 5 custom swim icons); rows shortened to one line with info/warning tooltips (hover + tap); mail sent to Dom via Hotmail |
 | 7 Aug 2026 | Parent's Guide polish: pool-length line in course cards (no orphaned "A"), roles section redesigned (featured dark TM card + symmetric 2×2 icon grid), TM bullet shortened to one line, kit list emojis; footer address links to Google Maps, Samples moved to bottom bar |
 | 7 Aug 2026 | Wellbeing videos on Safeguarding now use the library's section-per-video layout; DOB placeholder fixed in Firefox; video pages trimmed to 3 key points each; "Level X" removed from titles (chip only); Swim England 2026 nutrition Q&A added to library; mail: intro says everything live, warm-up/stretches moved to decisions, video-vintage entry updated with researched alternatives, FINA moved to bottom |
 | 7 Aug 2026 | Video library restructured: landing + page per category, per-video summaries & key points in alternating layout; Warm-Up/Stretches filled from Dom's playlist (5 more videos, 15 total); Hub restructured with Warm-Up + Stretches sections; Learn to Swim: Swim Torquay lessons buttons (researched URL); Training Videos library at `/training/videos/` (10 Swim England videos, transcript-based descriptions); Mental Wellbeing section with psych videos on Safeguarding |
