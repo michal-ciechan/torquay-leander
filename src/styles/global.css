@@ -350,9 +350,12 @@ textarea.form-field { min-height: 120px; resize: vertical; }
 .form-field-date::-webkit-inner-spin-button { display: none; }
 
 /* Date inputs ignore `placeholder`, so fake one: while the field is empty
-   (`:invalid` on a required input) and unfocused, blank out the browser's own
-   dd/mm/yyyy hint and show our overlay instead. Only where we can hide that
-   hint — Firefox lacks ::-webkit-datetime-edit, so it keeps its native text. */
+   (`:invalid` on a required input) and unfocused, hide the browser's own
+   dd/mm/yyyy hint and show our overlay instead. The hint renders in the
+   input's text colour in every engine (Chromium, Firefox, desktop Safari;
+   iOS Safari shows an empty field anyway), so `color: transparent` on the
+   input hides it everywhere. On focus the overlay drops away and the native
+   hint returns to guide the dd/mm/yyyy entry. */
 .date-field { position: relative; }
 .date-ph {
   display: none;
@@ -360,10 +363,8 @@ textarea.form-field { min-height: 120px; resize: vertical; }
   align-items: center;
   color: #94a3b8; font-size: 1rem; pointer-events: none;
 }
-@supports selector(::-webkit-datetime-edit) {
-  .form-field-date:invalid:not(:focus)::-webkit-datetime-edit { color: transparent; }
-  .form-field-date:invalid:not(:focus) + .date-ph { display: flex; }
-}
+.form-field-date:invalid:not(:focus) { color: transparent; }
+.form-field-date:invalid:not(:focus) + .date-ph { display: flex; }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
