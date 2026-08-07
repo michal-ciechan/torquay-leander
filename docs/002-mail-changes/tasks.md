@@ -179,7 +179,7 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 
 ---
 
-> *(§7 done — heading/intro reworded, session chips added for the Sunday double, heat-sheet links removed. Event names written out in site style; short-name alternative shown at `/samples/club-championships/`.)*
+> *(§7 done — heading/intro reworded, heat-sheet links removed. Programme now a **timeline layout**: one node per day, Sunday's two sessions paired side by side. Event names written out in site style; layout + short-name alternatives at `/samples/club-championships/`.)*
 
 ## 8. Contact page
 

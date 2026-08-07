@@ -58,8 +58,8 @@ const calendarDays = [
 <section class="variant">
   <div class="inner">
     <div class="variant-head">
-      <h2>1 · Session cards <span class="live-chip">live</span></h2>
-      <p>One card per session with event tags — what the page uses today.</p>
+      <h2>1 · Session cards</h2>
+      <p>One card per session with event tags — the previous layout.</p>
     </div>
     <div class="prog-list">
       {programme.map((day) => (
@@ -81,24 +81,28 @@ const calendarDays = [
 <section class="variant alt">
   <div class="inner">
     <div class="variant-head">
-      <h2>2 · Timeline</h2>
-      <p>The championships as a journey through November — reads top to bottom, session by session.</p>
+      <h2>2 · Timeline <span class="live-chip">live</span></h2>
+      <p>The championships as a journey through November — one node per day, with same-day sessions paired side by side.</p>
     </div>
     <div class="timeline">
-      {programme.map((day) => (
+      {calendarDays.map((d) => (
         <div class="tl-item">
           <div class="tl-node">
-            <span class="tl-day">{day.day}</span>
+            <span class="tl-day">{d.num}</span>
             <span class="tl-mon">Nov</span>
           </div>
-          <div class="tl-card">
-            <div class="tl-head">
-              <strong>{day.date}</strong>
-              {day.session && <span class="prog-session">{day.session}</span>}
-            </div>
-            <div class="prog-events">
-              {day.events.map((e) => <span class="event-tag">{e}</span>)}
-            </div>
+          <div class={`tl-cards ${d.sessions.length > 1 ? 'two' : ''}`}>
+            {d.sessions.map((sess) => (
+              <div class="tl-card">
+                <div class="tl-head">
+                  <strong>{d.wd} {d.num}th Nov</strong>
+                  {sess.label && <span class="prog-session">{sess.label}</span>}
+                </div>
+                <div class="prog-events">
+                  {sess.events.map((e) => <span class="event-tag">{e}</span>)}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       ))}
@@ -254,10 +258,9 @@ const calendarDays = [
   }
   .tl-day { font-size: 1.25rem; font-weight: 900; line-height: 1; }
   .tl-mon { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
-  .tl-card {
-    flex: 1; background: #fff; border: 1.5px solid var(--border); border-radius: 14px;
-    padding: 18px 22px;
-  }
+  .tl-cards { flex: 1; display: grid; gap: 14px; min-width: 0; }
+  .tl-cards.two { grid-template-columns: 1fr 1fr; }
+  .tl-card { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 18px 22px; }
   .tl-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
   .tl-head strong { font-size: 0.98rem; font-weight: 800; color: var(--text); }
 
@@ -303,5 +306,6 @@ const calendarDays = [
 
   @media (max-width: 700px) {
     .cal-grid { grid-template-columns: 1fr; }
+    .tl-cards.two { grid-template-columns: 1fr; }
   }
 </style>

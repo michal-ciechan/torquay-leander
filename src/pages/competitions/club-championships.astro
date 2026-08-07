@@ -2,30 +2,27 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-// 2026 programme (002-mail-changes §7). Heat sheet links removed for now —
-// they come back nearer the time once the sheets exist.
-const programme = [
+// 2026 programme (002-mail-changes §7), timeline layout. Heat sheet links
+// removed for now — they come back nearer the time once the sheets exist.
+const days = [
   {
-    date: 'Thursday 5th Nov',
-    events: ['400m Freestyle'],
+    date: 'Thursday 5th Nov', num: 5,
+    sessions: [{ events: ['400m Freestyle'] }],
   },
   {
-    date: 'Monday 9th Nov',
-    events: ['100m Individual Medley', '25m Backstroke (7 & under)', '200m Breaststroke', '50m Backstroke', '100m Freestyle'],
+    date: 'Monday 9th Nov', num: 9,
+    sessions: [{ events: ['100m Individual Medley', '25m Backstroke (7 & under)', '200m Breaststroke', '50m Backstroke', '100m Freestyle'] }],
   },
   {
-    date: 'Sunday 15th Nov',
-    session: 'Session 1',
-    events: ['25m Butterfly (7 & under)', '50m Butterfly', '100m Backstroke', '200m Freestyle'],
+    date: 'Sunday 15th Nov', num: 15,
+    sessions: [
+      { label: 'Session 1', events: ['25m Butterfly (7 & under)', '50m Butterfly', '100m Backstroke', '200m Freestyle'] },
+      { label: 'Session 2', events: ['25m Breaststroke (7 & under)', '50m Freestyle', '100m Breaststroke'] },
+    ],
   },
   {
-    date: 'Sunday 15th Nov',
-    session: 'Session 2',
-    events: ['25m Breaststroke (7 & under)', '50m Freestyle', '100m Breaststroke'],
-  },
-  {
-    date: 'Thursday 19th Nov',
-    events: ['200m Individual Medley', '25m Freestyle (7 & under)', '50m Breaststroke', '200m Backstroke', '100m Butterfly'],
+    date: 'Thursday 19th Nov', num: 19,
+    sessions: [{ events: ['200m Individual Medley', '25m Freestyle (7 & under)', '50m Breaststroke', '200m Backstroke', '100m Butterfly'] }],
   },
 ];
 
@@ -88,15 +85,25 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
     <h2>2026 Club Championships</h2>
     <p class="prog-text">This year's championships run across the sessions below. Heat sheets will be published here nearer the time — keep an eye on our Facebook page for announcements.</p>
 
-    <div class="prog-list">
-      {programme.map((day) => (
-        <div class="prog-day">
-          <div class="prog-head">
-            <span class="prog-date">{day.date}</span>
-            {day.session && <span class="prog-session">{day.session}</span>}
+    <div class="timeline">
+      {days.map((d) => (
+        <div class="tl-item">
+          <div class="tl-node">
+            <span class="tl-day">{d.num}</span>
+            <span class="tl-mon">Nov</span>
           </div>
-          <div class="prog-events">
-            {day.events.map((e) => <span class="event-tag">{e}</span>)}
+          <div class={`tl-cards ${d.sessions.length > 1 ? 'two' : ''}`}>
+            {d.sessions.map((sess) => (
+              <div class="tl-card">
+                <div class="tl-head">
+                  <strong>{d.date}</strong>
+                  {sess.label && <span class="prog-session">{sess.label}</span>}
+                </div>
+                <div class="prog-events">
+                  {sess.events.map((e) => <span class="event-tag">{e}</span>)}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       ))}
@@ -192,10 +199,26 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
   .programme { background: #fff; padding: 64px 5vw; }
   .programme h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
   .prog-text { color: var(--muted); font-size: 0.97rem; line-height: 1.75; max-width: 760px; margin-bottom: 32px; }
-  .prog-list { display: flex; flex-direction: column; gap: 16px; }
-  .prog-day { border: 1.5px solid var(--border); border-radius: 14px; padding: 22px 24px; }
-  .prog-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
-  .prog-date { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+  .timeline { position: relative; }
+  .timeline::before {
+    content: ''; position: absolute; left: 27px; top: 10px; bottom: 10px;
+    width: 3px; background: linear-gradient(var(--red), var(--red-dark)); border-radius: 2px;
+  }
+  .tl-item { position: relative; display: flex; gap: 22px; padding: 12px 0; }
+  .tl-node {
+    position: relative; z-index: 1; flex-shrink: 0;
+    width: 58px; height: 58px; border-radius: 16px;
+    background: var(--red); color: #fff;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 8px 22px rgba(220,38,38,0.35);
+  }
+  .tl-day { font-size: 1.25rem; font-weight: 900; line-height: 1; }
+  .tl-mon { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; }
+  .tl-cards { flex: 1; display: grid; gap: 14px; min-width: 0; }
+  .tl-cards.two { grid-template-columns: 1fr 1fr; }
+  .tl-card { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 18px 22px; }
+  .tl-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .tl-head strong { font-size: 0.98rem; font-weight: 800; color: var(--text); }
   .prog-session { background: var(--red-light); color: var(--red-dark); border-radius: 999px; padding: 5px 13px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
   .prog-events { display: flex; flex-wrap: wrap; gap: 8px; }
   .event-tag { background: #f1f5f9; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; color: var(--text); }
@@ -225,6 +248,7 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
     .faq-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 700px) {
+    .tl-cards.two { grid-template-columns: 1fr; }
     .format-grid, .extras-grid { grid-template-columns: 1fr; }
     .intro, .format, .programme, .faq, .extras { padding-left: 20px; padding-right: 20px; }
   }
