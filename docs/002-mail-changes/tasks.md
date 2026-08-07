@@ -50,7 +50,7 @@ Attachments expected (not in raw.md):
 
 ## 4. Training & membership
 
-- [ ] **Learn to Swim → Swim Torquay** — Add a button/link on stages 1–4 through to the Swim Torquay page.
+- [x] **Learn to Swim → Swim Torquay** — Add a button/link on stages 1–4 through to the Swim Torquay page. *(done — researched online: swimtorquay.com 301s to `swimtorquay.co.uk`; buttons on the Stages 1–4 card and the partner callout link to the lessons page, plus tel: link for 01803 323400)*
   > **Note (site check):** the "Stages 1–4" card on `/training/learn-to-swim/` currently has no button, and the "Lessons are run by Swim Torquay" callout has no link either — the button could serve both. Swim Torquay URL still needed (see open questions).
 - [ ] **Tab — Warm-up video** — Add a Warm Up Video tab (content TBD / linked from mail assets if provided).
 - [ ] **Tab — Stretches** — Add a Stretches tab (content TBD / linked from mail assets if provided).
@@ -203,7 +203,7 @@ Add a **Gala & Competition Guide** (or “Swimming Galas – A Parent's Guide”
 - [x] Confirm new logo file delivery and preferred formats (SVG/PNG). *(PNG received)*
 - [x] Confirm Lisa Matthieson photo delivery. *(received)*
 - [x] Confirm Swim England logo assets + official URL for affiliate link. *(used the official transparent PNG from swimming.org)*
-- [ ] Confirm Swim Torquay URL for Learn to Swim stages 1–4 button.
+- [x] Confirm Swim Torquay URL for Learn to Swim stages 1–4 button. *(found: `https://swimtorquay.co.uk/swimming-lessons-in-torquay.html` — verified live, Swim England Learn to Swim programme, booking details on page)*
 - [x] Confirm Facebook **embed method** for News feed. *(Page Plugin iframe, no API key; page: `facebook.com/torquayleander`)*
 - [ ] Decide where **Club Merchandise** and **Members Login** sit in the new nav order (omitted from the mail's proposed order).
 - [x] Confirm titles for unnamed training playlist videos. *(fetched via oEmbed + transcripts pulled via yt-dlp captions — all ten are official Swim England videos: trunk workout, calisthenics, 3-level lower-body conditioning, mobility for starts, arms/shoulders flexibility, nutrition, 2x sports psychology)*

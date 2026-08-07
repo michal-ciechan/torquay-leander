@@ -27,7 +27,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="partner-callout">
       <div class="partner-body">
         <strong>Lessons are run by Swim Torquay</strong>
-        <p>To find out more about Learn to Swim lessons, including availability and how to book, please get in touch with Swim Torquay.</p>
+        <p>To find out more about Learn to Swim lessons, including availability and how to book, visit Swim Torquay or call them on <a href="tel:01803323400">01803 323400</a>.</p>
+        <a class="partner-btn" href="https://swimtorquay.co.uk/swimming-lessons-in-torquay.html" target="_blank" rel="noopener">Swim Torquay lessons →</a>
       </div>
     </div>
   </div>
@@ -54,6 +55,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <span class="sg-range">Stages 1–4</span>
         <h3>Foundations &amp; water confidence</h3>
         <p>Getting comfortable and safe in the water, learning to float, glide and move independently, and developing the building blocks of all four strokes.</p>
+        <a class="sg-btn" href="https://swimtorquay.co.uk/swimming-lessons-in-torquay.html" target="_blank" rel="noopener">Book lessons with Swim Torquay →</a>
       </div>
       <div class="stage-group highlight">
         <span class="sg-range">Stages 5–7</span>
@@ -100,7 +102,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     padding: 22px 24px; margin-top: 14px;
   }
   .partner-body strong { display: block; font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
-  .partner-body p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+  .partner-body p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin: 0 0 12px; }
+  .partner-body p a { color: var(--red); font-weight: 700; text-decoration: none; }
+  .partner-body p a:hover { text-decoration: underline; }
+  .partner-btn {
+    display: inline-block; background: var(--red); color: #fff; text-decoration: none;
+    padding: 10px 18px; border-radius: 9px; font-weight: 700; font-size: 0.85rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .partner-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
 
   .stages { background: #f8fafc; padding: 72px 5vw; }
   .stages h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
@@ -124,6 +134,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .stage-group.highlight { border-color: var(--red); box-shadow: 0 12px 40px rgba(220,38,38,0.08); }
   .sg-range { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); }
   .stage-group h3 { font-size: 1.1rem; font-weight: 800; color: var(--text); margin: 8px 0 10px; }
+  .stage-group .sg-btn {
+    display: inline-block; margin-top: 14px; background: var(--red); color: #fff; text-decoration: none;
+    padding: 10px 18px; border-radius: 9px; font-weight: 700; font-size: 0.85rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .stage-group .sg-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
   .stage-group p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin: 0; }
   .stage-group p strong { color: var(--text); }
 
