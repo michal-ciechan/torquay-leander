@@ -89,6 +89,7 @@ Mike
 
 | Date | Change |
 |---|---|
+| 9 Aug 2026 | **Dom's logo picks applied** — navbar now thin-bird-outline variant (`b1-t2` → `public/logo-nav.png`), footer stays standard bird (`b0-t2`); picker defaults + live-preview baseline updated to match |
 | 7 Aug 2026 | Kit list: emojis → stroke SVG icons (Lucide + 5 custom swim icons); rows shortened to one line with info/warning tooltips (hover + tap); mail sent to Dom via Hotmail |
 | 7 Aug 2026 | Parent's Guide polish: pool-length line in course cards (no orphaned "A"), roles section redesigned (featured dark TM card + symmetric 2×2 icon grid), TM bullet shortened to one line, kit list emojis; footer address links to Google Maps, Samples moved to bottom bar |
 | 7 Aug 2026 | Wellbeing videos on Safeguarding now use the library's section-per-video layout; DOB placeholder fixed in Firefox; video pages trimmed to 3 key points each; "Level X" removed from titles (chip only); Swim England 2026 nutrition Q&A added to library; mail: intro says everything live, warm-up/stretches moved to decisions, video-vintage entry updated with researched alternatives, FINA moved to bottom |

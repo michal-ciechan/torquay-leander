@@ -40,7 +40,7 @@ const variations = [
       <p class="place-desc">Red bar at the top of every page.</p>
 
       <div class="strip strip-nav">
-        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-b0-t2.png`} alt="Navbar logo preview" />
+        <img :src="fileOf(sel.nav)" src={`${base}/samples/logo/logo-b1-t2.png`} alt="Navbar logo preview" />
         <span class="strip-brand">Torquay Leander</span>
         <span class="strip-links" aria-hidden="true">Training&ensp;Competitions&ensp;Membership</span>
         <span class="strip-cta" aria-hidden="true">Free Trial</span>
@@ -139,7 +139,8 @@ const variations = [
       b2t2: 'logo-b2-t2.png',
     };
     return {
-      sel: { nav: 't2', footer: 't2' },
+      // Defaults mirror what's live on the site (Dom's picks, 9 Aug 2026).
+      sel: { nav: 'b1t2', footer: 't2' },
       copied: false,
       init() {
         const p = new URLSearchParams(location.search);

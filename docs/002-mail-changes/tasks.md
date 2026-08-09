@@ -21,8 +21,8 @@ Attachments expected (not in raw.md):
   > **Note (site check):** the proposed order omits **Club Merchandise** and **Members Login** — decide where they land. "Membership / Join" merges what is currently two separate top-level items (Membership dropdown + Join Us). "Contact" will be the **new Contact page** (see §8).
 - [x] **Footer — Swim England** — Add Swim England affiliate logo and link (club is Swim England affiliated). *(done — official logo badge under the brand blurb + both footer text mentions link to swimming.org)*
   > **Note (site check):** footer already *says* "Swim England Affiliated" in the brand blurb and bottom bar — only the logo + link are missing.
-- [x] **Logo — header** — Replace club logo in the header with the new attached logo. *(done — cleaned + optimised to `public/logo.png`, colour logo on white chip)*
-- [x] **Logo — footer** — Replace club logo in the footer with the same new logo. *(done — same treatment; login page also uses the new asset, kept as white silhouette)*
+- [x] **Logo — header** — Replace club logo in the header with the new attached logo. *(done — cleaned + optimised to `public/logo.png`, colour logo on white chip. **Dom picked 9 Aug 2026:** navbar = thick word outline + thin bird outline (`b1-t2`), now `public/logo-nav.png`)*
+- [x] **Logo — footer** — Replace club logo in the footer with the same new logo. *(done — same treatment; login page also uses the new asset, kept as white silhouette. **Dom picked 9 Aug 2026:** footer = thick word outline + standard bird (`b0-t2`), unchanged in `public/logo.png`)*
   > **Note (site check):** both `Nav.astro` and `Footer.astro` currently hotlink the logo from the old WordPress site (`torquayleander.co.uk/wp-content/uploads/2021/07/Logo.png`) — host the new logo locally in `public/` when replacing.
 
 ---

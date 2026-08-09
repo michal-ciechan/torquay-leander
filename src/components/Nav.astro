@@ -1,6 +1,8 @@
 ---
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const logo = `${base}/logo.png`;
+// Nav uses the thin-bird-outline variant (b1-t2); the footer and login page
+// keep the standard bird (b0-t2) in logo.png. Both share the thick word outline.
+const logo = `${base}/logo-nav.png`;
 ---
 <div x-data="{ mo: false }">
   <nav>
