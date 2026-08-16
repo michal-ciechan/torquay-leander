@@ -41,13 +41,14 @@ const squadSessions = [
 
 const coaches = [
   { name: 'Neil', role: 'Head Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2021/08/Neil-e1628767191779-400x516.jpg' },
-  { name: 'Lisa', role: 'Coach', img: `${base}/coaches/lisa.jpg` },
-  { name: 'Gerry', role: 'Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Coach-2-2000-x-1600-e1628661652650-400x516.jpg' },
-  { name: 'Jon', role: 'Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2025/01/IMG_0603-400x516.jpg' },
-  { name: 'Matt', role: 'Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Poolside-Helper-1-2000-x-1600-e1628763126628-400x516.jpg' },
-  { name: 'Becky', role: 'Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2025/01/IMG_6420-scaled-e1738265017605-400x516.jpg' },
-  { name: 'Giles', role: 'Poolside Helper', img: 'https://torquayleander.co.uk/wp-content/uploads/2025/01/IMG_6422-scaled-e1738264896412-400x516.jpg' },
-  { name: 'Katie', role: 'Poolside Helper', img: 'https://torquayleander.co.uk/wp-content/uploads/2025/01/IMG_6424-scaled-e1738264824150-400x516.jpg' },
+  { name: 'Lisa', role: 'Swim Coach', img: `${base}/coaches/lisa.jpg` },
+  { name: 'Gerry', role: 'Swim Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Coach-2-2000-x-1600-e1628661652650-400x516.jpg' },
+  { name: 'Jon', role: 'Swim Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2025/01/IMG_0603-400x516.jpg' },
+  { name: 'Matt', role: 'Swim Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2021/07/Poolside-Helper-1-2000-x-1600-e1628763126628-400x516.jpg' },
+  { name: 'Becky', role: 'Swim Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2025/01/IMG_6420-scaled-e1738265017605-400x516.jpg' },
+  { name: 'Noemi', role: 'Swim and Dry Land Training Coach', img: `${base}/coaches/noemi.jpg` },
+  { name: 'Giles', role: 'Assistant Swim Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2025/01/IMG_6422-scaled-e1738264896412-400x516.jpg' },
+  { name: 'Katie', role: 'Assistant Swim Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2025/01/IMG_6424-scaled-e1738264824150-400x516.jpg' },
 ];
 ---
 <BaseLayout title="Training — Torquay Leander Swimming Club">
@@ -263,7 +264,15 @@ const coaches = [
 
   /* COACHES */
   .coaches { background: #fff; padding-top: 48px; }
-  .coaches-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 44px; }
+  /* Flex, not grid: 9 coaches never fill the last row, and flex lets it centre. */
+  .coaches-grid {
+    --cols: 5; --gap: 24px;
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: var(--gap); margin-top: 44px;
+  }
+  /* Basis is deliberately a gap narrower than an exact 1/N share: an exact fit
+     rounds over 100% at some widths and silently drops a card to the next row. */
+  .coach-card { flex: 0 1 calc(100% / var(--cols) - var(--gap)); }
   .coach-card { background: #fff; border-radius: 16px; border: 1.5px solid var(--border); overflow: hidden; text-align: center; transition: all 0.2s; }
   .coach-card:hover { border-color: var(--red); box-shadow: 0 8px 30px rgba(220,38,38,0.1); transform: translateY(-3px); }
   .coach-photo { aspect-ratio: 4 / 5; overflow: hidden; background: #f1f5f9; }
@@ -280,13 +289,15 @@ const coaches = [
   .btn-white { background: #000; color: #fff; padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; display: inline-block; }
   .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); background: #222; }
 
+  @media (max-width: 1200px) {
+    .coaches-grid { --cols: 3; }
+  }
   @media (max-width: 1000px) {
     .squad-times-grid { grid-template-columns: 1fr; }
-    .coaches-grid { grid-template-columns: repeat(2, 1fr); }
     .sub-cards { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 600px) {
-    .coaches-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .coaches-grid { --cols: 2; --gap: 14px; }
     .sub-cards { grid-template-columns: 1fr; }
     .inner { padding: 0; }
   }
