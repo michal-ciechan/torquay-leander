@@ -1,0 +1,2628 @@
+{
+  "source": "2027 Devon Championship Qualifying Times V1.pdf",
+  "entriesClose": "2026-12-16",
+  "agesAsAt": "2027-12-31",
+  "ageBands": [
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17ov"
+  ],
+  "events": [
+    {
+      "name": "50m Freestyle",
+      "distance": 50,
+      "stroke": "Freestyle",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "41.20",
+              "seconds": 41.2
+            },
+            {
+              "time": "41.20",
+              "seconds": 41.2
+            },
+            {
+              "time": "37.00",
+              "seconds": 37
+            },
+            {
+              "time": "34.00",
+              "seconds": 34
+            },
+            {
+              "time": "33.00",
+              "seconds": 33
+            },
+            {
+              "time": "29.90",
+              "seconds": 29.9
+            },
+            {
+              "time": "28.50",
+              "seconds": 28.5
+            },
+            {
+              "time": "27.00",
+              "seconds": 27
+            }
+          ],
+          "female": [
+            {
+              "time": "40.00",
+              "seconds": 40
+            },
+            {
+              "time": "40.00",
+              "seconds": 40
+            },
+            {
+              "time": "35.60",
+              "seconds": 35.6
+            },
+            {
+              "time": "34.00",
+              "seconds": 34
+            },
+            {
+              "time": "32.10",
+              "seconds": 32.1
+            },
+            {
+              "time": "29.70",
+              "seconds": 29.7
+            },
+            {
+              "time": "30.60",
+              "seconds": 30.6
+            },
+            {
+              "time": "29.20",
+              "seconds": 29.2
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "41.70",
+              "seconds": 41.7
+            },
+            {
+              "time": "41.70",
+              "seconds": 41.7
+            },
+            {
+              "time": "37.60",
+              "seconds": 37.6
+            },
+            {
+              "time": "34.60",
+              "seconds": 34.6
+            },
+            {
+              "time": "33.60",
+              "seconds": 33.6
+            },
+            {
+              "time": "30.60",
+              "seconds": 30.6
+            },
+            {
+              "time": "29.20",
+              "seconds": 29.2
+            },
+            {
+              "time": "27.80",
+              "seconds": 27.8
+            }
+          ],
+          "female": [
+            {
+              "time": "40.50",
+              "seconds": 40.5
+            },
+            {
+              "time": "40.50",
+              "seconds": 40.5
+            },
+            {
+              "time": "36.20",
+              "seconds": 36.2
+            },
+            {
+              "time": "34.60",
+              "seconds": 34.6
+            },
+            {
+              "time": "32.70",
+              "seconds": 32.7
+            },
+            {
+              "time": "30.40",
+              "seconds": 30.4
+            },
+            {
+              "time": "31.30",
+              "seconds": 31.3
+            },
+            {
+              "time": "29.90",
+              "seconds": 29.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "100m Freestyle",
+      "distance": 100,
+      "stroke": "Freestyle",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "01:36.40",
+              "seconds": 96.4
+            },
+            {
+              "time": "01:36.40",
+              "seconds": 96.4
+            },
+            {
+              "time": "01:23.20",
+              "seconds": 83.2
+            },
+            {
+              "time": "01:15.50",
+              "seconds": 75.5
+            },
+            {
+              "time": "01:14.50",
+              "seconds": 74.5
+            },
+            {
+              "time": "01:05.50",
+              "seconds": 65.5
+            },
+            {
+              "time": "01:01.80",
+              "seconds": 61.8
+            },
+            {
+              "time": "58.00",
+              "seconds": 58
+            }
+          ],
+          "female": [
+            {
+              "time": "01:30.60",
+              "seconds": 90.6
+            },
+            {
+              "time": "01:30.60",
+              "seconds": 90.6
+            },
+            {
+              "time": "01:20.40",
+              "seconds": 80.4
+            },
+            {
+              "time": "01:15.20",
+              "seconds": 75.2
+            },
+            {
+              "time": "01:11.60",
+              "seconds": 71.6
+            },
+            {
+              "time": "01:05.50",
+              "seconds": 65.5
+            },
+            {
+              "time": "01:08.00",
+              "seconds": 68
+            },
+            {
+              "time": "01:03.00",
+              "seconds": 63
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "01:37.30",
+              "seconds": 97.3
+            },
+            {
+              "time": "01:37.30",
+              "seconds": 97.3
+            },
+            {
+              "time": "01:24.20",
+              "seconds": 84.2
+            },
+            {
+              "time": "01:16.60",
+              "seconds": 76.6
+            },
+            {
+              "time": "01:15.60",
+              "seconds": 75.6
+            },
+            {
+              "time": "01:06.80",
+              "seconds": 66.8
+            },
+            {
+              "time": "01:03.10",
+              "seconds": 63.1
+            },
+            {
+              "time": "59.40",
+              "seconds": 59.4
+            }
+          ],
+          "female": [
+            {
+              "time": "01:31.50",
+              "seconds": 91.5
+            },
+            {
+              "time": "01:31.50",
+              "seconds": 91.5
+            },
+            {
+              "time": "01:21.40",
+              "seconds": 81.4
+            },
+            {
+              "time": "01:16.30",
+              "seconds": 76.3
+            },
+            {
+              "time": "01:12.80",
+              "seconds": 72.8
+            },
+            {
+              "time": "01:06.80",
+              "seconds": 66.8
+            },
+            {
+              "time": "01:09.20",
+              "seconds": 69.2
+            },
+            {
+              "time": "01:04.30",
+              "seconds": 64.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "200m Freestyle",
+      "distance": 200,
+      "stroke": "Freestyle",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "03:40.00",
+              "seconds": 220
+            },
+            {
+              "time": "03:40.00",
+              "seconds": 220
+            },
+            {
+              "time": "03:03.50",
+              "seconds": 183.5
+            },
+            {
+              "time": "02:48.00",
+              "seconds": 168
+            },
+            {
+              "time": "02:42.00",
+              "seconds": 162
+            },
+            {
+              "time": "02:23.00",
+              "seconds": 143
+            },
+            {
+              "time": "02:20.50",
+              "seconds": 140.5
+            },
+            {
+              "time": "02:13.00",
+              "seconds": 133
+            }
+          ],
+          "female": [
+            {
+              "time": "03:25.00",
+              "seconds": 205
+            },
+            {
+              "time": "03:25.00",
+              "seconds": 205
+            },
+            {
+              "time": "02:57.00",
+              "seconds": 177
+            },
+            {
+              "time": "02:53.00",
+              "seconds": 173
+            },
+            {
+              "time": "02:37.50",
+              "seconds": 157.5
+            },
+            {
+              "time": "02:26.00",
+              "seconds": 146
+            },
+            {
+              "time": "02:35.00",
+              "seconds": 155
+            },
+            {
+              "time": "02:20.00",
+              "seconds": 140
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "03:41.60",
+              "seconds": 221.6
+            },
+            {
+              "time": "03:41.60",
+              "seconds": 221.6
+            },
+            {
+              "time": "03:05.40",
+              "seconds": 185.4
+            },
+            {
+              "time": "02:50.10",
+              "seconds": 170.1
+            },
+            {
+              "time": "02:44.10",
+              "seconds": 164.1
+            },
+            {
+              "time": "02:25.40",
+              "seconds": 145.4
+            },
+            {
+              "time": "02:23.00",
+              "seconds": 143
+            },
+            {
+              "time": "02:15.60",
+              "seconds": 135.6
+            }
+          ],
+          "female": [
+            {
+              "time": "03:26.70",
+              "seconds": 206.7
+            },
+            {
+              "time": "03:26.70",
+              "seconds": 206.7
+            },
+            {
+              "time": "02:59.00",
+              "seconds": 179
+            },
+            {
+              "time": "02:55.00",
+              "seconds": 175
+            },
+            {
+              "time": "02:39.70",
+              "seconds": 159.7
+            },
+            {
+              "time": "02:28.40",
+              "seconds": 148.4
+            },
+            {
+              "time": "02:37.20",
+              "seconds": 157.2
+            },
+            {
+              "time": "02:22.50",
+              "seconds": 142.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "400m Freestyle",
+      "distance": 400,
+      "stroke": "Freestyle",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "06:55.00",
+              "seconds": 415
+            },
+            {
+              "time": "06:55.00",
+              "seconds": 415
+            },
+            {
+              "time": "06:20.00",
+              "seconds": 380
+            },
+            {
+              "time": "05:50.00",
+              "seconds": 350
+            },
+            {
+              "time": "05:35.00",
+              "seconds": 335
+            },
+            {
+              "time": "04:55.00",
+              "seconds": 295
+            },
+            {
+              "time": "04:53.50",
+              "seconds": 293.5
+            },
+            {
+              "time": "04:44.00",
+              "seconds": 284
+            }
+          ],
+          "female": [
+            {
+              "time": "07:00.00",
+              "seconds": 420
+            },
+            {
+              "time": "07:00.00",
+              "seconds": 420
+            },
+            {
+              "time": "06:05.00",
+              "seconds": 365
+            },
+            {
+              "time": "06:10.00",
+              "seconds": 370
+            },
+            {
+              "time": "05:29.00",
+              "seconds": 329
+            },
+            {
+              "time": "05:04.00",
+              "seconds": 304
+            },
+            {
+              "time": "05:10.00",
+              "seconds": 310
+            },
+            {
+              "time": "05:03.00",
+              "seconds": 303
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "06:58.40",
+              "seconds": 418.4
+            },
+            {
+              "time": "06:58.40",
+              "seconds": 418.4
+            },
+            {
+              "time": "06:23.70",
+              "seconds": 383.7
+            },
+            {
+              "time": "05:54.00",
+              "seconds": 354
+            },
+            {
+              "time": "05:39.20",
+              "seconds": 339.2
+            },
+            {
+              "time": "04:59.70",
+              "seconds": 299.7
+            },
+            {
+              "time": "04:58.20",
+              "seconds": 298.2
+            },
+            {
+              "time": "04:45.20",
+              "seconds": 285.2
+            }
+          ],
+          "female": [
+            {
+              "time": "07:03.30",
+              "seconds": 423.3
+            },
+            {
+              "time": "07:03.30",
+              "seconds": 423.3
+            },
+            {
+              "time": "06:08.80",
+              "seconds": 368.8
+            },
+            {
+              "time": "06:13.80",
+              "seconds": 373.8
+            },
+            {
+              "time": "05:33.20",
+              "seconds": 333.2
+            },
+            {
+              "time": "05:08.60",
+              "seconds": 308.6
+            },
+            {
+              "time": "05:14.50",
+              "seconds": 314.5
+            },
+            {
+              "time": "05:07.60",
+              "seconds": 307.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "800m Freestyle",
+      "distance": 800,
+      "stroke": "Freestyle",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "14:00.00",
+              "seconds": 840
+            },
+            {
+              "time": "13:30.00",
+              "seconds": 810
+            },
+            {
+              "time": "12:30.00",
+              "seconds": 750
+            },
+            {
+              "time": "11:10.00",
+              "seconds": 670
+            },
+            {
+              "time": "10:40.00",
+              "seconds": 640
+            },
+            {
+              "time": "10:15.70",
+              "seconds": 615.7
+            }
+          ],
+          "female": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "14:30.00",
+              "seconds": 870
+            },
+            {
+              "time": "14:00.00",
+              "seconds": 840
+            },
+            {
+              "time": "12:00.00",
+              "seconds": 720
+            },
+            {
+              "time": "11:30.00",
+              "seconds": 690
+            },
+            {
+              "time": "11:00.00",
+              "seconds": 660
+            },
+            {
+              "time": "11:00.00",
+              "seconds": 660
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "14:06.90",
+              "seconds": 846.9
+            },
+            {
+              "time": "13:37.10",
+              "seconds": 817.1
+            },
+            {
+              "time": "12:37.70",
+              "seconds": 757.7
+            },
+            {
+              "time": "11:18.60",
+              "seconds": 678.6
+            },
+            {
+              "time": "10:49.00",
+              "seconds": 649
+            },
+            {
+              "time": "10:25.00",
+              "seconds": 625
+            }
+          ],
+          "female": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "14:36.60",
+              "seconds": 876.6
+            },
+            {
+              "time": "14:06.90",
+              "seconds": 846.9
+            },
+            {
+              "time": "12:08.00",
+              "seconds": 728
+            },
+            {
+              "time": "11:38.30",
+              "seconds": 698.3
+            },
+            {
+              "time": "11:08.70",
+              "seconds": 668.7
+            },
+            {
+              "time": "11:08.70",
+              "seconds": 668.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1500m Freestyle",
+      "distance": 1500,
+      "stroke": "Freestyle",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "24:00.00",
+              "seconds": 1440
+            },
+            {
+              "time": "24:00.00",
+              "seconds": 1440
+            },
+            {
+              "time": "23:00.00",
+              "seconds": 1380
+            },
+            {
+              "time": "22:00.00",
+              "seconds": 1320
+            },
+            {
+              "time": "23:00.00",
+              "seconds": 1380
+            },
+            {
+              "time": "19:55.80",
+              "seconds": 1195.8
+            }
+          ],
+          "female": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "26:00.00",
+              "seconds": 1560
+            },
+            {
+              "time": "26:00.00",
+              "seconds": 1560
+            },
+            {
+              "time": "24:00.00",
+              "seconds": 1440
+            },
+            {
+              "time": "21:30.00",
+              "seconds": 1290
+            },
+            {
+              "time": "22:00.00",
+              "seconds": 1320
+            },
+            {
+              "time": "20:40.00",
+              "seconds": 1240
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "24:14.30",
+              "seconds": 1454.3
+            },
+            {
+              "time": "24:14.30",
+              "seconds": 1454.3
+            },
+            {
+              "time": "23:14.90",
+              "seconds": 1394.9
+            },
+            {
+              "time": "22:15.60",
+              "seconds": 1335.6
+            },
+            {
+              "time": "23:14.90",
+              "seconds": 1394.9
+            },
+            {
+              "time": "20:12.90",
+              "seconds": 1212.9
+            }
+          ],
+          "female": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "26:13.20",
+              "seconds": 1573.2
+            },
+            {
+              "time": "26:13.20",
+              "seconds": 1573.2
+            },
+            {
+              "time": "24:14.30",
+              "seconds": 1454.3
+            },
+            {
+              "time": "21:45.90",
+              "seconds": 1305.9
+            },
+            {
+              "time": "22:15.60",
+              "seconds": 1335.6
+            },
+            {
+              "time": "20:56.60",
+              "seconds": 1256.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "50m Breaststroke",
+      "distance": 50,
+      "stroke": "Breaststroke",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "54.50",
+              "seconds": 54.5
+            },
+            {
+              "time": "54.50",
+              "seconds": 54.5
+            },
+            {
+              "time": "50.00",
+              "seconds": 50
+            },
+            {
+              "time": "46.00",
+              "seconds": 46
+            },
+            {
+              "time": "43.50",
+              "seconds": 43.5
+            },
+            {
+              "time": "39.50",
+              "seconds": 39.5
+            },
+            {
+              "time": "37.20",
+              "seconds": 37.2
+            },
+            {
+              "time": "35.00",
+              "seconds": 35
+            }
+          ],
+          "female": [
+            {
+              "time": "53.50",
+              "seconds": 53.5
+            },
+            {
+              "time": "53.50",
+              "seconds": 53.5
+            },
+            {
+              "time": "47.90",
+              "seconds": 47.9
+            },
+            {
+              "time": "45.40",
+              "seconds": 45.4
+            },
+            {
+              "time": "42.30",
+              "seconds": 42.3
+            },
+            {
+              "time": "39.40",
+              "seconds": 39.4
+            },
+            {
+              "time": "40.00",
+              "seconds": 40
+            },
+            {
+              "time": "38.00",
+              "seconds": 38
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "55.10",
+              "seconds": 55.1
+            },
+            {
+              "time": "55.10",
+              "seconds": 55.1
+            },
+            {
+              "time": "50.60",
+              "seconds": 50.6
+            },
+            {
+              "time": "46.70",
+              "seconds": 46.7
+            },
+            {
+              "time": "44.20",
+              "seconds": 44.2
+            },
+            {
+              "time": "40.30",
+              "seconds": 40.3
+            },
+            {
+              "time": "38.00",
+              "seconds": 38
+            },
+            {
+              "time": "35.90",
+              "seconds": 35.9
+            }
+          ],
+          "female": [
+            {
+              "time": "54.10",
+              "seconds": 54.1
+            },
+            {
+              "time": "54.10",
+              "seconds": 54.1
+            },
+            {
+              "time": "48.60",
+              "seconds": 48.6
+            },
+            {
+              "time": "46.10",
+              "seconds": 46.1
+            },
+            {
+              "time": "43.00",
+              "seconds": 43
+            },
+            {
+              "time": "40.20",
+              "seconds": 40.2
+            },
+            {
+              "time": "40.80",
+              "seconds": 40.8
+            },
+            {
+              "time": "38.80",
+              "seconds": 38.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "100m Breaststroke",
+      "distance": 100,
+      "stroke": "Breaststroke",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "02:05.00",
+              "seconds": 125
+            },
+            {
+              "time": "02:05.00",
+              "seconds": 125
+            },
+            {
+              "time": "01:49.00",
+              "seconds": 109
+            },
+            {
+              "time": "01:44.00",
+              "seconds": 104
+            },
+            {
+              "time": "01:32.00",
+              "seconds": 92
+            },
+            {
+              "time": "01:28.00",
+              "seconds": 88
+            },
+            {
+              "time": "01:21.00",
+              "seconds": 81
+            },
+            {
+              "time": "01:20.00",
+              "seconds": 80
+            }
+          ],
+          "female": [
+            {
+              "time": "02:05.00",
+              "seconds": 125
+            },
+            {
+              "time": "02:05.00",
+              "seconds": 125
+            },
+            {
+              "time": "01:46.00",
+              "seconds": 106
+            },
+            {
+              "time": "01:40.00",
+              "seconds": 100
+            },
+            {
+              "time": "01:34.00",
+              "seconds": 94
+            },
+            {
+              "time": "01:26.00",
+              "seconds": 86
+            },
+            {
+              "time": "01:30.50",
+              "seconds": 90.5
+            },
+            {
+              "time": "01:25.00",
+              "seconds": 85
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "02:06.00",
+              "seconds": 126
+            },
+            {
+              "time": "02:06.00",
+              "seconds": 126
+            },
+            {
+              "time": "01:50.20",
+              "seconds": 110.2
+            },
+            {
+              "time": "01:45.20",
+              "seconds": 105.2
+            },
+            {
+              "time": "01:33.40",
+              "seconds": 93.4
+            },
+            {
+              "time": "01:29.40",
+              "seconds": 89.4
+            },
+            {
+              "time": "01:22.50",
+              "seconds": 82.5
+            },
+            {
+              "time": "01:21.60",
+              "seconds": 81.6
+            }
+          ],
+          "female": [
+            {
+              "time": "02:06.00",
+              "seconds": 126
+            },
+            {
+              "time": "02:06.00",
+              "seconds": 126
+            },
+            {
+              "time": "01:47.20",
+              "seconds": 107.2
+            },
+            {
+              "time": "01:41.30",
+              "seconds": 101.3
+            },
+            {
+              "time": "01:35.30",
+              "seconds": 95.3
+            },
+            {
+              "time": "01:27.50",
+              "seconds": 87.5
+            },
+            {
+              "time": "01:31.90",
+              "seconds": 91.9
+            },
+            {
+              "time": "01:26.50",
+              "seconds": 86.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "200m Breaststroke",
+      "distance": 200,
+      "stroke": "Breaststroke",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "04:20.00",
+              "seconds": 260
+            },
+            {
+              "time": "04:20.00",
+              "seconds": 260
+            },
+            {
+              "time": "04:10.00",
+              "seconds": 250
+            },
+            {
+              "time": "03:45.00",
+              "seconds": 225
+            },
+            {
+              "time": "03:35.00",
+              "seconds": 215
+            },
+            {
+              "time": "03:15.00",
+              "seconds": 195
+            },
+            {
+              "time": "03:08.00",
+              "seconds": 188
+            },
+            {
+              "time": "02:55.00",
+              "seconds": 175
+            }
+          ],
+          "female": [
+            {
+              "time": "04:25.00",
+              "seconds": 265
+            },
+            {
+              "time": "04:25.00",
+              "seconds": 265
+            },
+            {
+              "time": "03:55.00",
+              "seconds": 235
+            },
+            {
+              "time": "03:45.00",
+              "seconds": 225
+            },
+            {
+              "time": "03:30.00",
+              "seconds": 210
+            },
+            {
+              "time": "03:14.00",
+              "seconds": 194
+            },
+            {
+              "time": "03:20.00",
+              "seconds": 200
+            },
+            {
+              "time": "03:06.25",
+              "seconds": 186.25
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "04:22.00",
+              "seconds": 262
+            },
+            {
+              "time": "04:22.00",
+              "seconds": 262
+            },
+            {
+              "time": "04:12.10",
+              "seconds": 252.1
+            },
+            {
+              "time": "03:47.30",
+              "seconds": 227.3
+            },
+            {
+              "time": "03:37.50",
+              "seconds": 217.5
+            },
+            {
+              "time": "03:17.70",
+              "seconds": 197.7
+            },
+            {
+              "time": "03:10.80",
+              "seconds": 190.8
+            },
+            {
+              "time": "02:58.00",
+              "seconds": 178
+            }
+          ],
+          "female": [
+            {
+              "time": "04:27.00",
+              "seconds": 267
+            },
+            {
+              "time": "04:27.00",
+              "seconds": 267
+            },
+            {
+              "time": "03:57.20",
+              "seconds": 237.2
+            },
+            {
+              "time": "03:47.30",
+              "seconds": 227.3
+            },
+            {
+              "time": "03:32.50",
+              "seconds": 212.5
+            },
+            {
+              "time": "03:16.70",
+              "seconds": 196.7
+            },
+            {
+              "time": "03:22.60",
+              "seconds": 202.6
+            },
+            {
+              "time": "03:09.15",
+              "seconds": 189.15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "50m Backstroke",
+      "distance": 50,
+      "stroke": "Backstroke",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "49.30",
+              "seconds": 49.3
+            },
+            {
+              "time": "49.30",
+              "seconds": 49.3
+            },
+            {
+              "time": "43.10",
+              "seconds": 43.1
+            },
+            {
+              "time": "40.00",
+              "seconds": 40
+            },
+            {
+              "time": "38.80",
+              "seconds": 38.8
+            },
+            {
+              "time": "34.70",
+              "seconds": 34.7
+            },
+            {
+              "time": "33.20",
+              "seconds": 33.2
+            },
+            {
+              "time": "31.50",
+              "seconds": 31.5
+            }
+          ],
+          "female": [
+            {
+              "time": "46.80",
+              "seconds": 46.8
+            },
+            {
+              "time": "46.80",
+              "seconds": 46.8
+            },
+            {
+              "time": "42.60",
+              "seconds": 42.6
+            },
+            {
+              "time": "40.20",
+              "seconds": 40.2
+            },
+            {
+              "time": "36.50",
+              "seconds": 36.5
+            },
+            {
+              "time": "33.90",
+              "seconds": 33.9
+            },
+            {
+              "time": "35.00",
+              "seconds": 35
+            },
+            {
+              "time": "35.00",
+              "seconds": 35
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "49.70",
+              "seconds": 49.7
+            },
+            {
+              "time": "49.70",
+              "seconds": 49.7
+            },
+            {
+              "time": "43.60",
+              "seconds": 43.6
+            },
+            {
+              "time": "40.50",
+              "seconds": 40.5
+            },
+            {
+              "time": "39.30",
+              "seconds": 39.3
+            },
+            {
+              "time": "35.30",
+              "seconds": 35.3
+            },
+            {
+              "time": "33.80",
+              "seconds": 33.8
+            },
+            {
+              "time": "32.10",
+              "seconds": 32.1
+            }
+          ],
+          "female": [
+            {
+              "time": "47.20",
+              "seconds": 47.2
+            },
+            {
+              "time": "47.20",
+              "seconds": 47.2
+            },
+            {
+              "time": "43.10",
+              "seconds": 43.1
+            },
+            {
+              "time": "40.70",
+              "seconds": 40.7
+            },
+            {
+              "time": "37.00",
+              "seconds": 37
+            },
+            {
+              "time": "34.50",
+              "seconds": 34.5
+            },
+            {
+              "time": "35.60",
+              "seconds": 35.6
+            },
+            {
+              "time": "35.60",
+              "seconds": 35.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "100m Backstroke",
+      "distance": 100,
+      "stroke": "Backstroke",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "01:55.00",
+              "seconds": 115
+            },
+            {
+              "time": "01:55.00",
+              "seconds": 115
+            },
+            {
+              "time": "01:35.00",
+              "seconds": 95
+            },
+            {
+              "time": "01:28.00",
+              "seconds": 88
+            },
+            {
+              "time": "01:25.00",
+              "seconds": 85
+            },
+            {
+              "time": "01:15.00",
+              "seconds": 75
+            },
+            {
+              "time": "01:11.00",
+              "seconds": 71
+            },
+            {
+              "time": "01:09.00",
+              "seconds": 69
+            }
+          ],
+          "female": [
+            {
+              "time": "01:44.00",
+              "seconds": 104
+            },
+            {
+              "time": "01:44.00",
+              "seconds": 104
+            },
+            {
+              "time": "01:31.00",
+              "seconds": 91
+            },
+            {
+              "time": "01:29.00",
+              "seconds": 89
+            },
+            {
+              "time": "01:20.00",
+              "seconds": 80
+            },
+            {
+              "time": "01:15.00",
+              "seconds": 75
+            },
+            {
+              "time": "01:17.00",
+              "seconds": 77
+            },
+            {
+              "time": "01:14.60",
+              "seconds": 74.6
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "01:56.70",
+              "seconds": 116.7
+            },
+            {
+              "time": "01:56.70",
+              "seconds": 116.7
+            },
+            {
+              "time": "01:35.80",
+              "seconds": 95.8
+            },
+            {
+              "time": "01:28.90",
+              "seconds": 88.9
+            },
+            {
+              "time": "01:25.90",
+              "seconds": 85.9
+            },
+            {
+              "time": "01:16.10",
+              "seconds": 76.1
+            },
+            {
+              "time": "01:12.10",
+              "seconds": 72.1
+            },
+            {
+              "time": "01:10.20",
+              "seconds": 70.2
+            }
+          ],
+          "female": [
+            {
+              "time": "01:44.80",
+              "seconds": 104.8
+            },
+            {
+              "time": "01:44.80",
+              "seconds": 104.8
+            },
+            {
+              "time": "01:31.90",
+              "seconds": 91.9
+            },
+            {
+              "time": "01:29.90",
+              "seconds": 89.9
+            },
+            {
+              "time": "01:21.00",
+              "seconds": 81
+            },
+            {
+              "time": "01:16.10",
+              "seconds": 76.1
+            },
+            {
+              "time": "01:18.00",
+              "seconds": 78
+            },
+            {
+              "time": "01:15.70",
+              "seconds": 75.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "200m Backstroke",
+      "distance": 200,
+      "stroke": "Backstroke",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "04:05.00",
+              "seconds": 245
+            },
+            {
+              "time": "04:05.00",
+              "seconds": 245
+            },
+            {
+              "time": "03:25.00",
+              "seconds": 205
+            },
+            {
+              "time": "03:10.00",
+              "seconds": 190
+            },
+            {
+              "time": "03:20.00",
+              "seconds": 200
+            },
+            {
+              "time": "02:50.00",
+              "seconds": 170
+            },
+            {
+              "time": "02:48.00",
+              "seconds": 168
+            },
+            {
+              "time": "02:30.00",
+              "seconds": 150
+            }
+          ],
+          "female": [
+            {
+              "time": "04:05.00",
+              "seconds": 245
+            },
+            {
+              "time": "04:05.00",
+              "seconds": 245
+            },
+            {
+              "time": "03:23.00",
+              "seconds": 203
+            },
+            {
+              "time": "03:17.00",
+              "seconds": 197
+            },
+            {
+              "time": "02:54.00",
+              "seconds": 174
+            },
+            {
+              "time": "02:45.00",
+              "seconds": 165
+            },
+            {
+              "time": "02:50.00",
+              "seconds": 170
+            },
+            {
+              "time": "02:42.15",
+              "seconds": 162.15
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "04:06.40",
+              "seconds": 246.4
+            },
+            {
+              "time": "04:06.40",
+              "seconds": 246.4
+            },
+            {
+              "time": "03:26.60",
+              "seconds": 206.6
+            },
+            {
+              "time": "03:11.80",
+              "seconds": 191.8
+            },
+            {
+              "time": "03:21.70",
+              "seconds": 201.7
+            },
+            {
+              "time": "02:52.00",
+              "seconds": 172
+            },
+            {
+              "time": "02:50.00",
+              "seconds": 170
+            },
+            {
+              "time": "02:32.20",
+              "seconds": 152.2
+            }
+          ],
+          "female": [
+            {
+              "time": "04:06.40",
+              "seconds": 246.4
+            },
+            {
+              "time": "04:06.40",
+              "seconds": 246.4
+            },
+            {
+              "time": "03:24.60",
+              "seconds": 204.6
+            },
+            {
+              "time": "03:18.70",
+              "seconds": 198.7
+            },
+            {
+              "time": "02:55.90",
+              "seconds": 175.9
+            },
+            {
+              "time": "02:47.00",
+              "seconds": 167
+            },
+            {
+              "time": "02:52.00",
+              "seconds": 172
+            },
+            {
+              "time": "02:44.25",
+              "seconds": 164.25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "50m Butterfly",
+      "distance": 50,
+      "stroke": "Butterfly",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "54.00",
+              "seconds": 54
+            },
+            {
+              "time": "54.00",
+              "seconds": 54
+            },
+            {
+              "time": "42.60",
+              "seconds": 42.6
+            },
+            {
+              "time": "39.50",
+              "seconds": 39.5
+            },
+            {
+              "time": "38.00",
+              "seconds": 38
+            },
+            {
+              "time": "32.50",
+              "seconds": 32.5
+            },
+            {
+              "time": "31.50",
+              "seconds": 31.5
+            },
+            {
+              "time": "28.00",
+              "seconds": 28
+            }
+          ],
+          "female": [
+            {
+              "time": "49.50",
+              "seconds": 49.5
+            },
+            {
+              "time": "49.50",
+              "seconds": 49.5
+            },
+            {
+              "time": "41.00",
+              "seconds": 41
+            },
+            {
+              "time": "39.70",
+              "seconds": 39.7
+            },
+            {
+              "time": "35.50",
+              "seconds": 35.5
+            },
+            {
+              "time": "32.50",
+              "seconds": 32.5
+            },
+            {
+              "time": "33.90",
+              "seconds": 33.9
+            },
+            {
+              "time": "32.00",
+              "seconds": 32
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "54.40",
+              "seconds": 54.4
+            },
+            {
+              "time": "54.40",
+              "seconds": 54.4
+            },
+            {
+              "time": "43.00",
+              "seconds": 43
+            },
+            {
+              "time": "40.00",
+              "seconds": 40
+            },
+            {
+              "time": "38.50",
+              "seconds": 38.5
+            },
+            {
+              "time": "33.10",
+              "seconds": 33.1
+            },
+            {
+              "time": "32.10",
+              "seconds": 32.1
+            },
+            {
+              "time": "28.70",
+              "seconds": 28.7
+            }
+          ],
+          "female": [
+            {
+              "time": "49.90",
+              "seconds": 49.9
+            },
+            {
+              "time": "49.90",
+              "seconds": 49.9
+            },
+            {
+              "time": "41.50",
+              "seconds": 41.5
+            },
+            {
+              "time": "40.20",
+              "seconds": 40.2
+            },
+            {
+              "time": "36.00",
+              "seconds": 36
+            },
+            {
+              "time": "33.10",
+              "seconds": 33.1
+            },
+            {
+              "time": "34.50",
+              "seconds": 34.5
+            },
+            {
+              "time": "32.60",
+              "seconds": 32.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "100m Butterfly",
+      "distance": 100,
+      "stroke": "Butterfly",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "02:00.00",
+              "seconds": 120
+            },
+            {
+              "time": "02:00.00",
+              "seconds": 120
+            },
+            {
+              "time": "02:00.00",
+              "seconds": 120
+            },
+            {
+              "time": "01:40.00",
+              "seconds": 100
+            },
+            {
+              "time": "01:39.00",
+              "seconds": 99
+            },
+            {
+              "time": "01:17.10",
+              "seconds": 77.1
+            },
+            {
+              "time": "01:14.50",
+              "seconds": 74.5
+            },
+            {
+              "time": "01:10.45",
+              "seconds": 70.45
+            }
+          ],
+          "female": [
+            {
+              "time": "02:00.00",
+              "seconds": 120
+            },
+            {
+              "time": "02:00.00",
+              "seconds": 120
+            },
+            {
+              "time": "01:47.00",
+              "seconds": 107
+            },
+            {
+              "time": "01:41.00",
+              "seconds": 101
+            },
+            {
+              "time": "01:28.00",
+              "seconds": 88
+            },
+            {
+              "time": "01:18.00",
+              "seconds": 78
+            },
+            {
+              "time": "01:23.00",
+              "seconds": 83
+            },
+            {
+              "time": "01:16.00",
+              "seconds": 76
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "02:00.60",
+              "seconds": 120.6
+            },
+            {
+              "time": "02:00.60",
+              "seconds": 120.6
+            },
+            {
+              "time": "02:00.60",
+              "seconds": 120.6
+            },
+            {
+              "time": "01:40.80",
+              "seconds": 100.8
+            },
+            {
+              "time": "01:39.80",
+              "seconds": 99.8
+            },
+            {
+              "time": "01:18.10",
+              "seconds": 78.1
+            },
+            {
+              "time": "01:15.50",
+              "seconds": 75.5
+            },
+            {
+              "time": "01:11.50",
+              "seconds": 71.5
+            }
+          ],
+          "female": [
+            {
+              "time": "02:00.60",
+              "seconds": 120.6
+            },
+            {
+              "time": "02:00.60",
+              "seconds": 120.6
+            },
+            {
+              "time": "01:47.70",
+              "seconds": 107.7
+            },
+            {
+              "time": "01:41.80",
+              "seconds": 101.8
+            },
+            {
+              "time": "01:28.90",
+              "seconds": 88.9
+            },
+            {
+              "time": "01:19.00",
+              "seconds": 79
+            },
+            {
+              "time": "01:23.90",
+              "seconds": 83.9
+            },
+            {
+              "time": "01:17.00",
+              "seconds": 77
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "200m Butterfly",
+      "distance": 200,
+      "stroke": "Butterfly",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "04:10.00",
+              "seconds": 250
+            },
+            {
+              "time": "04:10.00",
+              "seconds": 250
+            },
+            {
+              "time": "03:40.00",
+              "seconds": 220
+            },
+            {
+              "time": "03:37.50",
+              "seconds": 217.5
+            },
+            {
+              "time": "03:37.50",
+              "seconds": 217.5
+            },
+            {
+              "time": "03:20.00",
+              "seconds": 200
+            },
+            {
+              "time": "02:56.00",
+              "seconds": 176
+            },
+            {
+              "time": "02:50.00",
+              "seconds": 170
+            }
+          ],
+          "female": [
+            {
+              "time": "04:10.00",
+              "seconds": 250
+            },
+            {
+              "time": "04:10.00",
+              "seconds": 250
+            },
+            {
+              "time": "03:55.00",
+              "seconds": 235
+            },
+            {
+              "time": "03:55.00",
+              "seconds": 235
+            },
+            {
+              "time": "03:50.00",
+              "seconds": 230
+            },
+            {
+              "time": "03:30.00",
+              "seconds": 210
+            },
+            {
+              "time": "03:29.00",
+              "seconds": 209
+            },
+            {
+              "time": "03:10.00",
+              "seconds": 190
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "04:11.30",
+              "seconds": 251.3
+            },
+            {
+              "time": "04:11.30",
+              "seconds": 251.3
+            },
+            {
+              "time": "03:41.40",
+              "seconds": 221.4
+            },
+            {
+              "time": "03:38.50",
+              "seconds": 218.5
+            },
+            {
+              "time": "03:38.50",
+              "seconds": 218.5
+            },
+            {
+              "time": "03:21.60",
+              "seconds": 201.6
+            },
+            {
+              "time": "02:57.80",
+              "seconds": 177.8
+            },
+            {
+              "time": "02:51.90",
+              "seconds": 171.9
+            }
+          ],
+          "female": [
+            {
+              "time": "04:11.30",
+              "seconds": 251.3
+            },
+            {
+              "time": "04:11.30",
+              "seconds": 251.3
+            },
+            {
+              "time": "03:56.30",
+              "seconds": 236.3
+            },
+            {
+              "time": "03:56.30",
+              "seconds": 236.3
+            },
+            {
+              "time": "03:51.40",
+              "seconds": 231.4
+            },
+            {
+              "time": "03:31.50",
+              "seconds": 211.5
+            },
+            {
+              "time": "03:30.50",
+              "seconds": 210.5
+            },
+            {
+              "time": "03:11.70",
+              "seconds": 191.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "100m Ind Medley",
+      "distance": 100,
+      "stroke": "Ind Medley",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "02:00.00",
+              "seconds": 120
+            },
+            {
+              "time": "02:00.00",
+              "seconds": 120
+            },
+            {
+              "time": "01:37.00",
+              "seconds": 97
+            },
+            {
+              "time": "01:28.00",
+              "seconds": 88
+            },
+            {
+              "time": "01:25.00",
+              "seconds": 85
+            },
+            {
+              "time": "01:15.00",
+              "seconds": 75
+            },
+            {
+              "time": "01:13.00",
+              "seconds": 73
+            },
+            {
+              "time": "01:09.00",
+              "seconds": 69
+            }
+          ],
+          "female": [
+            {
+              "time": "01:46.00",
+              "seconds": 106
+            },
+            {
+              "time": "01:46.00",
+              "seconds": 106
+            },
+            {
+              "time": "01:32.00",
+              "seconds": 92
+            },
+            {
+              "time": "01:29.00",
+              "seconds": 89
+            },
+            {
+              "time": "01:21.50",
+              "seconds": 81.5
+            },
+            {
+              "time": "01:16.00",
+              "seconds": 76
+            },
+            {
+              "time": "01:19.00",
+              "seconds": 79
+            },
+            {
+              "time": "01:13.00",
+              "seconds": 73
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "200m Ind Medley",
+      "distance": 200,
+      "stroke": "Ind Medley",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": "03:58.00",
+              "seconds": 238
+            },
+            {
+              "time": "03:58.00",
+              "seconds": 238
+            },
+            {
+              "time": "03:35.00",
+              "seconds": 215
+            },
+            {
+              "time": "03:15.00",
+              "seconds": 195
+            },
+            {
+              "time": "03:10.00",
+              "seconds": 190
+            },
+            {
+              "time": "02:47.00",
+              "seconds": 167
+            },
+            {
+              "time": "02:40.00",
+              "seconds": 160
+            },
+            {
+              "time": "02:30.00",
+              "seconds": 150
+            }
+          ],
+          "female": [
+            {
+              "time": "03:58.00",
+              "seconds": 238
+            },
+            {
+              "time": "03:58.00",
+              "seconds": 238
+            },
+            {
+              "time": "03:25.00",
+              "seconds": 205
+            },
+            {
+              "time": "03:15.00",
+              "seconds": 195
+            },
+            {
+              "time": "03:00.00",
+              "seconds": 180
+            },
+            {
+              "time": "02:45.00",
+              "seconds": 165
+            },
+            {
+              "time": "02:53.00",
+              "seconds": 173
+            },
+            {
+              "time": "02:42.00",
+              "seconds": 162
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": "03:59.70",
+              "seconds": 239.7
+            },
+            {
+              "time": "03:59.70",
+              "seconds": 239.7
+            },
+            {
+              "time": "03:36.80",
+              "seconds": 216.8
+            },
+            {
+              "time": "03:17.00",
+              "seconds": 197
+            },
+            {
+              "time": "03:12.10",
+              "seconds": 192.1
+            },
+            {
+              "time": "02:49.30",
+              "seconds": 169.3
+            },
+            {
+              "time": "02:42.40",
+              "seconds": 162.4
+            },
+            {
+              "time": "02:32.60",
+              "seconds": 152.6
+            }
+          ],
+          "female": [
+            {
+              "time": "03:59.70",
+              "seconds": 239.7
+            },
+            {
+              "time": "03:59.70",
+              "seconds": 239.7
+            },
+            {
+              "time": "03:26.90",
+              "seconds": 206.9
+            },
+            {
+              "time": "03:17.00",
+              "seconds": 197
+            },
+            {
+              "time": "03:02.00",
+              "seconds": 182
+            },
+            {
+              "time": "02:47.40",
+              "seconds": 167.4
+            },
+            {
+              "time": "02:55.30",
+              "seconds": 175.3
+            },
+            {
+              "time": "02:44.40",
+              "seconds": 164.4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "400m Ind Medley",
+      "distance": 400,
+      "stroke": "Ind Medley",
+      "courses": [
+        {
+          "course": "25m",
+          "male": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "06:40.00",
+              "seconds": 400
+            },
+            {
+              "time": "06:40.00",
+              "seconds": 400
+            },
+            {
+              "time": "06:30.00",
+              "seconds": 390
+            },
+            {
+              "time": "06:10.00",
+              "seconds": 370
+            },
+            {
+              "time": "05:55.00",
+              "seconds": 355
+            },
+            {
+              "time": "05:45.00",
+              "seconds": 345
+            }
+          ],
+          "female": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "06:40.00",
+              "seconds": 400
+            },
+            {
+              "time": "06:40.00",
+              "seconds": 400
+            },
+            {
+              "time": "06:30.00",
+              "seconds": 390
+            },
+            {
+              "time": "06:20.00",
+              "seconds": 380
+            },
+            {
+              "time": "06:20.00",
+              "seconds": 380
+            },
+            {
+              "time": "06:20.00",
+              "seconds": 380
+            }
+          ]
+        },
+        {
+          "course": "50m",
+          "male": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "06:44.40",
+              "seconds": 404.4
+            },
+            {
+              "time": "06:44.40",
+              "seconds": 404.4
+            },
+            {
+              "time": "06:34.50",
+              "seconds": 394.5
+            },
+            {
+              "time": "06:14.70",
+              "seconds": 374.7
+            },
+            {
+              "time": "05:59.90",
+              "seconds": 359.9
+            },
+            {
+              "time": "05:50.10",
+              "seconds": 350.1
+            }
+          ],
+          "female": [
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": null,
+              "seconds": null
+            },
+            {
+              "time": "06:44.40",
+              "seconds": 404.4
+            },
+            {
+              "time": "06:44.40",
+              "seconds": 404.4
+            },
+            {
+              "time": "06:34.50",
+              "seconds": 394.5
+            },
+            {
+              "time": "06:24.60",
+              "seconds": 384.6
+            },
+            {
+              "time": "06:24.60",
+              "seconds": 384.6
+            },
+            {
+              "time": "06:24.60",
+              "seconds": 384.6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

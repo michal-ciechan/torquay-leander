@@ -1,0 +1,35 @@
+---
+// Grouped toggle-switch selector for the Devon times pages.
+// Single-select: `model` holds one value. Multi-select: `model` is an array;
+// an empty array means "all" (nothing filtered out).
+interface Opt { value: string | number; label: string }
+interface Props { label: string; model: string; options: Opt[]; multi?: boolean }
+const { label, model, options, multi = false } = Astro.props;
+const opts = JSON.stringify(options);
+const isActive = multi ? `${model}.includes(o.value)` : `${model} === o.value`;
+const onClick = multi
+  ? `${model} = ${model}.includes(o.value) ? ${model}.filter(v => v !== o.value) : [...${model}, o.value]`
+  : `${model} = o.value`;
+---
+<div class="tg">
+  <span class="tg-label">{label}<span class="tg-hint" x-show={multi && `${model}.length === 0`} x-cloak>all</span></span>
+  <div class="tg-seg" role="group" aria-label={label}>
+    <template x-for={`o in ${opts}`} x-bind:key="o.value">
+      <button type="button" :class={`{active: ${isActive}}`} @click={onClick} x-text="o.label" :aria-pressed={isActive}></button>
+    </template>
+  </div>
+</div>
+
+<style is:global>
+  .tg { display: flex; flex-direction: column; gap: 7px; }
+  .tg-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .tg-hint { font-size: 0.62rem; letter-spacing: 0.5px; color: #94a3b8; background: #f1f5f9; border-radius: 999px; padding: 2px 7px; }
+  .tg-seg { display: inline-flex; flex-wrap: wrap; background: #f1f5f9; border: 1.5px solid var(--border); border-radius: 12px; padding: 4px; gap: 3px; width: fit-content; max-width: 100%; }
+  .tg-seg button {
+    font: inherit; font-size: 0.83rem; font-weight: 700; border: none; background: transparent;
+    color: var(--muted); padding: 8px 14px; min-width: 42px; border-radius: 9px; cursor: pointer;
+    transition: background 0.15s, color 0.15s, box-shadow 0.15s; white-space: nowrap;
+  }
+  .tg-seg button:hover { color: var(--text); }
+  .tg-seg button.active { background: var(--red); color: #fff; box-shadow: 0 2px 8px rgba(220,38,38,0.3); }
+</style>
