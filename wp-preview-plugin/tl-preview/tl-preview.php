@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: TL Preview
- * Description: Serves the new Torquay Leander site (built on GitHub Pages) at /preview/ on this domain, so it can be reviewed before the switchover. Deactivate to remove.
- * Version: 1.0.0
+ * Description: Serves the new Torquay Leander site (built on GitHub Pages) on this domain so it can be reviewed before the switchover: /preview/ is the work-in-progress build, /rc/ the signed-off release candidate. Deactivate to remove.
+ * Version: 1.1.0
  * Author: Mike Ciechan
  * Requires PHP: 7.4
  */
@@ -11,38 +11,49 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-const TL_PREVIEW_PREFIX   = '/preview';
-const TL_PREVIEW_UPSTREAM = 'https://michal-ciechan.github.io/torquay-leander';
-const TL_PREVIEW_BASE     = '/torquay-leander';
-const TL_PREVIEW_TTL      = 300; // seconds a fetched file is cached
+const TL_PREVIEW_ORIGIN = 'https://michal-ciechan.github.io';
+const TL_PREVIEW_TTL    = 300; // seconds a fetched file is cached
 
-// Runs before WordPress parses the request, so WP never sees /preview URLs.
+// Local prefix => upstream base path on TL_PREVIEW_ORIGIN, checked in order.
+// /preview is the `preview` branch build, /rc the `master` build.
+const TL_PREVIEW_MAPPINGS = array(
+    '/preview' => '/torquay-leander/preview',
+    '/rc'      => '/torquay-leander',
+);
+
+// Runs before WordPress parses the request, so WP never sees these URLs.
 add_action('plugins_loaded', 'tl_preview_maybe_serve', 0);
 
 function tl_preview_maybe_serve() {
     $uri  = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';
     $path = (string) parse_url($uri, PHP_URL_PATH);
 
-    if ($path !== TL_PREVIEW_PREFIX && strpos($path, TL_PREVIEW_PREFIX . '/') !== 0) {
-        return;
+    foreach (TL_PREVIEW_MAPPINGS as $prefix => $base) {
+        if ($path === $prefix || strpos($path, $prefix . '/') === 0) {
+            tl_preview_serve($prefix, $base, $path);
+        }
     }
-    if ($path === TL_PREVIEW_PREFIX) {
-        wp_redirect(TL_PREVIEW_PREFIX . '/', 301);
+    // No mapping matched - fall through to WordPress.
+}
+
+function tl_preview_serve($prefix, $base, $path) {
+    if ($path === $prefix) {
+        wp_redirect($prefix . '/', 301);
         exit;
     }
 
-    $rest = substr($path, strlen(TL_PREVIEW_PREFIX)); // starts with '/'
+    $rest = substr($path, strlen($prefix)); // starts with '/'
     if (strpos($rest, '..') !== false) {
         status_header(400);
         exit;
     }
 
     $fresh = isset($_GET['refresh']);
-    $key   = 'tl_preview_' . md5($rest);
+    $key   = 'tl_preview_' . md5($prefix . '|' . $rest);
     $hit   = $fresh ? false : get_transient($key);
 
     if ($hit === false) {
-        $res = wp_remote_get(TL_PREVIEW_UPSTREAM . $rest, array('timeout' => 15, 'redirection' => 0));
+        $res = wp_remote_get(TL_PREVIEW_ORIGIN . $base . $rest, array('timeout' => 15, 'redirection' => 0));
         if (is_wp_error($res)) {
             status_header(502);
             header('Content-Type: text/plain; charset=utf-8');
@@ -55,13 +66,10 @@ function tl_preview_maybe_serve() {
         $body = (string) wp_remote_retrieve_body($res);
         $loc  = (string) wp_remote_retrieve_header($res, 'location');
 
-        // GitHub Pages redirects /foo to /foo/ - map that back onto /preview.
+        // GitHub Pages redirects /foo to /foo/ - map that back onto our prefix.
         if ($code >= 300 && $code < 400 && $loc !== '') {
             $locPath = (string) parse_url($loc, PHP_URL_PATH);
-            if (strpos($locPath, TL_PREVIEW_BASE) === 0) {
-                $locPath = TL_PREVIEW_PREFIX . substr($locPath, strlen(TL_PREVIEW_BASE));
-            }
-            wp_redirect($locPath, $code);
+            wp_redirect(tl_preview_rebase($locPath), $code);
             exit;
         }
 
@@ -85,9 +93,21 @@ function tl_preview_maybe_serve() {
     exit;
 }
 
-// The GitHub Pages build links everything under /torquay-leander; point those at /preview.
+// The GitHub Pages builds link everything under their upstream base; point each
+// base (absolute or root-relative) at its local prefix. One pass, longest base
+// first, so /torquay-leander/preview/x becomes /preview/x, not /rc/preview/x.
 // The lookbehind skips repo URLs like github.com/michal-ciechan/torquay-leander.
 function tl_preview_rebase($body) {
-    $body = str_replace(TL_PREVIEW_UPSTREAM, TL_PREVIEW_PREFIX, $body);
-    return preg_replace('#(?<![\w.-])' . preg_quote(TL_PREVIEW_BASE, '#') . '(?=[/"\'?\#)\s]|$)#', TL_PREVIEW_PREFIX, $body);
+    $map = array_flip(TL_PREVIEW_MAPPINGS); // upstream base => local prefix
+    uksort($map, function ($a, $b) {
+        return strlen($b) - strlen($a);
+    });
+    $alts = implode('|', array_map(function ($b) {
+        return preg_quote($b, '#');
+    }, array_keys($map)));
+
+    $re = '#(?<![\w.-])(?:' . preg_quote(TL_PREVIEW_ORIGIN, '#') . ')?(' . $alts . ')(?=[/"\'?\#)\s]|$)#';
+    return preg_replace_callback($re, function ($m) use ($map) {
+        return $map[$m[1]];
+    }, $body);
 }
