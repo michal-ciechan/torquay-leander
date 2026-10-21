@@ -21,6 +21,8 @@ const canonical = new URL(Astro.url.pathname.slice(base.length) || '/', 'https:/
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <!-- ?debug opens an on-page console (Eruda) for phones; written synchronously so it catches load-time errors -->
+    <script is:inline>if (/[?&]debug\b/.test(location.search)) document.write('<script src="https://cdn.jsdelivr.net/npm/eruda@3"><\/script><script>eruda.init()<\/script>')</script>
     <script is:inline defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
     <script is:inline>window.tailwind = { corePlugins: { preflight: false } }</script>
     <script is:inline src="https://cdn.tailwindcss.com"></script>
