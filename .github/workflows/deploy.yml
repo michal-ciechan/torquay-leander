@@ -1,8 +1,14 @@
 name: Deploy to GitHub Pages
 
+# One repo = one Pages site, and every deploy replaces the whole site, so each
+# run builds BOTH branches into a single artifact:
+#   master  -> /torquay-leander/          (stable, signed-off)
+#   preview -> /torquay-leander/preview/  (day-to-day work)
+# This file must be identical on both branches.
+
 on:
   push:
-    branches: [master]
+    branches: [master, preview]
   workflow_dispatch:
 
 permissions:
@@ -10,24 +16,74 @@ permissions:
   pages: write
   id-token: write
 
+# Queue rather than cancel: a later run always rebuilds both branches from
+# their latest commits, so nothing is lost, and runs never race each other.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: master
+
+      - name: Resolve preview ref
+        id: preview
+        working-directory: master
+        run: |
+          if git ls-remote --exit-code --heads origin preview >/dev/null; then
+            echo "ref=preview" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::No preview branch yet - building master for /preview/ too"
+            echo "ref=master" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out preview
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.preview.outputs.ref }}
+          path: preview
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
-      - run: npm run build
+          cache-dependency-path: |
+            master/package-lock.json
+            preview/package-lock.json
+
+      - name: Build master (base /torquay-leander)
+        working-directory: master
+        env:
+          ASTRO_BASE: /torquay-leander
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build preview (base /torquay-leander/preview)
+        working-directory: preview
+        env:
+          ASTRO_BASE: /torquay-leander/preview
+        run: |
+          npm ci
+          npm run build
+
+      - name: Assemble site
+        run: |
+          mkdir -p site
+          cp -r master/dist/. site/
+          rm -rf site/preview
+          mkdir -p site/preview
+          cp -r preview/dist/. site/preview/
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./site
 
   deploy:
     needs: build

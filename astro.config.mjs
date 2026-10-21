@@ -1,9 +1,14 @@
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
 
+// Base path comes from ASTRO_BASE so the same source can be built for the
+// stable site (/torquay-leander, master) and the preview (/torquay-leander/preview,
+// preview branch) - see .github/workflows/deploy.yml.
+const base = (process.env.ASTRO_BASE || '/torquay-leander').replace(/\/$/, '');
+
 export default defineConfig({
   site: 'https://michal-ciechan.github.io',
-  base: '/torquay-leander',
+  base,
   trailingSlash: 'ignore',
   build: {
     format: 'directory',
@@ -12,10 +17,10 @@ export default defineConfig({
   // These keep old bookmarks and shared links working via meta-refresh pages.
   // Destinations must carry the base themselves — Astro emits them verbatim.
   redirects: {
-    '/galas/': '/torquay-leander/competitions/',
-    '/galas/club-championships/': '/torquay-leander/competitions/club-championships/',
-    '/galas/ribbon-gala/': '/torquay-leander/competitions/ribbon-gala/',
-    '/galas/competition-guide/': '/torquay-leander/competitions/competition-guide/',
+    '/galas/': `${base}/competitions/`,
+    '/galas/club-championships/': `${base}/competitions/club-championships/`,
+    '/galas/ribbon-gala/': `${base}/competitions/ribbon-gala/`,
+    '/galas/competition-guide/': `${base}/competitions/competition-guide/`,
   },
   // Dev-only: adds a "Dev Pages" app to the Astro dev toolbar (the bar at the
   // bottom during `astro dev`) linking to the /dev/ hub + tooling pages. The

@@ -7,7 +7,17 @@ Astro static site for the Torquay Leander swimming club, deployed to GitHub Page
 When asked for "the URL", always give **both** the local and the public URL:
 
 - **Local (dev):** http://localhost:12700/torquay-leander/ (also over HTTPS at `https://torquay.desktop.codeperf.net/torquay-leander/`)
-- **Public (GitHub Pages):** https://michal-ciechan.github.io/torquay-leander/
+- **Public preview (`preview` branch, GitHub Pages):** https://michal-ciechan.github.io/torquay-leander/preview/
+- **Public stable (`master` branch, GitHub Pages):** https://michal-ciechan.github.io/torquay-leander/
+- **On the club domain (WP proxy plugin, `wp-preview-plugin/`):** https://torquayleander.co.uk/preview/ (preview branch) and https://torquayleander.co.uk/rc/ (master) — needs plugin v1.1.0+ installed
+
+## Branches
+
+- **Work on `preview`.** Every push to `preview` deploys to https://michal-ciechan.github.io/torquay-leander/preview/.
+- **`master` is the signed-off release candidate** (becomes the real site at cutover), served at the Pages root.
+- **Promote** with a fast-forward: `git push origin preview:master`. Never merge; rebase `preview` if it diverges.
+- `.github/workflows/deploy.yml` builds **both** branches on any push (one Pages site per repo, each deploy replaces everything): master with `ASTRO_BASE=/torquay-leander` at the root, preview with `ASTRO_BASE=/torquay-leander/preview` under `preview/`. Keep the workflow and this file identical on both branches.
+- `astro.config.mjs` reads `base` from `ASTRO_BASE` (default `/torquay-leander`), so never hard-code `/torquay-leander` in src — use `import.meta.env.BASE_URL`. From Git Bash, set `MSYS_NO_PATHCONV=1` when passing `ASTRO_BASE`, or MSYS rewrites it to a Windows path.
 
 ## Commands
 
@@ -22,8 +32,8 @@ When asked for "the URL", always give **both** the local and the public URL:
 - `src/layouts/BaseLayout.astro` — HTML shell + Nav/Footer + CDN scripts (Alpine 3.14.3, Tailwind, Lucide). Used by the public site pages.
 - `src/components/Nav.astro`, `src/components/Footer.astro` — shared nav (Alpine-driven dropdowns + mobile menu) and footer.
 - `src/styles/global.css` — design tokens (`--red`, `--black`, etc.) and shared component styles.
-- `astro.config.mjs` — `base: '/torquay-leander'`, `trailingSlash: 'ignore'`, `build.format: 'directory'`.
-- `.github/workflows/deploy.yml` — Pages deploy on push to `master`.
+- `astro.config.mjs` — `base` from `ASTRO_BASE` (default `/torquay-leander`), `trailingSlash: 'ignore'`, `build.format: 'directory'`.
+- `.github/workflows/deploy.yml` — Pages deploy of both branches on push to `master` or `preview`.
 
 ## Conventions
 
