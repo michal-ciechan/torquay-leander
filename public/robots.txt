@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /preview/
+Disallow: /rc/
+Disallow: /dev/
+Disallow: /samples/
+Disallow: /login/
+
+Sitemap: https://torquayleander.co.uk/sitemap.xml

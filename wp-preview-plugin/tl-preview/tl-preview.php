@@ -2,7 +2,7 @@
 /**
  * Plugin Name: TL Preview
  * Description: Serves the new Torquay Leander site (built on GitHub Pages) on this domain: /preview/ is the work-in-progress build, /rc/ the signed-off release candidate, and with "Serve the new site" on (Settings > TL Preview) the release candidate also answers at the root. WordPress keeps wp-admin, logins, the REST API and any URL the new site does not have. Deactivate to remove.
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: Mike Ciechan
  * Requires PHP: 7.4
  */
@@ -32,6 +32,12 @@ const TL_PREVIEW_WP_QUERY = array('p', 'page_id', 'preview', 'rest_route', 's', 
 
 // Runs before WordPress parses the request, so WP never sees these URLs.
 add_action('plugins_loaded', 'tl_preview_maybe_serve', 0);
+
+// Live, the new site's sitemap.xml (linked from its robots.txt) replaces
+// WordPress's wp-sitemap.xml, which only lists the old pages.
+add_filter('wp_sitemaps_enabled', function ($enabled) {
+    return get_option(TL_PREVIEW_OPTION) ? false : $enabled;
+});
 
 function tl_preview_maybe_serve() {
     $uri  = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';

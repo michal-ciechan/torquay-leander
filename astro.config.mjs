@@ -1,10 +1,18 @@
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
+import { writeFile } from 'node:fs/promises';
 
 // Base path comes from ASTRO_BASE so the same source can be built for the
 // stable site (/torquay-leander, master) and the preview (/torquay-leander/preview,
 // preview branch) - see .github/workflows/deploy.yml.
 const base = (process.env.ASTRO_BASE || '/torquay-leander').replace(/\/$/, '');
+
+// The club domain, where the master build is served at the root by the WP
+// plugin (wp-preview-plugin/). The sitemap and canonical links point here.
+const liveSite = 'https://torquayleander.co.uk';
+
+// Tooling, auth and redirect stubs that should not be in the sitemap.
+const sitemapExclude = /^(dev|samples|login|galas)(\/|$)/;
 
 export default defineConfig({
   site: 'https://michal-ciechan.github.io',
@@ -27,6 +35,22 @@ export default defineConfig({
   // toolbar never ships to `astro build`, and the `command === 'dev'` guard keeps
   // the entrypoint out of production builds entirely.
   integrations: [
+    // Writes sitemap.xml with every public page on the club domain. robots.txt
+    // (public/) points Google at it.
+    {
+      name: 'live-sitemap',
+      hooks: {
+        'astro:build:done': async ({ dir, pages }) => {
+          const urls = pages
+            .map((p) => p.pathname.replace(/^\//, ''))
+            .filter((p) => !sitemapExclude.test(p))
+            .sort()
+            .map((p) => `  <url><loc>${liveSite}/${p}</loc></url>`);
+          const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
+          await writeFile(new URL('sitemap.xml', dir), xml);
+        },
+      },
+    },
     {
       name: 'dev-links-toolbar',
       hooks: {
