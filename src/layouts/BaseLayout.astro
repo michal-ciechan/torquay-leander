@@ -35,6 +35,48 @@ const canonical = new URL(Astro.url.pathname.slice(base.length) || '/', 'https:/
         if (window.lucide) window.lucide.createIcons();
       });
     </script>
+    <!-- Enquiry forms (form[data-enquiry="membership|general"]) post to the WordPress
+         plugin on the club domain (wp-preview-plugin/), which emails the club. Delegated,
+         so forms Alpine renders later (the Contact page tabs) are covered too. -->
+    <script is:inline>
+      document.addEventListener('submit', async (e) => {
+        const form = e.target.closest('form[data-enquiry]');
+        if (!form) return;
+        e.preventDefault();
+        const button = form.querySelector('[type=submit]');
+        let status = form.querySelector('.form-status');
+        if (!status) {
+          status = document.createElement('p');
+          status.className = 'form-status';
+          status.setAttribute('role', 'status');
+          form.appendChild(status);
+        }
+        const data = new FormData(form);
+        data.set('type', form.dataset.enquiry);
+        data.set('page', location.href);
+        // The /preview/ build and local dev go to the plugin's preview address, not the club.
+        const live = /(^|\.)torquayleander\.co\.uk$|\.github\.io$/.test(location.hostname) && !/\/preview(\/|$)/.test(location.pathname);
+        data.set('channel', live ? 'live' : 'preview');
+        button.disabled = true;
+        status.textContent = 'Sending…';
+        status.classList.remove('is-error');
+        let problem = "Sorry, that didn't send.";
+        try {
+          const res = await fetch('https://torquayleander.co.uk/wp-json/tl/v1/enquiry', { method: 'POST', body: data });
+          const body = await res.json().catch(() => ({}));
+          if (res.ok && body.ok) problem = null;
+          else if (body.message) problem = body.message; // e.g. "Please fill in: Name."
+        } catch (err) {} // offline / blocked: keep the generic message
+        button.disabled = false;
+        status.classList.toggle('is-error', !!problem);
+        if (problem) {
+          status.textContent = problem + ' You can also email us at torquayleander@hotmail.com.';
+        } else {
+          form.reset();
+          status.textContent = 'Thanks — your message has been sent and a member of the committee will be in touch.';
+        }
+      });
+    </script>
     <!-- Logo preview: picks made on /samples/logo/ apply to the real nav + footer.
          The live picks are baked in already — 'b1t2' in public/logo-nav.png and
          't2' in public/logo.png — so only a different pick needs swapping. -->

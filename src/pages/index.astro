@@ -147,17 +147,20 @@ const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURICompo
         <div class="join-card join-form-card">
           <h3>Ready to Dive In?</h3>
           <p class="join-form-intro">Interested in coming for a free trial? Please register your interest below. We understand it's not just about your ability but also the environment you train in — feeling comfortable with your fellow swimmers, coaches and surroundings is the best way to reach your potential.</p>
-          <input class="form-field" type="text" placeholder="Name of Swimmer" />
-          <label class="sr-only" for="dob">Date of Birth</label>
-          <div class="date-field">
-            <input id="dob" class="form-field form-field-date" type="date" required />
-            <span class="date-ph">Date of Birth</span>
-          </div>
-          <input class="form-field" type="text" placeholder="Swim level of swimmer (Stage 5 minimum)" />
-          <input class="form-field" type="text" placeholder="Name of parent / guardian" />
-          <input class="form-field" type="tel" placeholder="Contact number" />
-          <input class="form-field" type="email" placeholder="Email address" />
-          <button class="form-submit" onclick="window.location='mailto:torquayleander@hotmail.com?subject=Membership%20enquiry'">Send My Interest</button>
+          <form data-enquiry="membership">
+            <input class="form-field" type="text" name="swimmer_name" placeholder="Name of Swimmer" aria-label="Name of swimmer" required />
+            <label class="sr-only" for="dob">Date of Birth</label>
+            <div class="date-field">
+              <input id="dob" class="form-field form-field-date" type="date" name="date_of_birth" required />
+              <span class="date-ph">Date of Birth</span>
+            </div>
+            <input class="form-field" type="text" name="swim_level" placeholder="Swim level of swimmer (Stage 5 minimum)" aria-label="Swim level" required />
+            <input class="form-field" type="text" name="guardian_name" placeholder="Name of parent / guardian" aria-label="Name of parent or guardian" required />
+            <input class="form-field" type="tel" name="phone" placeholder="Contact number" aria-label="Contact number" required />
+            <input class="form-field" type="email" name="email" placeholder="Email address" aria-label="Email address" required />
+            <div class="form-trap" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off" /></div>
+            <button class="form-submit" type="submit">Send My Interest</button>
+          </form>
           <p class="form-note">Not about joining? <a href={`${base}/contact/?enquiry=general`}>Send a general enquiry</a> instead.</p>
         </div>
         <div class="join-card join-map-card">

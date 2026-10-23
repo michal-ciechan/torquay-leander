@@ -109,7 +109,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
       </div>
 
-      <form class="interest-form" action="#" method="post">
+      <form class="interest-form" data-enquiry="membership">
         <div class="field-group">
           <label for="swimmer-name">Name of Swimmer</label>
           <input type="text" id="swimmer-name" name="swimmer_name" placeholder="Full name" required />
@@ -134,6 +134,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" placeholder="your@email.com" required />
         </div>
+        <div class="form-trap" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off" /></div>
         <button type="submit" class="form-submit">Send My Interest</button>
       </form>
     </div>
