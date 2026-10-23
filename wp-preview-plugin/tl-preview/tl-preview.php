@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: TL Preview
- * Description: Serves the new Torquay Leander site (built on GitHub Pages) on this domain so it can be reviewed before the switchover: /preview/ is the work-in-progress build, /rc/ the signed-off release candidate. Deactivate to remove.
- * Version: 1.1.0
+ * Description: Serves the new Torquay Leander site (built on GitHub Pages) on this domain: /preview/ is the work-in-progress build, /rc/ the signed-off release candidate, and with "Serve the new site" on (Settings > TL Preview) the release candidate also answers at the root. WordPress keeps wp-admin, logins, the REST API and any URL the new site does not have. Deactivate to remove.
+ * Version: 1.2.0
  * Author: Mike Ciechan
  * Requires PHP: 7.4
  */
@@ -21,6 +21,15 @@ const TL_PREVIEW_MAPPINGS = array(
     '/rc'      => '/torquay-leander',
 );
 
+// When live, the root serves this build (the `master` one, same as /rc).
+const TL_PREVIEW_ROOT_BASE = '/torquay-leander';
+const TL_PREVIEW_OPTION    = 'tl_preview_live';
+
+// Requests WordPress must keep answering even when live: wp-admin, wp-login.php,
+// wp-json, wp-content, wp-cron.php, xmlrpc.php, and ?p= / ?rest_route= style URLs.
+const TL_PREVIEW_WP_PATHS = '#^/(wp-|xmlrpc\.php|index\.php)#';
+const TL_PREVIEW_WP_QUERY = array('p', 'page_id', 'preview', 'rest_route', 's', 'feed', 'attachment_id', 'author', 'cat');
+
 // Runs before WordPress parses the request, so WP never sees these URLs.
 add_action('plugins_loaded', 'tl_preview_maybe_serve', 0);
 
@@ -30,13 +39,35 @@ function tl_preview_maybe_serve() {
 
     foreach (TL_PREVIEW_MAPPINGS as $prefix => $base) {
         if ($path === $prefix || strpos($path, $prefix . '/') === 0) {
-            tl_preview_serve($prefix, $base, $path);
+            tl_preview_serve($prefix, $base, $path, false);
         }
     }
-    // No mapping matched - fall through to WordPress.
+
+    if (get_option(TL_PREVIEW_OPTION) && tl_preview_is_site_request($path)) {
+        tl_preview_serve('', TL_PREVIEW_ROOT_BASE, $path, true);
+    }
+    // Nothing served - fall through to WordPress.
 }
 
-function tl_preview_serve($prefix, $base, $path) {
+function tl_preview_is_site_request($path) {
+    $method = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';
+    if ($method !== 'GET' && $method !== 'HEAD') {
+        return false; // form posts, comments, admin-ajax
+    }
+    if ($path === '' || preg_match(TL_PREVIEW_WP_PATHS, $path)) {
+        return false;
+    }
+    foreach (TL_PREVIEW_WP_QUERY as $q) {
+        if (isset($_GET[$q])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// With $fallback, anything but a 200 (or a redirect) from GitHub returns so
+// WordPress answers instead: old WP pages keep working until replaced.
+function tl_preview_serve($prefix, $base, $path, $fallback) {
     if ($path === $prefix) {
         wp_redirect($prefix . '/', 301);
         exit;
@@ -44,6 +75,9 @@ function tl_preview_serve($prefix, $base, $path) {
 
     $rest = substr($path, strlen($prefix)); // starts with '/'
     if (strpos($rest, '..') !== false) {
+        if ($fallback) {
+            return;
+        }
         status_header(400);
         exit;
     }
@@ -55,6 +89,9 @@ function tl_preview_serve($prefix, $base, $path) {
     if ($hit === false) {
         $res = wp_remote_get(TL_PREVIEW_ORIGIN . $base . $rest, array('timeout' => 15, 'redirection' => 0));
         if (is_wp_error($res)) {
+            if ($fallback) {
+                return;
+            }
             status_header(502);
             header('Content-Type: text/plain; charset=utf-8');
             echo 'Preview temporarily unavailable.';
@@ -73,14 +110,18 @@ function tl_preview_serve($prefix, $base, $path) {
             exit;
         }
 
-        if (preg_match('#^(text/|application/(javascript|json|xml|manifest\+json)|image/svg)#i', $type)) {
+        if ($code === 200 && preg_match('#^(text/|application/(javascript|json|xml|manifest\+json)|image/svg)#i', $type)) {
             $body = tl_preview_rebase($body);
         }
 
         $hit = array('code' => $code, 'type' => $type, 'body' => $body);
         if ($code === 200 || $code === 404) {
-            set_transient($key, $hit, TL_PREVIEW_TTL);
+            set_transient($key, $fallback && $code !== 200 ? array('code' => $code) : $hit, TL_PREVIEW_TTL);
         }
+    }
+
+    if ($fallback && $hit['code'] !== 200) {
+        return;
     }
 
     status_header($hit['code']);
@@ -88,7 +129,9 @@ function tl_preview_serve($prefix, $base, $path) {
         header('Content-Type: ' . $hit['type']);
     }
     header('Cache-Control: public, max-age=' . TL_PREVIEW_TTL);
-    header('X-Robots-Tag: noindex, nofollow'); // keep the preview out of search results
+    if ($prefix !== '') {
+        header('X-Robots-Tag: noindex, nofollow'); // keep the previews out of search results
+    }
     echo $hit['body'];
     exit;
 }
@@ -99,6 +142,9 @@ function tl_preview_serve($prefix, $base, $path) {
 // The lookbehind skips repo URLs like github.com/michal-ciechan/torquay-leander.
 function tl_preview_rebase($body) {
     $map = array_flip(TL_PREVIEW_MAPPINGS); // upstream base => local prefix
+    if (get_option(TL_PREVIEW_OPTION)) {
+        $map[TL_PREVIEW_ROOT_BASE] = ''; // live: master links point at the root, not /rc
+    }
     uksort($map, function ($a, $b) {
         return strlen($b) - strlen($a);
     });
@@ -106,8 +152,58 @@ function tl_preview_rebase($body) {
         return preg_quote($b, '#');
     }, array_keys($map)));
 
-    $re = '#(?<![\w.-])(?:' . preg_quote(TL_PREVIEW_ORIGIN, '#') . ')?(' . $alts . ')(?=[/"\'?\#)\s]|$)#';
+    $re = '#(?<![\w.-])(?:' . preg_quote(TL_PREVIEW_ORIGIN, '#') . ')?(' . $alts . ')(?=([/"\'?\#)\s]|$))#';
     return preg_replace_callback($re, function ($m) use ($map) {
-        return $map[$m[1]];
+        $to = $map[$m[1]];
+        // A bare "/torquay-leander" at the root becomes "/", not an empty link.
+        return ($to === '' && (!isset($m[2]) || $m[2] !== '/')) ? '/' : $to;
     }, $body);
+}
+
+// Settings > TL Preview: the switch that puts the new site live at the root.
+add_action('admin_init', function () {
+    register_setting('tl_preview', TL_PREVIEW_OPTION, array(
+        'type'              => 'boolean',
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'default'           => false,
+    ));
+});
+
+add_action('admin_menu', function () {
+    add_options_page('TL Preview', 'TL Preview', 'manage_options', 'tl-preview', 'tl_preview_settings_page');
+});
+
+function tl_preview_settings_page() {
+    ?>
+    <div class="wrap">
+        <h1>TL Preview</h1>
+        <form method="post" action="options.php">
+            <?php settings_fields('tl_preview'); ?>
+            <p>
+                <label>
+                    <input type="checkbox" name="<?php echo esc_attr(TL_PREVIEW_OPTION); ?>" value="1" <?php checked(get_option(TL_PREVIEW_OPTION)); ?> />
+                    Serve the new site at <code><?php echo esc_html(home_url('/')); ?></code>
+                </label>
+            </p>
+            <p class="description">
+                The signed-off build (the one at <code>/rc/</code>) answers every page it has. WordPress still
+                answers wp-admin, logins, the REST API, form posts and any URL the new site does not have.
+                Untick to put the WordPress site back.
+            </p>
+            <?php submit_button(); ?>
+        </form>
+    </div>
+    <?php
+}
+
+// The host's page cache still holds the old pages - purge it whenever the switch changes.
+add_action('update_option_' . TL_PREVIEW_OPTION, 'tl_preview_purge');
+add_action('add_option_' . TL_PREVIEW_OPTION, 'tl_preview_purge');
+
+function tl_preview_purge() {
+    global $wpdb;
+    $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name LIKE '\\_transient\\_tl\\_preview\\_%' OR option_name LIKE '\\_transient\\_timeout\\_tl\\_preview\\_%'");
+    if (function_exists('sg_cachepress_purge_cache')) {
+        sg_cachepress_purge_cache(); // SiteGround Optimizer
+    }
 }

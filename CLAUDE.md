@@ -10,6 +10,7 @@ When asked for "the URL", always give **both** the local and the public URL:
 - **Public preview (`preview` branch, GitHub Pages):** https://michal-ciechan.github.io/torquay-leander/preview/
 - **Public stable (`master` branch, GitHub Pages):** https://michal-ciechan.github.io/torquay-leander/
 - **On the club domain (WP proxy plugin, `wp-preview-plugin/`):** https://torquayleander.co.uk/preview/ (preview branch) and https://torquayleander.co.uk/rc/ (master) — needs plugin v1.1.0+ installed
+- **Live site (plugin v1.2.0, "Serve the new site" switch in WP Settings > TL Preview, on since 23 Oct 2026):** https://torquayleander.co.uk/ serves the master build. WordPress still answers wp-admin, wp-login, wp-json, `?p=`-style URLs, non-GET requests and anything GitHub 404s. Untick the switch to roll back; it purges the SiteGround cache.
 
 ## Branches
 
