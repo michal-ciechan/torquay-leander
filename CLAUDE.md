@@ -12,6 +12,12 @@ When asked for "the URL", always give **both** the local and the public URL:
 - **On the club domain (WP proxy plugin, `wp-preview-plugin/`):** https://torquayleander.co.uk/preview/ (preview branch) and https://torquayleander.co.uk/rc/ (master) — needs plugin v1.1.0+ installed
 - **Live site (plugin v1.2.0, "Serve the new site" switch in WP Settings > TL Preview, on since 23 Oct 2026):** https://torquayleander.co.uk/ serves the master build. WordPress still answers wp-admin, wp-login, wp-json, `?p=`-style URLs, non-GET requests and anything GitHub 404s. Untick the switch to roll back; it purges the SiteGround cache.
 
+## Enquiry forms
+
+- Every `form[data-enquiry="membership|general"]` is posted by the handler in `BaseLayout.astro` to `https://torquayleander.co.uk/wp-json/tl/v1/enquiry` (`wp-preview-plugin/tl-preview/enquiries.php`). The plugin emails it and keeps a private copy under WP admin > Enquiries.
+- Recipients are set in WP Settings > TL Preview, not in code: live forms go to `enquiries.torquayleander@gmail.com`; `/preview/` and local dev send `channel=preview` to the separate preview address, with "[Preview]" in the subject.
+- Hotmail silently drops mail sent straight from SiteGround, so live enquiries go to that Gmail first. An Apps Script there ("Website enquiry forwarder", 5-minute trigger) re-sends each one to the club Hotmail with Reply-To set to the sender. Gmail forwarding itself wasn't available on the new account. Credentials: Bitwarden item "Torquay Leander Enquiries Gmail".
+
 ## Branches
 
 - **Work on `preview`.** Every push to `preview` deploys to https://michal-ciechan.github.io/torquay-leander/preview/.
