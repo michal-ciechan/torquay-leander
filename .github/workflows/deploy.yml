@@ -9,6 +9,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master, preview]
+  # Weekly rebuild so the Merchandise page picks up Wyvern's latest kit and
+  # prices (src/data/wyvern-shop.mjs fetches them at build time).
+  schedule:
+    - cron: '0 5 * * 1'
   workflow_dispatch:
 
 permissions:
