@@ -34,12 +34,31 @@ export function normalise(products) {
   });
 }
 
+// Shopify Markets prices by the visitor's location, and GitHub's runners are in the US:
+// without these the feed comes back in dollars (a £23.95 shirt read as 33.00). Pin GB
+// both ways - query string and the localization cookie Shopify sets for a chosen country.
+const GB = 'country=GB&currency=GBP';
+const getJson = async (url) => {
+  const res = await fetch(url, { headers: { cookie: 'localization=GB' }, signal: AbortSignal.timeout(10000) });
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  return res.json();
+};
+
 async function fetchProducts() {
   try {
-    const res = await fetch(`${SHOP_URL}/products.json?limit=250`, { signal: AbortSignal.timeout(10000) });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const items = normalise((await res.json()).products);
+    // The feed carries no currency, so ask the cart which one these requests are priced in.
+    const { currency } = await getJson(`${STORE}/cart.js?${GB}`);
+    if (currency !== 'GBP') throw new Error(`store priced the build in ${currency}, not GBP`);
+    const products = (await getJson(`${SHOP_URL}/products.json?limit=250&${GB}`)).products;
+    const items = normalise(products);
     if (!items.length) throw new Error('empty collection');
+    // Cross-check every price against the product's own endpoint (pence, lowest variant).
+    await Promise.all(products.map(async (p, i) => {
+      const { price_min } = await getJson(`${STORE}/products/${p.handle}.js?${GB}`);
+      if (Math.round(items[i].price * 100) !== price_min) {
+        throw new Error(`${p.handle}: feed says £${items[i].price}, product page says £${(price_min / 100).toFixed(2)}`);
+      }
+    }));
     return items;
   } catch (err) {
     console.warn(`[wyvern-shop] using fallback snapshot: ${err.message}`);
