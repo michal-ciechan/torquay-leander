@@ -34,6 +34,12 @@ nav {
 .nav-sponsor-item:hover { color: #fff; }
 .nav-sponsor-logo { display: block; height: 36px; width: auto; object-fit: contain; opacity: 0.9; filter: grayscale(1); transition: opacity 0.2s, filter 0.2s; position: relative; z-index: 1; }
 .nav-sponsor-item:hover .nav-sponsor-logo { opacity: 1; filter: grayscale(0); }
+/* Full-colour sponsor logos flip the usual treatment: colour at rest, grey on hover */
+.nav-sponsor-logo.is-colour { opacity: 1; filter: none; }
+.nav-sponsor-item:hover .nav-sponsor-logo.is-colour { filter: grayscale(1); }
+.nav-sponsor-logo.sw-mark { border-radius: 4px; }
+/* The Sparkworld wordmark tile is wide (~5:1), so it runs shorter to sit level with Safeheat */
+.nav-sponsors .nav-sponsor-logo.is-colour { height: 30px; }
 .nav-sponsors-divider { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
 .nav-sponsors-mob { display: none; flex-direction: column; align-items: center; gap: 2px; }
 .nav-sponsors-mob-logos { display: flex; align-items: center; gap: 4px; }
