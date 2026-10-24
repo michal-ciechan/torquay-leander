@@ -8,6 +8,7 @@
     "start": "astro dev --port 12700",
     "build": "astro build",
     "preview": "astro preview --port 12700",
+    "sync:shop": "node scripts/sync-wyvern-shop.mjs",
     "astro": "astro"
   },
   "repository": {

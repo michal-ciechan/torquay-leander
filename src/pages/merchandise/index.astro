@@ -33,7 +33,7 @@ const gbp = (n: number) => `£${n.toFixed(2)}`;
               <div class="shop-img">{p.image && <img src={p.image} alt={`Torquay Leander ${p.title}`} loading="lazy" />}</div>
               <div class="shop-body">
                 <h3>{p.title}</h3>
-                <p class="shop-price">from {gbp(p.price)}</p>
+                <p class="shop-price">{p.priceMax > p.price ? `from ${gbp(p.price)}` : gbp(p.price)}</p>
                 <span class="shop-buy">Buy on Wyvern →</span>
               </div>
             </a>

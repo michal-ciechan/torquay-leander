@@ -32,6 +32,7 @@ When asked for "the URL", always give **both** the local and the public URL:
 - `npm run build` — static build to `dist/`.
 - `npm run preview` — serve `dist/` locally on port 12700.
 - `node contrast-check.mjs` — WCAG audit of the site's colour pairs.
+- `npm run sync:shop` — refresh and verify the Merchandise page's Wyvern items and GBP prices (skill: `sync-shop`).
 
 ## Project shape
 
