@@ -2,32 +2,41 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-// 2026 programme (002-mail-changes §7), timeline layout. Heat sheet links
+// 2026 programme (club poster, Nov 2026), timeline layout. Heat sheet links
 // removed for now — they come back nearer the time once the sheets exist.
 const days = [
   {
-    date: 'Thursday 5th Nov', num: 5,
-    sessions: [{ events: ['400m Freestyle'] }],
+    date: 'Thursday 5th Nov', num: 5, time: '7–9pm',
+    sessions: [{ events: ['400m Freestyle (10 & over)'] }],
   },
   {
-    date: 'Monday 9th Nov', num: 9,
+    date: 'Monday 9th Nov', num: 9, time: '6–10pm',
+    note: 'We hope to finish earlier — younger swimmers will race first.',
     sessions: [{ events: ['100m Individual Medley', '25m Backstroke (7 & under)', '200m Breaststroke', '50m Backstroke', '100m Freestyle'] }],
   },
   {
-    date: 'Sunday 15th Nov', num: 15,
+    date: 'Sunday 15th Nov', num: 15, time: '2–7pm',
+    note: 'An extended gala, booked to reduce disruption to training.',
     sessions: [
       { label: 'Session 1', events: ['25m Butterfly (7 & under)', '50m Butterfly', '100m Backstroke', '200m Freestyle'] },
-      { label: 'Session 2', events: ['25m Breaststroke (7 & under)', '50m Freestyle', '100m Breaststroke'] },
+      { label: 'Session 2', events: ['25m Breaststroke (7 & under)', '50m Freestyle', '200m Breaststroke'] },
     ],
   },
   {
-    date: 'Thursday 19th Nov', num: 19,
+    date: 'Thursday 19th Nov', num: 19, time: '6–9pm',
     sessions: [{ events: ['200m Individual Medley', '25m Freestyle (7 & under)', '50m Breaststroke', '200m Backstroke', '100m Butterfly'] }],
   },
 ];
 
+// Unlicensed (longer-distance) events — times aren't recorded on Swim England.
+const unlicensed = [
+  { date: 'W/C 5th Oct', event: '400m Individual Medley', detail: 'Coach-selected swimmers only', time: 'During training' },
+  { date: 'Mon 12th Oct', event: '800m Freestyle (12 & over)', detail: 'See entry conditions below', time: '7:30–9pm' },
+  { date: 'Thu 22nd Oct', event: '1500m Freestyle (12 & over)', detail: 'See entry conditions below', time: '7:30–9pm' },
+  { date: 'W/C 23rd Nov', event: '200m Butterfly', detail: 'Coach-selected swimmers only', time: 'During training' },
+];
+
 const ageGroups = ['7 years &amp; under', '8–9 years', '10–11 years', '12–13 years', '14–15 years', '16 years &amp; over'];
-const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freestyle', '200m Butterfly'];
 ---
 <BaseLayout title="Club Championships — Torquay Leander">
 
@@ -70,9 +79,9 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
       </div>
       <div class="format-card">
         <h3>Longer-distance races</h3>
-        <p class="fc-sub">Held as unlicensed events at separate times for swimmers aged 10 &amp; over.</p>
+        <p class="fc-sub">Held as unlicensed events at separate times — dates are in the programme below.</p>
         <ul class="ld-list">
-          {longDistance.map((e) => <li>{e}</li>)}
+          {unlicensed.map((u) => <li>{u.event}</li>)}
         </ul>
       </div>
     </div>
@@ -83,8 +92,10 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
   <div class="inner">
     <p class="label">Programme</p>
     <h2>2026 Club Championships</h2>
-    <p class="prog-text">This year's championships run across the sessions below. Heat sheets will be published here nearer the time — keep an eye on our Facebook page for announcements.</p>
+    <p class="prog-text">Most championship events take place during normal training times, so the usual swim sessions will not run while a Club Championship event is taking place. Sunday 15th November has been booked as an extended 2pm–7pm gala to reduce disruption. Heat sheets will be published here nearer the time — keep an eye on our Facebook page for announcements.</p>
+    <p class="prog-text entry-note"><strong>All members of Torquay Leander can enter.</strong> Please speak to a coach if you're unsure what races to enter your swimmer in. Entries are made via the club organiser.</p>
 
+    <h3 class="prog-sub">Licensed events <span class="prog-sub-note">Times are recorded on Swim England</span></h3>
     <div class="timeline">
       {days.map((d) => (
         <div class="tl-item">
@@ -98,16 +109,30 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
                 <div class="tl-head">
                   <strong>{d.date}</strong>
                   {sess.label && <span class="prog-session">{sess.label}</span>}
+                  {sess === d.sessions[0] && <span class="prog-time">{d.time}</span>}
                 </div>
                 <div class="prog-events">
                   {sess.events.map((e) => <span class="event-tag">{e}</span>)}
                 </div>
               </div>
             ))}
+            {d.note && <p class="tl-note">{d.note}</p>}
           </div>
         </div>
       ))}
     </div>
+
+    <h3 class="prog-sub unl">Unlicensed events <span class="prog-sub-note">Longer-distance races</span></h3>
+    <div class="unl-grid">
+      {unlicensed.map((u) => (
+        <div class="tl-card">
+          <div class="tl-head"><strong>{u.date}</strong><span class="prog-time">{u.time}</span></div>
+          <div class="prog-events"><span class="event-tag">{u.event}</span></div>
+          <p class="unl-detail">{u.detail}</p>
+        </div>
+      ))}
+    </div>
+    <p class="prog-text entry-note"><strong>800m &amp; 1500m entry conditions:</strong> entries to the 800m and 1500m Freestyle are limited, and may be made at the coaches' discretion.</p>
   </div>
 </section>
 
@@ -151,8 +176,8 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
     </div>
     <div class="extra-card highlight">
       <span class="extra-emoji">🏆</span>
-      <h3>Awards Night</h3>
-      <p>Each January we hold our annual awards night — great fun with food and a disco, and a chance to celebrate all of our fantastic young swimmers. Trophies and medals won at the club championships are awarded on the evening.</p>
+      <h3>Celebration evening</h3>
+      <p><strong>Friday 15th January at Arena Torquay — all members welcome!</strong> Our annual awards night is great fun with food and a disco, and a chance to celebrate all of our fantastic young swimmers. Trophies and medals won at the club championships are awarded on the evening.</p>
     </div>
   </div>
 </section>
@@ -221,6 +246,14 @@ const longDistance = ['400m Individual Medley', '800m Freestyle', '1500m Freesty
   .tl-head strong { font-size: 0.98rem; font-weight: 800; color: var(--text); }
   .prog-session { background: var(--red-light); color: var(--red-dark); border-radius: 999px; padding: 5px 13px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
   .prog-events { display: flex; flex-wrap: wrap; gap: 8px; }
+  .prog-sub { font-size: 1.1rem; font-weight: 800; margin: 8px 0 18px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .prog-sub.unl { margin-top: 44px; }
+  .prog-sub-note { font-size: 0.78rem; font-weight: 600; color: var(--muted); }
+  .entry-note { margin-top: 28px; margin-bottom: 8px; }
+  .prog-time { background: #f1f5f9; border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; font-size: 0.78rem; font-weight: 700; color: var(--text); }
+  .tl-note { color: var(--muted); font-size: 0.85rem; margin: 0; }
+  .unl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  .unl-detail { color: var(--muted); font-size: 0.82rem; margin: 10px 0 0; }
   .event-tag { background: #f1f5f9; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; color: var(--text); }
 
   .faq { background: #f8fafc; padding: 64px 5vw; }
