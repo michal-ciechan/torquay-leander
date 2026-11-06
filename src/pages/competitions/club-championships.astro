@@ -12,7 +12,8 @@ const days = [
   {
     date: 'Monday 9th Nov', num: 9, time: '6–10pm',
     note: 'We hope to finish earlier — younger swimmers will race first.',
-    cove: true,
+    // Add `live` to any day once there's a watch-live option; href is the section to jump to.
+    live: { label: 'Watch live', href: '#the-cove' },
     sessions: [{ events: ['100m Individual Medley', '25m Backstroke (7 & under)', '200m Breaststroke', '50m Backstroke', '100m Freestyle'] }],
   },
   {
@@ -111,6 +112,7 @@ const ageGroups = ['7 years &amp; under', '8–9 years', '10–11 years', '12–
                   <strong>{d.date}</strong>
                   {sess.label && <span class="prog-session">{sess.label}</span>}
                   {sess === d.sessions[0] && <span class="prog-time">{d.time}</span>}
+                  {sess === d.sessions[0] && d.live && <a class="live-badge" href={d.live.href}><span class="live-dot"></span>{d.live.label}</a>}
                 </div>
                 <div class="prog-events">
                   {sess.events.map((e) => <span class="event-tag">{e}</span>)}
@@ -118,20 +120,19 @@ const ageGroups = ['7 years &amp; under', '8–9 years', '10–11 years', '12–
               </div>
             ))}
             {d.note && <p class="tl-note">{d.note}</p>}
-            {d.cove && (
-              <div class="cove">
-                <strong>📺 Watch live in The Cove!</strong>
-                <p>Upstairs at Plainmoor Football Club — double doors immediately behind the pool. Bar snacks and pizza slices are available in The Cove during the evening.</p>
-                <ul>
-                  <li>Visit the pool for your swimmer's heat.</li>
-                  <li>Use the marked floor area to watch your swimmer.</li>
-                  <li>After their heat, head back to The Cove so the next family can cheer!</li>
-                </ul>
-              </div>
-            )}
           </div>
         </div>
       ))}
+    </div>
+
+    <div class="cove" id="the-cove">
+      <strong>📺 Monday 9th Nov — watch live in The Cove!</strong>
+      <p>Upstairs at Plainmoor Football Club — double doors immediately behind the pool. Bar snacks and pizza slices are available in The Cove during the evening.</p>
+      <ul>
+        <li>Visit the pool for your swimmer's heat.</li>
+        <li>Use the marked floor area to watch your swimmer.</li>
+        <li>After their heat, head back to The Cove so the next family can cheer!</li>
+      </ul>
     </div>
 
     <h3 class="prog-sub unl">Unlicensed events <span class="prog-sub-note">Longer-distance races</span></h3>
@@ -264,10 +265,15 @@ const ageGroups = ['7 years &amp; under', '8–9 years', '10–11 years', '12–
   .entry-note { margin-top: 28px; margin-bottom: 8px; }
   .prog-time { background: #f1f5f9; border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; font-size: 0.78rem; font-weight: 700; color: var(--text); }
   .tl-note { color: var(--muted); font-size: 0.85rem; margin: 0; }
-  .cove { background: var(--red-light); border: 1.5px solid var(--red); border-radius: 14px; padding: 18px 22px; }
+  .live-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--red); color: #fff; border-radius: 999px; padding: 4px 12px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; text-decoration: none; }
+  .live-badge:hover { background: var(--red-dark); }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: live-pulse 1.6s ease-in-out infinite; }
+  @keyframes live-pulse { 50% { opacity: 0.3; } }
+  @media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
+  .cove { margin-top: 32px; scroll-margin-top: 90px; background: var(--red-light); border: 1.5px solid var(--red); border-radius: 14px; padding: 18px 22px; }
   .cove strong { color: var(--red-dark); font-size: 1rem; font-weight: 800; }
   .cove p { color: var(--text); font-size: 0.9rem; line-height: 1.6; margin: 6px 0 10px; }
-  .cove ul { margin: 0; padding-left: 20px; color: var(--text); font-size: 0.88rem; line-height: 1.7; }
+  .cove ul { list-style: disc; margin: 0; padding-left: 20px; color: var(--text); font-size: 0.88rem; line-height: 1.7; }
   .unl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
   .unl-detail { color: var(--muted); font-size: 0.82rem; margin: 10px 0 0; }
   .event-tag { background: #f1f5f9; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; color: var(--text); }
