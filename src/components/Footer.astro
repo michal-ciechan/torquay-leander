@@ -133,16 +133,19 @@ const logo = `${base}/logo.png`;
     color: rgba(255,255,255,0.45); font-size: 0.7rem; font-weight: 700;
     text-transform: uppercase; letter-spacing: 2px;
   }
-  .footer-sponsors-logos { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
-  .footer-sponsors-logos a { display: block; }
-  .footer-sponsors-logos img {
-    height: 34px; width: auto; object-fit: contain; display: block;
-    opacity: 0.75; filter: grayscale(1); transition: opacity 0.2s, filter 0.2s;
+  .footer-sponsors-logos { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .footer-sponsors-logos a {
+    height: 62px; min-width: 132px; padding: 0 20px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.2s, background 0.2s;
   }
+  .footer-sponsors-logos a:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+  .footer-sponsors-logos img { height: 34px; width: auto; object-fit: contain; display: block; }
   /* A plain wordmark reads heavier than the pictorial logos at the same height. */
   .footer-sponsors-logos img.is-wordmark { height: 24px; }
-  .footer-sponsors-logos a:hover img { opacity: 1; filter: grayscale(0); }
   @media (max-width: 600px) {
-    .footer-sponsors-logos { display: grid; grid-template-columns: repeat(2, auto); gap: 28px 44px; justify-items: center; }
+    .footer-sponsors-logos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; width: 100%; }
+    .footer-sponsors-logos a { min-width: 0; }
   }
 </style>
