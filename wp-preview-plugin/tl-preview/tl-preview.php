@@ -2,7 +2,7 @@
 /**
  * Plugin Name: TL Preview
  * Description: Serves the new Torquay Leander site (built on GitHub Pages) on this domain: /preview/ is the work-in-progress build, /rc/ the signed-off release candidate, and with "Serve the new site" on (Settings > TL Preview) the release candidate also answers at the root. WordPress keeps wp-admin, logins, the REST API and any URL the new site does not have. Also receives the enquiry forms and emails them to the club. Deactivate to remove.
- * Version: 1.3.0
+ * Version: 1.4.1
  * Author: Mike Ciechan
  * Requires PHP: 7.4
  */
@@ -40,6 +40,63 @@ add_action('plugins_loaded', 'tl_preview_maybe_serve', 0);
 add_filter('wp_sitemaps_enabled', function ($enabled) {
     return get_option(TL_PREVIEW_OPTION) ? false : $enabled;
 });
+
+// Live, visitors never see an old WordPress page: whatever WordPress would
+// render on the front end (an old page, ?p= / ?page_id= links, search,
+// archives, its own 404) goes to the new site instead. Old pages redirect to
+// their pretty URL, which the new site redirects on to its replacement; the
+// rest get the new site's 404 page. Logged-in editors still see WordPress.
+// Priority 20 lets redirect_canonical (10) fix ?p= links to pages first.
+add_action('template_redirect', 'tl_preview_retire_wp_front_end', 20);
+
+function tl_preview_retire_wp_front_end() {
+    if (!get_option(TL_PREVIEW_OPTION) || is_feed() || is_preview() || is_robots() || current_user_can('edit_pages')) {
+        return;
+    }
+    $uri  = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '/';
+    $path = (string) parse_url($uri, PHP_URL_PATH);
+
+    if (is_search()) {
+        wp_safe_redirect(home_url('/'), 302);
+        exit;
+    }
+    if (is_front_page() || is_home() || is_singular()) {
+        $target = (string) parse_url(is_singular() ? get_permalink() : home_url('/'), PHP_URL_PATH);
+        $wpQuery = false;
+        foreach (TL_PREVIEW_WP_QUERY as $q) {
+            $wpQuery = $wpQuery || isset($_GET[$q]);
+        }
+        // Same path and no ?p=-style query means the new site already lacks this
+        // URL (that's how WordPress got it) - redirecting would loop, so 404.
+        if ($target !== '' && ($target !== $path || $wpQuery)) {
+            wp_safe_redirect(home_url($target), 301);
+            exit;
+        }
+    }
+    tl_preview_not_found();
+}
+
+// The new site's own 404 page, fetched like any other page and cached.
+function tl_preview_not_found() {
+    $key  = 'tl_preview_404';
+    $body = get_transient($key);
+    if ($body === false) {
+        $res = wp_remote_get(TL_PREVIEW_ORIGIN . TL_PREVIEW_ROOT_BASE . '/404.html', array('timeout' => 15));
+        $body = '';
+        if (!is_wp_error($res) && (int) wp_remote_retrieve_response_code($res) === 200) {
+            $body = tl_preview_rebase((string) wp_remote_retrieve_body($res));
+            set_transient($key, $body, TL_PREVIEW_TTL);
+        }
+    }
+    if ($body === '') {
+        return; // GitHub unreachable - let WordPress answer rather than show nothing
+    }
+    status_header(404);
+    nocache_headers();
+    header('Content-Type: text/html; charset=utf-8');
+    echo $body;
+    exit;
+}
 
 function tl_preview_maybe_serve() {
     $uri  = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';
