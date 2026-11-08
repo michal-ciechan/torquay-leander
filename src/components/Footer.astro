@@ -81,6 +81,12 @@ const logo = `${base}/logo.png`;
         <a href="https://www.safeheat.co.uk" target="_blank" rel="noopener">
           <img src={`${base}/sponsors/safeheat-nav.svg`} alt="Safeheat" />
         </a>
+        <a href="https://knitt.co.uk/" target="_blank" rel="noopener">
+          <img src={`${base}/sponsors/knitt.png`} alt="KNiTT" class="is-wordmark" />
+        </a>
+        <a href="https://sigmaremovals.co.uk/" target="_blank" rel="noopener">
+          <img src={`${base}/sponsors/sigma-removals-dark.png`} alt="Sigma Removals & Storage" />
+        </a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -133,5 +139,10 @@ const logo = `${base}/logo.png`;
     height: 34px; width: auto; object-fit: contain; display: block;
     opacity: 0.75; filter: grayscale(1); transition: opacity 0.2s, filter 0.2s;
   }
+  /* A plain wordmark reads heavier than the pictorial logos at the same height. */
+  .footer-sponsors-logos img.is-wordmark { height: 24px; }
   .footer-sponsors-logos a:hover img { opacity: 1; filter: grayscale(0); }
+  @media (max-width: 600px) {
+    .footer-sponsors-logos { display: grid; grid-template-columns: repeat(2, auto); gap: 28px 44px; justify-items: center; }
+  }
 </style>
