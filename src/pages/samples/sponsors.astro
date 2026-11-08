@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// `dark` is the version drawn for the black footer; `light` is the brand's own colours, for white tiles.
+const sponsors = [
+  { name: 'Sparkworld', href: 'https://www.sparkworld.co.uk', dark: 'sparkworld-nav.svg', light: 'sparkworld.svg' },
+  { name: 'Safeheat', href: 'https://www.safeheat.co.uk', dark: 'safeheat-nav.svg', light: 'safeheat.svg' },
+  { name: 'KNiTT', href: 'https://knitt.co.uk/', dark: 'knitt.png', light: 'knitt.png', wordmark: true },
+  { name: 'Sigma Removals & Storage', href: 'https://sigmaremovals.co.uk/', dark: 'sigma-removals-dark.png', light: 'sigma-removals.png' },
+];
+
+const variants = [
+  { id: 'current', title: 'A · Current (on preview)', note: 'Grey at rest, brand colour on hover. Logos sit straight on the black footer.', tile: false, grey: true },
+  { id: 'white', title: 'B · White tiles, always colour', note: 'Each logo in its own colours on a rounded white tile. Closest to the logo files as supplied.', tile: 'white', grey: false },
+  { id: 'white-hover', title: 'C · White tiles, colour on hover', note: 'Same tiles, but grey and dimmed at rest so the footer stays calm.', tile: 'white', grey: true },
+  { id: 'soft', title: 'D · Soft dark tiles, always colour', note: 'Rounded tiles a shade lighter than the footer, logos in colour.', tile: 'soft', grey: false },
+];
+---
+<BaseLayout title="Sponsor Samples — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/samples/`}>Samples</a>
+      <span>›</span>
+      <span>Sponsors</span>
+    </div>
+    <h1>Footer Sponsors — Design Options</h1>
+    <p>The four sponsor logos in the footer, shown four ways. Hover a logo to see its hover state.</p>
+  </div>
+</section>
+
+<section class="variants">
+  <div class="inner">
+    {variants.map((v) => (
+      <div class="variant">
+        <h2>{v.title}</h2>
+        <p>{v.note}</p>
+        <div class="footer-demo">
+          <span class="demo-label">Our Sponsors</span>
+          <div class:list={['demo-logos', v.tile && `tile-${v.tile}`, v.grey && 'is-grey']}>
+            {sponsors.map((s) => (
+              <a href={s.href} target="_blank" rel="noopener">
+                <img src={`${base}/sponsors/${v.tile === 'white' ? s.light : s.dark}`} alt={s.name} class:list={[s.wordmark && 'is-wordmark']} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--black); padding: 64px 5vw 56px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 600px; line-height: 1.7; }
+
+  .variants { background: #fff; padding: 64px 5vw 90px; }
+  .inner { max-width: 1200px; margin: 0 auto; display: grid; gap: 48px; }
+  .variant h2 { font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+  .variant > p { font-size: 0.9rem; color: var(--muted); margin-bottom: 14px; }
+
+  /* Mirrors .footer-sponsors in Footer.astro */
+  .footer-demo {
+    background: var(--black); border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap;
+    padding: 32px 5vw;
+  }
+  .demo-label {
+    color: rgba(255,255,255,0.45); font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
+  }
+  .demo-logos { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
+  .demo-logos a { display: block; }
+  .demo-logos img {
+    height: 34px; width: auto; object-fit: contain; display: block;
+    transition: opacity 0.2s, filter 0.2s;
+  }
+  .demo-logos img.is-wordmark { height: 24px; }
+  .demo-logos.is-grey img { opacity: 0.75; filter: grayscale(1); }
+  .demo-logos.is-grey a:hover img { opacity: 1; filter: grayscale(0); }
+
+  .demo-logos[class*='tile-'] { gap: 16px; }
+  .demo-logos[class*='tile-'] a {
+    height: 62px; min-width: 132px; padding: 0 20px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .demo-logos[class*='tile-'] a:hover { transform: translateY(-2px); }
+  .tile-white a { background: #fff; }
+  .tile-soft a { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); }
+  .tile-soft a:hover { background: rgba(255,255,255,0.12); }
+
+  @media (max-width: 600px) {
+    .demo-logos { display: grid; grid-template-columns: repeat(2, auto); gap: 28px 44px; justify-items: center; }
+    .demo-logos[class*='tile-'] { grid-template-columns: repeat(2, 1fr); gap: 12px; justify-items: stretch; width: 100%; }
+    .demo-logos[class*='tile-'] a { min-width: 0; }
+  }
+</style>
