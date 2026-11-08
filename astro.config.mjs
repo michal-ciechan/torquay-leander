@@ -11,8 +11,38 @@ const base = (process.env.ASTRO_BASE || '/torquay-leander').replace(/\/$/, '');
 // plugin (wp-preview-plugin/). The sitemap and canonical links point here.
 const liveSite = 'https://torquayleander.co.uk';
 
+// Old URLs kept working via meta-refresh pages. Destinations must carry the
+// base themselves — Astro emits them verbatim.
+const redirects = {
+  // The /galas/ section was renamed to /competitions/ (002-mail-changes).
+  '/galas/': `${base}/competitions/`,
+  '/galas/club-championships/': `${base}/competitions/club-championships/`,
+  '/galas/ribbon-gala/': `${base}/competitions/ribbon-gala/`,
+  '/galas/competition-guide/': `${base}/competitions/competition-guide/`,
+  // Old WordPress page slugs (Google, Facebook posts, bookmarks). Without these
+  // the live proxy falls through to the old WP page and its old footer.
+  '/home/': `${base}/`,
+  '/codes-of-conduct/': `${base}/about/codes-of-conduct/`,
+  '/policies-and-procedures/': `${base}/about/codes-of-conduct/`,
+  '/882-2/': `${base}/safeguarding/`,
+  '/club-championships/': `${base}/competitions/club-championships/`,
+  '/competition-guide/': `${base}/competitions/competition-guide/`,
+  '/our-meets/': `${base}/competitions/`,
+  '/calendar/': `${base}/competitions/`,
+  '/125-celebration/': `${base}/about/`,
+  '/latest-news/': `${base}/`,
+  '/sign-up/': `${base}/about/join/`,
+  '/how-to-join/': `${base}/about/join/`,
+  '/our-facilities/': `${base}/about/facilities/`,
+  '/learn-to-swim/': `${base}/training/learn-to-swim/`,
+  '/our-coaches/': `${base}/training/#coaches`,
+  '/training-sessions/': `${base}/training/#timetable`,
+  '/training-kit/': `${base}/training/equipment/`,
+};
+
 // Tooling, auth and redirect stubs that should not be in the sitemap.
-const sitemapExclude = /^(dev|samples|login|galas)(\/|$)/;
+const redirectPaths = new Set(Object.keys(redirects).map((p) => p.replace(/^\//, '')));
+const sitemapExclude = /^(dev|samples|login|404)(\/|$)/;
 
 export default defineConfig({
   site: 'https://michal-ciechan.github.io',
@@ -21,15 +51,7 @@ export default defineConfig({
   build: {
     format: 'directory',
   },
-  // The /galas/ section was renamed to /competitions/ (002-mail-changes).
-  // These keep old bookmarks and shared links working via meta-refresh pages.
-  // Destinations must carry the base themselves — Astro emits them verbatim.
-  redirects: {
-    '/galas/': `${base}/competitions/`,
-    '/galas/club-championships/': `${base}/competitions/club-championships/`,
-    '/galas/ribbon-gala/': `${base}/competitions/ribbon-gala/`,
-    '/galas/competition-guide/': `${base}/competitions/competition-guide/`,
-  },
+  redirects,
   // Dev-only: adds a "Dev Pages" app to the Astro dev toolbar (the bar at the
   // bottom during `astro dev`) linking to the /dev/ hub + tooling pages. The
   // toolbar never ships to `astro build`, and the `command === 'dev'` guard keeps
@@ -43,7 +65,7 @@ export default defineConfig({
         'astro:build:done': async ({ dir, pages }) => {
           const urls = pages
             .map((p) => p.pathname.replace(/^\//, ''))
-            .filter((p) => !sitemapExclude.test(p))
+            .filter((p) => !sitemapExclude.test(p) && !redirectPaths.has(p))
             .sort()
             .map((p) => `  <url><loc>${liveSite}/${p}</loc></url>`);
           const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const links = [
+  { href: `${base}/about/join/`, label: 'Join the club' },
+  { href: `${base}/training/#timetable`, label: 'Training timetable' },
+  { href: `${base}/competitions/`, label: 'Competitions' },
+  { href: `${base}/membership/`, label: 'Membership' },
+  { href: `${base}/about/`, label: 'About us' },
+  { href: `${base}/contact/`, label: 'Contact us' },
+];
+---
+<BaseLayout title="Page not found — Torquay Leander">
+
+<section class="nf-hero">
+  <div class="nf-inner">
+    <p class="nf-code">404</p>
+    <h1>We can't find that page</h1>
+    <p>The club has a new website, so an old link or bookmark may point somewhere that's moved. Try one of these instead:</p>
+    <div class="nf-links">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </div>
+    <div class="hero-btns">
+      <a class="btn-primary" href={`${base}/`}>Go to the home page</a>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .nf-hero { background: var(--black); padding: 96px 5vw 110px; }
+  .nf-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+  .nf-hero .nf-code { color: var(--red); font-size: clamp(4rem, 12vw, 7rem); font-weight: 900; letter-spacing: -4px; line-height: 1; margin-bottom: 8px; }
+  .nf-hero h1 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 14px; }
+  .nf-hero p { color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 28px; }
+  .nf-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 36px; }
+  .nf-links a {
+    color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+    padding: 9px 16px; border-radius: 999px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .nf-links a:hover { background: rgba(220,38,38,0.18); border-color: var(--red); }
+  .hero-btns { justify-content: center; }
+</style>
