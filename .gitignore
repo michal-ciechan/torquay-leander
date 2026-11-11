@@ -13,3 +13,12 @@ dist/
 
 .memsearch/
 scratch-*
+
+# Antiphon-generated board card files (may contain private contact details)
+docs/cards/
+
+# Email threads and mail notes (private contact details)
+docs/emails/
+
+# Built plugin zip (binary, build artefact)
+wp-preview-plugin/tl-preview.zip
