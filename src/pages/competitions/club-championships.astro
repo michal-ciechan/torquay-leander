@@ -38,7 +38,13 @@ const unlicensed = [
   { date: 'W/C 23rd Nov', event: '200m Butterfly', detail: 'Coach-selected swimmers only', time: 'During training' },
 ];
 
-const ageGroups = ['7 years &amp; under', '8–9 years', '10–11 years', '12–13 years', '14–15 years', '16 years &amp; over'];
+// Trophy sponsorship payment links (SumUp, from the club's Nov 2026 poster).
+const sponsorOptions = [
+  { name: 'Cup', price: 75, icon: '🏆', href: 'https://pay.sumup.com/b2c/QYRLOBRM', style: 'red' },
+  { name: 'Shield', price: 50, icon: '🛡️', href: 'https://pay.sumup.com/b2c/QANW2WIL', style: 'dark' },
+];
+
+const ageGroups =['7 years &amp; under', '8–9 years', '10–11 years', '12–13 years', '14–15 years', '16 years &amp; over'];
 ---
 <BaseLayout title="Club Championships — Torquay Leander">
 
@@ -191,6 +197,49 @@ const ageGroups = ['7 years &amp; under', '8–9 years', '10–11 years', '12–
       <span class="extra-emoji">🎉</span>
       <h3>Presentation night</h3>
       <p><strong>Friday 15th January 2027 at Arena Torquay — all welcome!</strong> Our annual awards night is great fun with food and a disco, and a chance to celebrate all of our fantastic young swimmers. Trophies and medals won at the club championships are awarded on the evening.</p>
+      <a class="extra-link on-red" href="#sponsor-a-trophy">Sponsor a trophy →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Trophy sponsorship (club poster, Nov 2026). Payment goes through the club's SumUp
+     links. The poster's "events needing trophies" spreadsheet is kept private; visitors
+     ask via an enquiry instead and the committee replies with the list. -->
+<section class="sponsor" id="sponsor-a-trophy">
+  <div class="inner">
+    <p class="label">Trophy Sponsorship</p>
+    <h2>Sponsor a trophy</h2>
+    <p class="sponsor-text">A number of our Club Championship events don't yet have trophies for the winners. Help us recognise and celebrate our swimmers' achievements by sponsoring one.</p>
+
+    <div class="sponsor-grid">
+      {sponsorOptions.map((o) => (
+        <div class="sponsor-card">
+          <span class="sponsor-icon">{o.icon}</span>
+          <h3>Sponsor a {o.name}</h3>
+          <p class="sponsor-price">£{o.price}</p>
+          <a class:list={['sponsor-btn', o.style]} href={o.href} target="_blank" rel="noopener">Sponsor a {o.name.toLowerCase()}</a>
+        </div>
+      ))}
+    </div>
+
+    <div class="sponsor-note">
+      <span aria-hidden="true">📝</span>
+      <p><strong>Please add the event you wish to sponsor in the note section when you pay</strong> — for example: <em>10–11 F, 200 Backstroke</em>.</p>
+    </div>
+
+    <div class="sponsor-ask">
+      <div>
+        <h3>Which events still need a trophy?</h3>
+        <p>Send us a quick message and a member of the committee will email you the list of events still looking for a sponsor.</p>
+      </div>
+      <form data-enquiry="general">
+        <input type="hidden" name="subject" value="Trophy sponsorship - events needing trophies" />
+        <input class="form-field" type="text" name="name" placeholder="Your name" aria-label="Your name" required />
+        <input class="form-field" type="email" name="email" placeholder="Email address" aria-label="Email address" required />
+        <textarea class="form-field" name="message" aria-label="Message" required>Please send me the list of Club Championship events that still need a trophy.</textarea>
+        <div class="form-trap" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off" /></div>
+        <button class="form-submit" type="submit">Send me the list</button>
+      </form>
     </div>
   </div>
 </section>
@@ -298,16 +347,54 @@ const ageGroups = ['7 years &amp; under', '8–9 years', '10–11 years', '12–
   .extra-card.highlight h3, .extra-card.highlight p { color: #fff; }
   .extra-card.highlight p { color: rgba(255,255,255,0.9); margin-bottom: 0; }
   .extra-emoji { font-size: 2rem; display: block; margin-bottom: 10px; }
+  .extra-link.on-red { color: #fff; margin-top: 16px; }
+
+  .sponsor { background: var(--black); padding: 72px 5vw 84px; scroll-margin-top: 70px; }
+  .sponsor h2 { color: #fff; font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 900; letter-spacing: -0.8px; margin-bottom: 12px; }
+  .sponsor-text { color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.75; max-width: 680px; margin-bottom: 32px; }
+  .sponsor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+  .sponsor-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px;
+    padding: 28px 26px; display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  .sponsor-icon { font-size: 2.6rem; line-height: 1; margin-bottom: 12px; }
+  .sponsor-card h3 { color: #fff; font-size: 1.05rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .sponsor-price { color: #fff; font-size: 2.6rem; font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 18px; }
+  .sponsor-btn {
+    display: inline-block; padding: 13px 26px; border-radius: 10px; font-weight: 800; font-size: 0.95rem;
+    text-decoration: none; color: #fff; transition: transform 0.15s, background 0.15s;
+  }
+  .sponsor-btn.red { background: var(--red); }
+  .sponsor-btn.red:hover { background: var(--red-dark); }
+  .sponsor-btn.dark { background: #fff; color: var(--black); }
+  .sponsor-btn.dark:hover { background: #e2e8f0; }
+  .sponsor-btn:hover { transform: translateY(-1px); }
+  .sponsor-note {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: rgba(220,38,38,0.14); border: 1px solid rgba(220,38,38,0.5); border-radius: 14px;
+    padding: 16px 20px; margin-bottom: 36px;
+  }
+  .sponsor-note span { font-size: 1.4rem; line-height: 1.3; }
+  .sponsor-note p { color: rgba(255,255,255,0.85); font-size: 0.92rem; line-height: 1.6; margin: 0; }
+  .sponsor-note strong { color: #fff; }
+  .sponsor-note em { color: #fff; font-style: normal; font-weight: 700; }
+  .sponsor-ask {
+    background: #fff; border-radius: 16px; padding: 28px 26px;
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; align-items: start;
+  }
+  .sponsor-ask h3 { font-size: 1.15rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .sponsor-ask p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; margin: 0; }
+  .sponsor-ask textarea.form-field { min-height: 90px; }
 
   @media (max-width: 900px) {
     .faq-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 700px) {
     .tl-cards.two { grid-template-columns: 1fr; }
-    .format-grid, .extras-grid { grid-template-columns: 1fr; }
-    .intro, .format, .programme, .faq, .extras { padding-left: 20px; padding-right: 20px; }
+    .format-grid, .extras-grid, .sponsor-ask { grid-template-columns: 1fr; }
+    .intro, .format, .programme, .faq, .extras, .sponsor { padding-left: 20px; padding-right: 20px; }
   }
   @media (max-width: 480px) {
-    .faq-grid { grid-template-columns: 1fr; }
+    .faq-grid, .sponsor-grid { grid-template-columns: 1fr; }
   }
 </style>
