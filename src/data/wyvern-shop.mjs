@@ -1,5 +1,5 @@
 // Club kit sold through Wyvern Swimwear, grouped for the Merchandise page. Fetched at
-// build time (wyvern-feed.mjs) - the weekly scheduled deploy keeps prices and new items
+// build time (wyvern-feed.mjs) - the daily scheduled deploy keeps prices and new items
 // current. If Wyvern can't be reached or a price fails its checks, the build uses the
 // snapshot in wyvern-shop-fallback.json, refreshed with `npm run sync:shop`.
 import fallback from './wyvern-shop-fallback.json';

@@ -33,6 +33,7 @@ When asked for "the URL", always give **both** the local and the public URL:
 - `npm run preview` — serve `dist/` locally on port 12700.
 - `node contrast-check.mjs` — WCAG audit of the site's colour pairs.
 - `npm run sync:shop` — refresh and verify the Merchandise page's Wyvern items and GBP prices (skill: `sync-shop`).
+- `npm run sync:trophies` — refresh `src/data/trophies-fallback.json` from the club's OneDrive "Missing Trophies" sheet. The Club Championships page reads the sheet live at build time (`src/data/trophies.mjs`, anonymous OneDrive share API, no sign-in); this snapshot is only the fallback. The daily scheduled deploy (05:00 UTC) keeps the list current.
 
 ## Project shape
 

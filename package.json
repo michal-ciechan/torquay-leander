@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview --port 12700",
     "sync:shop": "node scripts/sync-wyvern-shop.mjs",
-    "astro": "astro"
+    "astro": "astro",
+    "sync:trophies": "node scripts/sync-trophies.mjs"
   },
   "repository": {
     "type": "git",

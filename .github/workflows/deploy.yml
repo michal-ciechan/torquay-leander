@@ -9,10 +9,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master, preview]
-  # Weekly rebuild so the Merchandise page picks up Wyvern's latest kit and
-  # prices (src/data/wyvern-shop.mjs fetches them at build time).
+  # Daily rebuild so data fetched at build time stays current: the Merchandise
+  # page's Wyvern kit and prices (src/data/wyvern-shop.mjs) and the Club
+  # Championships "events still needing a trophy" list (src/data/trophies.mjs).
   schedule:
-    - cron: '0 5 * * 1'
+    - cron: '0 5 * * *'
   workflow_dispatch:
 
 permissions:
