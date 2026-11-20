@@ -40,8 +40,10 @@ const unlicensed = [
 
 // Trophy sponsorship payment links (SumUp, from the club's Nov 2026 poster).
 const sponsorOptions = [
-  { name: 'Cup', price: 75, icon: '🏆', href: 'https://pay.sumup.com/b2c/QYRLOBRM', style: 'red' },
-  { name: 'Shield', price: 50, icon: '🛡️', href: 'https://pay.sumup.com/b2c/QANW2WIL', style: 'dark' },
+  { name: 'Cup', price: 75, icon: '🏆', href: 'https://pay.sumup.com/b2c/QYRLOBRM', style: 'red',
+    detail: 'Presented year after year, and extra bases can be added to the cup over time.' },
+  { name: 'Shield', price: 50, icon: '🛡️', href: 'https://pay.sumup.com/b2c/QANW2WIL', style: 'dark',
+    detail: '18 winner plaques, so 18 years of use, and more can be added after that.' },
 ];
 
 const ageGroups =['7 years &amp; under', '8–9 years', '10–11 years', '12–13 years', '14–15 years', '16 years &amp; over'];
@@ -210,6 +212,7 @@ const ageGroups =['7 years &amp; under', '8–9 years', '10–11 years', '12–1
     <p class="label">Trophy Sponsorship</p>
     <h2>Sponsor a trophy</h2>
     <p class="sponsor-text">A number of our Club Championship events don't yet have trophies for the winners. Help us recognise and celebrate our swimmers' achievements by sponsoring one.</p>
+    <p class="sponsor-text">It's a <strong>one-off payment</strong> that buys a trophy for the club. Our cups and shields are <strong>perpetual awards</strong>, presented to the winner of that event year after year, and <strong>your family or business name is added to the trophy</strong> as its sponsor. 🏆</p>
 
     <div class="sponsor-grid">
       {sponsorOptions.map((o) => (
@@ -217,6 +220,7 @@ const ageGroups =['7 years &amp; under', '8–9 years', '10–11 years', '12–1
           <span class="sponsor-icon">{o.icon}</span>
           <h3>Sponsor a {o.name}</h3>
           <p class="sponsor-price">£{o.price}</p>
+          <p class="sponsor-detail">{o.detail}</p>
           <a class:list={['sponsor-btn', o.style]} href={o.href} target="_blank" rel="noopener">Sponsor a {o.name.toLowerCase()}</a>
         </div>
       ))}
@@ -359,7 +363,10 @@ const ageGroups =['7 years &amp; under', '8–9 years', '10–11 years', '12–1
   }
   .sponsor-icon { font-size: 2.6rem; line-height: 1; margin-bottom: 12px; }
   .sponsor-card h3 { color: #fff; font-size: 1.05rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-  .sponsor-price { color: #fff; font-size: 2.6rem; font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 18px; }
+  .sponsor-price { color: #fff; font-size: 2.6rem; font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 8px; }
+  .sponsor-detail { color: rgba(255,255,255,0.7); font-size: 0.88rem; line-height: 1.6; max-width: 320px; margin: 0 auto 18px; }
+  .sponsor-text strong { color: #fff; }
+  .sponsor-text + .sponsor-text { margin-top: -18px; }
   .sponsor-btn {
     display: inline-block; padding: 13px 26px; border-radius: 10px; font-weight: 800; font-size: 0.95rem;
     text-decoration: none; color: #fff; transition: transform 0.15s, background 0.15s;
