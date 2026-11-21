@@ -9,14 +9,23 @@ import { fetchTrophySheet } from './trophies-feed.mjs';
 const STROKES = { FREE: 'Freestyle', BACK: 'Backstroke', BREAST: 'Breaststroke', FLY: 'Butterfly', IM: 'Individual Medley' };
 const STROKE_SHORT = { FREE: 'Free', BACK: 'Back', BREAST: 'Breast', FLY: 'Fly', IM: 'IM' };
 
+// The sheet still uses the old age groups "8 & UNDER" (the 25m events) and
+// "9 & UNDER"; the championships run 7 & under and 8–9 (see the page's age groups),
+// so map them across. Harmless once the sheet itself is corrected.
+const OLD_AGE_GROUPS = { '8 & under': '7 & under', '9 & under': '8–9 years' };
+
 // "14 – 15 years" / "14 - 15 years" -> "14–15 years"; "9 & UNDER" -> "9 & under".
 function cleanAge(age) {
-  return age
+  const clean = age
     .replace(/\s*[-–—�]\s*/g, '–')
     .replace(/&\s*(UNDER|OVER)/i, (_, w) => `& ${w.toLowerCase()}`)
     .replace(/\s+/g, ' ')
     .trim();
+  return OLD_AGE_GROUPS[clean] ?? clean;
 }
+
+// Youngest first, by the group's first number; anything without one goes last.
+const ageOrder = (a) => parseInt(a, 10) || Infinity;
 
 async function loadRows() {
   try {
@@ -52,7 +61,7 @@ export async function loadTrophies() {
     total: rows.length,
     needed,
     sponsored,
-    ages: unique(needed.map((e) => e.age)),
+    ages: unique(needed.map((e) => e.age)).sort((a, b) => ageOrder(a) - ageOrder(b)),
     strokes: unique(['Free', 'Back', 'Breast', 'Fly', 'IM'].filter((s) => needed.some((e) => e.strokeKey === s))),
   };
 }
