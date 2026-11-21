@@ -61,7 +61,11 @@ export async function loadTrophies() {
     total: rows.length,
     needed,
     sponsored,
-    ages: unique(needed.map((e) => e.age)).sort((a, b) => ageOrder(a) - ageOrder(b)),
+    // Every age group on the sheet, even one with nothing left to sponsor, so the
+    // filter always shows the full set. Non-age rows ("Youngest") are left out.
+    ages: unique(rows.map((r) => cleanAge(r.age)))
+      .filter((a) => ageOrder(a) !== Infinity)
+      .sort((a, b) => ageOrder(a) - ageOrder(b)),
     strokes: unique(['Free', 'Back', 'Breast', 'Fly', 'IM'].filter((s) => needed.some((e) => e.strokeKey === s))),
   };
 }
