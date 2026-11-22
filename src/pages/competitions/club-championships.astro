@@ -17,7 +17,16 @@ const trophyState = `{
       && (this.stroke === 'All' || e.strokeKey === this.stroke);
   },
   get shown() { return this.items.filter((_, i) => this.visible(i)); },
-  get ageDone() { return this.age !== 'All' && !this.items.some((e) => e.age === this.age); },
+  // Every event on the sheet (sponsored too), to tell "already sponsored" from "no such event".
+  events: ${JSON.stringify(trophies.events.map(({ age, gender, strokeKey }) => ({ age, gender, strokeKey })))},
+  get exists() {
+    return this.events.some((e) => (this.age === 'All' || e.age === this.age)
+      && (this.gender === 'All' || e.gender === this.gender)
+      && (this.stroke === 'All' || e.strokeKey === this.stroke));
+  },
+  get label() {
+    return [this.age, this.gender, this.stroke].filter((x) => x !== 'All').join(' ');
+  },
   copy(i) {
     navigator.clipboard?.writeText(this.items[i].note);
     this.copied = i;
@@ -294,8 +303,8 @@ const ageGroups =['7 years &amp; under', '8–9 years', '10–11 years', '12–1
           </li>
         ))}
       </ul>
-      <p class="needs-empty" x-show="ageDone" x-cloak>🏆 No trophies left to sponsor for <span x-text="age"></span> — every event in this age group already has one. Thank you to our sponsors!</p>
-      <p class="needs-empty" x-show="shown.length === 0 && !ageDone" x-cloak>No events match those filters — try another age group or stroke.</p>
+      <p class="needs-empty" x-show="shown.length === 0 && exists" x-cloak>🏆 The <span x-text="label"></span> trophies are already sponsored — thank you to our sponsors! Try another age group or stroke to find one still needing a sponsor.</p>
+      <p class="needs-empty" x-show="shown.length === 0 && !exists" x-cloak>There's no <span x-text="label"></span> event at the championships — try another age group or stroke.</p>
       <p class="needs-foot">Found one? Use <strong>Copy note</strong> and paste it into the note when you pay with the Cup or Shield button above.</p>
       {trophies.sponsored.length > 0 && (
         <p class="needs-thanks">🏆 Thank you to our latest trophy sponsors: {trophies.sponsored.join(', ')}.</p>

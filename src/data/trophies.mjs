@@ -38,8 +38,7 @@ async function loadRows() {
 
 export async function loadTrophies() {
   const rows = await loadRows();
-  const needed = rows
-    .filter((r) => /^no trophy$/i.test(r.trophy))
+  const events = rows
     .map((r) => {
       const age = cleanAge(r.age);
       const stroke = r.stroke.toUpperCase();
@@ -52,13 +51,16 @@ export async function loadTrophies() {
         strokeKey: STROKE_SHORT[stroke] ?? r.stroke,
         // Same shape as the poster's example ("10-11 F, 200 Backstroke") for the payment note.
         note: `${age.replace(/ years$/, '')} ${g}, ${r.distance} ${STROKES[stroke] ?? r.stroke}`,
+        needed: /^no trophy$/i.test(r.trophy),
       };
     });
+  const needed = events.filter((e) => e.needed);
   const unique = (xs) => [...new Set(xs)];
   // Rows whose trophy column holds a name rather than "Yes"/"NO TROPHY" are newly sponsored trophies.
   const sponsored = unique(rows.map((r) => r.trophy).filter((t) => t && !/^(yes|no trophy)$/i.test(t)));
   return {
     total: rows.length,
+    events, // every event, sponsored or not, so the page can tell "already sponsored" from "no such event"
     needed,
     sponsored,
     // Every age group on the sheet, even one with nothing left to sponsor, so the
