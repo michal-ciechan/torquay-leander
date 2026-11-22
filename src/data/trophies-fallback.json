@@ -1,6 +1,6 @@
 [
   {
-    "age": "8 & UNDER",
+    "age": "7 & UNDER",
     "gender": "M",
     "distance": 25,
     "stroke": "FREE",
@@ -8,7 +8,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "8 & UNDER",
+    "age": "7 & UNDER",
     "gender": "F",
     "distance": 25,
     "stroke": "FREE",
@@ -16,7 +16,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "8 & UNDER",
+    "age": "7 & UNDER",
     "gender": "M",
     "distance": 25,
     "stroke": "BREAST",
@@ -24,7 +24,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "8 & UNDER",
+    "age": "7 & UNDER",
     "gender": "F",
     "distance": 25,
     "stroke": "BREAST",
@@ -32,7 +32,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "8 & UNDER",
+    "age": "7 & UNDER",
     "gender": "M",
     "distance": 25,
     "stroke": "BACK",
@@ -40,7 +40,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "8 & UNDER",
+    "age": "7 & UNDER",
     "gender": "F",
     "distance": 25,
     "stroke": "BACK",
@@ -48,7 +48,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "8 & UNDER",
+    "age": "7 & UNDER",
     "gender": "M",
     "distance": 25,
     "stroke": "FLY",
@@ -56,7 +56,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "8 & UNDER",
+    "age": "7 & UNDER",
     "gender": "F",
     "distance": 25,
     "stroke": "FLY",
@@ -64,7 +64,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "M",
     "distance": 50,
     "stroke": "FREE",
@@ -72,7 +72,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "F",
     "distance": 50,
     "stroke": "FREE",
@@ -80,7 +80,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "M",
     "distance": 50,
     "stroke": "BREAST",
@@ -88,7 +88,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "F",
     "distance": 50,
     "stroke": "BREAST",
@@ -96,7 +96,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "M",
     "distance": 50,
     "stroke": "BACK",
@@ -104,7 +104,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "F",
     "distance": 50,
     "stroke": "BACK",
@@ -112,7 +112,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "M",
     "distance": 50,
     "stroke": "FLY",
@@ -120,7 +120,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "F",
     "distance": 50,
     "stroke": "FLY",
@@ -128,7 +128,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "M",
     "distance": 100,
     "stroke": "BREAST",
@@ -136,7 +136,7 @@
     "trophy": "NO TROPHY"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "F",
     "distance": 100,
     "stroke": "BREAST",
@@ -144,7 +144,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "M",
     "distance": 100,
     "stroke": "IM",
@@ -152,7 +152,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "F",
     "distance": 100,
     "stroke": "IM",
@@ -160,7 +160,7 @@
     "trophy": "Yes"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "M",
     "distance": 100,
     "stroke": "FREE",
@@ -168,7 +168,7 @@
     "trophy": "NO TROPHY"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "F",
     "distance": 100,
     "stroke": "FREE",
@@ -176,15 +176,15 @@
     "trophy": "NO TROPHY"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "M",
     "distance": 100,
     "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
+    "number": "103",
+    "trophy": "Giles Wilkinson"
   },
   {
-    "age": "9 & UNDER",
+    "age": "8-9 years",
     "gender": "F",
     "distance": 100,
     "stroke": "BACK",
@@ -412,7 +412,7 @@
     "gender": "F",
     "distance": 200,
     "stroke": "FREE",
-    "number": "",
+    "number": null,
     "trophy": "NO TROPHY"
   },
   {
@@ -428,8 +428,8 @@
     "gender": "F",
     "distance": 400,
     "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
+    "number": "102",
+    "trophy": "Pawson-Powell cup"
   },
   {
     "age": "12 - 13 years",
@@ -524,8 +524,8 @@
     "gender": "F",
     "distance": 200,
     "stroke": "IM",
-    "number": "",
-    "trophy": "NO TROPHY"
+    "number": "104",
+    "trophy": "Eileen Evans Trophy"
   },
   {
     "age": "12 - 13 years",
@@ -580,16 +580,16 @@
     "gender": "M",
     "distance": 200,
     "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
+    "number": "105",
+    "trophy": "Tina Wilkinson"
   },
   {
     "age": "12 - 13 years",
     "gender": "F",
     "distance": 200,
     "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
+    "number": "104",
+    "trophy": "Siena Wilkinson"
   },
   {
     "age": "12 - 13 years",
@@ -652,8 +652,8 @@
     "gender": "F",
     "distance": 200,
     "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
+    "number": "105",
+    "trophy": "The Tranckle Cup"
   },
   {
     "age": "12 - 13 years",
@@ -933,7 +933,7 @@
     "distance": 200,
     "stroke": "FREE",
     "number": "98",
-    "trophy": "NO TROPHY"
+    "trophy": "Yes"
   },
   {
     "age": "14 - 15 years",
