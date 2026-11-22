@@ -32,7 +32,7 @@ async function loadRows() {
     return await fetchTrophySheet();
   } catch (err) {
     console.warn(`[trophies] using fallback snapshot: ${err.message}`);
-    return fallback;
+    return fallback.events;
   }
 }
 

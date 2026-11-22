@@ -1,1298 +1,1304 @@
-[
-  {
-    "age": "7 & UNDER",
-    "gender": "M",
-    "distance": 25,
-    "stroke": "FREE",
-    "number": "21",
-    "trophy": "Yes"
-  },
-  {
-    "age": "7 & UNDER",
-    "gender": "F",
-    "distance": 25,
-    "stroke": "FREE",
-    "number": "20",
-    "trophy": "Yes"
-  },
-  {
-    "age": "7 & UNDER",
-    "gender": "M",
-    "distance": 25,
-    "stroke": "BREAST",
-    "number": "56",
-    "trophy": "Yes"
-  },
-  {
-    "age": "7 & UNDER",
-    "gender": "F",
-    "distance": 25,
-    "stroke": "BREAST",
-    "number": "62",
-    "trophy": "Yes"
-  },
-  {
-    "age": "7 & UNDER",
-    "gender": "M",
-    "distance": 25,
-    "stroke": "BACK",
-    "number": "39",
-    "trophy": "Yes"
-  },
-  {
-    "age": "7 & UNDER",
-    "gender": "F",
-    "distance": 25,
-    "stroke": "BACK",
-    "number": "38",
-    "trophy": "Yes"
-  },
-  {
-    "age": "7 & UNDER",
-    "gender": "M",
-    "distance": 25,
-    "stroke": "FLY",
-    "number": "55",
-    "trophy": "Yes"
-  },
-  {
-    "age": "7 & UNDER",
-    "gender": "F",
-    "distance": 25,
-    "stroke": "FLY",
-    "number": "67",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "23",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "24",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "43",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "44",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "45",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "46",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "66",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "96",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "63",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "7",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "8",
-    "trophy": "Yes"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "103",
-    "trophy": "Giles Wilkinson"
-  },
-  {
-    "age": "8-9 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "68",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "33",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "30",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "37",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "14",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "47",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "48",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "15",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "34",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FLY",
-    "number": "16",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FLY",
-    "number": "12",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "69",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "70",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "95",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "89",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "101",
-    "trophy": "The Zulhayir Cup"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "The Dunn Family Cup"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "93",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "71",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "72",
-    "trophy": "Yes"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "FREE",
-    "number": null,
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "M",
-    "distance": 400,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "10 - 11 years",
-    "gender": "F",
-    "distance": 400,
-    "stroke": "FREE",
-    "number": "102",
-    "trophy": "Pawson-Powell cup"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "2",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "1",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "10",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "25",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "58",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "59",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "94",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "19",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "18",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "104",
-    "trophy": "Eileen Evans Trophy"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FLY",
-    "number": "82",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "FLY",
-    "number": "36",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "FLY",
-    "number": "35",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "76",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "57",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "BACK",
-    "number": "105",
-    "trophy": "Tina Wilkinson"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "BACK",
-    "number": "104",
-    "trophy": "Siena Wilkinson"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "BREAST",
-    "number": "88",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "BREAST",
-    "number": "73",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "81",
-    "trophy": "Yes"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "FREE",
-    "number": "105",
-    "trophy": "The Tranckle Cup"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 400,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 400,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 800,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 800,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "M",
-    "distance": 1500,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "12 - 13 years",
-    "gender": "F",
-    "distance": 1500,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "74",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "75",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "77",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "3",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "4",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "11",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "26",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "6",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "27",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "5",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "42",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FLY",
-    "number": "78",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FLY",
-    "number": "80",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "85",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "90",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "97",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 400,
-    "stroke": "IM",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 400,
-    "stroke": "IM",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "BACK",
-    "number": "91",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "FREE",
-    "number": "98",
-    "trophy": "Yes"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "M",
-    "distance": 400,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 400,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 800,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 800,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 - 15 years",
-    "gender": "M",
-    "distance": 1500,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "14 – 15 years",
-    "gender": "F",
-    "distance": 1500,
-    "stroke": "FREE",
-    "number": "79",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "99",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FREE",
-    "number": "100",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "49",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BREAST",
-    "number": "50",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 50,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "17",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FREE",
-    "number": "13",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "40",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "BACK",
-    "number": "9",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "51",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 100,
-    "stroke": "IM",
-    "number": "52",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "FREE",
-    "number": "41",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "BREAST",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "BACK",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "FLY",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "28",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "29",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 400,
-    "stroke": "FREE",
-    "number": "22",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 400,
-    "stroke": "FREE",
-    "number": "32",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 400,
-    "stroke": "IM",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 400,
-    "stroke": "IM",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 800,
-    "stroke": "FREE",
-    "number": "",
-    "trophy": "NO TROPHY"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 800,
-    "stroke": "FREE",
-    "number": "54",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "M",
-    "distance": 1500,
-    "stroke": "FREE",
-    "number": "53",
-    "trophy": "Yes"
-  },
-  {
-    "age": "16 & OVER",
-    "gender": "F",
-    "distance": 1500,
-    "stroke": "FREE",
-    "number": "92",
-    "trophy": "Yes"
-  },
-  {
-    "age": "Youngest",
-    "gender": "M",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "83",
-    "trophy": "Yes"
-  },
-  {
-    "age": "Youngest",
-    "gender": "F",
-    "distance": 200,
-    "stroke": "IM",
-    "number": "84",
-    "trophy": "Yes"
-  }
-]
+{
+  "about": "Backup copy of the club's \"Missing Trophies\" sheet, used by the Club Championships page only if the live sheet cannot be read at build time (src/data/trophies.mjs).",
+  "source": "https://1drv.ms/x/c/f48baab3fa35dd67/IQCD9A1kYg9XR7T6zEduLA67AUKww3XITREioxlRXbWRhEo?e=72kutf",
+  "refresh": "npm run sync:trophies (scripts/sync-trophies.mjs), then commit this file",
+  "updated": "2026-11-22",
+  "events": [
+    {
+      "age": "7 & UNDER",
+      "gender": "M",
+      "distance": 25,
+      "stroke": "FREE",
+      "number": "21",
+      "trophy": "Yes"
+    },
+    {
+      "age": "7 & UNDER",
+      "gender": "F",
+      "distance": 25,
+      "stroke": "FREE",
+      "number": "20",
+      "trophy": "Yes"
+    },
+    {
+      "age": "7 & UNDER",
+      "gender": "M",
+      "distance": 25,
+      "stroke": "BREAST",
+      "number": "56",
+      "trophy": "Yes"
+    },
+    {
+      "age": "7 & UNDER",
+      "gender": "F",
+      "distance": 25,
+      "stroke": "BREAST",
+      "number": "62",
+      "trophy": "Yes"
+    },
+    {
+      "age": "7 & UNDER",
+      "gender": "M",
+      "distance": 25,
+      "stroke": "BACK",
+      "number": "39",
+      "trophy": "Yes"
+    },
+    {
+      "age": "7 & UNDER",
+      "gender": "F",
+      "distance": 25,
+      "stroke": "BACK",
+      "number": "38",
+      "trophy": "Yes"
+    },
+    {
+      "age": "7 & UNDER",
+      "gender": "M",
+      "distance": 25,
+      "stroke": "FLY",
+      "number": "55",
+      "trophy": "Yes"
+    },
+    {
+      "age": "7 & UNDER",
+      "gender": "F",
+      "distance": 25,
+      "stroke": "FLY",
+      "number": "67",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "23",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "24",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "43",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "44",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "45",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "46",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "66",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "96",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "63",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "7",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "8",
+      "trophy": "Yes"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "103",
+      "trophy": "Giles Wilkinson"
+    },
+    {
+      "age": "8-9 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "68",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "33",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "30",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "37",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "14",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "47",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "48",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "15",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "34",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FLY",
+      "number": "16",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FLY",
+      "number": "12",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "69",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "70",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "95",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "89",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "101",
+      "trophy": "The Zulhayir Cup"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "The Dunn Family Cup"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "93",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "71",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "72",
+      "trophy": "Yes"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "FREE",
+      "number": null,
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "M",
+      "distance": 400,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "10 - 11 years",
+      "gender": "F",
+      "distance": 400,
+      "stroke": "FREE",
+      "number": "102",
+      "trophy": "Pawson-Powell cup"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "2",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "1",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "10",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "25",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "58",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "59",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "94",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "19",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "18",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "104",
+      "trophy": "Eileen Evans Trophy"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FLY",
+      "number": "82",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "FLY",
+      "number": "36",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "FLY",
+      "number": "35",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "76",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "57",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "BACK",
+      "number": "105",
+      "trophy": "Tina Wilkinson"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "BACK",
+      "number": "104",
+      "trophy": "Siena Wilkinson"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "BREAST",
+      "number": "88",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "BREAST",
+      "number": "73",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "81",
+      "trophy": "Yes"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "FREE",
+      "number": "105",
+      "trophy": "The Tranckle Cup"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 400,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 400,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 800,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 800,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "M",
+      "distance": 1500,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "12 - 13 years",
+      "gender": "F",
+      "distance": 1500,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "74",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "75",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "77",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "3",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "4",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "11",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "26",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "6",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "27",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "5",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "42",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FLY",
+      "number": "78",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FLY",
+      "number": "80",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "85",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "90",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "97",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 400,
+      "stroke": "IM",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 400,
+      "stroke": "IM",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "BACK",
+      "number": "91",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "FREE",
+      "number": "98",
+      "trophy": "Yes"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "M",
+      "distance": 400,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 400,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 800,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 800,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 - 15 years",
+      "gender": "M",
+      "distance": 1500,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "14 – 15 years",
+      "gender": "F",
+      "distance": 1500,
+      "stroke": "FREE",
+      "number": "79",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "99",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FREE",
+      "number": "100",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "49",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BREAST",
+      "number": "50",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 50,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "17",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FREE",
+      "number": "13",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "40",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "BACK",
+      "number": "9",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "51",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 100,
+      "stroke": "IM",
+      "number": "52",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "FREE",
+      "number": "41",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "BREAST",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "BACK",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "FLY",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "28",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "29",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 400,
+      "stroke": "FREE",
+      "number": "22",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 400,
+      "stroke": "FREE",
+      "number": "32",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 400,
+      "stroke": "IM",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 400,
+      "stroke": "IM",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 800,
+      "stroke": "FREE",
+      "number": "",
+      "trophy": "NO TROPHY"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 800,
+      "stroke": "FREE",
+      "number": "54",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "M",
+      "distance": 1500,
+      "stroke": "FREE",
+      "number": "53",
+      "trophy": "Yes"
+    },
+    {
+      "age": "16 & OVER",
+      "gender": "F",
+      "distance": 1500,
+      "stroke": "FREE",
+      "number": "92",
+      "trophy": "Yes"
+    },
+    {
+      "age": "Youngest",
+      "gender": "M",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "83",
+      "trophy": "Yes"
+    },
+    {
+      "age": "Youngest",
+      "gender": "F",
+      "distance": 200,
+      "stroke": "IM",
+      "number": "84",
+      "trophy": "Yes"
+    }
+  ]
+}
