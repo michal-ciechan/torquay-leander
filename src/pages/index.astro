@@ -1,11 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { notice, upcomingChanges } from '../data/session-changes.mjs';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const hasChanges = upcomingChanges().length > 0;
 
 const fbPage = 'https://www.facebook.com/torquayleander';
 const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(fbPage)}&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`;
 ---
 <BaseLayout title="Torquay Leander Swimming Club">
+
+  {hasChanges && (
+    <a class="notice-bar" href={`${base}/training/#session-changes`}>
+      🎄 <strong>{notice.title}</strong> <span class="notice-cta">See the dates →</span>
+    </a>
+  )}
 
   <!-- HERO -->
   <section class="hero">
@@ -195,6 +203,15 @@ const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURICompo
 </BaseLayout>
 
 <style>
+  .notice-bar {
+    display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px 10px;
+    background: var(--red-dark); color: #fff; text-decoration: none; text-align: center;
+    padding: 10px 16px; font-size: 0.9rem;
+  }
+  .notice-bar:hover { background: var(--red); }
+  /* The hero normally tucks up under the fixed nav (margin-top: -70px); with the bar above it, it mustn't cover the bar. */
+  .notice-bar + .hero { margin-top: 0; }
+  .notice-cta { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
   .welcome-meets-grid {
     max-width: 1200px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 500px; gap: 48px; align-items: start;

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { notice, upcomingChanges } from '../../data/session-changes.mjs';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const changes = upcomingChanges();
 
 const squadSessions = [
   {
@@ -125,6 +127,27 @@ const coaches = [
       All swimmers should be poolside 5 minutes before their session starts in order to start warming up.
     </div>
 
+    {changes.length > 0 && (
+      <div class="changes" id="session-changes">
+        <div class="changes-head">
+          <h3>🎄 {notice.title}</h3>
+          <a class="changes-poster" href={`${base}/${notice.poster}`} target="_blank" rel="noopener">View the poster</a>
+        </div>
+        <ul class="changes-list">
+          {changes.map((c) => (
+            <li class={`change ${c.kind}`}>
+              <span class="change-date">{c.label}</span>
+              <span class="change-what">
+                <strong>{c.what}</strong>
+                {c.why && <span class="change-why"> ({c.why})</span>}
+                {c.note && <span class="change-note">✓ {c.note}</span>}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
     <div class="squad-times-grid">
       {squadSessions.map((s) => (
         <div class="squad-times-card">
@@ -230,6 +253,28 @@ const coaches = [
     margin: 24px 0 36px; display: flex; gap: 10px; align-items: flex-start; max-width: 760px;
   }
   .sessions-note svg { flex-shrink: 0; margin-top: 2px; }
+
+  /* SESSION CHANGES */
+  .changes { background: #fff; border: 1.5px solid var(--border); border-top: 4px solid var(--red); border-radius: 16px; padding: 22px 26px; margin: 0 0 36px; scroll-margin-top: 90px; }
+  .changes-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .changes-head h3 { margin: 0; font-size: 1.15rem; font-weight: 900; letter-spacing: -0.3px; }
+  .changes-poster { background: var(--red); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; white-space: nowrap; }
+  .changes-poster:hover { background: var(--red-dark); }
+  .changes-list { list-style: none; margin: 0; padding: 0; }
+  .change { display: grid; grid-template-columns: 210px 1fr; gap: 4px 16px; padding: 10px 0 10px 12px; border-top: 1px solid var(--border); border-left: 3px solid transparent; }
+  .change:first-child { border-top: 0; }
+  .change.off { border-left-color: var(--red); }
+  .change.partial { border-left-color: #f59e0b; }
+  .change.info { border-left-color: #16a34a; }
+  .change-date { font-weight: 800; color: var(--text); font-size: 0.9rem; }
+  .change-what { font-size: 0.9rem; color: var(--text); }
+  .change.off .change-what strong { color: var(--red-dark); }
+  .change-why { color: var(--muted); }
+  .change-note { display: block; color: #15803d; font-size: 0.82rem; margin-top: 2px; }
+  @media (max-width: 600px) {
+    .changes { padding: 18px 16px; }
+    .change { grid-template-columns: 1fr; }
+  }
 
   .squad-times-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .squad-times-card { background: #fff; border: 1.5px solid var(--border); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.25s; }
