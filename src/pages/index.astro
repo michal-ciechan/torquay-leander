@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { notice, upcomingChanges } from '../data/session-changes.mjs';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const hasChanges = upcomingChanges().length > 0;
+const hasChanges = upcomingChanges().items.length > 0;
 
 const fbPage = 'https://www.facebook.com/torquayleander';
 const fbEmbed = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(fbPage)}&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`;

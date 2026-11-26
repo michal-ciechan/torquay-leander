@@ -1,45 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { notice, upcomingChanges } from '../../data/session-changes.mjs';
+import { notice, upcomingChanges, changeCalendars } from '../../data/session-changes.mjs';
+import { squadSessions } from '../../data/training-timetable.mjs';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const changes = upcomingChanges();
-
-const squadSessions = [
-  {
-    name: 'Development Squad',
-    desc: 'Our improving swimmers in the Development squad are working on reinforcing their basic skills, stroke technique and improving their dives and turns. An introduction to competitive swimming as their stamina improves, includes in-house ribbon galas and club championships before attending galas further afield.',
-    times: [
-      { day: 'Monday', time: '6pm – 7pm' },
-      { day: 'Thursday', time: '6pm – 7pm' },
-      { day: 'Friday', time: '6pm – 7pm' },
-    ],
-    accent: 'dev',
-  },
-  {
-    name: 'Junior Squad',
-    desc: 'Swimmers continue to build their stamina through tougher training sessions. Race skills are developed such as starts, turns and finishes for each stroke and Individual Medley. Swimmers can enjoy competing in local competitions, team gala events and Devon Developments.',
-    times: [
-      { day: 'Monday', time: '7pm – 8pm' },
-      { day: 'Thursday', time: '7pm – 8pm' },
-      { day: 'Friday', time: '7pm – 8pm' },
-      { day: 'Saturday', time: '9am – 10am' },
-    ],
-    accent: 'junior',
-  },
-  {
-    name: 'Senior Squad',
-    desc: 'Senior swimmers train with a commitment to participate in County competitions, team gala events and open meets. Those who swim for fitness only, are also encouraged to support the club in team galas.',
-    times: [
-      { day: 'Monday', time: '8pm – 9pm' },
-      { day: 'Tuesday', time: '7pm – 9pm' },
-      { day: 'Wednesday', time: '8pm – 9pm' },
-      { day: 'Thursday', time: '8pm – 9pm' },
-      { day: 'Friday', time: '7pm – 8pm' },
-      { day: 'Saturday', time: '9am – 10am' },
-    ],
-    accent: 'senior',
-  },
-];
+const { items: changeItems, groups: changeGroups } = upcomingChanges();
+const calendars = changeCalendars();
 
 const coaches = [
   { name: 'Neil', role: 'Head Coach', img: 'https://torquayleander.co.uk/wp-content/uploads/2021/08/Neil-e1628767191779-400x516.jpg' },
@@ -127,24 +92,59 @@ const coaches = [
       All swimmers should be poolside 5 minutes before their session starts in order to start warming up.
     </div>
 
-    {changes.length > 0 && (
+    {changeItems.length > 0 && (
       <div class="changes" id="session-changes">
         <div class="changes-head">
           <h3>🎄 {notice.title}</h3>
           <a class="changes-poster" href={`${base}/${notice.poster}`} target="_blank" rel="noopener">View the poster</a>
         </div>
-        <ul class="changes-list">
-          {changes.map((c) => (
-            <li class={`change ${c.kind}`}>
-              <span class="change-date">{c.label}</span>
-              <span class="change-what">
-                <strong>{c.what}</strong>
-                {c.why && <span class="change-why"> ({c.why})</span>}
-                {c.note && <span class="change-note">✓ {c.note}</span>}
-              </span>
-            </li>
+
+        <div class="cal-row" style={`--months:${calendars.length}`}>
+          {calendars.map((m) => (
+            <div class="cal">
+              <p class="cal-title">{m.title}</p>
+              <div class="cal-grid">
+                {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((h) => <span class="cal-h">{h}</span>)}
+                {Array.from({ length: m.blanks }, () => <span></span>)}
+                {m.days.map((d) => d.href
+                  ? <a class={`cal-d ${d.kind}${d.past ? ' past' : ''}`} href={d.href} title={d.title}>{d.d}</a>
+                  : <span class={`cal-d ${d.kind}${d.past ? ' past' : ''}`} title={d.title}>{d.d}</span>)}
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
+        <div class="cal-legend">
+          <span><i class="normal"></i>Normal training</span>
+          <span><i class="off"></i>No training</span>
+          <span><i class="partial"></i>7–8pm off</span>
+          <span><i class="break"></i>Christmas break</span>
+          <span><i class="info"></i>Key date</span>
+        </div>
+
+        <div class="change-groups" style={`--months:${changeGroups.length}`}>
+          {changeGroups.map((g) => (
+            <div>
+              <p class="change-month">{g.month}</p>
+              <ul class="changes-list">
+                {g.items.map((c) => (
+                  <li class={`change ${c.kind}`} id={c.id}>
+                    <span class={`tile${c.tile.range ? ' range' : ''}`} aria-hidden="true">
+                      <span class="tile-m">{c.tile.top}</span>
+                      <span class="tile-d">{c.tile.big}</span>
+                      <span class="tile-w">{c.tile.bottom}</span>
+                    </span>
+                    <span class="change-body">
+                      <strong>{c.what}</strong>
+                      {c.why && <span class="change-why">{c.why}</span>}
+                      {c.note && <span class="change-note">{c.kind === 'break' ? '' : '✓ '}{c.note}</span>}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p class="changes-foot">Every other day runs to the normal timetable below.</p>
       </div>
     )}
 
@@ -260,20 +260,63 @@ const coaches = [
   .changes-head h3 { margin: 0; font-size: 1.15rem; font-weight: 900; letter-spacing: -0.3px; }
   .changes-poster { background: var(--red); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; white-space: nowrap; }
   .changes-poster:hover { background: var(--red-dark); }
+  /* Day colours, shared by the mini calendars and the legend */
+  .changes { --c-normal: #e0ecfb; --c-normal-ink: #1e3a5f; --c-off: var(--red); --c-partial: #fde68a; --c-info: #16a34a; --c-break-ink: #b91c1c;
+    --c-break: repeating-linear-gradient(135deg, #fecaca 0 3px, #fff5f5 3px 6px); }
+
+  /* Three small month calendars side by side */
+  .cal-row { display: grid; grid-template-columns: repeat(var(--months), minmax(0, 1fr)); gap: 12px 28px; max-width: 820px; }
+  .cal-title { font-size: 0.8rem; font-weight: 900; margin: 0 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+  .cal-h { font-size: 0.6rem; font-weight: 800; color: var(--muted); text-align: center; }
+  .cal-d { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-size: 0.68rem; line-height: 1; text-decoration: none; color: #b6bfcc; }
+  .cal-d.normal { background: var(--c-normal); color: var(--c-normal-ink); font-weight: 600; }
+  .cal-d.break { background: var(--c-break); color: var(--c-break-ink); }
+  .cal-d.off { background: var(--c-off); color: #fff; font-weight: 800; }
+  .cal-d.partial { background: var(--c-partial); color: #78350f; font-weight: 800; }
+  .cal-d.info { background: var(--c-info); color: #fff; font-weight: 800; }
+  .cal-d.past { opacity: 0.35; }
+  a.cal-d:hover { outline: 2px solid var(--text); outline-offset: 1px; }
+  .cal-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.75rem; color: var(--muted); margin: 12px 0 4px; }
+  .cal-legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+  .cal-legend i.normal { background: var(--c-normal); border: 1px solid #bcd3f0; }
+  .cal-legend i.off { background: var(--c-off); }
+  .cal-legend i.partial { background: var(--c-partial); }
+  .cal-legend i.break { background: var(--c-break); border: 1px solid #fecaca; }
+  .cal-legend i.info { background: var(--c-info); }
+
+  /* The changes as calendar tiles, one column per month on wide screens */
+  .change-groups { display: grid; grid-template-columns: repeat(var(--months), minmax(0, 1fr)); gap: 0 24px; align-items: start; }
+  .change-month { font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin: 18px 0 8px; }
   .changes-list { list-style: none; margin: 0; padding: 0; }
-  .change { display: grid; grid-template-columns: 210px 1fr; gap: 4px 16px; padding: 10px 0 10px 12px; border-top: 1px solid var(--border); border-left: 3px solid transparent; }
-  .change:first-child { border-top: 0; }
-  .change.off { border-left-color: var(--red); }
-  .change.partial { border-left-color: #f59e0b; }
-  .change.info { border-left-color: #16a34a; }
-  .change-date { font-weight: 800; color: var(--text); font-size: 0.9rem; }
-  .change-what { font-size: 0.9rem; color: var(--text); }
-  .change.off .change-what strong { color: var(--red-dark); }
-  .change-why { color: var(--muted); }
-  .change-note { display: block; color: #15803d; font-size: 0.82rem; margin-top: 2px; }
+  .change { display: flex; gap: 12px; align-items: stretch; margin-bottom: 10px; scroll-margin-top: 90px; }
+  .change:target .change-body { outline: 2px solid var(--text); outline-offset: 1px; }
+  .tile { flex: 0 0 58px; display: flex; flex-direction: column; text-align: center; border-radius: 10px; overflow: hidden; background: #fff; border: 1.5px solid var(--border); box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+  .tile-m { font-size: 0.62rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #fff; padding: 3px 0; background: var(--c-info); }
+  .tile-d { font-size: 1.45rem; font-weight: 900; line-height: 1.1; padding-top: 4px; color: var(--text); }
+  .tile.range .tile-d { font-size: 1rem; padding-top: 7px; }
+  .tile-w { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; color: var(--muted); padding-bottom: 5px; }
+  .change.off .tile-m { background: var(--c-off); }
+  .change.partial .tile-m { background: #d97706; }
+  .change.break .tile-m { background: #1e3a5f; }
+  .change-body { flex: 1; display: flex; flex-direction: column; justify-content: center; border-radius: 10px; padding: 9px 12px; background: #fff; border: 1.5px solid var(--border); font-size: 0.9rem; }
+  .change.off .change-body, .change.break .change-body { background: var(--red-light); border-color: #fecaca; }
+  .change.off strong, .change.break strong { color: var(--red-dark); }
+  .change-why { color: var(--muted); font-size: 0.8rem; }
+  .change-note { color: #15803d; font-size: 0.78rem; margin-top: 2px; }
+  .change.break .change-note { color: var(--muted); }
+  .changes-foot { margin: 8px 0 0; font-size: 0.82rem; color: var(--muted); background: #f1f5f9; border-radius: 10px; padding: 10px 14px; }
+
+  @media (max-width: 900px) {
+    .change-groups { grid-template-columns: 1fr; }
+  }
   @media (max-width: 600px) {
-    .changes { padding: 18px 16px; }
-    .change { grid-template-columns: 1fr; }
+    .changes { padding: 18px 14px; }
+    .cal-row { gap: 10px; }
+    .cal-title { font-size: 0.68rem; }
+    .cal-grid { gap: 1px; }
+    .cal-h { font-size: 0.5rem; }
+    .cal-d { font-size: 0.55rem; border-radius: 3px; }
   }
 
   .squad-times-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
