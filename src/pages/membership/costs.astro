@@ -9,12 +9,17 @@ const annualFees = [
   { name: 'Reactivation', price: '£15', unit: '/year', note: 'Re-activation fee when membership has lapsed during the year.' },
 ];
 
+// 2027 monthly fees, from the club's "2027 Fees Structure" poster (Nov 2026).
+// Discount is the poster's stated multi-hour discount; note is what changed vs 2026.
+const feesYear = 2027;
 const monthlyBands = [
-  { band: 'Band 1', price: '£35', hours: '1 hour per week' },
-  { band: 'Band 2', price: '£43', hours: '2 hours per week' },
-  { band: 'Band 3', price: '£50', hours: '3 hours per week' },
-  { band: 'Band 4', price: '£57', hours: '4 hours per week' },
-  { band: 'Band 5', price: '£65', hours: '5+ hours per week' },
+  { hours: '1 hour per week', price: '£35', discount: null, note: 'Frozen for a third year', change: 'frozen' },
+  { hours: '2 hours per week', price: '£43', discount: '5% discount', note: 'Frozen for a third year', change: 'frozen' },
+  { hours: '3 hours per week', price: '£50', discount: '10% discount', note: 'Frozen for a third year', change: 'frozen' },
+  { hours: '4 hours per week', price: '£57', discount: '15% discount', note: 'Frozen for a third year', change: 'frozen' },
+  { hours: '5 hours per week', price: '£62', discount: '20% discount', note: 'Reduced by £3', change: 'down' },
+  { hours: '6 hours per week', price: '£67', discount: '25% discount', note: 'New fee', change: 'new' },
+  { hours: '7 hours per week', price: '£70', discount: '30% discount', note: 'New fee', change: 'new' },
 ];
 ---
 <BaseLayout title="Membership Costs — Torquay Leander">
@@ -55,15 +60,20 @@ const monthlyBands = [
     <p class="label">Monthly Swimming Fees</p>
     <p class="section-text">Monthly subscriptions are based on the number of hours swum per week and are paid by <strong>direct debit set up via <a href="https://www.cluborganiser.co.uk/login.php" target="_blank" rel="noopener">Club Organiser</a></strong>. They represent the annual subscription broken into 12 equal installments and are due every month of membership — regardless of holidays, illness, gala weeks, or the club's Christmas and summer shutdown periods.</p>
 
+    <p class="band-title">{feesYear} monthly fees</p>
     <div class="band-table">
       {monthlyBands.map((b) => (
         <div class="band-row">
-          <span class="band-name">{b.band}</span>
           <span class="band-hours">{b.hours}</span>
+          <span class="band-tags">
+            {b.discount && <span class="tag tag-discount">{b.discount}</span>}
+            <span class={`tag tag-${b.change}`}>{b.note}</span>
+          </span>
           <span class="band-price">{b.price}<small>/month</small></span>
         </div>
       ))}
     </div>
+    <p class="band-small">Fees are subject to change at any time at the discretion of the Committee.</p>
 
     <div class="note">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -154,22 +164,29 @@ const monthlyBands = [
   .fee-note { color: var(--muted); font-size: 0.82rem; line-height: 1.6; margin: 0; }
 
   .monthly { background: #f8fafc; padding: 64px 5vw; }
-  .band-table { border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; max-width: 720px; }
+  .band-title { font-weight: 900; font-size: 1.05rem; margin: 0 0 12px; }
+  .band-table { border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; max-width: 760px; }
   .band-row {
-    display: grid; grid-template-columns: 1fr 2fr auto; align-items: center; gap: 16px;
-    padding: 18px 26px; border-bottom: 1px solid var(--border);
+    display: grid; grid-template-columns: 170px 1fr auto; align-items: center; gap: 10px 16px;
+    padding: 16px 24px; border-bottom: 1px solid var(--border);
   }
   .band-row:last-child { border-bottom: none; }
   .band-row:nth-child(even) { background: #fafbfc; }
-  .band-name { font-weight: 800; font-size: 0.95rem; color: var(--text); }
-  .band-hours { color: var(--muted); font-size: 0.9rem; }
+  .band-hours { font-weight: 800; font-size: 0.95rem; color: var(--text); }
+  .band-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+  .tag-discount { background: var(--red-light); color: var(--red-dark); border: 1px solid #fecaca; }
+  .tag-frozen { background: #f1f5f9; color: var(--muted); }
+  .tag-down { background: #dcfce7; color: #166534; }
+  .tag-new { background: var(--black); color: #fff; }
   .band-price { font-size: 1.35rem; font-weight: 900; color: var(--red); letter-spacing: -0.5px; white-space: nowrap; }
   .band-price small { font-size: 0.78rem; font-weight: 700; color: var(--muted); }
+  .band-small { color: var(--muted); font-size: 0.8rem; margin: 10px 0 0; max-width: 760px; }
 
   .note {
     display: flex; align-items: flex-start; gap: 10px;
     background: #fff; border: 1.5px solid var(--border); border-radius: 12px;
-    padding: 16px 18px; margin-top: 28px; max-width: 720px;
+    padding: 16px 18px; margin-top: 28px; max-width: 760px;
     color: var(--muted); font-size: 0.86rem; line-height: 1.6;
   }
   .note svg { flex-shrink: 0; margin-top: 2px; color: var(--red); }
@@ -213,8 +230,8 @@ const monthlyBands = [
   }
   @media (max-width: 600px) {
     .fee-grid { grid-template-columns: 1fr; }
-    .band-row { grid-template-columns: 1fr auto; gap: 4px 12px; }
-    .band-hours { grid-column: 1 / -1; order: 3; }
+    .band-row { grid-template-columns: 1fr auto; gap: 6px 12px; padding: 14px 16px; }
+    .band-tags { grid-column: 1 / -1; order: 3; }
     .annual, .monthly, .form-section { padding-left: 20px; padding-right: 20px; }
   }
 </style>
