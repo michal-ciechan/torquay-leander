@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Source: Khiyami et al., "Efficacy of Core Training in Swimming Performance and Neuromuscular
+// Parameters of Young Swimmers: A Randomised Control Trial", J Clin Med 2022;11(11):3198.
+const studyUrl = 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9181058/';
+
+const results = [
+  { big: '−1.4s', small: '50 m freestyle time (a 3.47% gain)' },
+  { big: '+0.2 m', small: 'further per stroke cycle' },
+  { big: '−2.9', small: 'fewer strokes per 50 m' },
+  { big: '+0.1 m/s', small: 'faster swimming speed' },
+];
+
+const warmup = ['Bent-over twists', 'Criss-cross crunches', 'Forward shoulder rotations', 'Backward shoulder rotations'];
+
+const weeks = [1, 2, 3, 4, 5, 6];
+const exercises = [
+  { name: 'Prone Bridge (Plank)', kit: 'Bodyweight', w: ['2 × 30s', '2 × 60s', '2 × 90s', '3 × 90s', '2 × 120s', '3 × 120s'],
+    cue: 'Support your body on your elbows and toes, keeping your spine neutral and abdominals braced in a straight line.' },
+  { name: 'Side Bridge (Side Plank)', kit: 'Bodyweight', w: ['2 × 30s', '2 × 60s', '2 × 90s', '3 × 90s', '2 × 120s', '3 × 120s'],
+    cue: 'Lie on one side and lift your hips so your body forms a straight line from head to feet.' },
+  { name: 'Bird Dog', kit: 'Bodyweight', w: ['3 × 10', '3 × 15', '3 × 20', '3 × 25', '4 × 25', '3 × 30'],
+    cue: 'Start on hands and knees with a neutral spine. Slowly extend one leg straight back while raising the opposite arm to shoulder height without letting your pelvis tilt, then alternate sides.' },
+  { name: 'Supine Leg Raise', kit: 'Bodyweight', w: ['3 × 10', '3 × 15', '3 × 20', '3 × 25', '4 × 25', '3 × 30'],
+    cue: 'Lie flat on your back with knees straight. Lift one straight leg up to about 75 degrees at the hip, lower it with control, and switch legs.' },
+  { name: 'Overhead Squat', kit: 'Medicine ball', w: ['3 × 10 (3 kg)', '3 × 10 (4 kg)', '3 × 15 (5 kg)', '3 × 20 (6 kg)', '4 × 20 (7 kg)', '3 × 25 (7 kg)'],
+    cue: 'Hold a medicine ball directly overhead with both hands, keeping your torso upright as you squat as low as balance and mobility allow.' },
+  { name: 'Seated Twist', kit: 'Medicine ball', w: ['3 × 15 (3 kg)', '3 × 15 (4 kg)', '3 × 15 (5 kg)', '3 × 20 (6 kg)', '4 × 20 (7 kg)', '3 × 25 (7 kg)'],
+    cue: 'Sit on the floor with knees bent at 45 degrees. Hold a medicine ball out in front of you and rotate your waist and shoulders from side to side.' },
+  { name: 'Prone Shoulder Press', kit: 'Dumbbells', w: ['3 × 10 (3 kg)', '4 × 10 (3 kg)', '3 × 15 (3 kg)', '3 × 20 (3 kg)', '4 × 20 (3 kg)', '3 × 25 (3 kg)'],
+    cue: 'Lie face down with arms extended overhead holding light dumbbells. Raise one arm off the floor, lower it back down, and alternate arms.' },
+];
+---
+<BaseLayout title="Dry-Land Core Training — Torquay Leander">
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="crumb">
+      <a href={`${base}/`}>Home</a>
+      <span>›</span>
+      <a href={`${base}/training/`}>Training</a>
+      <span>›</span>
+      <span>Dry-Land Core Training</span>
+    </div>
+    <h1>Dry-Land Core Training</h1>
+    <p>A 6-week core programme, three times a week before pool training, shown in a 2022 study to make young swimmers faster over 50 m freestyle.</p>
+  </div>
+</section>
+
+<section class="core">
+  <div class="inner">
+
+    <div class="key">
+      <p class="label">Key finding</p>
+      <p>Adding a 6-week, 3-times-a-week core programme to normal pool training made young swimmers <strong>1.4 seconds faster over 50 m freestyle</strong>. The gain came from a more efficient stroke rather than faster arms.</p>
+    </div>
+
+    <div class="results">
+      {results.map((r) => (
+        <div class="result"><span class="res-big">{r.big}</span><span class="res-small">{r.small}</span></div>
+      ))}
+    </div>
+
+    <h2>The study</h2>
+    <p class="text"><strong>Who and how.</strong> Eighteen healthy male swimmers aged about 13, each swimming around 28 km a week, were split at random into two groups. Both carried on with their normal pool sessions; one group also did 18 supervised dry-land core sessions over 6 weeks.</p>
+    <p class="text"><strong>In the water.</strong> Compared with the other group, the core group swam faster (+0.1 m/s), travelled further per stroke (+0.2 m per cycle), took fewer strokes (−2.9) and had a slightly lower stroke rate (−2.8 cycles a minute).</p>
+    <p class="text"><strong>In the muscles.</strong> Muscle tests (tensiomyography) showed faster contraction in the lower back (erector spinae), the lats (latissimus dorsi) and the external obliques.</p>
+    <p class="text"><strong>Why it matters.</strong> A stronger, quicker-reacting core stops the body sagging and leaking energy in the water, so swimmers pass power from the trunk to the arms and legs and hold a streamlined position through a sprint.</p>
+
+    <h2>Each session (about 50 minutes)</h2>
+    <p class="text">In the study, swimmers did this routine three times a week, straight before their pool session.</p>
+    <ol class="steps">
+      <li>
+        <span class="mins">10 min</span>
+        <div><strong>Warm-up</strong><span>{warmup.join(', ')}.</span></div>
+      </li>
+      <li>
+        <span class="mins">30 min</span>
+        <div><strong>Core circuit</strong><span>The 7 exercises below, with 1 minute's rest between each.</span></div>
+      </li>
+      <li>
+        <span class="mins">10 min</span>
+        <div><strong>Rest</strong><span>Then into the pool for normal training and cool-down.</span></div>
+      </li>
+    </ol>
+
+    <h2 id="progression">Week-by-week progression</h2>
+    <p class="text">Sets × seconds, or sets × reps. For one-sided exercises (side plank, bird dog, leg raise, shoulder press) do the time or reps <strong>on each side</strong>.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Exercise</th>{weeks.map((w) => <th>Week {w}</th>)}</tr>
+        </thead>
+        <tbody>
+          {exercises.map((e) => (
+            <tr>
+              <th scope="row">{e.name}<span class="kit">{e.kit}</span></th>
+              {e.w.map((v) => <td>{v}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="scroll-hint">Swipe the table sideways to see all 6 weeks.</p>
+
+    <h2>How to do each exercise</h2>
+    <ul class="cues">
+      {exercises.map((e) => (
+        <li><strong>{e.name}</strong><span class="kit">{e.kit}</span><p>{e.cue}</p></li>
+      ))}
+    </ul>
+
+    <div class="caveat">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span><strong>Scale it to the swimmer.</strong> The study used boys aged 10–16 and fixed 3–7 kg weights. Older, stronger or newer swimmers should adjust the medicine ball and dumbbell weights to suit their strength, and keep strict form. This page is for information only: talk to your coach before starting, and stop and get advice if anything hurts.</span>
+    </div>
+
+    <p class="source">Source: Khiyami A. et al., <a href={studyUrl} target="_blank" rel="noopener">“Efficacy of Core Training in Swimming Performance and Neuromuscular Parameters of Young Swimmers: A Randomised Control Trial”</a>, <em>Journal of Clinical Medicine</em>, 2022. For more land-training ideas see our <a href={`${base}/training/videos/`}>Training Videos</a>.</p>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--black); padding: 64px 5vw 56px; position: relative; overflow: hidden; }
+  .page-hero::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: #fff; clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; }
+  .crumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-bottom: 18px; flex-wrap: wrap; }
+  .crumb a { color: var(--red); text-decoration: none; }
+  .crumb span { opacity: 0.5; }
+  .page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .page-hero p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+
+  .core { background: #fff; padding: 72px 5vw 80px; }
+  .inner { max-width: 1000px; margin: 0 auto; }
+  .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  h2 { font-size: 1.35rem; font-weight: 900; letter-spacing: -0.5px; margin: 48px 0 14px; scroll-margin-top: 90px; }
+  .text { color: var(--muted); font-size: 0.97rem; line-height: 1.8; max-width: 780px; margin-bottom: 14px; }
+  .text strong { color: var(--text); }
+
+  .key { background: var(--red-light); border: 1.5px solid #fecaca; border-left: 5px solid var(--red); border-radius: 12px; padding: 20px 24px; max-width: 780px; }
+  .key p:last-child { color: var(--text); font-size: 1rem; line-height: 1.7; margin: 0; }
+
+  .results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+  .result { border: 1.5px solid var(--border); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+  .result .res-big { font-size: 1.6rem; font-weight: 900; color: var(--red); letter-spacing: -0.5px; }
+  .result .res-small { color: var(--muted); font-size: 0.82rem; line-height: 1.4; }
+
+  .steps { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; max-width: 780px; }
+  .steps li { display: flex; gap: 16px; align-items: center; border: 1.5px solid var(--border); border-radius: 12px; padding: 14px 18px; }
+  .steps .mins { flex-shrink: 0; min-width: 64px; text-align: center; background: var(--black); color: #fff; font-weight: 800; font-size: 0.8rem; border-radius: 8px; padding: 8px 6px; }
+  .steps strong { display: block; font-weight: 800; margin-bottom: 2px; }
+  .steps span:not(.mins) { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+
+  .table-wrap { overflow-x: auto; border: 1.5px solid var(--border); border-radius: 12px; -webkit-overflow-scrolling: touch; }
+  table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 0.86rem; }
+  th, td { padding: 11px 12px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  thead th { background: var(--black); color: #fff; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.3px; }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:nth-child(even) td, tbody tr:nth-child(even) th { background: #f8fafc; }
+  tbody th { font-weight: 800; color: var(--text); background: #fff; }
+  thead th:first-child, tbody th { position: sticky; left: 0; z-index: 1; }
+  tbody th .kit { display: block; font-weight: 500; color: var(--muted); font-size: 0.74rem; margin-top: 2px; }
+  .scroll-hint { display: none; color: var(--muted); font-size: 0.78rem; margin-top: 8px; }
+
+  .cues { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .cues li { border: 1.5px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+  .cues strong { font-weight: 800; }
+  .cues .kit { margin-left: 8px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); background: #f1f5f9; border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px; vertical-align: 2px; }
+  .cues p { color: var(--muted); font-size: 0.87rem; line-height: 1.6; margin: 6px 0 0; }
+
+  .caveat { display: flex; align-items: flex-start; gap: 10px; background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-top: 36px; max-width: 780px; color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+  .caveat svg { flex-shrink: 0; margin-top: 3px; color: var(--red); }
+  .caveat strong { color: var(--text); }
+  .source { color: var(--muted); font-size: 0.8rem; line-height: 1.6; margin-top: 22px; max-width: 780px; }
+  .source a { color: var(--red); }
+
+  @media (max-width: 800px) {
+    .results { grid-template-columns: repeat(2, 1fr); }
+    .cues { grid-template-columns: 1fr; }
+    .scroll-hint { display: block; }
+  }
+  @media (max-width: 600px) {
+    .core { padding-left: 20px; padding-right: 20px; }
+  }
+</style>

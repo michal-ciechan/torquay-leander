@@ -63,6 +63,13 @@ const coaches = [
           <span class="sub-desc">The kit every swimmer needs</span>
         </span>
       </a>
+      <a class="sub-card" href={`${base}/training/core-training/`}>
+        <span class="sub-icon">💪</span>
+        <span class="sub-body">
+          <strong>Dry-Land Core Training</strong>
+          <span class="sub-desc">A 6-week programme for faster sprints</span>
+        </span>
+      </a>
       <a class="sub-card" href={`${base}/training/videos/`}>
         <span class="sub-icon">🎬</span>
         <span class="sub-body">
@@ -233,7 +240,7 @@ const coaches = [
 
   /* SUB-PAGE CARDS */
   .sub-nav { background: #fff; padding: 48px 5vw; }
-  .sub-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .sub-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .sub-card {
     display: flex; flex-direction: row; align-items: center; gap: 16px;
     border: 1.5px solid var(--border); border-radius: 14px; padding: 20px 22px;
