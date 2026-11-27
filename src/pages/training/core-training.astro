@@ -1,10 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { poses, viewBoxes, defaultViewBox } from '../../data/core-exercise-poses.mjs';
+import { poses, viewBoxes, defaultViewBox, renderFrame } from '../../data/core-exercise-poses.mjs';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const pts = (p) => p.map(([x, y]) => `${x},${y}`).join(' ');
-const order = { far: 0, near: 1, move: 2 };
-const sortLimbs = (limbs) => [...limbs].sort((a, b) => order[a.cls] - order[b.cls]);
 
 // Source: Khiyami et al., "Efficacy of Core Training in Swimming Performance and Neuromuscular
 // Parameters of Young Swimmers: A Randomised Control Trial", J Clin Med 2022;11(11):3198.
@@ -119,17 +116,7 @@ const exercises = [
               {poses[e.name].map((f, i) => (
                 <li>
                   <svg viewBox={viewBoxes[e.name] ?? defaultViewBox} role="img" aria-label={`Step ${i + 1}: ${f.cap}`}>
-                    <defs><marker id={`ah-${e.name.replace(/\W/g, '')}-${i}`} viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="ah" /></marker></defs>
-                    {f.floor !== false && <line x1="4" y1="74.5" x2="116" y2="74.5" class="floor" />}
-                    {f.props.filter((p) => p.type === 'guide').map((p) => <path d={p.d} class="guide" />)}
-                    {sortLimbs(f.limbs).map((l) => <polyline points={pts(l.pts)} class={`limb ${l.cls}`} />)}
-                    <circle cx={f.head[0]} cy={f.head[1]} r="6" class="head" />
-                    {f.props.map((p) =>
-                      p.type === 'ball' ? <circle cx={p.at[0]} cy={p.at[1]} r="6.5" class="ball" /> :
-                      p.type === 'bell' ? <g class={p.far ? 'bell far' : 'bell'}><line x1={p.at[0]} y1={p.at[1] - 5} x2={p.at[0]} y2={p.at[1] + 5} /><rect x={p.at[0] - 2.5} y={p.at[1] - 7} width="5" height="4" rx="1" /><rect x={p.at[0] - 2.5} y={p.at[1] + 3} width="5" height="4" rx="1" /></g> :
-                      p.type === 'arrow' ? <path d={p.d} class="arrow" marker-end={`url(#ah-${e.name.replace(/\W/g, '')}-${i})`} /> :
-                      p.type === 'text' ? <text x={p.at[0]} y={p.at[1]} class="say">{p.text}</text> : null
-                    )}
+                    <Fragment set:html={renderFrame(f, `ah-${e.name.replace(/\W/g, '')}-${i}`)} />
                   </svg>
                   <span class="cap"><b>{i + 1}</b>{f.cap}</span>
                 </li>
@@ -206,21 +193,6 @@ const exercises = [
   .frames svg { width: 100%; height: auto; background: #f8fafc; border-radius: 10px; }
   .frames .cap { font-size: 0.72rem; line-height: 1.3; color: var(--muted); text-align: center; }
   .frames .cap b { display: inline-grid; place-items: center; width: 15px; height: 15px; margin-right: 4px; border-radius: 50%; background: var(--black); color: #fff; font-size: 0.6rem; vertical-align: 1px; }
-  .limb { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
-  .limb.near { stroke: #1a1a1a; }
-  .limb.far { stroke: #b6bcc6; }
-  .limb.move { stroke: var(--red); }
-  .head { fill: #1a1a1a; }
-  .floor { stroke: #cbd5e1; stroke-width: 2; }
-  .guide { stroke: var(--red); stroke-width: 1.2; stroke-dasharray: 3 3; fill: none; }
-  .ball { fill: #7c2d12; stroke: #1a1a1a; stroke-width: 1.5; }
-  .bell line { stroke: #1a1a1a; stroke-width: 2.5; }
-  .bell rect { fill: #475569; }
-  .bell.far line { stroke: #b6bcc6; }
-  .bell.far rect { fill: #b6bcc6; }
-  .arrow { stroke: var(--red); stroke-width: 2; fill: none; stroke-linecap: round; }
-  .ah { fill: var(--red); }
-  .say { font-size: 9px; font-weight: 800; fill: var(--red); text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
   .cues p { color: var(--muted); font-size: 0.87rem; line-height: 1.6; margin: 6px 0 0; }
 
   .caveat { display: flex; align-items: flex-start; gap: 10px; background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-top: 36px; max-width: 780px; color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
