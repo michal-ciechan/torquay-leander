@@ -12,6 +12,9 @@ const annualFees = [
 // 2027 monthly fees, from the club's "2027 Fees Structure" poster (Nov 2026).
 // Discount is the poster's stated multi-hour discount; note is what changed vs 2026.
 const feesYear = 2027;
+// The "what changed" badges (frozen / reduced / new) only matter while the new fees are
+// news: they drop off from 1 January 2027 (UK date; the daily 05:00 UTC rebuild picks it up).
+const showChangeNotes = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/London' }) < '2027-01-01';
 const monthlyBands = [
   { hours: '1 hour per week', price: '£35', discount: null, note: 'Frozen for a third year', change: 'frozen' },
   { hours: '2 hours per week', price: '£43', discount: '5% discount', note: 'Frozen for a third year', change: 'frozen' },
@@ -67,7 +70,7 @@ const monthlyBands = [
           <span class="band-hours">{b.hours}</span>
           <span class="band-tags">
             {b.discount && <span class="tag tag-discount">{b.discount}</span>}
-            <span class={`tag tag-${b.change}`}>{b.note}</span>
+            {showChangeNotes && <span class={`tag tag-${b.change}`}>{b.note}</span>}
           </span>
           <span class="band-price">{b.price}<small>/month</small></span>
         </div>
